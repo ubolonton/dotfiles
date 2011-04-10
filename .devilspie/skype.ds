@@ -1,0 +1,5 @@
+(if (is (application_name) "Skype")
+    (begin (if (is (window_role) "CallWindowForm")
+               (begin (undecorate) (stick) (above)
+                      (skip_pager) (skip_tasklist)
+                      (geometry "+963+0")))))

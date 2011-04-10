@@ -1,0 +1,6 @@
+(if (or (is (application_name) "Pidgin")
+        (matches (application_name) "Skype.*Linux")
+        (is (window_class) "Gnome-dictionary"))
+    (begin (undecorate)
+           (geometry "317x800+963+0")
+           (maximize_vertically)))

@@ -1,0 +1,3 @@
+(if (is (window_class) "Totem")
+    (begin (undecorate) (stick) (above)
+           (skip_pager) (skip_tasklist)))

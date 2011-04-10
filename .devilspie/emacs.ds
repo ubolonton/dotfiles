@@ -1,0 +1,2 @@
+(if (or (matches (application_name) "emacs"))
+    (begin (undecorate)))

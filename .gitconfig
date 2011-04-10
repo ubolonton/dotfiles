@@ -1,0 +1,19 @@
+[user]
+	name = Nguyễn Tuấn Anh
+	email = ubolonton@gmail.com
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	ui = auto
+[branch "master"]
+	merge = refs/heads/master
+[core]
+	excludesfile = ~/.gitignore
+	autocrlf = input
+	quotepath = false
+	safecrlf = warn
+[merge]
+	tool = emerge
+[rerere]
+	enabled = 1
