@@ -162,18 +162,29 @@
 ;;   "gv" "xpdf" "xterm" "xterm")
 
 ;; http://conkeror.org/UpstreamBugs#FocusedpluginspreventConkerorkeybindingsfromworking
-(xbindkey '(Escape) "conkeror -f unfocus")
+(xbindkey '(Mod4 Escape) "conkeror -f unfocus")
 (xbindkey '(Mod4 m) "conkeror -f search-clipboard-contents")
 
 ;; App switcher
-(xbindkey '(F1) "xdotool search --limit 1 Emacs windowactivate")
-(xbindkey '(F2) "xdotool search --limit 1 Conkeror windowactivate")
-(xbindkey '(F3) "xdotool search --limit 1 Terminal windowactivate")
+(xbindkey '(F1) "wmctrl -x -a Emacs")
+(xbindkey '(F2) "wmctrl -x -a Conkeror")
+(xbindkey '(F3) "wmctrl -x -a Terminal")
 ;; FIXME: This is convoluted and mostly does not work
 ;; (xbindkey '(F3) "xdotool search --class Pidgin | sort | tail -n 1 | xargs xdotool windowactivate")
 
+;; Toggle fullscreen for current window
+(xbindkey '(Mod4 Return) "wmctrl -r :ACTIVE: -b toggle,fullscreen")
+
+;; Poor man's window manager
+;; wmctrl can execute only 1 action at a time, so...
+(xbindkey '(Mod4 F2) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,963,800")
+(xbindkey '(Mod4 F3) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,963,0,317,800")
+(xbindkey '(Mod4 F4) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,1280,800")
+(xbindkey '(Mod4 Shift F2) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,640,800")
+(xbindkey '(Mod4 Shift F3) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,640,0,640,800")
+
 ;; Mouse banishment
-(xbindkey '(Menu) "xdotool mousemove 640 0")
+(xbindkey '(Menu) "xdotool mousemove 640 800; xdotool mousemove 640 0")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of xbindkeys guile configuration ;;
