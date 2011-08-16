@@ -1,0 +1,7 @@
+(if (and (is (window_property "_NET_WM_WINDOW_TYPE")
+             "_NET_WM_WINDOW_TYPE_NORMAL")
+         (or
+          (matches (application_name) "Firefox")
+          ))
+    (begin (unmaximize) (undecorate)
+           (maximize)))

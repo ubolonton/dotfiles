@@ -1,0 +1,12 @@
+;;; Right-sided contact lists and dictionary
+(if (and (is (window_property "_NET_WM_WINDOW_TYPE")
+             "_NET_WM_WINDOW_TYPE_NORMAL")
+         (or (and (is (application_name) "Pidgin")
+                  (is (window_name) "Buddy List"))
+             (matches (window_name) "Skype.*Beta")
+             (is (window_class) "Gnome-dictionary"))
+         )
+    ;; 963 to fit my current emacs size
+    (begin (undecorate)
+           (geometry "317x800+963+0")
+           (maximize_vertically)))
