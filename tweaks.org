@@ -1,0 +1,19 @@
+* Notifications
+# TODO: Doesn't it have textual config file?
+http://www.webupd8.org/2010/10/tweak-notifyosd-notifications-in-ubuntu.html
+#+begin_src zsh
+sudo add-apt-repository ppa:leolik/leolik
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install libnotify-bin
+pkill notify-osd
+
+wget https://launchpad.net/~amandeepgrewal/+archive/notifyosdconfig/+files/notifyosdconfig_0.1-6~lucid1_i386.deb && sudo dpkg -i notifyosdconfig_0.1-6~lucid1_i386.deb && sudo apt-get install -f
+#+end_src
+
+* Brightness
+http://stereopsis.com/flux/linux.html
+#+begin_src zsh
+sudo add-apt-repository ppa:kilian/f.lux
+sudo apt-get update
+sudo apt-get install fluxgui
+#+end_src
