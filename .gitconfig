@@ -17,3 +17,5 @@
 	tool = emerge
 [rerere]
 	enabled = 1
+[i18n]
+    logoutputencoding = UTF-8
