@@ -44,15 +44,15 @@
 ;; (set-numlock! #f or #t)
 ;; (set-scrolllock! #f or #t)
 ;; (set-capslock! #f or #t)
-;; 
+;;
 ;; Shell command key:
 ;; (xbindkey key "foo-bar-command [args]")
 ;; (xbindkey '(modifier* key) "foo-bar-command [args]")
-;; 
+;;
 ;; Scheme function key:
 ;; (xbindkey-function key function-name-or-lambda-function)
 ;; (xbindkey-function '(modifier* key) function-name-or-lambda-function)
-;; 
+;;
 ;; Other functions:
 ;; (remove-xbindkey key)
 ;; (run-command "foo-bar-command [args]")
@@ -166,9 +166,9 @@
 (xbindkey '(Mod4 m) "conkeror -f search-clipboard-contents")
 
 ;; App switcher
-(xbindkey '(F1) "wmctrl -x -a Emacs")
-(xbindkey '(F2) "wmctrl -x -a Conkeror")
-(xbindkey '(F3) "wmctrl -x -a Terminal")
+(xbindkey '(F1) "wmctrl -x -a Emacs || emacs")
+(xbindkey '(F2) "wmctrl -x -a Conkeror || conkeror")
+(xbindkey '(F3) "wmctrl -x -a Terminal || gnome-terminal")
 ;; FIXME: This is convoluted and mostly does not work
 ;; (xbindkey '(F3) "xdotool search --class Pidgin | sort | tail -n 1 | xargs xdotool windowactivate")
 
