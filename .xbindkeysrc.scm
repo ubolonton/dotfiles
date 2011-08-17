@@ -163,12 +163,14 @@
 
 ;; http://conkeror.org/UpstreamBugs#FocusedpluginspreventConkerorkeybindingsfromworking
 (xbindkey '(Mod4 Escape) "conkeror -f unfocus")
-(xbindkey '(Mod4 m) "conkeror -f search-clipboard-contents")
+;; Do a web search on clipboard content (only if it's opened)
+(xbindkey '(Mod4 m) "wmctrl -x -a Conkeror && conkeror -f search-clipboard-contents")
+(xbindkey '(Mod4 Shift m) "wmctrl -x -a Conkeror && conkeror -f search-clipboard-contents-duckduckgo")
 
 ;; App switcher
-(xbindkey '(F1) "wmctrl -x -a Emacs || emacs")
-(xbindkey '(F2) "wmctrl -x -a Conkeror || conkeror")
-(xbindkey '(F3) "wmctrl -x -a Terminal || gnome-terminal")
+(xbindkey '(F1) "wmctrl -x -a Emacs || pgrep emacs || emacs")
+(xbindkey '(F2) "wmctrl -x -a Conkeror || pgrep xulrunner || conkeror")
+(xbindkey '(F3) "wmctrl -x -a Terminal || pgrep gnome-terminal || gnome-terminal")
 ;; FIXME: This is convoluted and mostly does not work
 ;; (xbindkey '(F3) "xdotool search --class Pidgin | sort | tail -n 1 | xargs xdotool windowactivate")
 
