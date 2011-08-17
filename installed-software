@@ -183,6 +183,8 @@ dosfstools					install
 dpkg						install
 dpkg-dev					install
 dvd+rw-tools					install
+dvdauthor					install
+dvgrab						install
 dwm						install
 dwm-tools					install
 e2fslibs					install
@@ -295,6 +297,7 @@ foomatic-db-engine				install
 foomatic-filters				install
 fop						install
 freepats					install
+frei0r-plugins					install
 friendly-recovery				install
 ftp						install
 fuse-utils					install
@@ -412,10 +415,12 @@ gstreamer0.10-ffmpeg				install
 gstreamer0.10-gnonlin				install
 gstreamer0.10-nice				install
 gstreamer0.10-plugins-bad			install
+gstreamer0.10-plugins-bad-multiverse		install
 gstreamer0.10-plugins-base			install
 gstreamer0.10-plugins-base-apps			install
 gstreamer0.10-plugins-good			install
 gstreamer0.10-plugins-ugly			install
+gstreamer0.10-plugins-ugly-multiverse		install
 gstreamer0.10-pulseaudio			install
 gstreamer0.10-tools				install
 gstreamer0.10-x					install
@@ -486,6 +491,7 @@ insserv						install
 install-info					install
 install-package					install
 intel-gpu-tools					install
+intltool					install
 intltool-debian					install
 iproute						install
 iptables					install
@@ -520,6 +526,8 @@ kdelibs5					install
 kdelibs5-data					install
 kdelibs5-plugins				install
 kdemultimedia-kio-plugins			install
+kdenlive					install
+kdenlive-data					install
 kdepim-runtime					install
 kdepimlibs-data					deinstall
 kdepimlibs-kio-plugins				install
@@ -528,6 +536,7 @@ kdesudo						install
 kdoctools					install
 kerneloops-daemon				install
 kfind						install
+kino						install
 klibc-utils					install
 konqueror					install
 konqueror-nsplugins				install
@@ -595,6 +604,7 @@ libatasmart4					install
 libatk1.0-0					install
 libatk1.0-data					install
 libatk1.0-dev					install
+libatlas3gf-base				install
 libatm1						install
 libatspi1.0-0					install
 libattica0					install
@@ -725,6 +735,8 @@ libcupsppdc1					install
 libcurl3					install
 libcurl3-dbg					install
 libcurl3-gnutls					install
+libcv2.1					install
+libcvaux2.1					install
 libcwidget3					install
 libdaemon0					install
 libdatrie1					install
@@ -811,6 +823,7 @@ libexif12					install
 libexiv2-6					install
 libexpat1					install
 libexpat1-dev					install
+libfaac0					install
 libfaad2					install
 libfelix-framework-java				install
 libfelix-main-java				install
@@ -842,6 +855,7 @@ libgail-gnome-module				install
 libgail18					install
 libgamin0					install
 libganymed-ssh2-java				install
+libgavl1					install
 libgc1c2					install
 libgcc1						install
 libgcj-bc					install
@@ -1001,6 +1015,7 @@ libgwibber0					install
 libhal-storage1					install
 libhal1						install
 libhamcrest-java				install
+libhighgui2.1					install
 libhpmud0					install
 libhsqldb-java					install
 libhtml-format-perl				install
@@ -1183,7 +1198,11 @@ libmicroblog4					install
 libmikmod2					install
 libmimic0					install
 libmission-control-plugins0			install
+libmjpegtools-1.9				install
 libmldbm-perl					install
+libmlt++3					install
+libmlt-data					install
+libmlt4						install
 libmms0						install
 libmng1						install
 libmockobjects-java				install
@@ -1383,6 +1402,8 @@ libqapt1					install
 libqca2						install
 libqdox-java					install
 libqgpgme1					install
+libqimageblitz4					install
+libqjson0					install
 libqscintilla2-5				install
 libqt4-assistant				install
 libqt4-dbus					install
@@ -1412,6 +1433,7 @@ libqtscript4-sql				install
 libqtscript4-uitools				install
 libqtscript4-xml				install
 libqtwebkit4					install
+libquicktime1					install
 libraptor1					install
 librarian0					install
 librasqal2					install
@@ -1479,6 +1501,9 @@ libsoprano4					install
 libsoundtouch1c2				install
 libsoup-gnome2.4-1				install
 libsoup2.4-1					install
+libsox-fmt-alsa					install
+libsox-fmt-base					install
+libsox1b					install
 libspectre1					install
 libspeechd2					install
 libspeex1					install
@@ -1646,6 +1671,7 @@ libxi6						install
 libxine1					install
 libxine1-bin					install
 libxine1-console				install
+libxine1-ffmpeg					install
 libxine1-misc-plugins				install
 libxine1-x					install
 libxinerama-dev					install
@@ -1740,6 +1766,7 @@ mathematica-fonts				install
 maven2						install
 mawk						install
 media-player-info				install
+melt						install
 memtest86+					install
 mercurial					install
 mercurial-common				install
@@ -1862,6 +1889,8 @@ openoffice.org-thesaurus-en-au			install
 openoffice.org-thesaurus-en-us			install
 openoffice.org-writer				install
 openprinting-ppds				install
+openshot					install
+openshot-doc					install
 openssh-client					install
 openssh-server					install
 openssl						install
@@ -1975,6 +2004,7 @@ python-dbus					install
 python-debian					install
 python-desktopcouch				install
 python-desktopcouch-records			install
+python-distutils-extra				install
 python-django					install
 python-django-tagging				install
 python-egenix-mxdatetime			install
@@ -2019,6 +2049,7 @@ python-mako					install
 python-markupsafe				install
 python-mechanize				install
 python-minimal					install
+python-mlt2					install
 python-mysqldb					install
 python-newt					install
 python-notify					install
@@ -2113,6 +2144,7 @@ sbcl						install
 sbcl-doc					install
 screen						install
 screen-resolution-extra				install
+screenkey					install
 screensaver-default-images			install
 seahorse					install
 sed						install
@@ -2143,6 +2175,7 @@ sqliteman					install
 sqliteman-doc					install
 ssh						install
 ssh-askpass-gnome				install
+sshfs						install
 ssl-cert					install
 strace						install
 stumpwm						install
@@ -2152,6 +2185,7 @@ sudo						install
 sun-java6-bin					install
 sun-java6-jdk					install
 sun-java6-jre					install
+swh-plugins					install
 synaptic					install
 syslinux					install
 syslinux-common					install
@@ -2200,6 +2234,7 @@ texlive-pictures				install
 texlive-pictures-doc				install
 texlive-pstricks				install
 texlive-pstricks-doc				install
+tibesti						install
 tidy						install
 time						install
 tint2						install
@@ -2369,6 +2404,7 @@ xfonts-mathml					install
 xfonts-scalable					install
 xfonts-utils					install
 xfonts-wqy					install
+xine-ui						install
 xinit						install
 xinput						install
 xkb-data					install
@@ -2428,8 +2464,10 @@ xul-ext-ubufox					install
 xulrunner-1.9.2					install
 xulrunner-1.9.2-dev				install
 xvfb						install
+xvidcap						install
 xz-utils					install
 yelp						install
+zeitgeist-core					install
 zenity						install
 zip						install
 zlib1g						install
