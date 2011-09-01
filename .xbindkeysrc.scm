@@ -171,6 +171,8 @@
 (xbindkey '(F1) "wmctrl -x -a Emacs || pgrep emacs || emacs")
 (xbindkey '(F2) "wmctrl -x -a Conkeror || pgrep xulrunner || conkeror")
 (xbindkey '(F3) "wmctrl -x -a Terminal || pgrep gnome-terminal || gnome-terminal")
+(xbindkey '(F4) "wmctrl -x -a Firefox || pgrep firefox || firefox")
+(xbindkey '(F6) "wmctrl -x -a Chrome || pgrep google-chrome || google-chrome")
 ;; FIXME: This is convoluted and mostly does not work
 ;; (xbindkey '(F3) "xdotool search --class Pidgin | sort | tail -n 1 | xargs xdotool windowactivate")
 
