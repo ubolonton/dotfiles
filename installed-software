@@ -39,6 +39,7 @@ aptdaemon					install
 aptitude					install
 apturl						install
 apturl-common					install
+argyll						install
 aspell						install
 aspell-en					install
 at						install
@@ -339,6 +340,7 @@ ghostscript-cups				install
 ghostscript-x					install
 gir1.0-glib-2.0					install
 git						install
+git-cola					install
 git-core					install
 git-doc						install
 git-gui						install
@@ -350,6 +352,7 @@ gnome-applets					install
 gnome-applets-data				install
 gnome-bluetooth					install
 gnome-codec-install				install
+gnome-color-manager				install
 gnome-control-center				install
 gnome-desktop-data				install
 gnome-dictionary				install
@@ -1028,6 +1031,7 @@ libhyphen0					install
 libibus1					install
 libibus2					install
 libical0					install
+libicc2						install
 libice-dev					install
 libice6						install
 libicu42					install
@@ -1405,6 +1409,7 @@ libqgpgme1					install
 libqimageblitz4					install
 libqjson0					install
 libqscintilla2-5				install
+libqt3-mt					install
 libqt4-assistant				install
 libqt4-dbus					install
 libqt4-designer					install
@@ -1587,6 +1592,7 @@ libva1						install
 libvala-0.10-0					install
 libvcdinfo0					install
 libvdpau1					install
+libvigraimpex2					install
 libvirtodbc0					install
 libvisual-0.4-0					install
 libvisual-0.4-plugins				install
@@ -1747,6 +1753,7 @@ lockfile-progs					install
 login						install
 logrotate					install
 lp-solve					install
+lprof						install
 lsb-base					install
 lsb-release					install
 lshw						install
@@ -1840,6 +1847,7 @@ notify-osd-icons				install
 notifyosdconfig					install
 ntfs-3g						install
 ntfsprogs					install
+ntp						install
 ntpdate						install
 nvidia-173-modaliases				install
 nvidia-96-modaliases				install
@@ -2111,6 +2119,9 @@ python2.6					install
 python2.6-dev					install
 python2.6-minimal				install
 qapt-batch					install
+qgit						install
+qt3-assistant					install
+qt3-doc						install
 quadrapassel					install
 radeontool					install
 rarian-compat					install
@@ -2177,6 +2188,7 @@ ssh						install
 ssh-askpass-gnome				install
 sshfs						install
 ssl-cert					install
+stgit						install
 strace						install
 stumpwm						install
 subversion					install
@@ -2465,6 +2477,7 @@ xulrunner-1.9.2					install
 xulrunner-1.9.2-dev				install
 xvfb						install
 xvidcap						install
+xxdiff						install
 xz-utils					install
 yelp						install
 zeitgeist-core					install
