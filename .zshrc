@@ -1,7 +1,9 @@
 # Ubuntu
 
 # Terminal prompt
-export PROMPT="%T [%c] $ " # zsh
+export PROMPT=$'\e[0;36m
+❄ %T \e[1;36m %d
+\e[0m' # zsh
 
 # XXX: What's this?
 zstyle ':completion:*' menu select=0
