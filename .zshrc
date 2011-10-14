@@ -31,6 +31,8 @@ export TERM=xterm-256color
 
 alias ls='ls -aCFGlh --color'
 alias df='df -h'
+alias rs='rsync -rvz'
+alias utorrent='wine ~/.wine/drive_c/utorrent.exe'
 
 alias aptn='notify-send -t 2000 -i debian "apt-get:"'
 alias upd='sudo apt-get update; aptn "Updated"'
