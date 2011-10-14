@@ -18,8 +18,8 @@ export EDITOR="emacsclient"
 export SVN_EDITOR="emacsclient"
 
 # Clojurescript setup
-export CLOJURESCRIPT_HOME=~/Programming/Tools/clojurescript
-export PATH=$CLOJURESCRIPT_HOME/bin:$PATH
+export CLOJURESCRIPT_HOME=/home/ubolonton/Programming/Tools/clojurescript
+export PATH=$PATH:$CLOJURESCRIPT_HOME/bin
 
 # Personal executable
 export PATH=~/bin:$PATH
