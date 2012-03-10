@@ -73,3 +73,5 @@ function rem {sudo apt-get remove -y $* && aptn "Removed $@"}
 
 # Warp
 export PYTHONPATH=/home/ubolonton/Programming/Tools/warp
+
+export TERM=xterm-256color
