@@ -46,19 +46,6 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
 # 
-# Editors
-export EDITOR="emacsclient"
-export SVN_EDITOR="emacsclient"
-
-# Clojurescript setup
-export CLOJURESCRIPT_HOME=/home/ubolonton/Programming/Tools/clojurescript
-export PATH=$PATH:$CLOJURESCRIPT_HOME/bin
-
-# Personal executable
-export PATH=~/bin:$PATH
-
-# Gem
-export PATH=/var/lib/gems/1.8/bin:$PATH
 
 alias ls='ls -aCFGlh --color'
 alias df='df -h'
@@ -70,8 +57,3 @@ alias upd='sudo apt-get update; aptn "Updated"'
 alias upg='sudo apt-get upgrade; aptn "Upgraded"'
 function ins {sudo apt-get install -y $* &&  aptn "Installed $@"}
 function rem {sudo apt-get remove -y $* && aptn "Removed $@"}
-
-# Warp
-export PYTHONPATH=/home/ubolonton/Programming/Tools/warp
-
-export TERM=xterm-256color
