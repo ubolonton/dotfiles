@@ -1,3 +1,5 @@
+;;; TODO: xmonad can provide similar features, use it
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Start of xbindkeys guile configuration ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -167,32 +169,40 @@
 (xbindkey '(Mod4 m) "wmctrl -x -a Conkeror && conkeror -f search-clipboard-contents")
 (xbindkey '(Mod4 Shift m) "wmctrl -x -a Conkeror && conkeror -f search-clipboard-contents-duckduckgo")
 
-;; App switcher
-(xbindkey '(F1) "wmctrl -x -a Emacs || pgrep emacs || emacs")
-(xbindkey '(F2) "wmctrl -x -a Conkeror || pgrep xulrunner || conkeror")
-(xbindkey '(F3) "wmctrl -x -a Terminal || pgrep gnome-terminal || gnome-terminal")
-(xbindkey '(F9) "wmctrl -x -a Firefox || pgrep firefox || firefox")
-(xbindkey '(F10) "wmctrl -x -a Chrome || pgrep chrome || google-chrome") ; F*ck
-(xbindkey '(F11) "wmctrl -x -a Skype || pgrep skype || skype")
-(xbindkey '(F12) "wmctrl -x -a Pidgin || pgrep pidgin || pidgin")
+;;; NTA: Use xmonad now
+;; ;; App switcher
+;; (xbindkey '(F1) "wmctrl -x -a Emacs || pgrep emacs || emacs")
+;; (xbindkey '(F2) "wmctrl -x -a Conkeror || pgrep xulrunner || conkeror")
+;; (xbindkey '(F3) "wmctrl -x -a Terminal || pgrep gnome-terminal || gnome-terminal")
+;; (xbindkey '(F9) "wmctrl -x -a Firefox || pgrep firefox || firefox")
+;; (xbindkey '(F10) "wmctrl -x -a Chrome || pgrep chrome || google-chrome") ; F*ck
+;; (xbindkey '(F11) "wmctrl -x -a Skype || pgrep skype || skype")
+;; (xbindkey '(F12) "wmctrl -x -a Pidgin || pgrep pidgin || pidgin")
 ;; FIXME: This is convoluted and mostly does not work
 ;; (xbindkey '(F3) "xdotool search --class Pidgin | sort | tail -n 1 | xargs xdotool windowactivate")
 
-;; Toggle fullscreen for current window
-(xbindkey '(Mod4 Return) "wmctrl -r :ACTIVE: -b toggle,fullscreen")
+;;; NTA: Use xmonad now
+;; ;; Toggle fullscreen for current window
+;; (xbindkey '(Mod4 Return) "wmctrl -r :ACTIVE: -b toggle,fullscreen")
 
-;; Poor man's window manager
-;; wmctrl can execute only 1 action at a time, so...
-(xbindkey '(Mod4 F2) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,963,800")
-(xbindkey '(Mod4 F3) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,963,0,317,800")
-(xbindkey '(Mod4 F4) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,1280,800")
-(xbindkey '(Mod4 Shift F2) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,640,800")
-(xbindkey '(Mod4 Shift F3) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,640,0,640,800")
+;;; NTA: Use xmonad now
+;; ;; Poor man's window manager
+;; ;; wmctrl can execute only 1 action at a time, so...
+;; (xbindkey '(Mod4 F2) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,963,800")
+;; (xbindkey '(Mod4 F3) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,963,0,317,800")
+;; (xbindkey '(Mod4 F4) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,1280,800")
+;; (xbindkey '(Mod4 Shift F2) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,0,0,640,800")
+;; (xbindkey '(Mod4 Shift F3) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,640,0,640,800")
 
 ;; Mouse banishment
 (xbindkey '(Menu) "xdotool mousemove 640 800; xdotool mousemove 640 0")
 
+;;; Crude, but works
+(xbindkey '(XF86AudioMedia) "emacsclient -e '(ublt/start-or-pause)'")
+(xbindkey '(Mod4 XF86RaiseVolume) "emacsclient -e '(emms-next)'")
+(xbindkey '(Mod4 XF86LowerVolume) "emacsclient -e '(emms-previous)'")
+(xbindkey '(XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of xbindkeys guile configuration ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
