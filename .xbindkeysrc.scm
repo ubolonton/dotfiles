@@ -1,4 +1,6 @@
-;;; TODO: xmonad can provide similar features, use it
+;;; TODO: xmonad can provide similar
+;;; features, use it (or maybe not,
+;;; since it's quite unstable).
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Start of xbindkeys guile configuration ;;
@@ -199,8 +201,8 @@
 
 ;;; Crude, but works
 (xbindkey '(XF86AudioMedia) "emacsclient -e '(ublt/start-or-pause)'")
-(xbindkey '(Mod4 XF86RaiseVolume) "emacsclient -e '(emms-next)'")
-(xbindkey '(Mod4 XF86LowerVolume) "emacsclient -e '(emms-previous)'")
+(xbindkey '(Mod4 XF86AudioRaiseVolume) "emacsclient -e '(emms-next)'")
+(xbindkey '(Mod4 XF86AudioLowerVolume) "emacsclient -e '(emms-previous)'")
 (xbindkey '(XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
