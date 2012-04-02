@@ -46,7 +46,7 @@ main = do
     , ("M4-C-<Tab>"    , windows W.focusUp)
     , ("M4-q"          , kill)
     , ("M4-S-a"        , spawn "gmrun")
-    , ("M4-a"          , spawn "exe=`dmenu_path | dmenu -l 10 -fn 'DejaVu Sans Mono-14'` && eval \"exec $exe\"")
+    , ("M4-a"          , spawn "exe=`dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan'` && eval \"exec $exe\"")
     , ("M4-<KP_Left>"  , sendMessage Shrink)
     , ("M4-<KP_Right>" , sendMessage Expand)
     , ("M4-S-<F12>"    , io (exitWith ExitSuccess))
@@ -67,6 +67,7 @@ main = do
     , ("<F10>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
     , ("<F11>"         , runOrRaise "skype" (className =? "Skype"))
     , ("<F12>"         , runOrRaise "pidgin" (className =? "Pidgin"))
+    -- , ("<XF86AudioMedia>"      , spawn "emacsclient -e '(ublt/start-or-pause)'")
     ]
 
 -- Grid navigation
