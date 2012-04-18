@@ -1,5 +1,4 @@
-# deb cdrom:[Ubuntu 10.04.2 LTS _Lucid Lynx_ - Release i386 (20110211.1)]/ lucid main restricted
-# deb cdrom:[Ubuntu 10.04.2 LTS _Lucid Lynx_ - Release i386 (20110211.1)]/ maverick main restricted
+# deb cdrom:[Ubuntu 10.10 _Maverick Meerkat_ - Release i386 (20101007)]/ maverick main restricted
 # See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
 # newer versions of the distribution.
 
@@ -36,15 +35,20 @@ deb-src http://vn.archive.ubuntu.com/ubuntu/ maverick-updates multiverse
 ## newer versions of some applications which may provide useful features.
 ## Also, please note that software in backports WILL NOT receive any review
 ## or updates from the Ubuntu security team.
-# deb http://vn.archive.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
-# deb-src http://vn.archive.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
+# deb http://vn.archive.ubuntu.com/ubuntu/ maverick-backports main restricted universe multiverse
+# deb-src http://vn.archive.ubuntu.com/ubuntu/ maverick-backports main restricted universe multiverse
 
 ## Uncomment the following two lines to add software from Canonical's
 ## 'partner' repository.
 ## This software is not part of Ubuntu, but is offered by Canonical and the
 ## respective vendors as a service to Ubuntu users.
-# deb http://archive.canonical.com/ubuntu lucid partner
-# deb-src http://archive.canonical.com/ubuntu lucid partner
+deb http://archive.canonical.com/ubuntu maverick partner
+deb-src http://archive.canonical.com/ubuntu maverick partner
+
+## This software is not part of Ubuntu, but is offered by third-party
+## developers who want to ship their latest software.
+deb http://extras.ubuntu.com/ubuntu maverick main
+deb-src http://extras.ubuntu.com/ubuntu maverick main
 
 deb http://security.ubuntu.com/ubuntu maverick-security main restricted
 deb-src http://security.ubuntu.com/ubuntu maverick-security main restricted
@@ -52,10 +56,8 @@ deb http://security.ubuntu.com/ubuntu maverick-security universe
 deb-src http://security.ubuntu.com/ubuntu maverick-security universe
 deb http://security.ubuntu.com/ubuntu maverick-security multiverse
 deb-src http://security.ubuntu.com/ubuntu maverick-security multiverse
-# deb http://packages.sil.org/ubuntu maverick main # disabled on upgrade to maverick
-deb http://archive.canonical.com maverick partner
-# deb http://download.virtualbox.org/virtualbox/debian maverick contrib # disabled on upgrade to maverick
-deb http://extras.ubuntu.com/ubuntu maverick main #Third party developers repository
 
 deb http://emacs.naquadah.org/ maverick/
 deb-src http://emacs.naquadah.org/ maverick/
+
+deb http://download.virtualbox.org/virtualbox/debian maverick contrib non-free
