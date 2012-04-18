@@ -10,9 +10,10 @@
 	merge = refs/heads/master
 [core]
 	excludesfile = ~/.gitignore
-	autocrlf = input
-	quotepath = false
-	safecrlf = warn
+	# autocrlf = input
+	# quotepath = false
+	# safecrlf = warn
+     attributesfile = ~/.gitattributes
 [merge]
 	tool = emerge
 [rerere]
