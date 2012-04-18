@@ -3,7 +3,7 @@ export EDITOR="emacsclient"
 export SVN_EDITOR="emacsclient"
 
 # Clojurescript setup
-export CLOJURESCRIPT_HOME=/home/ubolonton/Programming/Tools/clojurescript
+export CLOJURESCRIPT_HOME=/home/ubolonton/Programming/Clojure/lib/clojurescript
 export PATH=$PATH:$CLOJURESCRIPT_HOME/bin
 
 # Personal executable
@@ -22,3 +22,5 @@ export TERM=xterm-256color
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+alias utorrent="wine ~/.wine/drive_c/uTorrent.exe"
