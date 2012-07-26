@@ -11,7 +11,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Actions.DwmPromote
 import System.Exit
 
-import XMonad.Util.EZConfig
+import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Actions.WindowBringer (gotoMenuArgs, bringMenuArgs)
 import XMonad.Actions.GridSelect
 import XMonad.Actions.WindowMenu
@@ -24,6 +24,7 @@ import XMonad.Layout.GridVariants
 import XMonad.Layout.Tabbed (simpleTabbed)
 
 import XMonad.Hooks.FadeInactive
+import XMonad.ManageHook
 
 import XMonad.Actions.RotSlaves
 
@@ -32,21 +33,21 @@ main = do
   xmonad $ gnomeConfig
     { terminal = "gnome-terminal"
     , focusFollowsMouse = False
-    , borderWidth = 1
+    , borderWidth = 2
     -- , keys = addPrefix (mod4Mask, xK_space) (keys gnomeConfig)
     , keys = myKeys
     , layoutHook = myLayout
-    , logHook = myLogHook
+    , logHook = myLog
     , modMask = mod4Mask
     , focusedBorderColor = "#00DD00" -- "#89A1F3"
     , normalBorderColor = "#0C1320"
     }
     `additionalKeysP`
     [ ("M4-<Tab>"      , windows W.focusDown)
-    , ("M4-C-<Tab>"    , windows W.focusUp)
+    , ("M4-S-<Tab>"    , windows W.focusUp)
     , ("M4-q"          , kill)
     , ("M4-S-a"        , spawn "gmrun")
-    , ("M4-a"          , spawn "exe=`dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan'` && eval \"exec $exe\"")
+    , ("M4-a"          , spawn "exe=`dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan' -p Run` && eval \"exec $exe\"")
     , ("M4-<KP_Left>"  , sendMessage Shrink)
     , ("M4-<KP_Right>" , sendMessage Expand)
     , ("M4-S-<F12>"    , io (exitWith ExitSuccess))
@@ -55,19 +56,18 @@ main = do
     , ("M4-S-<Return>" , rotSlavesUp)
     , ("M4-<Space>"    , sendMessage NextLayout)
     , ("M4-<F11>"      , withFocused $ windows . W.sink)
-    , ("M4-`"          , gotoMenuArgs ["-l", "10", "-p", "Go To"])
-    , ("M4-S-`"        , bringMenuArgs ["-l", "10", "-p", "Summon"])
+    , ("M4-`"          , gotoMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "'Go To'"])
+    , ("M4-S-`"        , bringMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "Summon"])
     , ("M4-'"          , goToSelected defaultGSConfig {gs_navigate = myNavigation})
     , ("M4-S-'"        , bringSelected defaultGSConfig {gs_navigate = myNavigation})
     , ("M4-o"          , windowMenu)
-    , ("<F1>"          , runOrRaise "emacs" (className =? "Emacs"))
+    , ("<F1>"          , runOrRaise "emacs23" (className =? "Emacs23" <||> className =? "Emacs"))
     , ("<F2>"          , runOrRaise "conkeror" (className =? "Conkeror"))
     , ("<F3>"          , runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
     , ("<F9>"          , runOrRaise "firefox" (className =? "Firefox"))
     , ("<F10>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
     , ("<F11>"         , runOrRaise "skype" (className =? "Skype"))
     , ("<F12>"         , runOrRaise "pidgin" (className =? "Pidgin"))
-    -- , ("<XF86AudioMedia>"      , spawn "emacsclient -e '(ublt/start-or-pause)'")
     ]
 
 -- Grid navigation
@@ -113,8 +113,10 @@ myLayout = desktopLayoutModifiers
     ratio = 7/10
     delta = 1/30
 
-myLogHook = fadeInactiveLogHook fadeAmount
+myLog = fadeInactiveLogHook fadeAmount
   where fadeAmount = 1
+
+-- myManage = composeAll [ className =? "Skype" --> doF ]
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
