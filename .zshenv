@@ -24,3 +24,10 @@ export TERM=xterm-256color
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 alias utorrent="wine ~/.wine/drive_c/uTorrent.exe"
+
+# Seems unnecessary with ibus-qt4
+# # Magic incantation for Skype to work with ibus-daemon?
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+# export XIM_PROGRAM=/usr/bin/ibus-daemon

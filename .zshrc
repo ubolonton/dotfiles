@@ -57,3 +57,5 @@ alias upd='sudo apt-get update; aptn "Updated"'
 alias upg='sudo apt-get upgrade; aptn "Upgraded"'
 function ins {sudo apt-get install -y $* &&  aptn "Installed $@"}
 function rem {sudo apt-get remove -y $* && aptn "Removed $@"}
+
+alias pi='dpkg -l | grep'
