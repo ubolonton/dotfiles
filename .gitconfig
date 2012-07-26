@@ -22,3 +22,9 @@
     logoutputencoding = UTF-8
 [diff "elisp"]
     xfuncname="^(\\((def).*)$"
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[format]
+    pretty = "Commit:  %C(cyan)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(yellow)%ar%Creset) %ai%n%n     %C(white)%s%n%b"
