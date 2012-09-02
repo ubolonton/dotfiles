@@ -169,8 +169,8 @@
 (xbindkey '(Mod4 Escape) "conkeror -f unfocus")
 ;; Do a web search on clipboard content (only if it's opened)
 ;; (xbindkey '(Mod4 m) "wmctrl -x -a Conkeror && conkeror -f search-clipboard-contents")
-(xbindkey '(Mod4 Shift m) "wmctrl -x -a Conkeror && conkeror -f search-clipboard-contents-duckduckgo")
-;; (xbindkey '(Mod4 m) "conkeror -f unfocus && conkeror -f search-clipboard-contents")
+(xbindkey '(Mod4 Shift m) "conkeror -f search-clipboard-contents-duckduckgo && conkeror -f unfocus")
+(xbindkey '(Mod4 m) "conkeror -f search-clipboard-contents && conkeror -f unfocus")
 
 ;;; NTA: Use xmonad now
 ;; ;; App switcher
@@ -204,7 +204,8 @@
 (xbindkey '(XF86AudioMedia) "emacsclient -e '(ublt/start-or-pause)'")
 (xbindkey '(Mod4 XF86AudioRaiseVolume) "emacsclient -e '(emms-next)'")
 (xbindkey '(Mod4 XF86AudioLowerVolume) "emacsclient -e '(emms-previous)'")
-(xbindkey '(XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
+;; (xbindkey '(XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
+(xbindkey '(Mod4 XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of xbindkeys guile configuration ;;
