@@ -46,16 +46,37 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
 # 
+function command_exists () {
+    type "$1" >/dev/null 2>&1 ;
+}
 
 alias ls='ls -aCFGlh --color'
-alias df='df -h'
-alias rs='rsync -rvz'
+alias df='df -h'                     # File system usage
+alias du='du -h'                     # File space usage
+alias dus='du -s'                     # File space usage
+alias rs='rsync -rvz'                # File sync
 alias ec='emacsclient'
+alias sk='sudo netstat -ntlp | grep' # Search processes listening on ports
 
-alias aptn='notify-send -t 2000 -i debian "apt-get:"'
+
+function aptn () {
+    if command_exists notify-send ; then
+        notify-send -t 2000 -i debian "apt-get:" $1
+    else
+        echo "apt-get: $1"
+    fi
+}
+alias pi='dpkg -l | grep'            # Search installed packages
 alias upd='sudo apt-get update; aptn "Updated"'
+function pa () {
+    apt-cache search $1 | grep $1
+}
 alias upg='sudo apt-get upgrade; aptn "Upgraded"'
 function ins {sudo apt-get install -y $* &&  aptn "Installed $@"}
 function rem {sudo apt-get remove -y $* && aptn "Removed $@"}
 
-alias pi='dpkg -l | grep'
+function server () {
+    local port="${1:-8765}" &&
+    gnome-open "http://localhost:${port}/" &&
+    python -m SimpleHTTPServer $port
+}
