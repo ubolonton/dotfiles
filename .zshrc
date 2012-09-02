@@ -58,7 +58,7 @@ alias rs='rsync -rvz'                # File sync
 alias ec='emacsclient'
 alias sk='sudo netstat -ntlp | grep' # Search processes listening on ports
 
-
+# apt-get utils
 function aptn () {
     if command_exists notify-send ; then
         notify-send -t 2000 -i debian "apt-get:" $1
@@ -66,17 +66,23 @@ function aptn () {
         echo "apt-get: $1"
     fi
 }
-alias pi='dpkg -l | grep'            # Search installed packages
-alias upd='sudo apt-get update; aptn "Updated"'
+# Search installed packages
+alias pi='dpkg -l | grep'
+# Search all packages
 function pa () {
     apt-cache search $1 | grep $1
 }
+alias upd='sudo apt-get update; aptn "Updated"'
 alias upg='sudo apt-get upgrade; aptn "Upgraded"'
 function ins {sudo apt-get install -y $* &&  aptn "Installed $@"}
 function rem {sudo apt-get remove -y $* && aptn "Removed $@"}
 
+# Run a simple http server (after optionally opening the browser if
+# possible)
 function server () {
-    local port="${1:-8765}" &&
-    gnome-open "http://localhost:${port}/" &&
+    local port="${1:-1111}" &&
+    if command_exists gnome-open ; then
+        gnome-open "http://localhost:${port}/"
+    fi &&
     python -m SimpleHTTPServer $port
 }
