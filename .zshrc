@@ -57,6 +57,7 @@ alias dus='du -s'                     # File space usage
 alias rs='rsync -rvz'                # File sync
 alias ec='emacsclient'
 alias sk='sudo netstat -ntlp | grep' # Search processes listening on ports
+alias pp='ps -ef | grep'
 
 # apt-get utils
 function aptn () {
@@ -70,7 +71,7 @@ function aptn () {
 alias pi='dpkg -l | grep'
 # Search all packages
 function pa () {
-    apt-cache search $1 | grep $1
+    apt-cache search --names-only $1 | grep $1
 }
 alias upd='sudo apt-get update; aptn "Updated"'
 alias upg='sudo apt-get upgrade; aptn "Upgraded"'
