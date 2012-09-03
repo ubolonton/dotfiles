@@ -205,7 +205,8 @@
 (xbindkey '(Mod4 XF86AudioRaiseVolume) "emacsclient -e '(emms-next)'")
 (xbindkey '(Mod4 XF86AudioLowerVolume) "emacsclient -e '(emms-previous)'")
 ;; (xbindkey '(XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
-(xbindkey '(Mod4 XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
+(xbindkey '(Mod4 XF86Mail) "conkeror -f switch-to-gmail-buffer && conkeror -f unfocus")
+(xbindkey '(XF86Mail) "conkeror -f switch-to-gmail-buffer && conkeror -f unfocus")
 
 ;;; Controling grooveshark
 (xbindkey '(XF86AudioPlay) "conkeror -f gs-play-or-pause")
