@@ -207,6 +207,11 @@
 ;; (xbindkey '(XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
 (xbindkey '(Mod4 XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
 
+;;; Controling grooveshark
+(xbindkey '(XF86AudioPlay) "conkeror -f gs-play-or-pause")
+(xbindkey '(XF86AudioNext) "conkeror -f gs-next")
+(xbindkey '(XF86AudioPrev) "conkeror -f gs-previous")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of xbindkeys guile configuration ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
