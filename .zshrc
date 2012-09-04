@@ -34,7 +34,7 @@ source $ZSH/oh-my-zsh.sh
 # Based on bira theme
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-local user_host='%{$terminfo[bold]$fg[green]%}%n@%M%{$reset_color%}'
+local user_host='%{$terminfo[bold]$fg[green]%}%n%{$fg[black]%}@%{$fg[red]%}%M%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
 
 PROMPT="
