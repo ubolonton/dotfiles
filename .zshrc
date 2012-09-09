@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # 
+
 # Based on bira theme
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
@@ -46,6 +47,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
 # 
+
 function command_exists () {
     type "$1" >/dev/null 2>&1 ;
 }
@@ -53,11 +55,13 @@ function command_exists () {
 alias ls='ls -aCFGlh --color'
 alias df='df -h'                     # File system usage
 alias du='du -h'                     # File space usage
-alias dus='du -s'                     # File space usage
+alias dus='du -s'                    # File space usage
 alias rs='rsync -rvz'                # File sync
 alias ec='emacsclient'
 alias sk='sudo netstat -ntlp | grep' # Search processes listening on ports
 alias pp='ps -ef | grep'
+
+#
 
 # apt-get utils
 function aptn () {
@@ -78,6 +82,8 @@ alias upg='sudo apt-get upgrade; aptn "Upgraded"'
 function ins {sudo apt-get install -y $* &&  aptn "Installed $@"}
 function rem {sudo apt-get remove -y $* && aptn "Removed $@"}
 
+#
+
 # Run a simple http server (after optionally opening the browser if
 # possible)
 function server () {
@@ -87,3 +93,11 @@ function server () {
     fi &&
     python -m SimpleHTTPServer $port
 }
+
+#
+
+# Python virtual env setup
+if command_exists virtualenvwrapper.sh ; then
+    source `which virtualenvwrapper.sh`
+    PROJECT_HOME=~/projects
+fi
