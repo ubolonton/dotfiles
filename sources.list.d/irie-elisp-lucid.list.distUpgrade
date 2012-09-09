@@ -1,1 +1,1 @@
-deb http://ppa.launchpad.net/irie/elisp/ubuntu lucid main
+# deb http://ppa.launchpad.net/irie/elisp/ubuntu maverick main # disabled on upgrade to maverick

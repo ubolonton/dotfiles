@@ -1,0 +1,2 @@
+# deb http://ppa.launchpad.net/mozillateam/firefox-stable/ubuntu natty main # disabled on upgrade to natty
+# deb-src http://ppa.launchpad.net/mozillateam/firefox-stable/ubuntu natty main # disabled on upgrade to natty

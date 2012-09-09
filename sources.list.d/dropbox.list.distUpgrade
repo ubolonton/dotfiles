@@ -1,1 +1,1 @@
-deb http://linux.dropbox.com/ubuntu lucid main
+# deb http://linux.dropbox.com/ubuntu maverick main # disabled on upgrade to maverick

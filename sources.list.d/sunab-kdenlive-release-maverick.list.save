@@ -1,2 +1,2 @@
-deb http://ppa.launchpad.net/sunab/kdenlive-release/ubuntu maverick main
-deb-src http://ppa.launchpad.net/sunab/kdenlive-release/ubuntu maverick main
+# deb http://ppa.launchpad.net/sunab/kdenlive-release/ubuntu natty main # disabled on upgrade to natty
+# deb-src http://ppa.launchpad.net/sunab/kdenlive-release/ubuntu natty main # disabled on upgrade to natty

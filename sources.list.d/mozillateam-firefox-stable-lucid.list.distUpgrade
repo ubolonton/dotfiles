@@ -1,1 +1,1 @@
-deb http://ppa.launchpad.net/mozillateam/firefox-stable/ubuntu lucid main
+# deb http://ppa.launchpad.net/mozillateam/firefox-stable/ubuntu maverick main # disabled on upgrade to maverick

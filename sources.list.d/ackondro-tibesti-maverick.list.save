@@ -1,2 +1,2 @@
-deb http://ppa.launchpad.net/ackondro/tibesti/ubuntu maverick main
-deb-src http://ppa.launchpad.net/ackondro/tibesti/ubuntu maverick main
+# deb http://ppa.launchpad.net/ackondro/tibesti/ubuntu natty main # disabled on upgrade to natty
+# deb-src http://ppa.launchpad.net/ackondro/tibesti/ubuntu natty main # disabled on upgrade to natty
