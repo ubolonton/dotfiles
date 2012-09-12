@@ -52,7 +52,7 @@ function command_exists () {
     type "$1" >/dev/null 2>&1 ;
 }
 
-alias ls='ls -aCFGlh --color'
+alias ls='ls -aCFGlh --color=auto'
 alias df='df -h'                     # File system usage
 alias du='du -h'                     # File space usage
 alias dus='du -s'                    # File space usage
