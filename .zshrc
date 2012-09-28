@@ -24,14 +24,13 @@ ZSH_THEME=""
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git knife macports node npm pip vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
 # 
-
 # Based on bira theme
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
