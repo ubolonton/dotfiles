@@ -47,6 +47,29 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
 # 
 
+# Determine platform
+local unamestr=$(uname)
+local platform=""
+if [[ $unamestr == "Linux" ]]; then
+    platform="Linux"
+elif [[ $unamestr == "Darwin" ]]; then
+    platform="Mac"
+fi
+
+# PATH
+if [[ $platform == "Linux" ]]; then
+    PATH=~/bin:$PATH
+elif [[ $platform == "Mac" ]]; then
+    PATH=~/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
+fi
+
+# autojump
+if [[ $platform == "Mac" ]]; then
+    if [ -f /opt/local/etc/profile.d/autojump.sh ]; then
+        . /opt/local/etc/profile.d/autojump.sh
+    fi
+fi
+
 function command_exists () {
     type "$1" >/dev/null 2>&1 ;
 }
@@ -55,31 +78,54 @@ alias ls='ls -aCFGlh --color=auto'
 alias df='df -h'                     # File system usage
 alias du='du -h'                     # File space usage
 alias dus='du -s'                    # File space usage
-alias rs='rsync -rvz'                # File sync
 alias ec='emacsclient'
 alias sk='sudo netstat -ntlp | grep' # Search processes listening on ports
 alias pp='ps -ef | grep'
 
-#
+# File sync
+alias rs='rsync --progress -rv'
+alias rsl='rsync --progress -rv --inplace' # Local
+alias rsn='rsync --progress -rvz'          # Network
 
-# apt-get utils
-function aptn () {
-    if command_exists notify-send ; then
-        notify-send -t 2000 -i debian "apt-get:" $1
-    else
-        echo "apt-get: $1"
-    fi
-}
-# Search installed packages
-alias pi='dpkg -l | grep'
-# Search all packages
-function pa () {
-    apt-cache search --names-only $1 | grep $1
-}
-alias upd='sudo apt-get update; aptn "Updated"'
-alias upg='sudo apt-get upgrade; aptn "Upgraded"'
-function ins {sudo apt-get install -y $* &&  aptn "Installed $@"}
-function rem {sudo apt-get remove -y $* && aptn "Removed $@"}
+#
+if [[ $platform == "Linux" ]]; then
+    # apt-get utils
+    function aptn () {
+        if command_exists notify-send ; then
+            notify-send -t 2000 -i debian "apt-get:" $1
+        else
+            echo "apt-get: $1"
+        fi
+    }
+    # Search installed packages
+    alias pi='dpkg -l | grep'
+    # Search all packages
+    function pa () {
+        apt-cache search --names-only $1 | grep $1
+    }
+    alias upd='sudo apt-get update; aptn "Updated"'
+    alias upg='sudo apt-get upgrade; aptn "Upgraded"'
+    function ins {
+        sudo apt-get install -y $* &&  aptn "Installed $@"
+    }
+    function rem {
+        sudo apt-get remove -y $* && aptn "Removed $@"
+    }
+    alias pf='dpkg -L'
+elif [[ $platform == "Mac" ]]; then
+    function pa () {
+        port search $1 | grep $1
+    }
+    alias upd='sudo port selfupdate'
+    alias upg='sudo port upgrade outdated'
+    function ins {
+        sudo port -v install $*
+    }
+    function rem {
+        sudo port -v uninstall $*
+    }
+fi
+
 
 #
 
@@ -87,8 +133,10 @@ function rem {sudo apt-get remove -y $* && aptn "Removed $@"}
 # possible)
 function server () {
     local port="${1:-1111}" &&
-    if command_exists gnome-open ; then
+    if command_exists gnome-open ; then # Linux
         gnome-open "http://localhost:${port}/"
+    elif command_exists open ; then # Mac
+        open "http://localhost:${port}/"
     fi &&
     python -m SimpleHTTPServer $port
 }
