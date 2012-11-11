@@ -68,6 +68,10 @@ if [[ $platform == "Mac" ]]; then
     if [ -f /opt/local/etc/profile.d/autojump.sh ]; then
         . /opt/local/etc/profile.d/autojump.sh
     fi
+elif [[ $platform == "Linux" ]]; then
+    if [ -f /usr/share/autojump/autojump.sh ]; then
+        . /usr/share/autojump/autojump.sh
+    fi
 fi
 
 function command_exists () {
