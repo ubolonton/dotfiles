@@ -1,5 +1,6 @@
 abcde						install
 accountsservice					install
+acetoneiso					install
 ack						install
 ack-grep					install
 acl						install
@@ -54,6 +55,7 @@ aptdaemon-data					install
 aptitude					install
 apturl						install
 apturl-common					install
+arandr						install
 argyll						install
 asciidoc					install
 aspectj						install
@@ -66,6 +68,7 @@ aumix						install
 aumix-common					install
 autoconf					install
 autoconf2.13					install
+autojump					install
 automake					install
 automake1.4					install
 autossh						install
@@ -113,7 +116,7 @@ bsh-gcj						install
 build-essential					install
 busybox-initramfs				install
 busybox-static					install
-byobu						install
+byobu						deinstall
 bzip2						install
 bzr						install
 bzrtools					install
@@ -128,6 +131,7 @@ caribou						deinstall
 cd-discid					install
 cdbs						install
 cdparanoia					install
+cdrdao						install
 checkbox					install
 checkbox-gtk					install
 checkbox-qt					install
@@ -189,6 +193,7 @@ dblatex						install
 dbus						install
 dbus-x11					install
 dc						install
+dconf						install
 dconf-gsettings-backend				install
 dconf-service					install
 dcraw						install
@@ -404,6 +409,7 @@ friendly-recovery				install
 ftp						install
 fuse						install
 fuse-utils					install
+fuseiso						install
 g++						install
 g++-4.4						install
 g++-4.5						install
@@ -577,7 +583,9 @@ gnome-user-share				install
 gnome-utils					install
 gnomine						install
 gnupg						install
+gnupg-agent					install
 gnupg-curl					install
+gnupg2						install
 gnuplot						install
 gnuplot-nox					install
 gnuplot-x11					install
@@ -851,6 +859,7 @@ libasound2-plugins				install
 libaspectj-java					install
 libaspell15					install
 libass4						install
+libassuan0					install
 libasyncns0					install
 libatasmart4					install
 libatk-adaptor					install
@@ -1257,6 +1266,7 @@ libfontconfig1					install
 libfontconfig1-dev				install
 libfontenc1					install
 libfop-java					install
+libframe6					install
 libfreemarker-java				install
 libfreerdp-plugins-standard			install
 libfreerdp1					install
@@ -1312,6 +1322,7 @@ libgdk-pixbuf2.0-dev				install
 libgdu-gtk0					install
 libgdu0						install
 libgee2						install
+libgeis1					install
 libgeoclue0					install
 libgeoip1					install
 libgeronimo-jpa-2.0-spec-java			install
@@ -1438,6 +1449,7 @@ libgpm-dev					install
 libgpm2						install
 libgpod-common					install
 libgpod4					install
+libgrail5					install
 libgraph4					install
 libgraphicsmagick++3				install
 libgraphicsmagick3				install
@@ -1718,6 +1730,7 @@ libkrb5support0					install
 libkresources4					install
 libkrosscore4					install
 libkrossui4					install
+libksba8					install
 libktexteditor4					install
 libktnef4					install
 libkutils4					install
@@ -2647,6 +2660,8 @@ linux-headers-3.2.0-29				install
 linux-headers-3.2.0-29-generic-pae		install
 linux-headers-3.2.0-30				install
 linux-headers-3.2.0-30-generic-pae		install
+linux-headers-3.2.0-31				install
+linux-headers-3.2.0-31-generic-pae		install
 linux-headers-generic-pae			install
 linux-image-2.6.32-29-generic-pae		install
 linux-image-2.6.32-30-generic-pae		install
@@ -2664,6 +2679,7 @@ linux-image-3.2.0-26-generic-pae		install
 linux-image-3.2.0-27-generic-pae		install
 linux-image-3.2.0-29-generic-pae		install
 linux-image-3.2.0-30-generic-pae		install
+linux-image-3.2.0-31-generic-pae		install
 linux-image-generic-pae				install
 linux-libc-dev					install
 linux-sound-base				install
@@ -2785,6 +2801,7 @@ ntpdate						install
 ntrack-module-libnl-0				install
 nux-tools					install
 nvidia-common					install
+nvidia-settings					install
 obex-data-server				install
 obexd-client					install
 ocaml						install
@@ -2836,6 +2853,7 @@ os-prober					install
 oss-compat					install
 overlay-scrollbar				install
 oxygen-icon-theme				install
+p7zip-full					install
 packagekit					deinstall
 packagekit-backend-apt				deinstall
 paman						install
@@ -2873,6 +2891,8 @@ phppgadmin					install
 pidgin						install
 pidgin-data					install
 pidgin-libnotify				install
+pinentry-gtk2					install
+pinentry-qt4					install
 pinyin-database					install
 pitivi						install
 pkg-config					install
@@ -3090,6 +3110,10 @@ python2.6-minimal				install
 python2.7					install
 python2.7-dev					install
 python2.7-minimal				install
+python3						install
+python3-minimal					install
+python3.2					install
+python3.2-minimal				install
 qapt-batch					install
 qdbus						install
 qgit						install
@@ -3365,6 +3389,7 @@ unixodbc					install
 unixodbc-dev					install
 uno-libs3					install
 unrar						install
+unrar-free					install
 unzip						install
 update-inetd					install
 update-manager					install
