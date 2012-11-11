@@ -28,6 +28,8 @@ import XMonad.ManageHook
 
 import XMonad.Actions.RotSlaves
 
+import XMonad.Actions.CycleWindows
+
 main :: IO ()
 main = do
   xmonad $ gnomeConfig
@@ -43,8 +45,9 @@ main = do
     , normalBorderColor = "#0C1320"
     }
     `additionalKeysP`
-    [ ("M4-<Tab>"      , windows W.focusDown)
-    , ("M4-S-<Tab>"    , windows W.focusUp)
+    [ -- ("M4-<Tab>"      , windows W.focusDown)
+    -- ,
+      ("M4-S-<Tab>"    , windows W.focusUp)
     , ("M4-q"          , kill)
     , ("M4-S-a"        , spawn "gmrun")
     , ("M4-a"          , spawn "exe=`dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan' -p Run` && eval \"exec $exe\"")
@@ -68,6 +71,7 @@ main = do
     , ("<F10>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
     , ("<F11>"         , runOrRaise "skype" (className =? "Skype"))
     , ("<F12>"         , runOrRaise "pidgin" (className =? "Pidgin"))
+    , ("M4-<Tab>"      , cycleRecentWindows [xK_Super_L] xK_Tab xK_quoteleft)
     ]
 
 -- Grid navigation
