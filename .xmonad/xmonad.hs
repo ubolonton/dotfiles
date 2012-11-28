@@ -50,7 +50,7 @@ main = do
       ("M4-S-<Tab>"    , windows W.focusUp)
     , ("M4-q"          , kill)
     , ("M4-S-a"        , spawn "gmrun")
-    , ("M4-a"          , spawn "exe=`dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan' -p Run` && eval \"exec $exe\"")
+    , ("M4-a"          , spawn "exe=`PATH=/home/ubolonton/bin:$PATH dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan' -p Run` && eval \"exec $exe\"")
     , ("M4-<KP_Left>"  , sendMessage Shrink)
     , ("M4-<KP_Right>" , sendMessage Expand)
     , ("M4-S-<F12>"    , io (exitWith ExitSuccess))
