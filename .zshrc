@@ -45,7 +45,7 @@ RPS1="${return_code}"
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
-# 
+#
 # Personal key bindings for Dvorak layout
 bindkey -e "\eh" backward-char
 bindkey -e "\en" forward-char
@@ -71,7 +71,12 @@ bindkey -e "\eR" end-of-buffer-or-history
 
 bindkey -e "\e\t" menu-complete
 bindkey -e "\t" menu-complete
+bindkey -e "\eb" menu-complete
 
+bindkey -e "\e " insert-last-word
+
+bindkey -M isearch "\ec" history-incremental-search-backward
+bindkey -M isearch "\et" history-incremental-search-forward
 
 # 
 
