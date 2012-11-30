@@ -24,26 +24,39 @@ ZSH_THEME=""
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git knife macports node npm pip vagrant)
+# plugins=(git knife macports node npm pip vagrant)
+plugins=(git knife node npm pip vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
 # 
+# Manual display, otherwise
+VIRTUAL_ENV_DISABLE_PROMPT=TRUE
+# NTA XXX: Why doesn't it work with left prompt?
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo ' ('`basename $VIRTUAL_ENV`')'
+}
+
+# All of my git variables.
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$terminfo[bold]$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$terminfo[bold]$fg[red]%} ✘"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[yellow]%} °"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$terminfo[bold]$fg[green]%} ✔"
+
 # Based on bira theme
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+local return_code="%(?..%{$terminfo[bold]$fg[red]%}%? ↵%{$reset_color%})"
 
 local user_host='%{$terminfo[bold]$fg[green]%}%n%{$fg[black]%}@%{$fg[red]%}%M%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
 
 PROMPT="
-╭─ ${user_host} ${current_dir}
+╭─ ${user_host} ${current_dir} ${return_code}
 ╰─%B%b "
-RPS1="${return_code}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
-ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
+RPROMPT='$(git_prompt_info)$(virtualenv_info) $(date "+%a %Y-%m-%d %T %Z")'
 
 #
 # Personal key bindings for Dvorak layout
