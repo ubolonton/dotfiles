@@ -32,31 +32,70 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # 
+# My theme, based on bira theme
+# NTA TODO: 256-color theme with fallback to 16-color
+
 # Manual display, otherwise
 VIRTUAL_ENV_DISABLE_PROMPT=TRUE
 # NTA XXX: Why doesn't it work with left prompt?
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo ' ('`basename $VIRTUAL_ENV`')'
+function ublt-virtualenv-info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`')'
 }
 
-# All of my git variables.
+function ublt-date {
+    date '+%a %Y-%m-%d %T %Z'
+}
+
+function ublt-fill-bar {
+    local term_width
+    (( term_width = ${COLUMNS} - 1 ))
+
+    local fill_bar=""
+    local pwd_len=""
+
+    # NTA TODO: Use $pwd_len & this
+    # local pwdsize=${#${(%):-%~}}
+
+    local user="%n"
+    local host="%M"
+    local current_dir="%~"
+    local date="$(ublt-date)"
+
+    # Left prompt's left part
+    local left_left_prompt_size=${#${(%):-╭─ ${user}@${host} $(ublt-virtualenv-info) ${current_dir}}}
+    # Left prompt's right part
+    local left_right_prompt_size=${#${(%):-${date}}}
+    local left_prompt_size
+    (( left_prompt_size = ${left_left_prompt_size} + ${left_right_prompt_size} ))
+
+    if [[ "$left_prompt_size" -gt $term_width ]]; then
+	    ((pwd_len=$term_width - $left_prompt_size))
+    else
+	    fill_bar="${(l.(($term_width - $left_prompt_size - 6))..─.)}"
+    fi
+
+    echo "%{$fg[magenta]%}  ${fill_bar}  %{$reset_color%}"
+}
+
+# git variables
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$terminfo[bold]$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$terminfo[bold]$fg[red]%} ✘"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[yellow]%} °"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$terminfo[bold]$fg[green]%} ✔"
 
-# Based on bira theme
+local user_host='%{$terminfo[bold]$fg[green]%}%n%{$fg[black]%}@%{$fg[red]%}%M%{$reset_color%}'
+local virtual_env_info='$(ublt-virtualenv-info)'
+local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
+local fill_bar='$(ublt-fill-bar)'
+local date_time='%{$terminfo[bold]$fg[cyan]%}$(ublt-date)%{$reset_color%}'
 local return_code="%(?..%{$terminfo[bold]$fg[red]%}%? ↵%{$reset_color%})"
 
-local user_host='%{$terminfo[bold]$fg[green]%}%n%{$fg[black]%}@%{$fg[red]%}%M%{$reset_color%}'
-local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
-
 PROMPT="
-╭─ ${user_host} ${current_dir} ${return_code}
+╭─ ${user_host} ${virtual_env_info} ${current_dir} ${fill_bar} ${date_time}
 ╰─%B%b "
 
-RPROMPT='$(git_prompt_info)$(virtualenv_info) $(date "+%a %Y-%m-%d %T %Z")'
+RPROMPT='${return_code} $(git_prompt_info) %l'
 
 #
 # Personal key bindings for Dvorak layout
