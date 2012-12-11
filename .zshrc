@@ -46,35 +46,39 @@ function ublt-date {
     date '+%a %Y-%m-%d %T %Z'
 }
 
-function ublt-fill-bar {
-    local term_width
-    (( term_width = ${COLUMNS} - 1 ))
-
-    local fill_bar=""
-    local pwd_len=""
-
-    # NTA TODO: Use $pwd_len & this
-    # local pwdsize=${#${(%):-%~}}
-
+function ublt-prompt {
     local user="%n"
     local host="%M"
     local current_dir="%~"
     local date="$(ublt-date)"
+    local virtual_env_info="$(ublt-virtualenv-info)"
+
+    # NTA XXX: For some reason this does not work
+    # local left_left_prompt_size_no_dir=${#${(%):-╭─ ${user}@${host} $(ublt-virtualenv-info)}}
 
     # Left prompt's left part
-    local left_left_prompt_size=${#${(%):-╭─ ${user}@${host} $(ublt-virtualenv-info) ${current_dir}}}
+    local left_left_prompt_size=${#${(%):-╭─ ${user}@${host} ${virtual_env_info} ${current_dir}}}
+    local dir_name_size=${#${(%):-${current_dir}}}
+    local left_left_prompt_size_no_dir
+    (( left_left_prompt_size_no_dir = $left_left_prompt_size - $dir_name_size ))
     # Left prompt's right part
     local left_right_prompt_size=${#${(%):-${date}}}
-    local left_prompt_size
-    (( left_prompt_size = ${left_left_prompt_size} + ${left_right_prompt_size} ))
 
-    if [[ "$left_prompt_size" -gt $term_width ]]; then
-	    ((pwd_len=$term_width - $left_prompt_size))
+    local max_length
+    (( max_length = ${COLUMNS} - $left_right_prompt_size - $left_left_prompt_size_no_dir - 3 ))
+    if [[ $max_length -gt $dir_name_size ]]; then
+	    local fill_bar="${(l.(($max_length - $dir_name_size - 2))..─.)}"
+        local dir_and_stuff="%{$terminfo[bold]$fg[blue]%}${current_dir}%{$reset_color%} %{$fg[magenta]%} ${fill_bar} %{$reset_color%}"
     else
-	    fill_bar="${(l.(($term_width - $left_prompt_size - 6))..─.)}"
+        local dir_and_stuff="%{$terminfo[bold]$fg[magenta]%}%${max_length}<··· <%{$terminfo[bold]$fg[blue]%}${current_dir}%<< "
     fi
 
-    echo "%{$fg[magenta]%}  ${fill_bar}  %{$reset_color%}"
+    local user_host="%{$terminfo[bold]$fg[green]%}${user}%{$fg[black]%}@%{$fg[red]%}${host}%{$reset_color%}"
+    local date_time="%{$terminfo[bold]$fg[cyan]%}${date}%{$reset_color%}"
+
+    echo "
+╭─ ${user_host} ${virtual_env_info} ${dir_and_stuff} ${date_time}
+╰─%B%b "
 }
 
 # git variables
@@ -84,17 +88,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$terminfo[bold]$fg[red]%} ✘"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[yellow]%} °"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$terminfo[bold]$fg[green]%} ✔"
 
-local user_host='%{$terminfo[bold]$fg[green]%}%n%{$fg[black]%}@%{$fg[red]%}%M%{$reset_color%}'
-local virtual_env_info='$(ublt-virtualenv-info)'
-local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
-local fill_bar='$(ublt-fill-bar)'
-local date_time='%{$terminfo[bold]$fg[cyan]%}$(ublt-date)%{$reset_color%}'
-local return_code="%(?..%{$terminfo[bold]$fg[red]%}%? ↵%{$reset_color%})"
-
-PROMPT="
-╭─ ${user_host} ${virtual_env_info} ${current_dir} ${fill_bar} ${date_time}
-╰─%B%b "
-
+PROMPT='$(ublt-prompt)'
 RPROMPT='${return_code} $(git_prompt_info) %l'
 
 #
@@ -177,6 +171,8 @@ alias rsl='rsync --progress -rv --inplace' # Local
 alias rsn='rsync --progress -rvz'          # Network
 
 #
+# Package manager shortcuts
+
 if [[ $platform == "Linux" ]]; then
     # apt-get utils
     function aptn () {
@@ -231,9 +227,9 @@ function server () {
 }
 
 #
-
-# Python virtual env setup
-if command_exists virtualenvwrapper.sh ; then
-    source `which virtualenvwrapper.sh`
-    PROJECT_HOME=~/projects
-fi
+# NTA: Slow, don't use for now
+# # Python virtual env setup
+# if command_exists virtualenvwrapper.sh ; then
+#     source `which virtualenvwrapper.sh`
+#     PROJECT_HOME=~/projects
+# fi
