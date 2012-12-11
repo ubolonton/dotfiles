@@ -67,9 +67,11 @@ function ublt-prompt {
     local max_length
     (( max_length = ${COLUMNS} - $left_right_prompt_size - $left_left_prompt_size_no_dir - 3 ))
     if [[ $max_length -gt $dir_name_size ]]; then
+        # Fill remaining spaces with ─────
 	    local fill_bar="${(l.(($max_length - $dir_name_size - 2))..─.)}"
         local dir_and_stuff="%{$terminfo[bold]$fg[blue]%}${current_dir}%{$reset_color%} %{$fg[magenta]%} ${fill_bar} %{$reset_color%}"
     else
+        # Or cut off if dir name is too long
         local dir_and_stuff="%{$terminfo[bold]$fg[magenta]%}%${max_length}<··· <%{$terminfo[bold]$fg[blue]%}${current_dir}%<< "
     fi
 
@@ -157,7 +159,12 @@ function command_exists () {
     type "$1" >/dev/null 2>&1 ;
 }
 
-alias ls='ls -aCFGlh --color=auto'
+if [[ $platform == "Linux" ]]; then
+    alias ls='ls -aCFho --color=auto'
+elif [[ $platform == "Mac" ]]; then
+    alias ls='ls -aCFho -G'
+fi
+
 alias df='df -h'                     # File system usage
 alias du='du -h'                     # File space usage
 alias dus='du -s'                    # File space usage
