@@ -169,8 +169,8 @@
 (xbindkey '(Mod4 Escape) "conkeror -f unfocus")
 ;; Do a web search on clipboard content (only if it's opened)
 ;; (xbindkey '(Mod4 m) "wmctrl -x -a Conkeror && conkeror -f search-clipboard-contents")
-(xbindkey '(Mod4 Shift m) "conkeror -f search-clipboard-contents-duckduckgo && conkeror -f unfocus")
-(xbindkey '(Mod4 m) "conkeror -f search-clipboard-contents && conkeror -f unfocus")
+;; (xbindkey '(Mod4 Shift m) "conkeror -f search-clipboard-contents-duckduckgo && conkeror -f unfocus")
+;; (xbindkey '(Mod4 m) "conkeror -f search-clipboard-contents && conkeror -f unfocus")
 
 ;;; NTA: Use xmonad now
 ;; ;; App switcher
