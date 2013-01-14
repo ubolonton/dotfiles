@@ -32,6 +32,13 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # 
+# Utils
+
+function command_exists () {
+    type "$1" >/dev/null 2>&1 ;
+}
+
+# 
 # My theme, based on bira theme
 # NTA TODO: 256-color theme with fallback to 16-color
 
@@ -95,6 +102,7 @@ RPROMPT='${return_code} $(git_prompt_info) %l'
 
 #
 # Personal key bindings for Dvorak layout
+
 bindkey -e "\eh" backward-char
 bindkey -e "\en" forward-char
 bindkey -e "\eg" backward-word
@@ -127,8 +135,8 @@ bindkey -M isearch "\ec" history-incremental-search-backward
 bindkey -M isearch "\et" history-incremental-search-forward
 
 # 
-
 # Determine platform
+
 local unamestr=$(uname)
 local platform=""
 if [[ $unamestr == "Linux" ]]; then
@@ -137,27 +145,32 @@ elif [[ $unamestr == "Darwin" ]]; then
     platform="Mac"
 fi
 
+# 
 # PATH
+
 if [[ $platform == "Linux" ]]; then
+    # Use user's bin/
     PATH=~/bin:$PATH
 elif [[ $platform == "Mac" ]]; then
+    # Use user's bin/ & gnu replacements
     PATH=~/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
 fi
 
-# autojump
+# 
+# autojump ("j <partial name>")
+
 if [[ $platform == "Mac" ]]; then
-    if [ -f /opt/local/etc/profile.d/autojump.sh ]; then
-        . /opt/local/etc/profile.d/autojump.sh
-    fi
+    ublt_autojump_sh=/opt/local/etc/profile.d/autojump.sh
 elif [[ $platform == "Linux" ]]; then
-    if [ -f /usr/share/autojump/autojump.sh ]; then
-        . /usr/share/autojump/autojump.sh
-    fi
+    ublt_autojump_sh=/usr/share/autojump/autojump.sh
 fi
 
-function command_exists () {
-    type "$1" >/dev/null 2>&1 ;
-}
+if [ -f $ublt_autojump_sh ]; then
+    . $ublt_autojump_sh
+fi
+
+# 
+# Colored, detailed listing
 
 if [[ $platform == "Linux" ]]; then
     alias ls='ls -aCFho --color=auto'
@@ -165,12 +178,24 @@ elif [[ $platform == "Mac" ]]; then
     alias ls='ls -aCFho -G'
 fi
 
-alias df='df -h'                     # File system usage
-alias du='du -h'                     # File space usage
-alias dus='du -s'                    # File space usage
+# 
+# Useful aliases
+
 alias ec='emacsclient'
-alias sk='sudo netstat -ntlp | grep' # Search processes listening on ports
-alias pp='ps -ef | grep'
+
+# Disk
+alias df='df -h'                           # File system usage
+alias du='du -h'                           # File space usage
+alias dus='du -s'                          # File space usage
+
+# List
+alias lc='lsof -nPi tcp'                   # List connections
+alias l.='ls -d .*'                        # List dot files
+
+# Search
+alias sp='ps -ef | grep'                   # Search processes
+alias sk='sudo netstat -ntlp | grep'       # Search sockets
+alias sc='lsof -nPi tcp | grep'            # Search connections
 
 # File sync
 alias rs='rsync --progress -rv'
@@ -218,11 +243,34 @@ elif [[ $platform == "Mac" ]]; then
     }
 fi
 
+# 
+# Extract archive
+
+function extract () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
 
 #
-
 # Run a simple http server (after optionally opening the browser if
 # possible)
+
 function server () {
     local port="${1:-1111}" &&
     if command_exists gnome-open ; then # Linux
@@ -236,6 +284,7 @@ function server () {
 #
 # NTA: Slow, don't use for now
 # # Python virtual env setup
+
 # if command_exists virtualenvwrapper.sh ; then
 #     source `which virtualenvwrapper.sh`
 #     PROJECT_HOME=~/projects
