@@ -214,6 +214,7 @@
 
 ;;; Controling grooveshark
 (xbindkey '(XF86AudioPlay) "conkeror -f gs-play-or-pause")
+(xbindkey '(Mod4 XF86AudioPlay) "conkeror -f gs-play-or-pause")
 (xbindkey '(XF86AudioNext) "conkeror -f gs-next")
 (xbindkey '(XF86AudioPrev) "conkeror -f gs-previous")
 (xbindkey '(XF86Forward)   "conkeror -f gs-next")
