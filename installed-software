@@ -47,6 +47,7 @@ apport						install
 apport-gtk					install
 apport-symptoms					install
 apt						install
+apt-file					install
 apt-transport-https				install
 apt-utils					install
 apt-xapian-index				install
@@ -91,6 +92,7 @@ bind9-host					install
 bind9utils					install
 binfmt-support					install
 binutils					install
+bison						install
 bitlbee						install
 bitlbee-common					install
 blt						install
@@ -245,6 +247,7 @@ docbook-xml					install
 docbook-xsl					install
 dolphin						install
 dosfstools					install
+dpatch						deinstall
 dpkg						install
 dpkg-dev					install
 duplicity					install
@@ -263,12 +266,18 @@ eclipse-rcp					install
 ecryptfs-utils					install
 ed						install
 eject						install
+elasticsearch					install
 emacs						install
 emacs-goodies-el				install
-emacs-snapshot-common				deinstall
+emacs-snapshot					deinstall
+emacs-snapshot-bin-common			install
+emacs-snapshot-common				install
 emacs23						install
 emacs23-bin-common				install
 emacs23-common					install
+emacs24						install
+emacs24-bin-common				install
+emacs24-common					install
 emacsen-common					install
 emacspeak					install
 empathy						install
@@ -358,7 +367,7 @@ firefox-gnome-support				install
 firefox-locale-en				install
 firefox-locale-vi				install
 flashplugin-installer				install
-flim						install
+flim						deinstall
 fluxgui						install
 folks-common					install
 fontconfig					install
@@ -448,6 +457,8 @@ geoclue-ubuntu-geoip				install
 geoip-database					install
 gettext						install
 gettext-base					install
+gfortran					install
+gfortran-4.6					install
 ghc						install
 ghc-doc						install
 ghc-haddock					install
@@ -623,6 +634,7 @@ gstreamer0.10-pulseaudio			install
 gstreamer0.10-tools				install
 gstreamer0.10-x					install
 gtk-recordmydesktop				install
+gtk-redshift					install
 gtk2-engines					install
 gtk2-engines-murrine				install
 gtk2-engines-pixbuf				install
@@ -687,6 +699,7 @@ icedtea-netx-common				install
 icoutils					install
 id3v2						install
 ienglish-common					install
+iftop						install
 ifupdown					install
 ifuse						install
 im-switch					install
@@ -843,6 +856,7 @@ libaprutil1-dbd-sqlite3				install
 libaprutil1-ldap				install
 libapt-inst1.3					deinstall
 libapt-inst1.4					install
+libapt-pkg-perl					install
 libapt-pkg4.11					deinstall
 libapt-pkg4.12					install
 libarchive1					deinstall
@@ -921,6 +935,7 @@ libbetter-appframework-java			install
 libbind9-60					deinstall
 libbind9-80					install
 libbindex-java					install
+libbison-dev					install
 libblas3gf					install
 libblkid1					install
 libbluetooth3					install
@@ -1056,6 +1071,7 @@ libcommons-parent-java				install
 libcommons-validator-java			deinstall
 libcommons-vfs-java				install
 libcompizconfig0				install
+libconfig-file-perl				install
 libconfig-inifiles-perl				install
 libcouchdb-glib-1.0-2				install
 libcroco3					install
@@ -1403,6 +1419,7 @@ libgnome-pilot2					install
 libgnome-vfs2.0-cil				install
 libgnome-window-settings1			install
 libgnome2-0					install
+libgnome2-bin					install
 libgnome2-canvas-perl				install
 libgnome2-common				install
 libgnome2-dev					install
@@ -2209,9 +2226,11 @@ librasqal3					install
 libraw1394-11					install
 libraw5						install
 librdf0						install
+libreadline-gplv2-dev				install
 libreadline5					install
 libreadline6					install
 librecode0					install
+libregexp-assemble-perl				install
 libregexp-java					install
 libreoffice					install
 libreoffice-base				install
@@ -2252,6 +2271,7 @@ librsync1					install
 librtmp-dev					install
 librtmp0					install
 libruby1.8					install
+libruby1.9.1					install
 libsac-java					install
 libsac-java-gcj					install
 libsamplerate0					install
@@ -2323,6 +2343,7 @@ libspeex1					install
 libspeexdsp1					install
 libsqlite0					install
 libsqlite3-0					install
+libsqlite3-dev					install
 libss2						install
 libssh-4					install
 libssl-dev					install
@@ -2402,6 +2423,7 @@ libtinfo5					install
 libtinyxml2.5.3					deinstall
 libtinyxml2.6.2					install
 libtirpc1					install
+libtokyocabinet8				install
 libtool						install
 libtorque2					install
 libtorrent-rasterbar5				deinstall
@@ -2626,6 +2648,7 @@ libxxf86dga1					install
 libxxf86misc1					install
 libxxf86vm1					install
 libyajl1					install
+libyaml-0-2					install
 libyaml-tiny-perl				install
 libyelp0					install
 libzbar0					install
@@ -2662,6 +2685,14 @@ linux-headers-3.2.0-30				install
 linux-headers-3.2.0-30-generic-pae		install
 linux-headers-3.2.0-31				install
 linux-headers-3.2.0-31-generic-pae		install
+linux-headers-3.2.0-32				install
+linux-headers-3.2.0-32-generic-pae		install
+linux-headers-3.2.0-33				install
+linux-headers-3.2.0-33-generic-pae		install
+linux-headers-3.2.0-34				install
+linux-headers-3.2.0-34-generic-pae		install
+linux-headers-3.2.0-35				install
+linux-headers-3.2.0-35-generic-pae		install
 linux-headers-generic-pae			install
 linux-image-2.6.32-29-generic-pae		install
 linux-image-2.6.32-30-generic-pae		install
@@ -2680,6 +2711,10 @@ linux-image-3.2.0-27-generic-pae		install
 linux-image-3.2.0-29-generic-pae		install
 linux-image-3.2.0-30-generic-pae		install
 linux-image-3.2.0-31-generic-pae		install
+linux-image-3.2.0-32-generic-pae		install
+linux-image-3.2.0-33-generic-pae		install
+linux-image-3.2.0-34-generic-pae		install
+linux-image-3.2.0-35-generic-pae		install
 linux-image-generic-pae				install
 linux-libc-dev					install
 linux-sound-base				install
@@ -2747,8 +2782,9 @@ mplayer						install
 mscompress					install
 msr-tools					install
 mtools						install
-mtr-tiny					install
+mtr						install
 multiarch-support				install
+mutt						install
 mutter-common					install
 myspell-en-au					install
 myspell-en-gb					install
@@ -2814,6 +2850,7 @@ octave3.2-common				install
 odbcinst					install
 odbcinst1debian1				deinstall
 odbcinst1debian2				install
+offlineimap					install
 okular						install
 onboard						install
 oneconf						install
@@ -2914,14 +2951,15 @@ poppler-utils					install
 popularity-contest				install
 portmap						deinstall
 postfix						install
-postgresql-8.4					install
+postgis						install
+postgresql					install
+postgresql-8.4					deinstall
+postgresql-9.1					install
 postgresql-client				install
-postgresql-client-8.4				install
 postgresql-client-9.1				install
 postgresql-client-common			install
 postgresql-common				install
 postgresql-doc					install
-postgresql-doc-8.4				install
 postgresql-doc-9.1				install
 powermgmt-base					install
 ppp						install
@@ -3122,9 +3160,30 @@ qt3-assistant					install
 qt3-doc						install
 quadrapassel					install
 quilt						install
+r-base						install
+r-base-core					install
+r-base-html					install
+r-cran-boot					install
+r-cran-class					install
+r-cran-cluster					install
+r-cran-codetools				install
+r-cran-foreign					install
+r-cran-kernsmooth				install
+r-cran-lattice					install
+r-cran-mass					install
+r-cran-matrix					install
+r-cran-mgcv					install
+r-cran-nlme					install
+r-cran-nnet					install
+r-cran-rpart					install
+r-cran-spatial					install
+r-cran-survival					install
+r-doc-html					install
+r-recommended					install
 radeontool					install
 rarian-compat					install
 rastertosag-gdi					install
+rbenv						install
 rcconf						install
 rdesktop					install
 rdiff-backup					install
@@ -3133,6 +3192,7 @@ realpath					install
 recode						install
 recordmydesktop					install
 redis-server					install
+redshift					install
 reinteract					install
 remmina						install
 remmina-common					install
@@ -3151,6 +3211,7 @@ rhythmbox-plugins				install
 rhythmbox-ubuntuone				install
 rlwrap						install
 rpcbind						install
+rstudio						install
 rsync						install
 rsyslog						install
 rtkit						install
@@ -3159,6 +3220,7 @@ ruby						install
 ruby-dev					install
 ruby1.8						install
 ruby1.8-dev					install
+ruby1.9.1					install
 rubygems					install
 rxvt						install
 rxvt-unicode					install
@@ -3175,7 +3237,7 @@ screenkey					install
 screensaver-default-images			install
 seahorse					install
 sed						install
-semi						install
+semi						deinstall
 sensible-utils					install
 sessioninstaller				install
 sgml-base					install
@@ -3213,6 +3275,7 @@ ssh						install
 ssh-askpass-gnome				install
 ssh-import-id					install
 sshfs						install
+sshuttle					install
 ssl-cert					install
 stgit						install
 strace						install
@@ -3245,6 +3308,7 @@ tcl8.5						install
 tclx8.4						install
 tcpd						install
 tcpdump						install
+tcptraceroute					install
 tdb-tools					install
 telepathy-gabble				install
 telepathy-haze					install
@@ -3445,8 +3509,8 @@ whois						install
 whoopsie					install
 winbind						install
 wine						install
-wine-gecko1.7					install
-wine-mono0.0.4					install
+wine-gecko1.8					install
+wine-mono0.0.8					install
 wine1.2						deinstall
 wine1.3						deinstall
 wine1.4						deinstall
@@ -3461,7 +3525,7 @@ wireless-tools					install
 wireshark					install
 wireshark-common				install
 wkhtmltopdf					install
-wl						install
+wl						deinstall
 wmctrl						install
 wmgtemp						deinstall
 wodim						install
