@@ -186,7 +186,8 @@ alias ec='emacsclient'
 # Disk
 alias df='df -h'                           # File system usage
 alias du='du -h'                           # File space usage
-alias dus='du -s'                          # File space usage
+alias dus='du -s'                          # File space usage (summary)
+alias dul='du -d1'                         # File space usage (sub dirs)
 
 # List
 alias lc='lsof -nPi tcp'                   # List connections
