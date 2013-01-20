@@ -64,7 +64,7 @@ main = do
     , ("M4-'"          , goToSelected defaultGSConfig {gs_navigate = myNavigation})
     , ("M4-S-'"        , bringSelected defaultGSConfig {gs_navigate = myNavigation})
     , ("M4-o"          , windowMenu)
-    , ("<F1>"          , runOrRaise "emacs23" (className =? "Emacs23" <||> className =? "Emacs"))
+    , ("<F1>"          , runOrRaise "emacs" (className =? "Emacs"))
     , ("<F2>"          , runOrRaise "conkeror" (className =? "Conkeror"))
     , ("<F3>"          , runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
     , ("<F9>"          , runOrRaise "firefox" (className =? "Firefox"))
