@@ -204,6 +204,17 @@ alias rsl='rsync --progress -rv --inplace' # Local
 alias rsn='rsync --progress -rvz'          # Network
 
 #
+# Pretty-print json
+alias json='python -m'
+function ppjs () {
+    if command_exists pygmentize ; then
+        python -mjson.tool $1 | pygmentize -l json
+    else
+        python -mjson.tool $1
+    fi
+}
+
+#
 # Package manager shortcuts
 
 if [[ $platform == "Linux" ]]; then
