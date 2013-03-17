@@ -204,9 +204,11 @@
 (xbindkey '(XF86AudioMedia) "emacsclient -e '(ublt/start-or-pause)'")
 (xbindkey '(Mod4 XF86AudioRaiseVolume) "emacsclient -e '(emms-next)'")
 (xbindkey '(Mod4 XF86AudioLowerVolume) "emacsclient -e '(emms-previous)'")
-;; (xbindkey '(XF86Mail) "conkeror -f unfocus && conkeror -f switch-to-gmail-buffer")
-(xbindkey '(Mod4 XF86Mail) "conkeror -f switch-to-gmail-buffer && conkeror -f unfocus")
+(xbindkey '(Mod4 XF86Forward)   "emacsclient -e '(emms-next)")
+(xbindkey '(Mod4 XF86Back)       "emacsclient -e '(emms-previous)")
+
 (xbindkey '(XF86Mail) "conkeror -f switch-to-gmail-buffer && conkeror -f unfocus")
+(xbindkey '(Mod4 XF86Mail) "conkeror -f switch-to-gmail-buffer && conkeror -f unfocus")
 
 ;;; ...
 (xbindkey '(XF86AudioRaiseVolume) "amixer set PCM 5%+")
@@ -219,6 +221,13 @@
 (xbindkey '(XF86AudioPrev) "conkeror -f gs-previous")
 (xbindkey '(XF86Forward)   "conkeror -f gs-next")
 (xbindkey '(XF86Back)      "conkeror -f gs-previous")
+
+(xbindkey '(F6) "conkeror -f ublt-launch-GMail")
+(xbindkey '(F7) "conkeror -f ublt-launch-Google-Reader")
+(xbindkey '(F8) "conkeror -f ublt-launch-Prismatic")
+(xbindkey '(F9) "conkeror -f ublt-launch-Facebook")
+(xbindkey '(F10) "conkeror -f ublt-launch-Grooveshark")
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of xbindkeys guile configuration ;;
