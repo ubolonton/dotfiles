@@ -48,14 +48,16 @@ main = do
     `additionalKeysP`
     [ -- ("M4-<Tab>"      , windows W.focusDown)
     -- ,
-      ("M4-S-<Tab>"    , windows W.focusUp)
+      ("M4-<Tab>"      , windows W.focusDown)
+    , ("M4-S-<Tab>"    , cycleRecentWindows [xK_Super_L] xK_Tab xK_quoteleft)
     , ("M4-q"          , kill)
     , ("M4-S-`"        , spawn "gmrun")
-    , ("M4-`"          , spawn "exe=`PATH=/home/ubolonton/bin:$PATH dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan' -p Run` && eval \"exec $exe\"")
+    -- , ("M4-`"          , spawn "exe=`PATH=/home/ubolonton/bin:$PATH dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan' -p Run` && eval \"exec $exe\"")
+    , ("M4-`"          , spawn "$HOME/bin/ublt-dmenu")
     , ("M4-<KP_Left>"  , sendMessage Shrink)
     , ("M4-<KP_Right>" , sendMessage Expand)
     , ("M4-S-<F12>"    , io (exitWith ExitSuccess))
-    , ("M4-<F12>"      , spawn "xmonad --recompile; xmonad --restart")
+    , ("M4-<F12>"      , spawn "xmonad --recompile && xmonad --restart")
     , ("M4-<Return>"   , dwmpromote)
     , ("M4-S-<Return>" , rotSlavesUp)
     , ("M4-<Space>"    , sendMessage NextLayout)
@@ -68,11 +70,10 @@ main = do
     , ("<F1>"          , runOrRaise "emacs" (className =? "Emacs"))
     , ("<F2>"          , runOrRaise "conkeror" (className =? "Conkeror"))
     , ("<F3>"          , runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
-    , ("<F9>"          , runOrRaise "firefox" (className =? "Firefox"))
-    , ("<F10>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
+    -- , ("<F9>"          , runOrRaise "firefox" (className =? "Firefox"))
+    -- , ("<F10>"         , runOrRaise "pidgin" (className =? "Pidgin"))
     , ("<F11>"         , runOrRaise "skype" (className =? "Skype"))
-    , ("<F12>"         , runOrRaise "pidgin" (className =? "Pidgin"))
-    , ("M4-<Tab>"      , cycleRecentWindows [xK_Super_L] xK_Tab xK_quoteleft)
+    , ("<F12>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
     ]
 
 -- Grid navigation

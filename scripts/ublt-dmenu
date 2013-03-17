@@ -1,0 +1,2 @@
+#! /bin/sh
+PATH=$HOME/bin:$PATH dmenu_path | dmenu -b -l 10 -fn '10x20' -nb '#0C1320' -nf '#505764' -sb '#131A27' -sf 'cyan' -p Run
