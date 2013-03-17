@@ -22,6 +22,7 @@ import XMonad.Layout.IM
 import Data.Ratio ((%))
 import XMonad.Layout.GridVariants
 import XMonad.Layout.Tabbed (simpleTabbed)
+import XMonad.Layout.Reflect (reflectHoriz)
 
 import XMonad.Hooks.FadeInactive
 import XMonad.ManageHook
@@ -107,14 +108,15 @@ addPrefix p ms conf =
   chopMod = (.&. complement mod)
 
 myLayout = desktopLayoutModifiers
-           $ tiled
-           ||| Mirror tiled
+           $ (reflectHoriz $ tiled)
+           ||| (tiled)
+           ||| Mirror (reflectHoriz $ tiled)
            ||| Full
            ||| withIM (7%30) (Or (Role "buddy_list") (Role "MainWindow")) simpleTabbed
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
-    ratio = 7/10
+    ratio = 7/10 - 1/30
     delta = 1/30
 
 myLog = fadeInactiveLogHook fadeAmount
