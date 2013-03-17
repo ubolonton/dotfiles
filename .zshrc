@@ -121,6 +121,8 @@ bindkey -e "\eI" kill-whole-line
 
 bindkey -e "\ec" up-history
 bindkey -e "\et" down-history
+bindkey -e "\em" up-history
+bindkey -e "\ev" down-history
 
 bindkey -e "\eG" beginning-of-buffer-or-history
 bindkey -e "\eR" end-of-buffer-or-history
@@ -133,6 +135,8 @@ bindkey -e "\e " insert-last-word
 
 bindkey -M isearch "\ec" history-incremental-search-backward
 bindkey -M isearch "\et" history-incremental-search-forward
+bindkey -M isearch "\em" history-incremental-search-backward
+bindkey -M isearch "\ev" history-incremental-search-forward
 
 # 
 # Determine platform
