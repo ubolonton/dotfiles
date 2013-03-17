@@ -23,6 +23,7 @@ import Data.Ratio ((%))
 import XMonad.Layout.GridVariants
 import XMonad.Layout.Tabbed (simpleTabbed)
 import XMonad.Layout.Reflect (reflectHoriz)
+import XMonad.Layout.Master (multimastered)
 
 import XMonad.Hooks.FadeInactive
 import XMonad.ManageHook
@@ -109,12 +110,18 @@ addPrefix p ms conf =
   chopMod = (.&. complement mod)
 
 myLayout = desktopLayoutModifiers
-           $ (reflectHoriz $ tiled)
-           ||| (tiled)
-           ||| Mirror (reflectHoriz $ tiled)
+           $ tiledTab
+           ||| skype
            ||| Full
-           ||| withIM (7%30) (Or (Role "buddy_list") (Role "MainWindow")) simpleTabbed
+           ||| Mirror tiledTab
+           -- ||| simpleTabbed
+           -- ||| (reflectHoriz $ tiled)
+           -- ||| (tiled)
+           -- ||| withIM (7%30) (Or (Role "buddy_list") (Role "MainWindow")) simpleTabbed
   where
+    skype = (multimastered 1 delta (8/10) $ simpleTabbed)
+
+    tiledTab = (reflectHoriz $ (multimastered nmaster delta ratio $ simpleTabbed))
     tiled = Tall nmaster delta ratio
     nmaster = 1
     ratio = 7/10 - 1/30
