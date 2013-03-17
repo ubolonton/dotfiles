@@ -1,6 +1,3 @@
 #! /bin/sh
 
-# HACK to use firefox's xulrunner instead of using another xulrunner.
-# Can't understand why don't they just distribute xulrunner.
-
-exec firefox -app ~/Programming/Tools/conkeror/application.ini "$@"
+exec xulrunner --app /home/ubolonton/Programming/Tools/conkeror/application.ini "$@"
