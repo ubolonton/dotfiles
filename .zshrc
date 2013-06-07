@@ -207,6 +207,15 @@ alias rs='rsync --progress -rv'
 alias rsl='rsync --progress -rv --inplace' # Local
 alias rsn='rsync --progress -rvz'          # Network
 
+# git log
+# One-line id/author/message/time
+alias gl="git log --abbrev-commit --date=relative --pretty=format:'%C(cyan)%h%Creset %C(green)%an%Creset %s %C(cyan)(%cr)%Creset'"
+# Graph
+alias gg="git log --abbrev-commit --graph --all --pretty=format:'%x20%C(cyan)%h%x20%C(green)%an%x20%Creset%s%C(yellow)%d%Creset'"
+# Not merged to master
+alias gm="git log --abbrev-commit --date=relative --pretty=format:'%C(cyan)%h%Creset %C(green)%an%Creset %s %C(cyan)(%cr)%Creset' HEAD --not master"
+
+
 #
 # Pretty-print json
 function ppjs () {
