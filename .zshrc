@@ -209,7 +209,6 @@ alias rsn='rsync --progress -rvz'          # Network
 
 #
 # Pretty-print json
-alias json='python -m'
 function ppjs () {
     if command_exists pygmentize ; then
         python -mjson.tool $1 | pygmentize -l json
