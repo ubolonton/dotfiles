@@ -3274,6 +3274,9 @@ r-cran-spatial					install
 r-cran-survival					install
 r-doc-html					install
 r-recommended					install
+racket						deinstall
+racket-common					install
+racket-doc					install
 radeontool					install
 rarian-compat					install
 rastertosag-gdi					install
