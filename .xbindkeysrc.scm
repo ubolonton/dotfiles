@@ -202,6 +202,7 @@
 
 ;;; Crude, but works
 (xbindkey '(XF86AudioMedia) "emacsclient -e '(ublt/start-or-pause)'")
+(xbindkey '(Mod4 XF86AudioPlay) "emacsclient -e '(ublt/start-or-pause)'")
 (xbindkey '(Mod4 XF86AudioRaiseVolume) "emacsclient -e '(emms-next)'")
 (xbindkey '(Mod4 XF86AudioLowerVolume) "emacsclient -e '(emms-previous)'")
 (xbindkey '(Mod4 XF86Forward)   "emacsclient -e '(emms-next)")
@@ -216,17 +217,17 @@
 
 ;;; Controling grooveshark
 (xbindkey '(XF86AudioPlay) "conkeror -f gs-play-or-pause")
-(xbindkey '(Mod4 XF86AudioPlay) "conkeror -f gs-play-or-pause")
 (xbindkey '(XF86AudioNext) "conkeror -f gs-next")
 (xbindkey '(XF86AudioPrev) "conkeror -f gs-previous")
 (xbindkey '(XF86Forward)   "conkeror -f gs-next")
 (xbindkey '(XF86Back)      "conkeror -f gs-previous")
 
 (xbindkey '(F6) "conkeror -f ublt-launch-GMail")
-(xbindkey '(F7) "conkeror -f ublt-launch-Google-Reader")
+(xbindkey '(F7) "conkeror -f ublt-launch-Feedly")
 (xbindkey '(F8) "conkeror -f ublt-launch-Prismatic")
 (xbindkey '(F9) "conkeror -f ublt-launch-Facebook")
 (xbindkey '(F10) "conkeror -f ublt-launch-Grooveshark")
+(xbindkey '(XF86Calculator) "conkeror -f ublt-launch-CIAS")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
