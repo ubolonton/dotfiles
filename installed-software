@@ -355,6 +355,7 @@ f-spot						install
 fakeroot					install
 fancontrol					install
 fastjar						install
+fbreader					install
 ffmpeg						install
 file						install
 file-roller					install
@@ -413,6 +414,7 @@ foomatic-db-compressed-ppds			install
 foomatic-db-engine				install
 foomatic-filters				install
 fop						install
+foreman						install
 freepats					install
 freetds-common					install
 frei0r-plugins					install
@@ -666,6 +668,8 @@ hardening-wrapper				install
 hardinfo					install
 hddtemp						install
 hdparm						install
+heroku						install
+heroku-toolbelt					install
 hfsprogs					install
 hibernate					install
 hicolor-icon-theme				install
@@ -1530,6 +1534,7 @@ libgtk2.0-bin					install
 libgtk2.0-cil					install
 libgtk2.0-common				install
 libgtk2.0-dev					install
+libgtkglext1					install
 libgtkhtml-4.0-0				install
 libgtkhtml-4.0-common				install
 libgtkhtml-editor-4.0-0				install
@@ -1791,6 +1796,7 @@ liblcms2-2					install
 libldap-2.4-2					install
 libldap2-dev					install
 liblightdm-gobject-1-0				install
+liblinebreak2					install
 liblircclient0					install
 liblist-moreutils-perl				install
 libllvm2.9					deinstall
@@ -2697,6 +2703,11 @@ libyelp0					install
 libzbar0					install
 libzeitgeist-1.0-1				install
 libzephyr4					install
+libzlcore-data					install
+libzlcore0.12					install
+libzltext-data					install
+libzltext0.12					install
+libzlui-qt4					install
 libzvbi-common					install
 libzvbi0					install
 light-themes					install
@@ -2752,6 +2763,16 @@ linux-headers-3.2.0-44				install
 linux-headers-3.2.0-44-generic-pae		install
 linux-headers-3.2.0-45				install
 linux-headers-3.2.0-45-generic-pae		install
+linux-headers-3.2.0-48				install
+linux-headers-3.2.0-48-generic-pae		install
+linux-headers-3.2.0-49				install
+linux-headers-3.2.0-49-generic-pae		install
+linux-headers-3.2.0-51				install
+linux-headers-3.2.0-51-generic-pae		install
+linux-headers-3.2.0-52				install
+linux-headers-3.2.0-52-generic-pae		install
+linux-headers-3.2.0-53				install
+linux-headers-3.2.0-53-generic-pae		install
 linux-headers-generic-pae			install
 linux-image-2.6.32-29-generic-pae		install
 linux-image-2.6.32-30-generic-pae		install
@@ -2783,6 +2804,11 @@ linux-image-3.2.0-41-generic-pae		install
 linux-image-3.2.0-43-generic-pae		install
 linux-image-3.2.0-44-generic-pae		install
 linux-image-3.2.0-45-generic-pae		install
+linux-image-3.2.0-48-generic-pae		install
+linux-image-3.2.0-49-generic-pae		install
+linux-image-3.2.0-51-generic-pae		install
+linux-image-3.2.0-52-generic-pae		install
+linux-image-3.2.0-53-generic-pae		install
 linux-image-generic-pae				install
 linux-libc-dev					install
 linux-sound-base				install
@@ -2817,6 +2843,7 @@ mawk						install
 media-player-info				install
 melt						install
 memtest86+					install
+mencoder					install
 mercurial					install
 mercurial-common				install
 mesa-common-dev					install
@@ -2906,6 +2933,7 @@ ntrack-module-libnl-0				install
 nux-tools					install
 nvidia-common					install
 nvidia-settings					install
+nvidia-settings-304				install
 obex-data-server				install
 obexd-client					install
 ocaml						install
@@ -3245,6 +3273,8 @@ python3						install
 python3-minimal					install
 python3.2					install
 python3.2-minimal				install
+python3.3					install
+python3.3-minimal				install
 qapt-batch					install
 qdbus						install
 qgit						install
@@ -3274,7 +3304,7 @@ r-cran-spatial					install
 r-cran-survival					install
 r-doc-html					install
 r-recommended					install
-racket						deinstall
+racket						install
 racket-common					install
 racket-doc					install
 radeontool					install
@@ -3568,6 +3598,7 @@ uswsusp						install
 util-linux					install
 uuid						install
 uuid-runtime					install
+vagrant						install
 vbetool						install
 velocity					deinstall
 vim						install
@@ -3611,6 +3642,8 @@ wine1.4						deinstall
 wine1.4-i386					deinstall
 wine1.5						install
 wine1.5-i386					install
+wine1.6						install
+wine1.6-i386					install
 winetricks					install
 winpdb						install
 wireless-crda					install
@@ -3744,3 +3777,4 @@ zip						install
 zlib1g						install
 zlib1g-dev					install
 zsh						install
+zsnes						install
