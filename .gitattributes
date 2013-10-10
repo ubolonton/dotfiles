@@ -1,1 +1,3 @@
 *.el diff=elisp
+*.clj diff=clj
+*.cljs diff=cljs

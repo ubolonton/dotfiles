@@ -3,6 +3,7 @@
 [user]
     name = Nguyễn Tuấn Anh
     email = ubolonton@gmail.com
+    # email = anh@cogini.com
 [color]
     status = auto
     diff = auto
@@ -23,6 +24,10 @@
 [i18n]
     logoutputencoding = UTF-8
 [diff "elisp"]
+    xfuncname="^(\\((def).*)$"
+[diff "clj"]
+    xfuncname="^(\\((def).*)$"
+[diff "cljs"]
     xfuncname="^(\\((def).*)$"
 [color]
     diff = auto
