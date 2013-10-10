@@ -229,6 +229,10 @@
 (xbindkey '(F10) "conkeror -f ublt-launch-Grooveshark")
 (xbindkey '(XF86Calculator) "conkeror -f ublt-launch-CIAS")
 
+;;; Temp
+(xbindkey '(Mod4 Shift r) "conkeror -f ublt-theme")
+(xbindkey '(Mod4 r) "conkeror-test -f ublt-theme-test")
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End of xbindkeys guile configuration ;;
