@@ -21,6 +21,7 @@ amarok						install
 amarok-common					install
 amarok-utils					install
 anacron						install
+anki						install
 ant						install
 ant-gcj						deinstall
 ant-optional					install
@@ -334,6 +335,7 @@ esound-clients					deinstall
 esound-common					install
 espeak						install
 espeak-data					install
+etckeeper					install
 everpad						install
 evince						install
 evince-common					install
@@ -350,6 +352,7 @@ evolution-plugins				install
 evolution-webcal				install
 example-content					install
 exiv2						install
+extlinux					install
 exuberant-ctags					install
 f-spot						install
 fakeroot					install
@@ -810,6 +813,7 @@ krb5-locales					install
 krb5-multidev					install
 kubuntu-debug-installer				install
 lacheck						install
+lame						install
 landscape-client-ui-install			install
 language-pack-en				install
 language-pack-en-base				install
@@ -2773,6 +2777,8 @@ linux-headers-3.2.0-52				install
 linux-headers-3.2.0-52-generic-pae		install
 linux-headers-3.2.0-53				install
 linux-headers-3.2.0-53-generic-pae		install
+linux-headers-3.2.0-54				install
+linux-headers-3.2.0-54-generic-pae		install
 linux-headers-generic-pae			install
 linux-image-2.6.32-29-generic-pae		install
 linux-image-2.6.32-30-generic-pae		install
@@ -2809,6 +2815,7 @@ linux-image-3.2.0-49-generic-pae		install
 linux-image-3.2.0-51-generic-pae		install
 linux-image-3.2.0-52-generic-pae		install
 linux-image-3.2.0-53-generic-pae		install
+linux-image-3.2.0-54-generic-pae		install
 linux-image-generic-pae				install
 linux-libc-dev					install
 linux-sound-base				install
@@ -3418,6 +3425,8 @@ synaptic					install
 syslinux					install
 syslinux-common					install
 syslinux-legacy					install
+syslinux-themes-debian				install
+syslinux-themes-debian-squeeze			install
 system-config-printer-common			install
 system-config-printer-gnome			install
 system-config-printer-udev			install
@@ -3556,6 +3565,8 @@ udisks						install
 ufw						install
 unattended-upgrades				install
 unclutter					install
+unetbootin					install
+unetbootin-translations				install
 unity						install
 unity-2d					install
 unity-2d-common					install
