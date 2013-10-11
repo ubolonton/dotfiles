@@ -25,6 +25,7 @@ import XMonad.Layout.Tabbed (simpleTabbed)
 import XMonad.Layout.Reflect (reflectHoriz)
 import XMonad.Layout.Master (multimastered)
 
+import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.FadeInactive
 import XMonad.ManageHook
 
@@ -63,6 +64,7 @@ main = do
     , ("M4-S-<Return>" , rotSlavesUp)
     , ("M4-<Space>"    , sendMessage NextLayout)
     , ("M4-<F11>"      , withFocused $ windows . W.sink)
+    , ("M4-<F10>"      , sendMessage $ ToggleStrut U)
     -- , ("M4-`"          , gotoMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "'Go To'"])
     -- , ("M4-S-`"        , bringMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "Summon"])
     , ("M4-'"          , goToSelected defaultGSConfig {gs_navigate = myNavigation})
@@ -109,7 +111,9 @@ addPrefix p ms conf =
   mod = modMask conf
   chopMod = (.&. complement mod)
 
-myLayout = desktopLayoutModifiers
+myDesktop layout = avoidStrutsOn [U] (layout)
+
+myLayout = myDesktop
            $ tiledTab
            ||| skype
            ||| Full
