@@ -43,6 +43,7 @@ main = do
     , keys = myKeys
     , layoutHook = myLayout
     , logHook = myLog
+    , manageHook = myManage XMonad.ManageHook.<+> manageHook gnomeConfig
     , modMask = mod4Mask
     , focusedBorderColor = "#00DD00" -- "#89A1F3"
     , normalBorderColor = "#0C1320"
@@ -62,7 +63,7 @@ main = do
     , ("M4-<F12>"      , spawn "xmonad --recompile && xmonad --restart")
     , ("M4-<Return>"   , dwmpromote)
     , ("M4-S-<Return>" , rotSlavesUp)
-    , ("M4-<Space>"    , sendMessage NextLayout)
+    , ("M4-S-<Space>"    , sendMessage NextLayout)
     , ("M4-<F11>"      , withFocused $ windows . W.sink)
     , ("M4-<F10>"      , sendMessage $ ToggleStrut U)
     -- , ("M4-`"          , gotoMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "'Go To'"])
@@ -110,6 +111,10 @@ addPrefix p ms conf =
   where
   mod = modMask conf
   chopMod = (.&. complement mod)
+
+myManage = composeAll [
+  className =? "Do" --> doIgnore
+  ]
 
 myDesktop layout = avoidStrutsOn [U] (layout)
 
