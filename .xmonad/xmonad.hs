@@ -38,7 +38,7 @@ main = do
   xmonad $ gnomeConfig
     { terminal = "gnome-terminal"
     , focusFollowsMouse = False
-    , borderWidth = 2
+    , borderWidth = 1
     -- , keys = addPrefix (mod4Mask, xK_space) (keys gnomeConfig)
     , keys = myKeys
     , layoutHook = myLayout
@@ -113,7 +113,8 @@ addPrefix p ms conf =
   chopMod = (.&. complement mod)
 
 myManage = composeAll [
-  className =? "Do" --> doIgnore
+    className =? "Do" --> doIgnore
+  , className =? "Xfce4-panel" --> doIgnore
   ]
 
 myDesktop layout = avoidStrutsOn [U] (layout)
