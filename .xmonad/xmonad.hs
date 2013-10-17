@@ -25,6 +25,7 @@ import XMonad.Layout.GridVariants
 import XMonad.Layout.Tabbed (simpleTabbed)
 import XMonad.Layout.Reflect (reflectHoriz)
 import XMonad.Layout.Master (multimastered)
+import XMonad.Layout.PerWorkspace
 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.FadeInactive
@@ -65,7 +66,7 @@ main = do
     , ("M4-<F12>"      , spawn "xmonad --recompile && xmonad --restart")
     , ("M4-<Return>"   , dwmpromote)
     , ("M4-S-<Return>" , rotSlavesUp)
-    , ("M4-S-<Space>"    , sendMessage NextLayout)
+    , ("M4-S-<Space>"  , sendMessage NextLayout)
     , ("M4-<F11>"      , withFocused $ windows . W.sink)
     , ("M4-<F10>"      , sendMessage $ ToggleStrut U)
     -- , ("M4-`"          , gotoMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "'Go To'"])
@@ -131,18 +132,21 @@ myManage = composeAll [
 
 myDesktop layout = avoidStrutsOn [U] (layout)
 
-myLayout = myDesktop
-           $ tiledTab
-           ||| skype
-           ||| Full
-           ||| Mirror tiledTab
+myLayout = myDesktop $ myWorkspaceLayout
+  where
+    myWorkspaceLayout = onWorkspace "4:skype" skype $
+                        onWorkspaces ["1:main", "3:terminal"] main $
+                        onWorkspaces ["5:firefox", "6:chrome"] devBrowser $
+                        all
+    main = Full ||| tiledTab
+    devBrowser = tiledTabRot ||| tiledTab ||| Full
+    all = tiledTab ||| skype ||| Full ||| tiledTabRot
            -- ||| simpleTabbed
            -- ||| (reflectHoriz $ tiled)
            -- ||| (tiled)
            -- ||| withIM (7%30) (Or (Role "buddy_list") (Role "MainWindow")) simpleTabbed
-  where
     skype = (multimastered 1 delta (8/10) $ simpleTabbed)
-
+    tiledTabRot = Mirror tiledTab
     tiledTab = (reflectHoriz $ (multimastered nmaster delta ratio $ simpleTabbed))
     tiled = Tall nmaster delta ratio
     nmaster = 1
