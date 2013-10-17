@@ -2,6 +2,7 @@ import XMonad
 import XMonad.Config.Gnome
 import XMonad.Actions.Submap
 
+import Control.Monad (liftM2)
 import Control.Arrow hiding ((|||))
 import Data.Bits
 import Data.Monoid
@@ -47,6 +48,7 @@ main = do
     , modMask = mod4Mask
     , focusedBorderColor = "#00DD00" -- "#89A1F3"
     , normalBorderColor = "#0C1320"
+    , workspaces = myWorkspaces
     }
     `additionalKeysP`
     [ -- ("M4-<Tab>"      , windows W.focusDown)
@@ -112,10 +114,20 @@ addPrefix p ms conf =
   mod = modMask conf
   chopMod = (.&. complement mod)
 
+myWorkspaces = ["1:main", "2", "3:terminal", "4:skype", "5:firefox", "6:chrome", "7", "8", "9"]
+
 myManage = composeAll [
-    className =? "Do" --> doIgnore
+    className =? "Emacs" --> doShiftAndGo "1:main"
+  , className =? "Conkeror" --> doShiftAndGo "1:main"
+  , className =? "Gnome-terminal" --> doShiftAndGo "3:terminal"
+  , className =? "Skype" --> doShift "4:skype"
+  , className =? "Firefox" --> doShiftAndGo "5:firefox"
+  , className =? "Chrome" --> doShiftAndGo "6:chrome"
   , className =? "Xfce4-panel" --> doIgnore
+  , className =? "Do" --> doIgnore
+  , className =? "Orage" --> doFloat
   ]
+  where doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
 
 myDesktop layout = avoidStrutsOn [U] (layout)
 
@@ -140,14 +152,13 @@ myLayout = myDesktop
 myLog = fadeInactiveLogHook fadeAmount
   where fadeAmount = 1
 
--- myManage = composeAll [ className =? "Skype" --> doF ]
-
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ -- ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
     --  Reset the layouts on the current workspace to default
-      ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
+      -- ((modm .|. shiftMask, xK_F9 ), setLayout $ XMonad.layoutHook conf)
+      ((shiftMask .|. modm, xK_F9 ), setLayout $ XMonad.layoutHook conf)
     -- -- Push window back into tiling
     -- , ((modm,               xK_t     ), withFocused $ windows . W.sink)
     -- -- Increment the number of windows in the master area
@@ -168,7 +179,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-shift-[1..9], Move client to workspace N
     --
     [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_4]
+        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, shiftMask)]]
     ++
     --
