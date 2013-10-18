@@ -1,4 +1,4 @@
-# This is for reading, not running
+# This is for reading, not running (provisioning ubolonton.org)
 
 # To get add-apt-repository
 sudo apt-get install python-software-properties
