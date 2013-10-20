@@ -74,7 +74,7 @@ main = do
     , ("M4-'"          , goToSelected defaultGSConfig {gs_navigate = myNavigation})
     , ("M4-S-'"        , bringSelected defaultGSConfig {gs_navigate = myNavigation})
     , ("M4-o"          , windowMenu)
-    , ("<F1>"          , runOrRaise "emacs" (className =? "Emacs"))
+    , ("<F1>"          , runOrRaise "emacs" (className =? "Emacs24")) -- FIX
     , ("<F2>"          , runOrRaise "conkeror" (className =? "Conkeror"))
     , ("<F3>"          , runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
     -- , ("<F9>"          , runOrRaise "firefox" (className =? "Firefox"))
@@ -119,7 +119,7 @@ addPrefix p ms conf =
 myWorkspaces = ["1:main", "2", "3:terminal", "4:skype", "5:firefox", "6:chrome", "7", "8", "9"]
 
 myManage = composeAll [
-    className =? "Emacs" --> doShiftAndGo "1:main"
+    className =? "emacs" --> doShiftAndGo "1:main"
   , className =? "Conkeror" --> doShiftAndGo "1:main"
   , className =? "Gnome-terminal" --> doShiftAndGo "3:terminal"
   , className =? "Skype" --> doShift "4:skype"
