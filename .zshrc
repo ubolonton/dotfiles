@@ -244,6 +244,7 @@ if [[ $platform == "Linux" ]]; then
     function pa () {
         apt-cache search --names-only $1 | grep $1
     }
+    alias po='apt-cache policy'
     alias upd='sudo apt-get update; aptn "Updated"'
     alias upg='sudo apt-get upgrade; aptn "Upgraded"'
     function ins {
