@@ -132,6 +132,7 @@ myManage = composeAll [
   , className =? "Xfce4-panel" --> doIgnore
   , className =? "Do" --> doIgnore
   , className =? "Orage" --> doFloat
+  , (className =? "Nautilus" <&&> appName =? "file_properties") --> doFloat
   ]
   where doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
 
