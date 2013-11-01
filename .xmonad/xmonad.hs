@@ -127,6 +127,7 @@ myManage = composeAll [
   , className =? "Firefox" --> doShiftAndGo "5:firefox"
   , className =? "Google-chrome" --> doShiftAndGo "6:chrome"
   , className =? "Nautilus" --> doShift "7"
+  , className =? "Thunar" --> doShift "7"
   , className =? "Vlc" --> doShiftAndGo "8"
   , className =? "Update-manager" --> doShift "9"
   , className =? "Xfce4-panel" --> doFloat
