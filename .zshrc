@@ -150,17 +150,6 @@ elif [[ $unamestr == "Darwin" ]]; then
 fi
 
 # 
-# PATH
-
-if [[ $platform == "Linux" ]]; then
-    # Use user's bin/
-    PATH=~/bin:$PATH
-elif [[ $platform == "Mac" ]]; then
-    # Use user's bin/ & gnu replacements
-    PATH=~/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
-fi
-
-# 
 # autojump ("j <partial name>")
 
 if [[ $platform == "Mac" ]]; then
@@ -314,3 +303,21 @@ function server () {
 #     source `which virtualenvwrapper.sh`
 #     PROJECT_HOME=~/projects
 # fi
+
+# 
+# Node version manager
+
+if [ -f ~/.nvm/nvm.sh ] ; then
+    source ~/.nvm/nvm.sh
+fi
+
+# 
+# PATH
+
+if [[ $platform == "Linux" ]]; then
+    # Use user's bin/
+    PATH=~/bin:$PATH
+elif [[ $platform == "Mac" ]]; then
+    # Use user's bin/ & gnu replacements
+    PATH=~/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
+fi
