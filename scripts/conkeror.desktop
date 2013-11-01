@@ -6,7 +6,7 @@
 Version=1.0
 Type=Application
 Terminal=false
-Icon=conkeror.png
+Icon=/home/ubolonton/Pictures/conkeror_logo.png
 Name=Conkeror
 Comment=Emacs like Web Browser
 GenericName=Web Browser
