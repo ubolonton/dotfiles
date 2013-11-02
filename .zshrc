@@ -45,23 +45,23 @@ function command_exists () {
 # Manual display, otherwise
 VIRTUAL_ENV_DISABLE_PROMPT=TRUE
 # NTA XXX: Why doesn't it work with left prompt?
-function ublt-virtualenv-info {
+function ublt/virtualenv-info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`')'
 }
 
-function ublt-date {
+function ublt/date {
     date '+%a %Y-%m-%d %T %Z'
 }
 
-function ublt-prompt {
+function ublt/prompt {
     local user="%n"
     local host="%M"
     local current_dir="%~"
-    local date="$(ublt-date)"
-    local virtual_env_info="$(ublt-virtualenv-info)"
+    local date="$(ublt/date)"
+    local virtual_env_info="$(ublt/virtualenv-info)"
 
     # NTA XXX: For some reason this does not work
-    # local left_left_prompt_size_no_dir=${#${(%):-╭─ ${user}@${host} $(ublt-virtualenv-info)}}
+    # local left_left_prompt_size_no_dir=${#${(%):-╭─ ${user}@${host} $(ublt/virtualenv-info)}}
 
     # Left prompt's left part
     local left_left_prompt_size=${#${(%):-╭─ ${user}@${host} ${virtual_env_info} ${current_dir}}}
@@ -97,7 +97,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$terminfo[bold]$fg[red]%} ✘"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[yellow]%} °"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$terminfo[bold]$fg[green]%} ✔"
 
-PROMPT='$(ublt-prompt)'
+PROMPT='$(ublt/prompt)'
 RPROMPT='${return_code} $(git_prompt_info) %l'
 
 #
@@ -138,23 +138,13 @@ bindkey -M isearch "\et" history-incremental-search-forward
 bindkey -M isearch "\em" history-incremental-search-backward
 bindkey -M isearch "\ev" history-incremental-search-forward
 
-# 
-# Determine platform
-
-local unamestr=$(uname)
-local platform=""
-if [[ $unamestr == "Linux" ]]; then
-    platform="Linux"
-elif [[ $unamestr == "Darwin" ]]; then
-    platform="Mac"
-fi
 
 # 
 # autojump ("j <partial name>")
 
-if [[ $platform == "Mac" ]]; then
+if [[ $(uname) == "Darwin" ]]; then
     ublt_autojump_sh=/opt/local/etc/profile.d/autojump.sh
-elif [[ $platform == "Linux" ]]; then
+elif [[ $(uname) == "Linux" ]]; then
     ublt_autojump_sh=/usr/share/autojump/autojump.sh
 fi
 
@@ -165,14 +155,16 @@ fi
 # 
 # Colored, detailed listing
 
-if [[ $platform == "Linux" ]]; then
+if [[ $(uname) == "Linux" ]]; then
     alias ls='ls -aCFho --color=auto'
-elif [[ $platform == "Mac" ]]; then
+elif [[ $(uname) == "Darwin" ]]; then
     alias ls='ls -aCFho -G'
 fi
 
 # 
 # Useful aliases
+
+alias utorrent="wine ~/.wine/drive_c/uTorrent.exe"
 
 alias ec='emacsclient'
 
@@ -218,7 +210,7 @@ function ppjs () {
 #
 # Package manager shortcuts
 
-if [[ $platform == "Linux" ]]; then
+if [[ $(uname) == "Linux" ]]; then
     # apt-get utils
     function aptn () {
         if command_exists notify-send ; then
@@ -243,7 +235,7 @@ if [[ $platform == "Linux" ]]; then
         sudo apt-get remove -y $* && aptn "Removed $@"
     }
     alias pf='dpkg -L'
-elif [[ $platform == "Mac" ]]; then
+elif [[ $(uname) == "Darwin" ]]; then
     function pa () {
         port search $1 | grep $1
     }
@@ -311,13 +303,5 @@ if [ -f ~/.nvm/nvm.sh ] ; then
     source ~/.nvm/nvm.sh
 fi
 
-# 
-# PATH
-
-if [[ $platform == "Linux" ]]; then
-    # Use user's bin/
-    PATH=~/bin:$PATH
-elif [[ $platform == "Mac" ]]; then
-    # Use user's bin/ & gnu replacements
-    PATH=~/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
-fi
+# Path deduplication
+typeset -U PATH
