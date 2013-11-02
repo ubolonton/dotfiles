@@ -42,15 +42,33 @@ function command_exists () {
 # My theme, based on bira theme
 # NTA TODO: 256-color theme with fallback to 16-color
 
-# Manual display, otherwise
+# It looks like the pair of %{ %} serves the purporse of preserving
+# length or sth
+
+# Virtualenv puts it before the prompt, which does not work well for
+# my multi-prompt
 VIRTUAL_ENV_DISABLE_PROMPT=TRUE
 # NTA XXX: Why doesn't it work with left prompt?
 function ublt/virtualenv-info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`')'
+    [ $VIRTUAL_ENV ] && echo "%{$fg[green]%} py%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"`basename $VIRTUAL_ENV`
+}
+
+function ublt/nvm-info {
+    [ $NVM_BIN ] && echo "%{$fg[green]%} js%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(basename $(dirname $NVM_BIN))
 }
 
 function ublt/date {
     date '+%a %Y-%m-%d %T %Z'
+}
+
+# Returns size excluding color codes and stuff
+# Better than ${#${(%):-${str}}}
+function ublt/size {
+    # I hate this
+    # http://stackoverflow.com/questions/10564314/count-length-of-user-visible-string-for-zsh-prompt
+    local zero='%([BSUbfksu]|([FB]|){*})'
+    local str=$1
+    echo ${#${(S%%)str//$~zero/}}
 }
 
 # Multi-line prompt. Note that the normal right-prompt approach does
@@ -59,40 +77,36 @@ function ublt/date {
 function ublt/prompt {
     local user="%n"
     local host="%M"
-    local current_dir="%~"
-    local date="$(ublt/date)"
+    local user_host="%{$terminfo[bold]$fg[green]%}${user}%{$fg[black]%}@%{$fg[red]%}${host}%{$reset_color%}"
+    local date_time="%{$terminfo[bold]$fg[cyan]%}$(ublt/date)%{$reset_color%}"
     local virtual_env_info="$(ublt/virtualenv-info)"
+    local nvm_info="$(ublt/nvm-info)"
 
-    # NTA XXX: For some reason this does not work
-    # local left_left_prompt_size_no_dir=${#${(%):-╭─ ${user}@${host} $(ublt/virtualenv-info)}}
+    # Left, right, and second lines
+    local   left="╭─ ${user_host}${virtual_env_info}${nvm_info}"
+    local second="╰─%B%b "
+    local right="${date_time}"
 
-    # Left prompt's left part
-    local left_left_prompt_size=${#${(%):-╭─ ${user}@${host} ${virtual_env_info} ${current_dir}}}
-    local dir_name_size=${#${(%):-${current_dir}}}
-    local left_left_prompt_size_no_dir
-    (( left_left_prompt_size_no_dir = $left_left_prompt_size - $dir_name_size ))
-    # Left prompt's right part
-    local left_right_prompt_size=${#${(%):-${date}}}
+    # Length of middle part
+    local max_length
+    (( max_length = ${COLUMNS} - $(ublt/size $right) - $(ublt/size $left) - 4 ))
 
     # Construct a middle part of appropriate length that will make the
     # right part right-aligned
-    local max_length
-    (( max_length = ${COLUMNS} - $left_right_prompt_size - $left_left_prompt_size_no_dir - 3 ))
+    local current_dir="%~"
+    local dir_name_size=$(ublt/size $current_dir)
     if [[ $max_length -gt $dir_name_size ]]; then
         # Fill remaining spaces with ─────
-	    local fill_bar="${(l.(($max_length - $dir_name_size - 2))..─.)}"
-        local dir_and_stuff="%{$terminfo[bold]$fg[blue]%}${current_dir}%{$reset_color%} %{$fg[magenta]%} ${fill_bar} %{$reset_color%}"
+	    local fill_bar="${(l.(($max_length - $dir_name_size))..─.)}"
+        local middle="%{$terminfo[bold]$fg[blue]%}${current_dir}%{$reset_color%} %{$fg[magenta]%}${fill_bar}%{$reset_color%}"
     else
         # Or cut off if dir name is too long
-        local dir_and_stuff="%{$terminfo[bold]$fg[magenta]%}%${max_length}<··· <%{$terminfo[bold]$fg[blue]%}${current_dir}%<< "
+        local middle="%{$terminfo[bold]$fg[magenta]%}%${max_length}<··· <%{$terminfo[bold]$fg[blue]%}${current_dir}%<<"
     fi
 
-    local user_host="%{$terminfo[bold]$fg[green]%}${user}%{$fg[black]%}@%{$fg[red]%}${host}%{$reset_color%}"
-    local date_time="%{$terminfo[bold]$fg[cyan]%}${date}%{$reset_color%}"
-
     echo "
-╭─ ${user_host} ${virtual_env_info} ${dir_and_stuff} ${date_time}
-╰─%B%b "
+${left} ${middle} ${right}
+${second}"
 }
 
 function ublt/right-prompt {
