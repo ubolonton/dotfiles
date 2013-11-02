@@ -53,6 +53,9 @@ function ublt/date {
     date '+%a %Y-%m-%d %T %Z'
 }
 
+# Multi-line prompt. Note that the normal right-prompt approach does
+# not work since it appears on the last line of the prompt. Therefore
+# some calculation is needed to get a part of the prompt right-aligned
 function ublt/prompt {
     local user="%n"
     local host="%M"
@@ -71,6 +74,8 @@ function ublt/prompt {
     # Left prompt's right part
     local left_right_prompt_size=${#${(%):-${date}}}
 
+    # Construct a middle part of appropriate length that will make the
+    # right part right-aligned
     local max_length
     (( max_length = ${COLUMNS} - $left_right_prompt_size - $left_left_prompt_size_no_dir - 3 ))
     if [[ $max_length -gt $dir_name_size ]]; then
@@ -90,15 +95,26 @@ function ublt/prompt {
 ╰─%B%b "
 }
 
-# git variables
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$terminfo[bold]$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$terminfo[bold]$fg[red]%} ✘"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[yellow]%} °"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$terminfo[bold]$fg[green]%} ✔"
+function ublt/right-prompt {
+    # Red exit code wrapped in [], nothing if exit code is 0
+    local exit_code="%(?..[%{$fg[red]%}%?%{$reset_color%}])"
+
+    # Set git prompt variables
+    local ZSH_THEME_GIT_PROMPT_PREFIX="%{$terminfo[bold]$fg[magenta]%}"
+    local ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+    local ZSH_THEME_GIT_PROMPT_DIRTY="%{$terminfo[bold]$fg[red]%} ✘"
+    local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[yellow]%} °"
+    local ZSH_THEME_GIT_PROMPT_CLEAN="%{$terminfo[bold]$fg[green]%} ✔"
+    # Get the actual prompt now
+    local git_info="$(git_prompt_info)"
+
+    local terminal="%l"
+
+    echo "${exit_code} ${git_info} ${terminal}"
+}
 
 PROMPT='$(ublt/prompt)'
-RPROMPT='${return_code} $(git_prompt_info) %l'
+RPROMPT='$(ublt/right-prompt)'
 
 #
 # Personal key bindings for Dvorak layout
