@@ -116,12 +116,12 @@ addPrefix p ms conf =
   mod = modMask conf
   chopMod = (.&. complement mod)
 
-myWorkspaces = ["1:main", "2", "3:terminal", "4:skype", "5:firefox", "6:chrome", "7", "8", "9"]
+myWorkspaces = ["1:emacs", "2:conkeror", "3:terminal", "4:skype", "5:firefox", "6:chrome", "7", "8", "9"]
 
 myManage = composeAll [
-    className =? "Emacs" --> doShiftAndGo "1:main"
-  , className =? "Emacs24" --> doShiftAndGo "1:main"
-  , className =? "Conkeror" --> doShiftAndGo "1:main"
+    className =? "Emacs" --> doShiftAndGo "1:emacs"
+  , className =? "Emacs24" --> doShiftAndGo "1:emacs"
+  , className =? "Conkeror" --> doShiftAndGo "2:conkeror"
   , className =? "Gnome-terminal" --> doShiftAndGo "3:terminal"
   , className =? "Skype" --> doShift "4:skype"
   , className =? "Firefox" --> doShiftAndGo "5:firefox"
@@ -139,10 +139,10 @@ myManage = composeAll [
 
 myDesktop layout = avoidStrutsOn [U] (layout)
 
-myLayout = myDesktop $ myWorkspaceLayout
+myLayout = myDesktop myWorkspaceLayout
   where
     myWorkspaceLayout = onWorkspace "4:skype" skype $
-                        onWorkspaces ["1:main", "3:terminal"] main $
+                        onWorkspaces ["1:emacs", "2:conkeror", "3:terminal"] main $
                         onWorkspaces ["5:firefox", "6:chrome"] devBrowser $
                         all
     main = Full ||| tiledTab
