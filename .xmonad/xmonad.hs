@@ -134,6 +134,7 @@ myManage = composeAll [
   , className =? "Vlc" --> doShiftAndGo "8"
   , className =? "Update-manager" --> doShift "9"
   , className =? "Xfce4-panel" --> doFloat
+  , className =? "Gpick" --> doFloat
   , className =? "Do" --> doIgnore
   , className =? "Orage" --> doFloat
   , (className =? "Nautilus" <&&> appName =? "file_properties") --> doFloat
