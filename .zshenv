@@ -12,6 +12,12 @@ export TERM=xterm-256color
 # export QT_IM_MODULE=ibus
 # export XIM_PROGRAM=/usr/bin/ibus-daemon
 
+# # For open-jdk 6
+# # http://www.haskell.org/haskellwiki/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
+# export _JAVA_AWT_WM_NONREPARENTING=1
+
+# export AWT_TOOLKIT=MToolkit
+
 # 
 # PATH
 

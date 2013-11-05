@@ -29,6 +29,7 @@ import XMonad.Layout.PerWorkspace
 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.SetWMName
 import XMonad.ManageHook
 
 import XMonad.Actions.RotSlaves
@@ -43,6 +44,8 @@ main = do
     , borderWidth = 1
     -- , keys = addPrefix (mod4Mask, xK_space) (keys gnomeConfig)
     , keys = myKeys
+    -- For compatibility with some java programs
+    , startupHook = setWMName "LG3D"
     , layoutHook = myLayout
     , logHook = myLog
     , manageHook = myManage XMonad.ManageHook.<+> manageHook gnomeConfig
