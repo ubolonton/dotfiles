@@ -329,9 +329,18 @@ function server () {
 # 
 # Node version manager
 
-if [ -f ~/.nvm/nvm.sh ] ; then
-    source ~/.nvm/nvm.sh
+if [ -s "$HOME/.nvm/nvm.sh" ] ; then
+    source "$HOME/.nvm/nvm.sh"
 fi
 
+# 
+# Ruby version manager
+
+# Load RVM into a shell session *as a function*
+if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
+    source "$HOME/.rvm/scripts/rvm"
+fi
+
+# 
 # Path deduplication
 typeset -U PATH
