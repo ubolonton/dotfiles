@@ -19,6 +19,8 @@
      attributesfile = ~/.gitattributes
 [merge]
     tool = emerge
+[push]
+    default = current
 [rerere]
     enabled = 1
 [i18n]
