@@ -80,10 +80,10 @@ main = do
     , ("<F1>"          , runOrRaise "emacs" (className =? "Emacs" <||> className =? "Emacs24")) -- FIX
     , ("<F2>"          , runOrRaise "conkeror" (className =? "Conkeror"))
     , ("<F3>"          , runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
-    -- , ("<F9>"          , runOrRaise "firefox" (className =? "Firefox"))
+    , ("<F12>"          , runOrRaise "firefox" (className =? "Firefox"))
     -- , ("<F10>"         , runOrRaise "pidgin" (className =? "Pidgin"))
     , ("<F11>"         , runOrRaise "skype" (className =? "Skype"))
-    , ("<F12>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
+    -- , ("<F12>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
     ]
 
 -- Grid navigation
