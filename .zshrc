@@ -318,13 +318,11 @@ function server () {
 }
 
 #
-# NTA: Slow, don't use for now
-# # Python virtual env setup
+# My Python default virtual env
 
-# if command_exists virtualenvwrapper.sh ; then
-#     source `which virtualenvwrapper.sh`
-#     PROJECT_HOME=~/projects
-# fi
+if [ -s "$HOME/.virtualenvs/default/bin/activate" ] ; then
+    source "$HOME/.virtualenvs/default/bin/activate"
+fi
 
 # 
 # Node version manager
