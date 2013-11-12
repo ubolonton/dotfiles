@@ -21,6 +21,11 @@ export TERM=xterm-256color
 # 
 # PATH
 
+if [ -d "$HOME/.cabal/bin" ] ; then
+    PATH="$HOME/.cabal/bin":$PATH
+fi
+
+
 if [[ $(uname) == "Linux" ]]; then
     # Use user's bin/
     PATH=~/bin:$PATH
