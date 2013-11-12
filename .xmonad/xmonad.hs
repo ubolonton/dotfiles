@@ -72,6 +72,8 @@ main = do
     , ("M4-S-<Space>"  , sendMessage NextLayout)
     , ("M4-<F11>"      , withFocused $ windows . W.sink)
     , ("M4-<F10>"      , sendMessage $ ToggleStrut U)
+    -- , ("M4-S-1"        , viewWS (1 :: ScreenId) (1 :: WorkspaceId))
+    -- , ("M4-S-1"        , OS.viewOnScreen (1 :: ScreenId) (1 :: WorkspaceId))
     -- , ("M4-`"          , gotoMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "'Go To'"])
     -- , ("M4-S-`"        , bringMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "Summon"])
     , ("M4-'"          , goToSelected defaultGSConfig {gs_navigate = myNavigation})
@@ -131,12 +133,15 @@ myManage = composeAll [
   , className =? "Google-chrome" --> doShiftAndGo "6:chrome"
   , className =? "Nautilus" --> doShift "7"
   , className =? "Thunar" --> doShift "7"
+  , className =? "Qbittorrent" --> doShift "7"
   , className =? "Vlc" --> doShiftAndGo "8"
   , className =? "Update-manager" --> doShift "9"
+  , className =? "Gnome-language-selector" --> doShift "9"
   , className =? "Xfce4-panel" --> doFloat
   , className =? "Gpick" --> doFloat
-  , className =? "Do" --> doIgnore
   , className =? "Orage" --> doFloat
+  , className =? "Globaltime" --> doFloat
+  , className =? "Do" --> doIgnore
   , (className =? "Nautilus" <&&> appName =? "file_properties") --> doFloat
   ]
   where doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
