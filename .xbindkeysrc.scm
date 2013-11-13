@@ -222,12 +222,16 @@
 (xbindkey '(XF86Forward)   "conkeror -f gs-next")
 (xbindkey '(XF86Back)      "conkeror -f gs-previous")
 
-(xbindkey '(F6) "conkeror -f ublt-launch-GMail")
-(xbindkey '(F7) "conkeror -f ublt-launch-Feedly")
-(xbindkey '(F8) "conkeror -f ublt-launch-Prismatic")
-(xbindkey '(F9) "conkeror -f ublt-launch-Facebook")
-(xbindkey '(F10) "conkeror -f ublt-launch-Grooveshark")
-(xbindkey '(XF86Calculator) "conkeror -f ublt-launch-CIAS")
+(xbindkey '(F6) "conkeror -f ublt-launch-GMail && wmctrl -x -a Conkeror")
+(xbindkey '(F7) "conkeror -f ublt-launch-Feedly && wmctrl -x -a Conkeror")
+(xbindkey '(F8) "conkeror -f ublt-launch-Prismatic && wmctrl -x -a Conkeror")
+(xbindkey '(F9) "conkeror -f ublt-launch-Facebook && wmctrl -x -a Conkeror")
+(xbindkey '(F10) "conkeror -f ublt-launch-Grooveshark && wmctrl -x -a Conkeror")
+(xbindkey '(XF86Mail) "conkeror -f ublt-launch-GMail && wmctrl -x -a Conkeror")
+
+(xbindkey '(XF86Calculator) "conkeror -f ublt-launch-CIAS && wmctrl -x -a Conkeror")
+(xbindkey '(Mod4 XF86Calculator) "conkeror -f ublt-launch-Redmine && wmctrl -x -a Conkeror")
+(xbindkey '(Mod4 Shift XF86Calculator) "conkeror -f ublt-launch-Gitlab && wmctrl -x -a Conkeror")
 
 ;;; Temp
 (xbindkey '(Mod4 Shift r) "conkeror -f ublt-theme")

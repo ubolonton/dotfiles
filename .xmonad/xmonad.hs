@@ -30,6 +30,7 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.ManageHook
 
 import XMonad.Actions.RotSlaves
@@ -38,7 +39,8 @@ import XMonad.Actions.CycleWindows
 
 main :: IO ()
 main = do
-  xmonad $ gnomeConfig
+  -- ewmh is to play nice with tools like xdotool/wmctrl
+  xmonad $ ewmh $ gnomeConfig
     { terminal = "gnome-terminal"
     , focusFollowsMouse = False
     , borderWidth = 1
