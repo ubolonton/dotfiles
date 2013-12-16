@@ -17,6 +17,8 @@ import XMonad.Actions.WindowBringer (gotoMenuArgs, bringMenuArgs)
 import XMonad.Actions.GridSelect
 import XMonad.Actions.WindowMenu
 import XMonad.Actions.WindowGo
+import qualified XMonad.Actions.OnScreen as OS
+import XMonad.Actions.DynamicWorkspaceGroups
 
 import XMonad.Config.Desktop
 import XMonad.Layout.IM
@@ -153,7 +155,8 @@ myDesktop layout = avoidStrutsOn [U] (layout)
 myLayout = myDesktop myWorkspaceLayout
   where
     myWorkspaceLayout = onWorkspace "4:skype" skype $
-                        onWorkspaces ["1:emacs", "2:conkeror", "3:terminal"] main $
+                        onWorkspaces ["2:conkeror", "3:terminal"] main $
+                        onWorkspaces ["1:emacs"] (Full ||| tiledTab ||| (Mirror (reflectHoriz $ tiledTab))) $
                         onWorkspaces ["5:firefox", "6:chrome"] devBrowser $
                         all
     main = Full ||| tiledTab
@@ -209,5 +212,5 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_F9, xK_F10] [0..]
+        | (key, sc) <- zip [xK_F8, xK_F9] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
