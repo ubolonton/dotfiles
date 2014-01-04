@@ -33,6 +33,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.EwmhDesktops (ewmh)
+import XMonad.Hooks.ManageHelpers (doFullFloat)
 import XMonad.ManageHook
 
 import XMonad.Actions.RotSlaves
@@ -147,6 +148,8 @@ myManage = composeAll [
   , className =? "Globaltime" --> doFloat
   , className =? "Do" --> doIgnore
   , (className =? "Nautilus" <&&> appName =? "file_properties") --> doFloat
+  -- FIX: Centered, with reasonable (not full) size instead
+  , (stringProperty "WM_WINDOW_ROLE" =? "GtkFileChooserDialog") --> doFullFloat
   ]
   where doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
 
