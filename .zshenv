@@ -19,12 +19,18 @@ export TERM=xterm-256color
 # export AWT_TOOLKIT=MToolkit
 
 # 
+export GOPATH="$HOME/Programming/lib/go"
+
+# 
 # PATH
 
 if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$HOME/.cabal/bin":$PATH
 fi
 
+if [ -d "$GOPATH/bin" ] ; then
+    PATH="$GOPATH/bin":$PATH
+fi
 
 if [[ $(uname) == "Linux" ]]; then
     # Use user's bin/
