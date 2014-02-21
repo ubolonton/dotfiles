@@ -12,5 +12,7 @@
   "plusplus": true,
   "regexp": true,
   "unused": true,
-  "strict": false
+  "strict": false,
+
+  "esnext": true
 }
