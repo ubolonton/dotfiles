@@ -198,7 +198,7 @@
 ;; (xbindkey '(Mod4 Shift F3) "wmctrl -r :ACTIVE: -b remove,fullscreen; wmctrl -r :ACTIVE: -e 0,640,0,640,800")
 
 ;; Mouse banishment
-(xbindkey '(Menu) "xdotool mousemove 640 800; xdotool mousemove 640 0")
+(xbindkey '(Menu) "xdotool mousemove 640 800; xdotool mousemove 960 0")
 
 ;;; Crude, but works
 (xbindkey '(XF86AudioMedia) "emacsclient -e '(ublt/start-or-pause)'")
