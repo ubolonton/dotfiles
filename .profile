@@ -30,5 +30,3 @@ export CAPP_BUILD="/Users/lonton/Tools/cappuccino/Build"
 alias ls='ls -aCFG'
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
-
-echo WTF
