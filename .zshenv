@@ -19,7 +19,6 @@ export TERM=xterm-256color
 # export AWT_TOOLKIT=MToolkit
 
 # 
-
 function ublt/add-path {
     if [ -d "$1" ] ; then
         case ":$PATH:" in
@@ -35,17 +34,6 @@ function ublt/add-path {
 }
 
 # 
-# Haskell
-
-ublt/add-path "$HOME/.cabal/bin"
-
-# 
-# Go
-
-export GOPATH="$HOME/Programming/lib/go"
-ublt/add-path "$GOPATH/bin"
-
-# 
 # ~/bin
 
 if [[ $(uname) == "Linux" ]]; then
@@ -59,6 +47,49 @@ elif [[ $(uname) == "Darwin" ]]; then
     ublt/add-path "~/bin"
 fi
 
+# 
+# Haskell
+
+ublt/add-path "$HOME/.cabal/bin"
+
+# 
+# Go
+
+export GOPATH="$HOME/Programming/lib/go"
+ublt/add-path "$GOPATH/bin"
+
+#
+# Python's default virtual environment
+
+# XXX: Because virtualenv always "puts" its path at the beginning, and
+# because rvm always "wants" its path at the beginning
+case ":$PATH:" in
+    *:$HOME/.virtualenvs/default/bin:*)
+        ;;
+    *)
+        if [ -s "$HOME/.virtualenvs/default/bin/activate" ] ; then
+            source "$HOME/.virtualenvs/default/bin/activate"
+        fi
+        ;;
+esac
+
+
+# 
+# Node version manager
+
+if [ -s "$HOME/.nvm/nvm.sh" ] ; then
+    source "$HOME/.nvm/nvm.sh"
+fi
+
+# 
+# Ruby version manager
+
+# Load RVM into a shell session *as a function*
+if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
+    source "$HOME/.rvm/scripts/rvm"
+fi
+
 # # 
-# Deduplication
+# Path deduplication
+
 typeset -U PATH

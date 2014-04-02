@@ -333,37 +333,6 @@ alias vssh="ssh vagrant@127.0.0.1 -p 2222 \
 -o IdentitiesOnly=yes \
 -i /home/ubolonton/.vagrant.d/insecure_private_key"
 
-#
-# My Python default virtual env
-
-# XXX: Because virtualenv always "puts" its path at the beginning, and
-# because rvm always "wants" its path at the beginning
-case ":$PATH:" in
-    *:$HOME/.virtualenvs/default/bin:*)
-        ;;
-    *)
-        if [ -s "$HOME/.virtualenvs/default/bin/activate" ] ; then
-            source "$HOME/.virtualenvs/default/bin/activate"
-        fi
-        ;;
-esac
-
-
-# 
-# Node version manager
-
-if [ -s "$HOME/.nvm/nvm.sh" ] ; then
-    source "$HOME/.nvm/nvm.sh"
-fi
-
-# 
-# Ruby version manager
-
-# Load RVM into a shell session *as a function*
-if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
-    source "$HOME/.rvm/scripts/rvm"
-fi
-
 # 
 # Path deduplication
 typeset -U PATH
