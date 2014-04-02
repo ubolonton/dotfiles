@@ -336,9 +336,18 @@ alias vssh="ssh vagrant@127.0.0.1 -p 2222 \
 #
 # My Python default virtual env
 
-if [ -s "$HOME/.virtualenvs/default/bin/activate" ] ; then
-    source "$HOME/.virtualenvs/default/bin/activate"
-fi
+# XXX: Because virtualenv always "puts" its path at the beginning, and
+# because rvm always "wants" its path at the beginning
+case ":$PATH:" in
+    *:$HOME/.virtualenvs/default/bin:*)
+        ;;
+    *)
+        if [ -s "$HOME/.virtualenvs/default/bin/activate" ] ; then
+            source "$HOME/.virtualenvs/default/bin/activate"
+        fi
+        ;;
+esac
+
 
 # 
 # Node version manager

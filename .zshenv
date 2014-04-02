@@ -19,26 +19,46 @@ export TERM=xterm-256color
 # export AWT_TOOLKIT=MToolkit
 
 # 
-export GOPATH="$HOME/Programming/lib/go"
+
+function ublt/add-path {
+    if [ -d "$1" ] ; then
+        case ":$PATH:" in
+            *:$1:*)
+                # echo "Skipping $1"
+                ;;
+            *)
+                # echo "Adding $1"
+                PATH="$1":$PATH
+                ;;
+        esac
+    fi
+}
 
 # 
-# PATH
+# Haskell
 
-if [ -d "$HOME/.cabal/bin" ] ; then
-    PATH="$HOME/.cabal/bin":$PATH
-fi
+ublt/add-path "$HOME/.cabal/bin"
 
-if [ -d "$GOPATH/bin" ] ; then
-    PATH="$GOPATH/bin":$PATH
-fi
+# 
+# Go
+
+export GOPATH="$HOME/Programming/lib/go"
+ublt/add-path "$GOPATH/bin"
+
+# 
+# ~/bin
 
 if [[ $(uname) == "Linux" ]]; then
     # Use user's bin/
-    PATH=~/bin:$PATH
+    ublt/add-path "~/bin"
 elif [[ $(uname) == "Darwin" ]]; then
     # Use user's bin/ & gnu replacements
-    PATH=~/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
+    ublt/add-path "/opt/local/sbin"
+    ublt/add-path "/opt/local/bin"
+    ublt/add-path "/opt/local/libexec/gnubin"
+    ublt/add-path "~/bin"
 fi
 
+# # 
 # Deduplication
 typeset -U PATH
