@@ -38,13 +38,13 @@ function ublt/add-path {
 
 if [[ $(uname) == "Linux" ]]; then
     # Use user's bin/
-    ublt/add-path "~/bin"
+    ublt/add-path "$HOME/bin"
 elif [[ $(uname) == "Darwin" ]]; then
     # Use user's bin/ & gnu replacements
     ublt/add-path "/opt/local/sbin"
     ublt/add-path "/opt/local/bin"
     ublt/add-path "/opt/local/libexec/gnubin"
-    ublt/add-path "~/bin"
+    ublt/add-path "$HOME/bin"
 fi
 
 # 
