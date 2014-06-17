@@ -208,10 +208,6 @@
 (xbindkey '(Mod4 XF86Forward)   "emacsclient -e '(emms-next)")
 (xbindkey '(Mod4 XF86Back)       "emacsclient -e '(emms-previous)")
 
-(xbindkey '(XF86Mail) "conkeror -f switch-to-gmail-buffer && conkeror -f unfocus")
-(xbindkey '(Mod4 XF86Mail) "conkeror -f switch-to-gmail-buffer && conkeror -f unfocus")
-
-;;; ...
 (xbindkey '(XF86AudioRaiseVolume) "amixer set Master 2.25dB+")
 (xbindkey '(XF86AudioLowerVolume) "amixer set Master 2.25dB-")
 
@@ -227,15 +223,23 @@
 (xbindkey '(F8) "conkeror -f ublt-launch-Prismatic && wmctrl -x -a Conkeror")
 (xbindkey '(F9) "conkeror -f ublt-launch-Facebook && wmctrl -x -a Conkeror")
 (xbindkey '(F10) "conkeror -f ublt-launch-Grooveshark && wmctrl -x -a Conkeror")
-(xbindkey '(XF86Mail) "conkeror -f ublt-launch-GMail && wmctrl -x -a Conkeror")
+;; (xbindkey '(XF86Mail) "conkeror -f ublt-launch-GMail && wmctrl -x -a Conkeror")
 
 (xbindkey '(XF86Calculator) "conkeror -f ublt-launch-CIAS && wmctrl -x -a Conkeror")
 (xbindkey '(Mod4 XF86Calculator) "conkeror -f ublt-launch-Redmine && wmctrl -x -a Conkeror")
 (xbindkey '(Mod4 Shift XF86Calculator) "conkeror -f ublt-launch-Gitlab && wmctrl -x -a Conkeror")
 
+(xbindkey '(Mod4 XF86Sleep) "toggle-night-vision")
+
+;;; Somehow if we bind XF86Mail TAB gets bound as well
+(xbindkey '(Mod4 XF86Mail) "exo-open --launch MailReader")
+
 ;;; Temp
-(xbindkey '(Mod4 Shift r) "conkeror -f ublt-theme")
-(xbindkey '(Mod4 r) "conkeror-test -f ublt-theme-test")
+;; (xbindkey '(Mod4 Shift r) "conkeror -f ublt-theme")
+;; (xbindkey '(Mod4 r) "conkeror -f ublt-theme-test")
+
+;; (xbindkey  "xrandr --output LVDS1 --off")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
