@@ -147,6 +147,7 @@ myManage = composeAll [
   , className =? "Orage" --> doFloat
   , className =? "Globaltime" --> doFloat
   , className =? "Do" --> doIgnore
+  , title =? "Whisker Menu" --> doFloat
   , (className =? "Nautilus" <&&> appName =? "file_properties") --> doFloat
   -- FIX: Centered, with reasonable (not full) size instead
   , (stringProperty "WM_WINDOW_ROLE" =? "GtkFileChooserDialog") --> doFullFloat
