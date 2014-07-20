@@ -88,9 +88,9 @@ main = do
     , ("<F2>"          , runOrRaise "conkeror" (className =? "Conkeror"))
     , ("<F3>"          , runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
     , ("<F12>"          , runOrRaise "firefox" (className =? "Firefox"))
+    , ("S-<F12>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
     -- , ("<F10>"         , runOrRaise "pidgin" (className =? "Pidgin"))
     , ("<F11>"         , runOrRaise "skype" (className =? "Skype"))
-    -- , ("<F12>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
     ]
 
 -- Grid navigation
