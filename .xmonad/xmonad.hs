@@ -147,6 +147,7 @@ myManage = composeAll [
   , className =? "Orage" --> doFloat
   , className =? "Globaltime" --> doFloat
   , className =? "Do" --> doIgnore
+  , className =? "Xfce4-notifyd" --> doIgnore
   , title =? "Whisker Menu" --> doFloat
   , (className =? "Nautilus" <&&> appName =? "file_properties") --> doFloat
   -- FIX: Centered, with reasonable (not full) size instead
