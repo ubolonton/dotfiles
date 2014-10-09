@@ -168,6 +168,9 @@ bindkey -M isearch "\et" history-incremental-search-forward
 bindkey -M isearch "\em" history-incremental-search-backward
 bindkey -M isearch "\ev" history-incremental-search-forward
 
+# To "help" autokey
+bindkey -e "^[[D" backward-word
+bindkey -e "^[[C" emacs-forward-word
 
 # 
 # autojump ("j <partial name>")

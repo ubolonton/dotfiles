@@ -1,1 +1,7 @@
 My personal config files. Clone and create appropriate symbolic links.
+
+* .autokey
+#+begin_src sh
+sudo apt-get install autokey
+#+end_src
+Add .autokey dir
