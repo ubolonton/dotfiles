@@ -164,7 +164,9 @@ bindkey -e "\eb" menu-complete
 bindkey -e "\e " insert-last-word
 
 bindkey -M isearch "\ec" history-incremental-search-backward
+bindkey -M isearch "^[OA" history-incremental-search-backward
 bindkey -M isearch "\et" history-incremental-search-forward
+bindkey -M isearch "^[OB" history-incremental-search-backward
 bindkey -M isearch "\em" history-incremental-search-backward
 bindkey -M isearch "\ev" history-incremental-search-forward
 
