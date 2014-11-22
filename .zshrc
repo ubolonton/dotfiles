@@ -57,6 +57,10 @@ function ublt/nvm-info {
     [ $NVM_BIN ] && echo "%{$fg[green]%} js%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(basename $(dirname $NVM_BIN))
 }
 
+function ublt/rbenv-info {
+    [ rbenv ] && echo "%{$fg[green]%} rb%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(rbenv version-name)
+}
+
 function ublt/date {
     date '+%a %Y-%m-%d %T %Z'
 }
@@ -81,9 +85,10 @@ function ublt/prompt {
     local date_time="%{$terminfo[bold]$fg[cyan]%}$(ublt/date)%{$reset_color%}"
     local virtual_env_info="$(ublt/virtualenv-info)"
     local nvm_info="$(ublt/nvm-info)"
+    local rbenv_info="$(ublt/rbenv-info)"
 
     # Left, right, and second lines
-    local   left="╭─ ${user_host}${virtual_env_info}${nvm_info}"
+    local   left="╭─ ${user_host}${virtual_env_info}${nvm_info}${rbenv_info}"
     local second="╰─%B%b "
     local right="${date_time}"
 
