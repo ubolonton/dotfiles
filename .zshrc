@@ -341,3 +341,8 @@ alias vssh="ssh vagrant@127.0.0.1 -p 2222 \
 # 
 # Path deduplication
 typeset -U PATH
+
+if command_exists rbenv ; then
+    eval "$(rbenv init -)"
+fi
+

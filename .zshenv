@@ -89,6 +89,9 @@ if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
     source "$HOME/.rvm/scripts/rvm"
 fi
 
+ublt/add-path "$HOME/.rbenv/bin"
+
+
 # # 
 # Path deduplication
 
