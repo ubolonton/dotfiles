@@ -225,7 +225,6 @@
 (xbindkey '(F10) "conkeror -f ublt-launch-Grooveshark && wmctrl -x -a Conkeror")
 ;; (xbindkey '(XF86Mail) "conkeror -f ublt-launch-GMail && wmctrl -x -a Conkeror")
 
-(xbindkey '(XF86Calculator) "conkeror -f ublt-launch-CIAS && wmctrl -x -a Conkeror")
 (xbindkey '(Mod4 XF86Calculator) "conkeror -f ublt-launch-Redmine && wmctrl -x -a Conkeror")
 (xbindkey '(Mod4 Shift XF86Calculator) "conkeror -f ublt-launch-Gitlab && wmctrl -x -a Conkeror")
 
