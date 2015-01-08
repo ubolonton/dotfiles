@@ -1,0 +1,15 @@
+# -*- mode: conf -*-
+$include /etc/inputrc
+
+# C-<delete>
+"\e[3;5~": kill-word
+# C-<backspace> (needs to set "Backspace generates escape sequence" in
+# Gnome Terminal's Preferences' compatibility tab)
+"\e[3~": backward-kill-word
+
+# M-i M-I (my Dvorak's layout strategy)
+"\ei": kill-line
+"\eI": kill-whole-line
+
+"\em": reverse-search-history
+"\ev": forward-search-history

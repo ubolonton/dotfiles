@@ -136,7 +136,11 @@ PROMPT='$(ublt/prompt)'
 RPROMPT='$(ublt/right-prompt)'
 
 #
-# Personal key bindings for Dvorak layout
+# Personal key bindings for Dvorak layout (note that like my Emacs'
+# bindings, these handle both cases: with and without Autokey's
+# remapping)
+
+# \e means "escape sequence". C-v then type to see
 
 bindkey -e "\eh" backward-char
 bindkey -e "\en" forward-char
@@ -178,6 +182,14 @@ bindkey -M isearch "\ev" history-incremental-search-forward
 # To "help" autokey
 bindkey -e "^[[D" backward-word
 bindkey -e "^[[C" emacs-forward-word
+
+# C-<delete> (needs to set "Delete generates escape sequence" in
+# Gnome Terminal's Preferences' compatibility tab)
+bindkey -e "\e[3;5~" kill-word
+# C-<backspace> (needs to set "Backspace generates escape sequence" in
+# Gnome Terminal's Preferences' compatibility tab)
+bindkey -e "\e[3~" backward-kill-word
+
 
 # 
 # autojump ("j <partial name>")
