@@ -1,7 +1,11 @@
-{:user {:plugins [[lein-difftest "1.3.7"]
-                  [lein-marginalia "0.7.0"]
-                  [lein-pprint "1.1.1"]
+{:user {:plugins [[lein-difftest "2.0.0"]
+                  [lein-marginalia "0.8.0"]
+                  [lein-pprint "1.1.2"]
                   ;; [lein-noir "1.2.1"]
                   ;; [noir/lein-template "1.3.0"]
-                  [lein-cljsbuild "0.3.3"]]
-        :dependencies [[com.cemerick/pomegranate "0.0.13"]]}}
+                  [refactor-nrepl "0.2.2"]
+                  [lein-cljsbuild "1.0.4"]
+                  [lein-ancient "0.5.5"]
+                  [cider/cider-nrepl "0.8.2"]]
+        :dependencies [[com.cemerick/pomegranate "0.3.0"]
+                       [ring-serve "0.1.2"]]}}
