@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="next_tab" mtime="1405824994" type="string">
+		<stringvalue>&lt;Super&gt;braceright</stringvalue>
+	</entry>
+	<entry name="prev_tab" mtime="1405824991" type="string">
+		<stringvalue>&lt;Super&gt;braceleft</stringvalue>
+	</entry>
+	<entry name="set_window_title" mtime="1405824985" type="string">
+		<stringvalue>&lt;Shift&gt;&lt;Super&gt;t</stringvalue>
+	</entry>
+	<entry name="toggle_menubar" mtime="1405824953" type="string">
+		<stringvalue>&lt;Primary&gt;F10</stringvalue>
+	</entry>
+	<entry name="paste" mtime="1405824944" type="string">
+		<stringvalue>&lt;Super&gt;v</stringvalue>
+	</entry>
+	<entry name="copy" mtime="1405824940" type="string">
+		<stringvalue>&lt;Super&gt;c</stringvalue>
+	</entry>
+	<entry name="close_window" mtime="1405824934" type="string">
+		<stringvalue>&lt;Super&gt;q</stringvalue>
+	</entry>
+	<entry name="close_tab" mtime="1405824929" type="string">
+		<stringvalue>&lt;Super&gt;w</stringvalue>
+	</entry>
+	<entry name="new_window" mtime="1405824921" type="string">
+		<stringvalue>&lt;Super&gt;n</stringvalue>
+	</entry>
+	<entry name="new_tab" mtime="1405824916" type="string">
+		<stringvalue>&lt;Super&gt;t</stringvalue>
+	</entry>
+</gconf>

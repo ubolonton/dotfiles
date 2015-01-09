@@ -9,3 +9,7 @@ Add .autokey dir via GUI
 * Konsole
 Symlink =~/.kde/share/apps/konsole= to =konsole=
 Symlink =~/.kde/share/config/konsolerc= to =konsolerc=
+
+* Gnome-terminal
+Just in case (use Konsole if possible).
+Symlink =~/.gconf/apps/gnome-terminal= to =gnome-terminal=
