@@ -182,14 +182,9 @@ bindkey -M isearch "\ev" history-incremental-search-forward
 # To "help" autokey
 bindkey -e "^[[D" backward-word
 bindkey -e "^[[C" emacs-forward-word
-
 # C-<delete> (needs to set "Delete generates escape sequence" in
 # Gnome Terminal's Preferences' compatibility tab)
 bindkey -e "\e[3;5~" kill-word
-# C-<backspace> (needs to set "Backspace generates escape sequence" in
-# Gnome Terminal's Preferences' compatibility tab)
-bindkey -e "\e[3~" backward-kill-word
-
 
 # 
 # autojump ("j <partial name>")
