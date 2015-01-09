@@ -86,13 +86,11 @@ main = do
     -- , ("M4-S-`"        , bringMenuArgs ["-b", "-l", "10", "-fn", "'10x20'", "-nb", "'#0C1320'", "-nf", "'#505764'", "-sb", "'#131A27'", "-sf", "'cyan'", "-p", "Summon"])
     , ("M4-'"          , goToSelected defaultGSConfig {gs_navigate = myNavigation})
     , ("M4-S-'"        , bringSelected defaultGSConfig {gs_navigate = myNavigation})
-    , ("M4-o"          , windowMenu)
+    -- , ("M4-o"          , windowMenu)
     , ("<F1>"          , runOrRaise "emacs" (className =? "Emacs" <||> className =? "Emacs24")) -- FIX
     , ("<F2>"          , runOrRaise "conkeror" (className =? "Conkeror"))
     , ("<F3>"          , runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
-    , ("<F12>"       , runOrRaise "firefox" (className =? "Firefox"))
-    -- , ("<F12>"         , runOrRaise "google-chrome" (className =? "Google-chrome"))
-    -- , ("<F10>"         , runOrRaise "pidgin" (className =? "Pidgin"))
+    , ("<F12>"       , runOrRaise "firefox" (className =? "Firefox" <||> className =? "Firefox-dev"))
     , ("<F11>"         , runOrRaise "skype" (className =? "Skype"))
     ]
 
@@ -138,6 +136,7 @@ myManage = composeAll [
   , className =? "Gnome-terminal" --> doShiftAndGo "3:terminal"
   , className =? "Skype" --> doShift "4:skype"
   , className =? "Firefox" --> doShiftAndGo "5:firefox"
+  , className =? "Firefox-dev" --> doShiftAndGo "5:firefox"
   , className =? "Google-chrome" --> doShiftAndGo "6:chrome"
   , className =? "Nautilus" --> doShift "7"
   , className =? "Thunar" --> doShift "7"
