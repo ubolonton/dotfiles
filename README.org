@@ -4,4 +4,8 @@ My personal config files. Clone and create appropriate symbolic links.
 #+begin_src sh
 sudo apt-get install autokey
 #+end_src
-Add .autokey dir
+Add .autokey dir via GUI
+
+* Konsole
+Symlink =~/.kde/share/apps/konsole= to =konsole=
+Symlink =~/.kde/share/config/konsolerc= to =konsolerc=

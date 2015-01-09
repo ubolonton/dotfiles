@@ -145,7 +145,7 @@ RPROMPT='$(ublt/right-prompt)'
 bindkey -e "\eh" backward-char
 bindkey -e "\en" forward-char
 bindkey -e "\eg" backward-word
-bindkey -e "\er" emacs-forward-word
+bindkey -e "\er" forward-word
 
 bindkey -e "\ee" backward-delete-char
 bindkey -e "\eu" delete-char
@@ -181,10 +181,17 @@ bindkey -M isearch "\ev" history-incremental-search-forward
 
 # To "help" autokey
 bindkey -e "^[[D" backward-word
-bindkey -e "^[[C" emacs-forward-word
-# C-<delete> (needs to set "Delete generates escape sequence" in
-# Gnome Terminal's Preferences' compatibility tab)
+bindkey -e "^[[C" forward-word
+# C-<delete>: Works on most terminal emulators. If not, configure
 bindkey -e "\e[3;5~" kill-word
+# XXX: To use these, configure Konsole > Settings > Edit Current
+# Profile > Keyboard: Backspace+Ctrl => \E[25~ (just type them in).
+# Note that we don't use ";5" or ";*" because tmux refuses to forward
+# them.
+bindkey -e "\e[25~" backward-delete-char
+bindkey -e "\e[26~" backward-kill-word
+bindkey -e "\e[27~" kill-word
+
 
 # 
 # autojump ("j <partial name>")
