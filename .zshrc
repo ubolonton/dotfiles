@@ -58,7 +58,9 @@ function ublt/nvm-info {
 }
 
 function ublt/rbenv-info {
-    [ rbenv ] && echo "%{$fg[green]%} rb%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(rbenv version-name)
+    if command_exists rbenv ; then
+        echo "%{$fg[green]%} rb%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(rbenv version-name)
+    fi
 }
 
 function ublt/date {
