@@ -366,10 +366,15 @@ alias vssh="ssh vagrant@127.0.0.1 -p 2222 \
 -i /home/ubolonton/.vagrant.d/insecure_private_key"
 
 # 
-# Path deduplication
-typeset -U PATH
+# Clojure
+export LEIN_FAST_TRAMPOLINE=y
+alias cljsbuild="lein trampoline cljsbuild $@"
+
+# 
 
 if command_exists rbenv ; then
     eval "$(rbenv init -)"
 fi
 
+# Path deduplication
+typeset -U PATH
