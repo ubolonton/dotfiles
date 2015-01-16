@@ -3,7 +3,7 @@ import XMonad.Config.Gnome
 import XMonad.Actions.Submap
 
 import Control.Monad (liftM2)
-import Control.Arrow hiding ((|||))
+import Control.Arrow hiding ((|||), (<+>))
 import Data.Bits
 import Data.Monoid
 import qualified Data.Map as M
@@ -30,8 +30,10 @@ import XMonad.Layout.Master (multimastered)
 import XMonad.Layout.PerWorkspace
 
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.FadeInactive
+-- import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.FadeWindows
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.Place
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.ManageHelpers (doFullFloat)
 import XMonad.ManageHook
@@ -44,15 +46,17 @@ main :: IO ()
 main = do
   -- ewmh is to play nice with tools like xdotool/wmctrl
   xmonad $ ewmh $ gnomeConfig
-    { terminal = "gnome-terminal"
+    { terminal = "konsole"
     , focusFollowsMouse = False
     , borderWidth = 1
     -- , keys = addPrefix (mod4Mask, xK_space) (keys gnomeConfig)
     , keys = myKeys
-    -- For compatibility with some java programs
+    -- For compatibility with some java programs. TODO: Maybe just
+    -- run "wmname LG3D"
     , startupHook = setWMName "LG3D"
     , layoutHook = myLayout
-    , logHook = myLog
+    , logHook = fadeWindowsLogHook myLog
+    -- , logHook = myLog
     , manageHook = myManage XMonad.ManageHook.<+> manageHook gnomeConfig
     , modMask = mod4Mask
     , focusedBorderColor = "#00DD00" -- "#89A1F3"
@@ -89,7 +93,7 @@ main = do
     -- , ("M4-o"          , windowMenu)
     , ("<F1>"          , runOrRaise "emacs" (className =? "Emacs" <||> className =? "Emacs24")) -- FIX
     , ("<F2>"          , runOrRaise "conkeror" (className =? "Conkeror"))
-    , ("<F3>"          , runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
+    , ("<F3>"          , runOrRaise "konsole" (className =? "Konsole"))
     , ("<F12>"       , runOrRaise "firefox" (className =? "Firefox" <||> className =? "Firefox-dev"))
     , ("<F11>"         , runOrRaise "skype" (className =? "Skype"))
     ]
@@ -134,6 +138,7 @@ myManage = composeAll [
   , className =? "Emacs24" --> doShiftAndGo "1:emacs"
   , className =? "Conkeror" --> doShiftAndGo "2:conkeror"
   , className =? "Gnome-terminal" --> doShiftAndGo "3:terminal"
+  , className =? "Konsole" --> doShiftAndGo "3:terminal"
   , className =? "Skype" --> doShift "4:skype"
   , className =? "Firefox" --> doShiftAndGo "5:firefox"
   , className =? "Firefox-dev" --> doShiftAndGo "5:firefox"
@@ -148,8 +153,13 @@ myManage = composeAll [
   , className =? "Gpick" --> doFloat
   , className =? "Orage" --> doFloat
   , className =? "Globaltime" --> doFloat
+  , className =? "Yakuake" --> doFloat
   , className =? "Do" --> doIgnore
   , className =? "Xfce4-notifyd" --> doIgnore
+  -- , appName =? "ublt-helm-dedicated" --> placeHook( fixed(1,1)) <+> doFloat <+> doF W.focusDown
+  , appName =? "ublt-helm-dedicated" --> doIgnore
+  , className =? "Screenkey" --> placeHook( withGaps(0, 0, 0, 0)(fixed(0,1)) ) <+> doFloat <+> doF W.focusDown
+  -- , (className =? "Kazam" <&&> title =? "kazam") --> doIgnore
   , title =? "Whisker Menu" --> doFloat
   , (className =? "Nautilus" <&&> appName =? "file_properties") --> doFloat
   -- FIX: Centered, with reasonable (not full) size instead
@@ -181,8 +191,21 @@ myLayout = myDesktop myWorkspaceLayout
     ratio = 7/10 - 1/30
     delta = 1/30
 
-myLog = fadeInactiveLogHook fadeAmount
-  where fadeAmount = 1
+-- myLog = fadeInactiveLogHook fadeAmount
+--   where fadeAmount = 1
+
+-- XXX: Doesn't seem to work
+myLog = composeAll [
+  (appName =? "ublt-helm-dedicated") --> transparency 0.5
+  , (className =? "Emacs") --> transparency 0.9
+  , opaque
+  ]
+
+-- myFadeHook = composeAll [
+--   isUnfocused --> transparency 0.2
+--   , isFloating --> transparency 0.9
+--   , opaque
+--   ]
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
