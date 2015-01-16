@@ -91,6 +91,11 @@ fi
 
 ublt/add-path "$HOME/.rbenv/bin"
 
+# 
+# PHP globally installed packages
+
+ublt/add-path "$HOME/.composer/vendor/bin"
+
 
 # # 
 # Path deduplication
