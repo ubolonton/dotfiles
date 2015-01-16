@@ -323,18 +323,24 @@ function extract () {
         *.Z)         uncompress $1  ;;
         *.7z)        7z x $1        ;;
         *)     echo "'$1' cannot be extracted via extract()" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
+      esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
+
+# 
+# Postgres & MySQL
+alias createdb='createdb --encoding=utf8 --lc-ctype=en_US.utf8 --lc-collate=en_US.utf8 --template=template0'
+
+alias mysql='mysql --pager=less'
 
 #
 # Run a simple http server (after optionally opening the browser if
 # possible)
 
 function server () {
-    local port="${1:-1111}" &&
+    local port=${1:-1111} &&
     if command_exists gnome-open ; then # Linux
         gnome-open "http://localhost:${port}/"
     elif command_exists open ; then # Mac
