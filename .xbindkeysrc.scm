@@ -232,6 +232,9 @@
 ;;; Somehow if we bind XF86Mail TAB gets bound as well
 (xbindkey '(Mod4 XF86Mail) "exo-open --launch MailReader")
 
+
+(xbindkey '(Mod4 "6") "yakuake")
+
 ;;; Temp
 ;; (xbindkey '(Mod4 Shift r) "conkeror -f ublt-theme")
 ;; (xbindkey '(Mod4 r) "conkeror -f ublt-theme-test")
