@@ -8,13 +8,16 @@ $include /etc/inputrc
 # Profile > Keyboard: Backspace+Ctrl => \E[25~ (just type them in).
 # Note that we don't use ";5" or ";*" because tmux refuses to forward
 # them.
-"\e[25~": backward-delete-char
-"\e[26~": backward-kill-word
-"\e[27~": kill-word
+"\ee": backward-delete-char
+"\e.": backward-kill-word
+"\ep": kill-word
 
-# XXX: Because Konsole-tmux-zsh-readline, not exactly sure why.
-"\eOD": backward-word
-"\eOC": forward-word
+# # XXX: Because Konsole-tmux-zsh-readline, not exactly sure why.
+# "\eOD": backward-word
+# "\eOC": forward-word
+
+"\eg": backward-word
+"\er": forward-word
 
 # M-i M-I (my Dvorak's layout strategy)
 "\ei": kill-line

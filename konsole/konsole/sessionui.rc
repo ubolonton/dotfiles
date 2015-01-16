@@ -56,9 +56,9 @@
   <Action name="close-session"/>
  </Menu>
  <ActionProperties scheme="Default">
-  <Action shortcut="Ctrl+Shift+W; Meta+W" name="close-session"/>
+  <Action shortcut="Ctrl+Shift+W" name="close-session"/>
   <Action shortcut="Ctrl+Shift+C; Meta+C" name="edit_copy"/>
   <Action shortcut="Ctrl+Shift+V; Meta+V" name="edit_paste"/>
-  <Action shortcut="Ctrl+Alt+S; Meta+Shift+T" name="rename-session"/>
+  <Action shortcut="Ctrl+Alt+S" name="rename-session"/>
  </ActionProperties>
 </kpartgui>
