@@ -194,6 +194,10 @@ bindkey -e "\e[25~" backward-delete-char
 bindkey -e "\e[26~" backward-kill-word
 bindkey -e "\e[27~" kill-word
 
+# XXX: WTF tmux
+bindkey -e "\e[1~" beginning-of-line
+bindkey -e "\e[4~" end-of-line
+
 
 # 
 # autojump ("j <partial name>")
