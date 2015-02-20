@@ -1,0 +1,7 @@
+#! /bin/sh
+
+pkill xbindkeys && xbindkeys
+
+/home/ubolonton/bin/xrandr-dell-home
+
+sleep 3 && xfce4-panel --restart && pkill gnome-terminal && konsole
