@@ -16,18 +16,18 @@ key Ins-AnyModifier : "\E[2~"
 key Ins+KeyPad : "\E[2~"
 key Del-AnyModifier : "\E[3~"
 key Del+KeyPad : "\E[3~"
-key Home+Shift-AppScreen : ScrollUpToTop
-key Home+AnyModifier : "\E[1;*H"
+# key Home+Shift-AppScreen : ScrollUpToTop
+# key Home+AnyModifier : "\E[1;*H"
 key Home+AppCursorKeys-AnyModifier : "\EOH"
-key Home-AppCursorKeys-AnyModifier : "\E[H"
-key Home+KeyPad-AppCursorKeys : "\E[H"
-key Home+KeyPad+AppCursorKeys : "\EOH"
-key End+Shift-AppScreen : ScrollDownToBottom
-key End+AnyModifier : "\E[1;*F"
+# key Home-AppCursorKeys-AnyModifier : "\E[H"
+# key Home+KeyPad-AppCursorKeys : "\E[H"
+# key Home+KeyPad+AppCursorKeys : "\EOH"
+# key End+Shift-AppScreen : ScrollDownToBottom
+# key End+AnyModifier : "\E[1;*F"
 key End+AppCursorKeys-AnyModifier : "\EOF"
-key End-AppCursorKeys-AnyModifier : "\E[F"
-key End+KeyPad-AppCursorKeys : "\E[F"
-key End+KeyPad+AppCursorKeys : "\EOF"
+# key End-AppCursorKeys-AnyModifier : "\E[F"
+# key End+KeyPad-AppCursorKeys : "\E[F"
+# key End+KeyPad+AppCursorKeys : "\EOF"
 key Left-Shift+KeyPad+Ansi-AppCursorKeys : "\E[D"
 key Left-Shift+KeyPad+Ansi+AppCursorKeys : "\EOD"
 key Left+Shift+AppScreen : "\E[1;*D"
@@ -91,9 +91,13 @@ key F11-AnyModifier : "\E[23~"
 key F12+AnyModifier : "\E[24;*~"
 key F12-AnyModifier : "\E[24~"
 
-# Personal positional navigation (Dvorak)
+# Undo autokey mappings to get personal positional navigation (Dvorak)
+# (to be handled by zshrc/readline).
 key Backspace : "\Ee"
 key Backspace+Ctrl : "\E."
 key Del+Ctrl : "\Ep"
 key Left+Ctrl: "\Eg"
 key Right+Ctrl: "\Er"
+
+key Home+Ctrl : "\EG"
+key End+Ctrl : "\ER"
