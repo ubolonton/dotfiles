@@ -212,11 +212,17 @@
 (xbindkey '(XF86AudioLowerVolume) "amixer set Master 2.25dB-")
 
 ;;; Controling grooveshark
-(xbindkey '(XF86AudioPlay) "conkeror -f gs-play-or-pause")
-(xbindkey '(XF86AudioNext) "conkeror -f gs-next")
-(xbindkey '(XF86AudioPrev) "conkeror -f gs-previous")
-(xbindkey '(XF86Forward)   "conkeror -f gs-next")
-(xbindkey '(XF86Back)      "conkeror -f gs-previous")
+;; (xbindkey '(XF86AudioPlay) "conkeror -f gs-play-or-pause")
+;; (xbindkey '(XF86AudioNext) "conkeror -f gs-next")
+;; (xbindkey '(XF86AudioPrev) "conkeror -f gs-previous")
+;; (xbindkey '(XF86Forward)   "conkeror -f gs-next")
+;; (xbindkey '(XF86Back)      "conkeror -f gs-previous")
+
+;;; Controlling VLC
+(xbindkey '(XF86AudioPlay) "qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause")
+(xbindkey '(XF86AudioNext) "qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next")
+(xbindkey '(XF86AudioPrev) "qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous")
+
 
 (xbindkey '(F6) "conkeror -f ublt-launch-GMail && wmctrl -x -a Conkeror")
 (xbindkey '(F7) "conkeror -f ublt-launch-Feedly && wmctrl -x -a Conkeror")
