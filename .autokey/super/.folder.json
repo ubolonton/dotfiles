@@ -1,0 +1,23 @@
+{
+    "usageCount": 1, 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [], 
+        "immediate": false, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "modes": [], 
+    "title": "super", 
+    "hotkey": {
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "filter": {
+        "regex": "^.*(emacs|Konsole|Conkeror).*$", 
+        "isRecursive": true
+    }, 
+    "type": "folder", 
+    "showInTrayMenu": true
+}
