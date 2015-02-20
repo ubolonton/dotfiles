@@ -134,7 +134,7 @@ addPrefix p ms conf =
 myWorkspaces = ["1:emacs", "2:conkeror", "3:terminal", "4:skype", "5:firefox", "6:chrome", "7", "8", "9"]
 
 myManage = composeAll [
-    className =? "Emacs" --> doShiftAndGo "1:emacs"
+  className =? "Emacs" --> doShiftAndGo "1:emacs"
   , className =? "Emacs24" --> doShiftAndGo "1:emacs"
   , className =? "Conkeror" --> doShiftAndGo "2:conkeror"
   , className =? "Gnome-terminal" --> doShiftAndGo "3:terminal"
@@ -156,6 +156,8 @@ myManage = composeAll [
   , className =? "Yakuake" --> doFloat
   , className =? "Do" --> doIgnore
   , className =? "Xfce4-notifyd" --> doIgnore
+  , className =? "Firefox-dev" <&&> appName =? "Toplevel" --> doFloat
+  , className =? "Firefox-dev" <&&> appName =? "KeySnail" --> doFloat
   -- , appName =? "ublt-helm-dedicated" --> placeHook( fixed(1,1)) <+> doFloat <+> doF W.focusDown
   , appName =? "ublt-helm-dedicated" --> doIgnore
   , className =? "Screenkey" --> placeHook( withGaps(0, 0, 0, 0)(fixed(0,1)) ) <+> doFloat <+> doF W.focusDown
