@@ -32,13 +32,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # 
-# Utils
-
-function command_exists () {
-    type "$1" >/dev/null 2>&1 ;
-}
-
-# 
 # My theme, based on bira theme
 # NTA TODO: 256-color theme with fallback to 16-color
 
@@ -375,10 +368,15 @@ export LEIN_FAST_TRAMPOLINE=y
 alias cljsbuild="lein trampoline cljsbuild $@"
 
 # 
+# Ruby (interactive tools only, so here)
 
+if [ -d "$HOME/.rbenv/bin" ] ; then
+    ublt/add-path "$HOME/.rbenv/bin"
+fi
 if command_exists rbenv ; then
     eval "$(rbenv init -)"
 fi
 
+# 
 # Path deduplication
 typeset -U PATH

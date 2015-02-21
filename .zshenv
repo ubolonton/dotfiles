@@ -19,6 +19,12 @@ export TERM=xterm-256color
 # export AWT_TOOLKIT=MToolkit
 
 # 
+# Utils
+
+function command_exists () {
+    type "$1" >/dev/null 2>&1 ;
+}
+
 function ublt/add-path {
     if [ -d "$1" ] ; then
         case ":$PATH:" in
@@ -88,8 +94,6 @@ fi
 if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
     source "$HOME/.rvm/scripts/rvm"
 fi
-
-ublt/add-path "$HOME/.rbenv/bin"
 
 # 
 # PHP globally installed packages
