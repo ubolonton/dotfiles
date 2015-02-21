@@ -1,10 +1,22 @@
 My personal config files. Clone and create appropriate symbolic links.
 
 * .autokey
-#+begin_src sh
-sudo apt-get install autokey
+- Install
+- Add .autokey dir via GUI
+- Make it auto-start
+- Monkey-patch =/usr/lib/python2.7/dist-packages/autokey/model.py= to make autokey use regular expressions to exclude windows, not including.
+#+begin_src python
+class AbstractWindowFilter:
+    ...
+
+    def _should_trigger_window_title(self, windowInfo):
+        r = self.get_applicable_regex()
+        if r is not None:
+            return not (r.match(windowInfo[0]) or r.match(windowInfo[1]))
+        else:
+            return True
 #+end_src
-Add .autokey dir via GUI
+
 
 * Konsole
 Symlink =~/.kde/share/apps/konsole= to =konsole=
