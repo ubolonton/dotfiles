@@ -56,6 +56,10 @@ function ublt/rbenv-info {
     fi
 }
 
+function ublt/go-info {
+    [ $gvm_go_name ] && echo "%{$fg[green]%} go%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(echo $gvm_go_name | cut -d'o' -f 2)
+}
+
 function ublt/date {
     date '+%a %Y-%m-%d %T %Z'
 }
@@ -81,9 +85,10 @@ function ublt/prompt {
     local virtual_env_info="$(ublt/virtualenv-info)"
     local nvm_info="$(ublt/nvm-info)"
     local rbenv_info="$(ublt/rbenv-info)"
+    local go_info="$(ublt/go-info)"
 
     # Left, right, and second lines
-    local   left="╭─ ${user_host}${virtual_env_info}${nvm_info}${rbenv_info}"
+    local   left="╭─ ${user_host}${virtual_env_info}${nvm_info}${go_info}${rbenv_info}"
     local second="╰─%B%b "
     local right="${date_time}"
 

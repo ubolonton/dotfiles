@@ -59,10 +59,11 @@ fi
 ublt/add-path "$HOME/.cabal/bin"
 
 # 
-# Go
+# Go version manager
 
-export GOPATH="$HOME/Programming/lib/go"
-ublt/add-path "$GOPATH/bin"
+if [ -s "$HOME/.gvm/scripts/gvm" ] ; then
+    source "$HOME/.gvm/scripts/gvm"
+fi
 
 #
 # Python's default virtual environment
