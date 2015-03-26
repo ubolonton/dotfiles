@@ -1,17 +1,23 @@
 {
   "jquery": false,
-  "eqeqeq": true,               // ===
-  "indent": 2,
-  "immed": true,                // immediate ex. functions must be wrapped
-  "undef": true,
-  "bitwise": true,
-  "forin": true,
   "newcap": true,
-  "noarg": true,
-  "nonew": true,
-  "plusplus": true,
-  "regexp": true,
-  "unused": true,
+  "indent": 2,
+
+  "eqeqeq": true,               // ===
+  "immed": true,                // immediate ex. functions must be wrapped
+  "bitwise": true,              // no | & ^
+  "forin": true,                // for..in needs to check own's property
+  "freeze": true,               // don't touch built-in prototypes
+  "latedef": true,              // must declare first
+  "noarg": true,                // no arguments.caller or arguments.callee
+  "nonew": true,                // disallow using "new" for side-effect
+  "undef": true,                // undefined var
+  "unused": true,               // unused var
+  "curly": true,                // no implicit block
+
+  "plusplus": false,            // ++ is ok
+  "noyield": true,              // yield-less generator function is ok
+
   "strict": false,
 
   "esnext": true
