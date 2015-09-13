@@ -3,7 +3,6 @@
 [user]
     name = Nguyễn Tuấn Anh
     email = ubolonton@gmail.com
-    # email = anh@cogini.com
 [color]
     status = auto
     diff = auto
@@ -47,3 +46,5 @@
     smtpserver = smtp.gmail.com
     smtpuser = ubolonton@gmail.com
     smtpserverport = 587
+[diff "gpg"]
+	textconv = gpg --no-tty --decrypt
