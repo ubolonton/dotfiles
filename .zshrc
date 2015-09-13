@@ -242,9 +242,9 @@ alias sk='sudo netstat -ntlp | grep'       # Search sockets
 alias sc='lsof -nPi tcp | grep'            # Search connections
 
 # File sync
-alias rs='rsync --progress -rv'
-alias rsl='rsync --progress -rv --inplace' # Local
-alias rsn='rsync --progress -rvz'          # Network
+alias rs='rsync -vv --progress -r'
+alias rsl='rsync -vv --progress -r --inplace' # Local
+alias rsn='rsync -vv --progress -rz'          # Network
 
 # git log
 # One-line id/author/message/time
