@@ -70,15 +70,17 @@ fi
 
 # XXX: Because virtualenv always "puts" its path at the beginning, and
 # because rvm always "wants" its path at the beginning
-case ":$PATH:" in
-    *:$HOME/.virtualenvs/default/bin:*)
-        ;;
-    *)
-        if [ -s "$HOME/.virtualenvs/default/bin/activate" ] ; then
-            source "$HOME/.virtualenvs/default/bin/activate"
-        fi
-        ;;
-esac
+# case ":$PATH:" in
+#     *:$HOME/.virtualenvs/default/bin:*)
+#         echo 1
+#         ;;
+#     *)
+#         echo 2
+#         if [ -s "$HOME/.virtualenvs/default/bin/activate" ] ; then
+#             source "$HOME/.virtualenvs/default/bin/activate"
+#         fi
+#         ;;
+# esac
 
 
 # 
