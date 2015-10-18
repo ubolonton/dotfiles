@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <include path="apps.xml"></include>
+
+  <item>
+    <name>ubolonton.Ergonomics</name>
+    <include path="ergonomics.xml">
+      <replacementdef>
+        <replacementname>DISABLED</replacementname>
+        <!-- Let these handle the keys themselves. -->
+        <replacementvalue>EMACS, TERMINAL</replacementvalue>
+      </replacementdef>
+    </include>
+  </item>
+
+  <item>
+    <name>ubolonton.Terminal</name>
+    <include path="terminal.xml"></include>
+  </item>
+
+  <item>
+    <name>ubolonton.Slack</name>
+    <include path="slack.xml"></include>
+  </item>
+
+  <item>
+    <name>ubolonton.Apple</name>
+    <include path="apple.xml"></include>
+  </item>
+</root>

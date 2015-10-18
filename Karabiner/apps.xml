@@ -1,0 +1,31 @@
+<item>
+  <appdef>
+    <appname>TERMINAL</appname>
+    <equal>com.apple.Terminal</equal>
+    <equal>iTerm</equal>
+    <equal>net.sourceforge.iTerm</equal>
+    <equal>com.googlecode.iterm2</equal>
+  </appdef>
+
+  <appdef>
+    <appname>EMACS</appname>
+    <equal>org.gnu.Emacs</equal>
+    <equal>org.gnu.AquamacsEmacs</equal>
+    <equal>org.gnu.Aquamacs</equal>
+  </appdef>
+
+
+  <appdef>
+    <appname>FINDER</appname>
+    <equal>com.apple.finder</equal>
+  </appdef>
+  <appdef>
+    <appname>SPOTLIGHT</appname>
+    <equal>com.apple.Spotlight</equal>
+  </appdef>
+
+  <appdef>
+    <appname>SLACK</appname>
+    <equal>com.tinyspeck.slackmacgap</equal>
+  </appdef>
+</item>

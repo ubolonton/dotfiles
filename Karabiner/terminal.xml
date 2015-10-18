@@ -1,0 +1,20 @@
+<item>
+  <item>
+    <name>Navigation</name>
+    <identifier>ublt.terminal.navigation</identifier>
+    <only>TERMINAL</only>
+
+    <autogen>
+      <!-- C-M-h prev-tab -->
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::MINUS, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+    <autogen>
+      <!-- C-M-n next-tab -->
+      __KeyToKey__
+      KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::EQUAL, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+  </item>
+</item>

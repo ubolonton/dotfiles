@@ -1,0 +1,149 @@
+<item>
+  <!-- This assumes a QWERTY layout even though I use Dvorak. That is
+       because Karabiner is below the QWERTY-Dvorak mapping layer of
+       OS X. -->
+  <item>
+    <name>Navigation</name>
+    <identifier>ublt.ergonomics.navigation</identifier>
+    <not>{{ DISABLED }}</not>
+
+    <autogen>
+      <!-- M-n left -->
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT
+    </autogen>
+    <autogen>
+      <!-- M-h right -->
+      __KeyToKey__
+      KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT
+    </autogen>
+    <autogen>
+      <!-- M-c up -->
+      __KeyToKey__
+      KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::CURSOR_UP
+    </autogen>
+    <autogen>
+      <!-- M-t down -->
+      __KeyToKey__
+      KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::CURSOR_DOWN
+    </autogen>
+
+    <autogen>
+      <!-- M-g backward-word -->
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+    <autogen>
+      <!-- M-r forward-word -->
+      __KeyToKey__
+      KeyCode::O, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+
+    <autogen>
+      <!-- M-d beginning-of-line -->
+      __KeyToKey__
+      KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+    </autogen>
+    <autogen>
+      <!-- M-D end-of-line -->
+      __KeyToKey__
+      KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+    </autogen>
+
+    <autogen>
+      <!-- M-C page-up -->
+      __KeyToKey__
+      KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::PAGEUP
+    </autogen>
+    <autogen>
+      <!-- M-T page-down -->
+      __KeyToKey__
+      KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::PAGEDOWN
+    </autogen>
+
+    <block>
+      <not>FINDER</not>
+      <autogen>
+        <!-- M-G beginning-of-buffer -->
+        __KeyToKey__
+        KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+      </autogen>
+      <autogen>
+        <!-- M-R end-of-buffer -->
+        __KeyToKey__
+        KeyCode::O, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+      </autogen>
+    </block>
+  </item>
+
+  <item>
+    <name>Editing</name>
+    <identifier>ublt.ergonomics.editing</identifier>
+    <not>{{ DISABLED }}</not>
+
+    <autogen>
+      <!-- M-e backward-delete -->
+      __KeyToKey__
+      KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::DELETE
+    </autogen>
+    <autogen>
+      <!-- M-u forward-detele -->
+      __KeyToKey__
+      KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+
+    <autogen>
+      <!-- M-. backward-kill-word -->
+      __KeyToKey__
+      KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+    <autogen>
+      <!-- M-p forward-kill-word -->
+      __KeyToKey__
+      KeyCode::R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::FORWARD_DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+
+    <autogen>
+      <!-- M-i C-k kill-line -->
+      __KeyToKey__
+      KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      <!-- XXX: V instead of K, because Dvorak mapping is not done by
+           Karabiner, as noted in the beginning. -->
+      KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL
+    </autogen>
+  </item>
+
+  <item>
+    <name>Other combinations</name>
+    <identifier>ublt.ergonomics.other</identifier>
+    <not>FINDER</not>
+    <autogen>
+      <!-- C-M-c M-⬆ -->
+      __KeyToKey__
+      KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+    <autogen>
+      <!-- C-M-t M-⬇ -->
+      __KeyToKey__
+      KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+  </item>
+</item>

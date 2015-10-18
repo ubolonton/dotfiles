@@ -1,0 +1,44 @@
+<item>
+  <item>
+    <name>Finder</name>
+    <identifier>ublt.apple.finder</identifier>
+    <only>FINDER</only>
+    <autogen>
+      <!-- M-G select-first-item -->
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+    <autogen>
+      <!-- M-R select-last-item -->
+      __KeyToKey__
+      KeyCode::O, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+    <autogen>
+      <!-- C-M-c s-⬆ go-to-containing-dir -->
+      __KeyToKey__
+      KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+    </autogen>
+    <autogen>
+      <!-- C-M-t s-⬇ open-selected-item -->
+      __KeyToKey__
+      KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+    </autogen>
+  </item>
+
+  <item>
+    <name>Spotlight</name>
+    <identifier>ublt.apple.spotlight</identifier>
+    <only>SPOTLIGHT</only>
+    <autogen>
+      <!-- C-g ESCAPE -->
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::ESCAPE
+    </autogen>
+  </item>
+
+</item>
