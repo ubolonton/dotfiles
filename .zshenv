@@ -27,15 +27,7 @@ function command_exists () {
 
 function ublt/add-path {
     if [ -d "$1" ] ; then
-        case ":$PATH:" in
-            *:$1:*)
-                # echo "Skipping $1"
-                ;;
-            *)
-                # echo "Adding $1"
-                PATH="$1":$PATH
-                ;;
-        esac
+        PATH="$1":$PATH
     fi
 }
 
