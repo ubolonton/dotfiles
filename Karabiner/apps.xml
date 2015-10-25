@@ -14,6 +14,20 @@
     <equal>org.gnu.Aquamacs</equal>
   </appdef>
 
+  <appdef>
+    <appname>CONKEROR</appname>
+    <equal>org.mozdev.conkeror</equal>
+  </appdef>
+
+  <appdef>
+    <appname>FIREFOX</appname>
+    <equal>org.mozilla.firefox</equal>
+  </appdef>
+
+  <appdef>
+    <appname>CHROME</appname>
+    <equal>com.google.Chrome</equal>
+  </appdef>
 
   <appdef>
     <appname>FINDER</appname>

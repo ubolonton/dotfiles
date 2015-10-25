@@ -14,8 +14,43 @@
   </item>
 
   <item>
-    <name>ubolonton.Terminal</name>
-    <include path="terminal.xml"></include>
+    <name>ubolonton.AppSwitcher</name>
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Emacs</name>
+      <url type="file">/Applications/MacPorts/Emacs.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Conkeror</name>
+      <url type="file">/Users/ubolonton/Applications/Conkeror.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_iTerm</name>
+      <url type="file">/Applications/iTerm.app</url>
+    </vkopenurldef>
+    <item>
+      <name>Custom app switcher keys</name>
+      <identifier>ubolonton.switcher</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::F1,
+        KeyCode::VK_OPEN_URL_APP_Emacs,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::F2,
+        KeyCode::VK_OPEN_URL_APP_Conkeror,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::F3,
+        KeyCode::VK_OPEN_URL_APP_iTerm,
+      </autogen>
+    </item>
+  </item>
+
+  <item>
+    <name>ubolonton.TabbedNavigation</name>
+    <include path="tabbed-navigation.xml"></include>
   </item>
 
   <item>

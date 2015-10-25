@@ -1,8 +1,12 @@
 <item>
   <item>
-    <name>Navigation</name>
-    <identifier>ublt.terminal.navigation</identifier>
-    <only>TERMINAL</only>
+    <name>Tabbed Navigation</name>
+    <identifier>ublt.navigation.tabbed</identifier>
+    <only>
+      CONKEROR, FIREFOX, CHROME,
+      TERMINAL,
+      FINDER,
+    </only>
 
     <autogen>
       <!-- C-M-h prev-tab -->
