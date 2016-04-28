@@ -11,6 +11,23 @@
     <name>KeyCode::VK_OPEN_URL_APP_iTerm</name>
     <url type="file">/Applications/iTerm.app</url>
   </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Slack</name>
+    <url type="file">/Applications/Slack.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Firefox</name>
+    <url type="file">/Applications/Firefox.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Google_Chrome</name>
+    <url type="file">/Applications/Google Chrome.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Intellij</name>
+    <url type="file">/Applications/IntelliJ IDEA 15 CE.app</url>
+  </vkopenurldef>
+
   <item>
     <name>Custom app switcher keys</name>
     <identifier>ubolonton.switcher</identifier>
@@ -28,6 +45,21 @@
       __KeyToKey__
       KeyCode::F3,
       KeyCode::VK_OPEN_URL_APP_iTerm,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F10,
+      KeyCode::VK_OPEN_URL_APP_Intellij,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F11,
+      KeyCode::VK_OPEN_URL_APP_Slack,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F12,
+      KeyCode::VK_OPEN_URL_APP_Google_Chrome,
     </autogen>
   </item>
 </item>

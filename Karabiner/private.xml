@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <root>
+  <!-- Definitions of apps -->
   <include path="apps.xml"></include>
 
   <item>
@@ -15,55 +16,8 @@
 
   <item>
     <name>ubolonton.AppSwitcher</name>
-    <vkopenurldef>
-      <name>KeyCode::VK_OPEN_URL_APP_Emacs</name>
-      <url type="file">/Applications/MacPorts/Emacs.app</url>
-    </vkopenurldef>
-    <vkopenurldef>
-      <name>KeyCode::VK_OPEN_URL_APP_Conkeror</name>
-      <url type="file">/Users/ubolonton/Applications/Conkeror.app</url>
-    </vkopenurldef>
-    <vkopenurldef>
-      <name>KeyCode::VK_OPEN_URL_APP_iTerm</name>
-      <url type="file">/Applications/iTerm.app</url>
-    </vkopenurldef>
-    <vkopenurldef>
-      <name>KeyCode::VK_OPEN_URL_APP_Slack</name>
-      <url type="file">/Applications/Slack.app</url>
-    </vkopenurldef>
-    <vkopenurldef>
-      <name>KeyCode::VK_OPEN_URL_APP_Firefox</name>
-      <url type="file">/Applications/Firefox.app</url>
-    </vkopenurldef>
-    <item>
-      <name>Custom app switcher keys</name>
-      <identifier>ubolonton.switcher</identifier>
-      <autogen>
-        __KeyToKey__
-        KeyCode::F1,
-        KeyCode::VK_OPEN_URL_APP_Emacs,
-      </autogen>
-      <autogen>
-        __KeyToKey__
-        KeyCode::F2,
-        KeyCode::VK_OPEN_URL_APP_Conkeror,
-      </autogen>
-      <autogen>
-        __KeyToKey__
-        KeyCode::F3,
-        KeyCode::VK_OPEN_URL_APP_iTerm,
-      </autogen>
-      <autogen>
-        __KeyToKey__
-        KeyCode::F11,
-        KeyCode::VK_OPEN_URL_APP_Slack,
-      </autogen>
-      <autogen>
-        __KeyToKey__
-        KeyCode::F12,
-        KeyCode::VK_OPEN_URL_APP_Firefox,
-      </autogen>
-    </item>
+    <include path="switcher.xml">
+    </include>
   </item>
 
   <item>
