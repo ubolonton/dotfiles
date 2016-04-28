@@ -11,6 +11,12 @@
       KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
     </autogen>
     <autogen>
+      <!-- s-H open-fancy-switcher -->
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+    <autogen>
       <!-- C-g ESC -->
       __KeyToKey__
       KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
