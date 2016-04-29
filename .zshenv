@@ -41,7 +41,7 @@ elif [[ $(uname) == "Darwin" ]]; then
     # Use user's bin/ & gnu replacements
     ublt/add-path "/opt/local/sbin"
     ublt/add-path "/opt/local/bin"
-    ublt/add-path "/opt/local/libexec/gnubin"
+    # ublt/add-path "/opt/local/libexec/gnubin"
     ublt/add-path "$HOME/bin"
 fi
 
@@ -94,7 +94,6 @@ fi
 # PHP globally installed packages
 
 ublt/add-path "$HOME/.composer/vendor/bin"
-
 
 # # 
 # Path deduplication

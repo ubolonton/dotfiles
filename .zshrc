@@ -383,5 +383,28 @@ if command_exists rbenv ; then
 fi
 
 # 
+if [ -s "$HOME/google-cloud-sdk/completion.zsh.inc" ] ; then
+    source "$HOME/google-cloud-sdk/completion.zsh.inc"
+fi
+
+if [ -s "$HOME/google-cloud-sdk/path.zsh.inc" ] ; then
+    source "$HOME/google-cloud-sdk/path.zsh.inc"
+fi
+
+# 
+# TODO XXX FIX HACK WTF F*ck /etc/profile calling path_helper
+
+if [[ $(uname) == "Linux" ]]; then
+    # Use user's bin/
+    ublt/add-path "$HOME/bin"
+elif [[ $(uname) == "Darwin" ]]; then
+    # Use user's bin/ & gnu replacements
+    ublt/add-path "/opt/local/sbin"
+    ublt/add-path "/opt/local/bin"
+    # ublt/add-path "/opt/local/libexec/gnubin"
+    ublt/add-path "$HOME/bin"
+fi
+
+# 
 # Path deduplication
 typeset -U PATH
