@@ -1,0 +1,57 @@
+Mako
+MarkupSafe
+# MySQL-python
+Pillow
+PyYAML
+# -e git+https://github.com/pinard/Pymacs.git@31b3f98f4365e5ad446bd713ca7183f09d023394#egg=Pymacs-dev
+Skype4Py
+Twisted
+argparse
+beautifulsoup4
+boto
+colorama
+elpy
+flake8
+# frida
+html5lib
+httplib2
+# infoqscraper
+ipython
+jedi
+mccabe
+# -e git+https://github.com/defnull/multipart.git@616348b023e4ba5e6d3dc4c714abf0cf8784caf5#egg=multipart-v0.1
+numpy
+pep8
+# pgxnclient
+phonenumbers
+psycopg2
+# py-mysql2pgsql
+pyflakes
+python-dateutil
+# -e git+https://github.com/davisp/python-spidermonkey.git@6e3d647f7b04e5ea325d28d2e00fda5df40ea72c#egg=python_spidermonkey-master
+pytz
+# pyzmq
+qrcode
+rope
+ropemacs
+ropemode
+simplejson
+six
+storm
+termcolor
+transaction
+twilio
+twisted-csp
+txAWS
+unittest2
+warp
+wsgiref
+zope.component
+zope.event
+zope.interface
+apns
+apns-client
+pyapns
+youtube-dl
+py-bcrypt
+tx_logging
