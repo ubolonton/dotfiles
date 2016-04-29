@@ -226,6 +226,8 @@ alias utorrent="wine ~/.wine/drive_c/uTorrent.exe"
 
 alias ec='emacsclient'
 
+alias tailf='tail -f'
+
 # Disk
 alias df='df -h'                           # File system usage
 alias du='du -h'                           # File space usage
@@ -294,9 +296,13 @@ if [[ $(uname) == "Linux" ]]; then
     }
     alias pf='dpkg -L'
 elif [[ $(uname) == "Darwin" ]]; then
+    # Search installed packages
+    alias pi='port installed | grep'
+    # Search all packages
     function pa () {
         port search $1 | grep $1
     }
+    alias po='port info'
     alias upd='sudo port selfupdate'
     alias upg='sudo port upgrade outdated'
     function ins {
@@ -305,6 +311,7 @@ elif [[ $(uname) == "Darwin" ]]; then
     function rem {
         sudo port -v uninstall $*
     }
+    alias pf='port contents'
 fi
 
 # 
