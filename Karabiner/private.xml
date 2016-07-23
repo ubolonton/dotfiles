@@ -31,6 +31,11 @@
   </item>
 
   <item>
+    <name>ubolonton.Intellij</name>
+    <include path="intellij.xml"></include>
+  </item>
+
+  <item>
     <name>ubolonton.Apple</name>
     <include path="apple.xml"></include>
   </item>

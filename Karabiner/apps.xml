@@ -42,4 +42,9 @@
     <appname>SLACK</appname>
     <equal>com.tinyspeck.slackmacgap</equal>
   </appdef>
+
+  <appdef>
+    <appname>INTELLIJ</appname>
+    <equal>com.jetbrains.intellij.ce</equal>
+  </appdef>
 </item>

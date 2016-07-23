@@ -48,6 +48,11 @@
     </autogen>
     <autogen>
       __KeyToKey__
+      KeyCode::F9,
+      KeyCode::VK_OPEN_URL_APP_Firefox,
+    </autogen>
+    <autogen>
+      __KeyToKey__
       KeyCode::F10,
       KeyCode::VK_OPEN_URL_APP_Intellij,
     </autogen>
