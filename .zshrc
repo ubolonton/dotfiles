@@ -240,8 +240,13 @@ alias l.='ls -d .*'                        # List dot files
 
 # Search
 alias sp='ps -ef | grep'                   # Search processes
-alias sk='sudo netstat -ntlp | grep'       # Search sockets
 alias sc='lsof -nPi tcp | grep'            # Search connections
+if [[ $(uname) == "Linux" ]]; then
+    alias sk='sudo netstat -ntlp | grep'       # Search sockets
+elif [[ $(uname) == "Darwin" ]]; then
+    alias sk='sudo netstat -atp tcp | grep'       # Search sockets
+fi
+
 
 # File sync
 alias rs='rsync -vv --progress -r'
