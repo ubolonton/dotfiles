@@ -1,0 +1,8 @@
+<item>
+  <item>
+    <name>Navigation</name>
+    <identifier>ublt.intellij.navigation</identifier>
+    <only>INTELLIJ</only>
+
+  </item>
+</item>
