@@ -27,43 +27,52 @@
     <name>KeyCode::VK_OPEN_URL_APP_Intellij</name>
     <url type="file">/Applications/IntelliJ IDEA 15 CE.app</url>
   </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_PyCharm</name>
+    <url type="file">/Applications/PyCharm CE.app</url>
+  </vkopenurldef>
 
   <item>
     <name>Custom app switcher keys</name>
     <identifier>ubolonton.switcher</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::F1,
+      KeyCode::F1, ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_APP_Emacs,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F2,
+      KeyCode::F2, ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_APP_Conkeror,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F3,
+      KeyCode::F3, ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_APP_iTerm,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F9,
+      KeyCode::F9, ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_APP_Firefox,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F10,
+      KeyCode::F10, ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_APP_PyCharm,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F10, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_APP_Intellij,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F11,
+      KeyCode::F11, ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_APP_Slack,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F12,
+      KeyCode::F12, ModifierFlag::NONE,
       KeyCode::VK_OPEN_URL_APP_Google_Chrome,
     </autogen>
   </item>
