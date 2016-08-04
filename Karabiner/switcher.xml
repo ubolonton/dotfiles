@@ -37,22 +37,22 @@
     <identifier>ubolonton.switcher</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::F1, ModifierFlag::NONE,
+      KeyCode::F1,
       KeyCode::VK_OPEN_URL_APP_Emacs,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F2, ModifierFlag::NONE,
+      KeyCode::F2,
       KeyCode::VK_OPEN_URL_APP_Conkeror,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F3, ModifierFlag::NONE,
+      KeyCode::F3,
       KeyCode::VK_OPEN_URL_APP_iTerm,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F9, ModifierFlag::NONE,
+      KeyCode::F9,
       KeyCode::VK_OPEN_URL_APP_Firefox,
     </autogen>
     <autogen>
@@ -67,12 +67,12 @@
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F11, ModifierFlag::NONE,
+      KeyCode::F11,
       KeyCode::VK_OPEN_URL_APP_Slack,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::F12, ModifierFlag::NONE,
+      KeyCode::F12,
       KeyCode::VK_OPEN_URL_APP_Google_Chrome,
     </autogen>
   </item>
