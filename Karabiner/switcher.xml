@@ -24,12 +24,20 @@
     <url type="file">/Applications/Google Chrome.app</url>
   </vkopenurldef>
   <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Discord</name>
+    <url type="file">/Applications/Discord.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_Intellij</name>
     <url type="file">/Applications/IntelliJ IDEA 15 CE.app</url>
   </vkopenurldef>
+  <!-- <vkopenurldef> -->
+  <!--   <name>KeyCode::VK_OPEN_URL_APP_PyCharm</name> -->
+  <!--   <url type="file">/Applications/PyCharm CE.app</url> -->
+  <!-- </vkopenurldef> -->
   <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_APP_PyCharm</name>
-    <url type="file">/Applications/PyCharm CE.app</url>
+    <name>KeyCode::VK_OPEN_URL_APP_CLion</name>
+    <url type="file">/Applications/CLion.app</url>
   </vkopenurldef>
 
   <item>
@@ -58,7 +66,7 @@
     <autogen>
       __KeyToKey__
       KeyCode::F10, ModifierFlag::NONE,
-      KeyCode::VK_OPEN_URL_APP_PyCharm,
+      KeyCode::VK_OPEN_URL_APP_Discord
     </autogen>
     <autogen>
       __KeyToKey__

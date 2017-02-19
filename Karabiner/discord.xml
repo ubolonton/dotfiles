@@ -1,0 +1,32 @@
+<item>
+  <item>
+    <name>Navigation</name>
+    <identifier>ublt.discord.navigation</identifier>
+    <only>DISCORD</only>
+
+    <autogen>
+      <!-- s-h find-or-start-chat -->
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+    </autogen>
+    <autogen>
+      <!-- C-g ESC -->
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::ESCAPE
+    </autogen>
+    <autogen>
+      <!-- C-M-h prev-unread-channel -->
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+    <autogen>
+      <!-- C-M-n next-unread-channel -->
+      __KeyToKey__
+      KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+  </item>
+</item>
