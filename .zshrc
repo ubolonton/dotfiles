@@ -25,7 +25,7 @@ ZSH_THEME=""
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git knife macports node npm pip vagrant)
-plugins=(git knife node npm pip vagrant zsh-syntax-highlighting)
+plugins=(git knife node npm pip zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
