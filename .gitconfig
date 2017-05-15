@@ -11,7 +11,7 @@
 [branch "master"]
     merge = refs/heads/master
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore_global
     # autocrlf = input
     # quotepath = false
     # safecrlf = warn
