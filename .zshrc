@@ -363,29 +363,13 @@ function server () {
     python -m SimpleHTTPServer $port
 }
 
-#
-# Convenient alias to ssh to the currently running vagrant
-# Usage:
-# vssh
-# vssh -p 22
-# vssh python -i
-# vssh 'cd /vagrant && ls'
-
-alias vssh="ssh vagrant@127.0.0.1 -p 2222 \
--o DSAAuthentication=yes \
--o LogLevel=FATAL \
--o StrictHostKeyChecking=no \
--o UserKnownHostsFile=/dev/null \
--o IdentitiesOnly=yes \
--i /home/ubolonton/.vagrant.d/insecure_private_key"
-
 # 
 # Clojure
 export LEIN_FAST_TRAMPOLINE=y
 alias cljsbuild="lein trampoline cljsbuild $@"
 
 # 
-# Ruby (interactive tools only, so here)
+# Ruby (interactive tools only, so here, not .zshenv)
 
 if [ -d "$HOME/.rbenv/bin" ] ; then
     ublt/add-path "$HOME/.rbenv/bin"
