@@ -28,3 +28,6 @@ Symlink =~/.gconf/apps/gnome-terminal= to =gnome-terminal=
 
 * Redshift
 Symlink =~/.conf/redshift.conf= to =redshift.conf=
+
+* IntelliJ
+Symlink =~/Library/Preferences/IdeaIC2017.1/keymaps= to =IntelliJ/keymap.xml=
