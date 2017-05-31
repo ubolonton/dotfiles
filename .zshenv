@@ -94,7 +94,11 @@ fi
 
 ublt/add-path "$HOME/.composer/vendor/bin"
 
-# # 
+# 
+# Go workspace's binaries
+ublt/add-path $(go env GOPATH)/bin
+
+# 
 # Path deduplication
 
 typeset -U PATH
