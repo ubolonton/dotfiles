@@ -96,7 +96,8 @@ ublt/add-path "$HOME/.composer/vendor/bin"
 
 # 
 # Go workspace's binaries
-ublt/add-path $(go env GOPATH)/bin
+export GOPATH="$HOME/go"
+ublt/add-path $GOPATH/bin
 
 # 
 # Path deduplication
