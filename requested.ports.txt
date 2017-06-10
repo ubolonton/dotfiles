@@ -48,3 +48,5 @@ tmux-pasteboard
 watch
 wget
 youtube-dl
+gpg-agent
+wireshark2
