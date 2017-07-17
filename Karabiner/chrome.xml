@@ -1,0 +1,13 @@
+<item>
+  <item>
+    <name>Navigation</name>
+    <identifier>ublt.chrome.navigation</identifier>
+    <only>CHROME</only>
+    <autogen>
+      <!-- C-g ESC -->
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::ESCAPE
+    </autogen>
+  </item>
+</item>

@@ -41,6 +41,11 @@
   </item>
 
   <item>
+    <name>ubolonton.Chrome</name>
+    <include path="chrome.xml"></include>
+  </item>
+
+  <item>
     <name>ubolonton.Apple</name>
     <include path="apple.xml"></include>
   </item>
