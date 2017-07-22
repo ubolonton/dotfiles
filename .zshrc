@@ -401,5 +401,6 @@ elif [[ $(uname) == "Darwin" ]]; then
 fi
 
 # 
-# Path deduplication
-typeset -U PATH
+# XXX: Work around for jline issue
+alias sbt="TERM=xterm sbt"
+alias scala="TERM=xterm scala"
