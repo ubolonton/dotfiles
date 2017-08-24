@@ -102,12 +102,22 @@
     <keyboard-shortcut first-keystroke="ctrl left" />
     <keyboard-shortcut first-keystroke="ctrl alt h" />
   </action>
+  <action id="QuickJavaDoc">
+    <keyboard-shortcut first-keystroke="f1" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+    <mouse-shortcut keystroke="control button2" />
+    <keyboard-shortcut first-keystroke="ctrl h" second-keystroke="d" />
+    <keyboard-shortcut first-keystroke="ctrl h" second-keystroke="ctrl d" />
+  </action>
   <action id="Run" />
   <action id="SelectNextOccurrence" />
   <action id="ShowNavBar">
     <keyboard-shortcut first-keystroke="alt home" />
   </action>
   <action id="SurroundWith" />
+  <action id="TypeHierarchy" />
+  <action id="TypeHierarchy.BaseOnThisType" />
+  <action id="TypeHierarchyBase.BaseOnThisType" />
   <action id="Vcs.Log.GoToRef">
     <keyboard-shortcut first-keystroke="meta f" />
   </action>
