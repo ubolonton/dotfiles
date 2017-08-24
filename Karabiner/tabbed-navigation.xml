@@ -6,6 +6,7 @@
       CONKEROR, FIREFOX, CHROME,
       TERMINAL,
       FINDER,
+      ICHAT,
     </only>
 
     <autogen>

@@ -52,4 +52,9 @@
     <appname>INTELLIJ</appname>
     <equal>com.jetbrains.intellij.ce</equal>
   </appdef>
+
+  <appdef>
+    <appname>ICHAT</appname>
+    <equal>com.apple.iChat</equal>
+  </appdef>
 </item>
