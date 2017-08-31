@@ -28,17 +28,4 @@
       KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
     </autogen>
   </item>
-
-  <item>
-    <name>Spotlight</name>
-    <identifier>ublt.apple.spotlight</identifier>
-    <only>SPOTLIGHT</only>
-    <autogen>
-      <!-- C-g ESCAPE -->
-      __KeyToKey__
-      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
-      KeyCode::ESCAPE
-    </autogen>
-  </item>
-
 </item>

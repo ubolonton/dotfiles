@@ -21,37 +21,14 @@
   </item>
 
   <item>
-    <name>ubolonton.TabbedNavigation</name>
+    <name>ubolonton.Navigation</name>
     <include path="tabbed-navigation.xml"></include>
+    <include path="C-g.xml"></include>
   </item>
 
   <item>
-    <name>ubolonton.Slack</name>
+    <name>ubolonton.Chat</name>
     <include path="slack.xml"></include>
-  </item>
-
-  <item>
-    <name>ubolonton.Discord</name>
     <include path="discord.xml"></include>
-  </item>
-
-  <item>
-    <name>ubolonton.Intellij</name>
-    <include path="intellij.xml"></include>
-  </item>
-
-  <item>
-    <name>ubolonton.Chrome</name>
-    <include path="chrome.xml"></include>
-  </item>
-
-  <item>
-    <name>ubolonton.Alfred</name>
-    <include path="alfred.xml"></include>
-  </item>
-
-  <item>
-    <name>ubolonton.Apple</name>
-    <include path="apple.xml"></include>
   </item>
 </root>

@@ -1,6 +1,6 @@
 <item>
   <item>
-    <name>Tabbed Navigation</name>
+    <name>Tabs →←</name>
     <identifier>ublt.navigation.tabbed</identifier>
     <only>
       CONKEROR, FIREFOX, CHROME,

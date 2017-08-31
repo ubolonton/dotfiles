@@ -1,0 +1,22 @@
+<item>
+  <item>
+    <name>C-g → ESCAPE</name>
+    <identifier>ublt.navigation.C-g</identifier>
+    <only>
+      CHROME,
+      INTELLIJ,
+      SLACK,
+      DISCORD,
+      ALFRED,
+      SPOTLIGHT,
+      SHORTCAT,
+    </only>
+
+    <autogen>
+      <!-- C-g ESC -->
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::ESCAPE
+    </autogen>
+  </item>
+</item>

@@ -1,7 +1,7 @@
 <item>
   <item>
-    <name>Navigation</name>
-    <identifier>ublt.discord.navigation</identifier>
+    <name>Discord</name>
+    <identifier>ublt.discord</identifier>
     <only>DISCORD</only>
 
     <autogen>
@@ -9,12 +9,6 @@
       __KeyToKey__
       KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
       KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
-    </autogen>
-    <autogen>
-      <!-- C-g ESC -->
-      __KeyToKey__
-      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
-      KeyCode::ESCAPE
     </autogen>
     <autogen>
       <!-- C-M-h prev-unread-channel -->

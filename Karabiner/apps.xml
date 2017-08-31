@@ -62,4 +62,9 @@
     <appname>ALFRED</appname>
     <equal>com.runningwithcrayons.Alfred-3</equal>
   </appdef>
+
+  <appdef>
+    <appname>SHORTCAT</appname>
+    <equal>com.sproutcube.Shortcat</equal>
+  </appdef>
 </item>

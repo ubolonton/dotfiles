@@ -1,7 +1,7 @@
 <item>
   <item>
-    <name>Navigation</name>
-    <identifier>ublt.slack.navigation</identifier>
+    <name>Slack</name>
+    <identifier>ublt.slack</identifier>
     <only>SLACK</only>
 
     <autogen>
@@ -15,12 +15,6 @@
       __KeyToKey__
       KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
       KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
-    </autogen>
-    <autogen>
-      <!-- C-g ESC -->
-      __KeyToKey__
-      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
-      KeyCode::ESCAPE
     </autogen>
     <autogen>
       <!-- C-M-h prev-unread-channel -->
