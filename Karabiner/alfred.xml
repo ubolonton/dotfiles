@@ -1,0 +1,13 @@
+<item>
+  <item>
+    <name>Navigation</name>
+    <identifier>ublt.alfred.navigation</identifier>
+    <only>ALFRED</only>
+    <autogen>
+      <!-- C-g ESC -->
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::ESCAPE
+    </autogen>
+  </item>
+</item>

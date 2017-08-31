@@ -46,6 +46,11 @@
   </item>
 
   <item>
+    <name>ubolonton.Alfred</name>
+    <include path="alfred.xml"></include>
+  </item>
+
+  <item>
     <name>ubolonton.Apple</name>
     <include path="apple.xml"></include>
   </item>

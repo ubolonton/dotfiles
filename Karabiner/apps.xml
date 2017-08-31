@@ -57,4 +57,9 @@
     <appname>ICHAT</appname>
     <equal>com.apple.iChat</equal>
   </appdef>
+
+  <appdef>
+    <appname>ALFRED</appname>
+    <equal>com.runningwithcrayons.Alfred-3</equal>
+  </appdef>
 </item>
