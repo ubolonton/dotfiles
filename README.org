@@ -30,7 +30,11 @@ Symlink =~/.gconf/apps/gnome-terminal= to =gnome-terminal=
 Symlink =~/.conf/redshift.conf= to =redshift.conf=
 
 * IntelliJ
-Symlink =~/Library/Preferences/IdeaIC2017.1/keymaps/ubolonton.xml= to =IntelliJ/keymap.xml=
+#+begin_src sh
+ln -s ~/dotfiles/IntelliJ/keymap.xml ~/Library/Preferences/IdeaIC2017.2/keymaps/ubolonton.xml
+ln -s ~/dotfiles/IntelliJ/keymap.xml ~/Library/Preferences/Gogland1.0/keymaps/ubolonton.xml
+#+end_src
+
 
 * Karabiner
 Symlink =~/Users/ubolonton/Library/Application Support/Karabiner= to =Karabiner=

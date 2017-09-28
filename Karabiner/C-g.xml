@@ -5,6 +5,7 @@
     <only>
       CHROME,
       INTELLIJ,
+      GOGLAND,
       SLACK,
       DISCORD,
       ALFRED,

@@ -54,6 +54,11 @@
   </appdef>
 
   <appdef>
+    <appname>GOGLAND</appname>
+    <equal>com.jetbrains.gogland-EAP</equal>
+  </appdef>
+
+  <appdef>
     <appname>ICHAT</appname>
     <equal>com.apple.iChat</equal>
   </appdef>
