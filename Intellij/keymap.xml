@@ -44,6 +44,20 @@
   <action id="EditorForwardParagraph">
     <keyboard-shortcut first-keystroke="shift alt n" />
   </action>
+  <action id="EditorLineEnd">
+    <keyboard-shortcut first-keystroke="meta right" />
+    <keyboard-shortcut first-keystroke="ctrl e" />
+  </action>
+  <action id="EditorLineStart">
+    <keyboard-shortcut first-keystroke="meta left" />
+    <keyboard-shortcut first-keystroke="ctrl a" />
+  </action>
+  <action id="EditorTextEnd">
+    <keyboard-shortcut first-keystroke="end" />
+  </action>
+  <action id="EditorTextStart">
+    <keyboard-shortcut first-keystroke="home" />
+  </action>
   <action id="FillParagraph">
     <keyboard-shortcut first-keystroke="alt q" />
   </action>

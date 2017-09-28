@@ -77,13 +77,13 @@
         <!-- M-G beginning-of-buffer -->
         __KeyToKey__
         KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
-        KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+        KeyCode::HOME
       </autogen>
       <autogen>
         <!-- M-R end-of-buffer -->
         __KeyToKey__
         KeyCode::O, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
-        KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+        KeyCode::END
       </autogen>
     </block>
   </item>
