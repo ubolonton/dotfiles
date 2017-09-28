@@ -46,16 +46,16 @@
     </autogen>
 
     <autogen>
-      <!-- M-d beginning-of-line -->
+      <!-- M-d beginning-of-line (C-a) -->
       __KeyToKey__
       KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
-      KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+      KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL
     </autogen>
     <autogen>
-      <!-- M-D end-of-line -->
+      <!-- M-D end-of-line (C-e) -->
       __KeyToKey__
       KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
-      KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+      KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL
     </autogen>
 
     <autogen>
