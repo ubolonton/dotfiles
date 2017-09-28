@@ -1,4 +1,6 @@
 <keymap version="1" name="ubolonton" parent="Mac OS X 10.5+">
+  <action id=":cursive.repl.actions/next-history-item" />
+  <action id=":cursive.repl.actions/prev-history-item" />
   <action id="AceAction">
     <keyboard-shortcut first-keystroke="ctrl semicolon" />
     <keyboard-shortcut first-keystroke="meta m" />
@@ -42,14 +44,6 @@
   <action id="EditorForwardParagraph">
     <keyboard-shortcut first-keystroke="shift alt n" />
   </action>
-  <action id="EditorTextEnd">
-    <keyboard-shortcut first-keystroke="meta end" />
-    <keyboard-shortcut first-keystroke="meta down" />
-  </action>
-  <action id="EditorTextStart">
-    <keyboard-shortcut first-keystroke="meta home" />
-    <keyboard-shortcut first-keystroke="meta up" />
-  </action>
   <action id="FillParagraph">
     <keyboard-shortcut first-keystroke="alt q" />
   </action>
@@ -67,17 +61,26 @@
     <mouse-shortcut keystroke="meta button1" />
     <keyboard-shortcut first-keystroke="meta t" />
   </action>
+  <action id="GotoImplementation">
+    <mouse-shortcut keystroke="meta alt button1" />
+    <keyboard-shortcut first-keystroke="meta down" />
+  </action>
   <action id="GotoNextError">
     <keyboard-shortcut first-keystroke="alt v" />
   </action>
   <action id="GotoPreviousError">
     <keyboard-shortcut first-keystroke="alt m" />
   </action>
+  <action id="GotoSuperMethod">
+    <keyboard-shortcut first-keystroke="meta up" />
+  </action>
   <action id="GotoSymbol">
     <keyboard-shortcut first-keystroke="meta alt o" />
     <keyboard-shortcut first-keystroke="meta i" />
   </action>
   <action id="IntroduceConstant" />
+  <action id="MethodOverloadSwitchDown" />
+  <action id="MethodOverloadSwitchUp" />
   <action id="MinimizeCurrentWindow" />
   <action id="MoveStatementDown">
     <keyboard-shortcut first-keystroke="shift meta down" />
