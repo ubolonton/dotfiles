@@ -38,3 +38,6 @@ ln -s ~/dotfiles/IntelliJ/keymap.xml ~/Library/Preferences/Gogland1.0/keymaps/ub
 
 * Karabiner
 Symlink =~/Users/ubolonton/Library/Application Support/Karabiner= to =Karabiner=
+
+* iTerm2
+Look for ~Load preferences from a custom folder or URL~, set the directory to =dotfiles/iTerm2=.
