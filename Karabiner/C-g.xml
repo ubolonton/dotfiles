@@ -9,6 +9,7 @@
       SLACK,
       DISCORD,
       ALFRED,
+      QUICKSILVER,
       SPOTLIGHT,
       SHORTCAT,
     </only>

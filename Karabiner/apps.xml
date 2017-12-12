@@ -69,6 +69,11 @@
   </appdef>
 
   <appdef>
+    <appname>QUICKSILVER</appname>
+    <equal>com.blacktree.Quicksilver</equal>
+  </appdef>
+
+  <appdef>
     <appname>SHORTCAT</appname>
     <equal>com.sproutcube.Shortcat</equal>
   </appdef>
