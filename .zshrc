@@ -401,6 +401,9 @@ elif [[ $(uname) == "Darwin" ]]; then
 fi
 
 # 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# 
 # XXX: Work around for jline issue
 alias sbt="TERM=xterm sbt"
 alias scala="TERM=xterm scala"
