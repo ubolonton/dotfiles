@@ -100,6 +100,12 @@ export GOPATH="$HOME/go"
 ublt/add-path $GOPATH/bin
 
 # 
+# Rust
+if [ -s "$HOME/.cargo/bin/rustup" ] ; then
+    ublt/add-path "$HOME/.cargo/bin"
+fi
+
+# 
 # Path deduplication
 
 typeset -U PATH
