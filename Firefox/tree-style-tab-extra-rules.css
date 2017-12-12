@@ -1,0 +1,42 @@
+/* Title of unread tabs */
+.tab.unread .label {
+  color: magenta !important;
+  font-style: italic !important;
+}
+
+/* Add private browsing indicator per tab */
+.tab.private-browsing .label:before {
+  content: "🕶";
+}
+
+/* Less visible tab dividers.
+   A black border with a very low alpha slightly darkens any color. */
+.tab {
+  border: solid 1px #00000012;
+}
+
+/* Change styling of pending (unloaded) tabs */
+.tab.discarded {
+  opacity: 0.65;
+}
+.tab.discarded .label {
+  font-style: italic;
+}
+.tab.discarded .favicon {
+  opacity: 0.85 !important;
+}
+
+/* Show close button only when hovering */
+.tab:not(:hover) .closebox {
+  display: none;
+}
+.tab .closebox::before {
+  border-radius: 5px; /* vary between 0 and 10 to make the background rounder */
+}
+.tab .closebox:hover::before {
+  background: #c8c8c8;
+  opacity: 1; /* defaults to 0.1 */
+}
+.tab.active .closebox:hover::before {
+  background: #96afc8;
+}
