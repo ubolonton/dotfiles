@@ -401,6 +401,13 @@ elif [[ $(uname) == "Darwin" ]]; then
 fi
 
 # 
+# Additional completions
+if [ -d "$HOME/.zfunc" ] ; then
+    fpath+="$HOME/.zfunc"
+    autoload -U compinit && compinit
+fi
+
+# 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # 
