@@ -18,86 +18,31 @@ function ublt/add-path {
     fi
 }
 
+function ublt/maybe-load {
+    [ -s "$1" ] && source "$1";
+}
+
 ######################################################################
 # ~/bin
 
-local system=`uname`
-if [[ $system == "Linux" ]]; then
-    # Use user's bin/
-    ublt/add-path "$HOME/bin"
-elif [[ $system == "Darwin" ]]; then
-    # Use user's bin/ & gnu replacements
-    ublt/add-path "/opt/local/sbin"
-    ublt/add-path "/opt/local/bin"
-    # ublt/add-path "/opt/local/libexec/gnubin"
-    ublt/add-path "$HOME/bin"
-fi
-unset system
+function ublt/basic-path  {
+    local system=`uname`
+    if [[ $system == "Linux" ]]; then
+        # Use user's bin/
+        ublt/add-path "$HOME/bin"
+    elif [[ $system == "Darwin" ]]; then
+        # Use user's bin/ & gnu replacements
+        ublt/add-path "/opt/local/sbin"
+        ublt/add-path "/opt/local/bin"
+        # ublt/add-path "/opt/local/libexec/gnubin"
+        ublt/add-path "$HOME/bin"
+    fi
+}
 
-######################################################################
-# Haskell
-
-ublt/add-path "$HOME/.cabal/bin"
-
-######################################################################
-# Go version manager
-
-if [ -s "$HOME/.gvm/scripts/gvm" ] ; then
-    source "$HOME/.gvm/scripts/gvm"
-fi
-
-######################################################################
-# Python's default virtual environment
-
-# XXX: Because virtualenv always "puts" its path at the beginning, and
-# because rvm always "wants" its path at the beginning
-case ":$PATH:" in
-    *:$HOME/.virtualenvs/default/bin:*)
-        ;;
-    *)
-        if [ -s "$HOME/.virtualenvs/default/bin/activate" ] ; then
-            source "$HOME/.virtualenvs/default/bin/activate"
-        fi
-        ;;
-esac
-
-
-######################################################################
-# Node version manager
-
-export NVM_DIR="$HOME/.nvm"
-if [ -s "$NVM_DIR/nvm.sh" ] ; then
-    source "$NVM_DIR/nvm.sh"
-fi
-
-######################################################################
-# Ruby version manager
-
-# Load RVM into a shell session *as a function*
-if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
-    source "$HOME/.rvm/scripts/rvm"
-fi
-
-######################################################################
-# PHP globally installed packages
-
-ublt/add-path "$HOME/.composer/vendor/bin"
-
-######################################################################
-# Go workspace's binaries
-export GOPATH="$HOME/go"
-ublt/add-path $GOPATH/bin
-
-######################################################################
-# Rust
-if [ -s "$HOME/.cargo/bin/rustup" ] ; then
-    ublt/add-path "$HOME/.cargo/bin"
-    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-fi
+ublt/basic-path
 
 ######################################################################
 # Path deduplication
-
 typeset -U PATH
 
 ######################################################################

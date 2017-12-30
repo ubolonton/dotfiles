@@ -37,9 +37,6 @@ source $ZSH/oh-my-zsh.sh
 # It looks like the pair of %{ %} serves the purporse of preserving
 # length or sth
 
-# Virtualenv puts it before the prompt, which does not work well for
-# my multi-prompt
-VIRTUAL_ENV_DISABLE_PROMPT=TRUE
 # NTA XXX: Why doesn't it work with left prompt?
 function ublt/virtualenv-info {
     [ $VIRTUAL_ENV ] && echo "%{$fg[green]%} py%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"`basename $VIRTUAL_ENV`
@@ -136,9 +133,7 @@ RPROMPT='$(ublt/right-prompt)'
 
 ######################################################################
 # This is is loaded before custom key bindings, since fzf binds some keys which I want to override.
-if [ -f ~/.fzf.zsh ] ; then
-    source ~/.fzf.zsh
-fi
+ublt/maybe-load "$HOME/.fzf.zsh"
 
 ######################################################################
 
@@ -202,13 +197,20 @@ bindkey -e "\e[27~" kill-word
 bindkey -e "\e[1~" beginning-of-line
 bindkey -e "\e[4~" end-of-line
 
+######################################################################
+# TODO XXX FIX HACK WTF F*ck /etc/profile calling path_helper. This makes sure that
+# /opt paths go before /usr paths.
+ublt/basic-path
+
+######################################################################
+system=`uname`
 
 ######################################################################
 # autojump ("j <partial name>")
 
-if [[ $(uname) == "Darwin" ]]; then
+if [[ $system == "Darwin" ]]; then
     ublt_autojump_sh=/opt/local/etc/profile.d/autojump.sh
-elif [[ $(uname) == "Linux" ]]; then
+elif [[ $system == "Linux" ]]; then
     ublt_autojump_sh=/usr/share/autojump/autojump.sh
 fi
 
@@ -219,47 +221,37 @@ fi
 ######################################################################
 # Colored, detailed listing
 
-if [[ $(uname) == "Linux" ]]; then
+if [[ $system == "Linux" ]]; then
     alias ls='ls -aCFho --color=auto'
-elif [[ $(uname) == "Darwin" ]]; then
+elif [[ $system == "Darwin" ]]; then
     alias ls='ls -aCFho -G'
 fi
 
 ######################################################################
-# Useful aliases
-
-alias utorrent="wine ~/.wine/drive_c/uTorrent.exe"
-
-alias ec='emacsclient'
-
-alias tailf='tail -f'
-
-# Disk
+# Inspect disk
 alias df='df -h'                           # File system usage
 alias du='du -h'                           # File space usage
 alias dus='du -s'                          # File space usage (summary)
 alias dul='du -d1'                         # File space usage (sub dirs)
 
-# List
-alias lc='lsof -nPi tcp'                   # List connections
-alias l.='ls -d .*'                        # List dot files
-
+######################################################################
 # Search
 alias sp='ps -ef | grep'                   # Search processes
 alias sc='lsof -nPi tcp | grep'            # Search connections
-if [[ $(uname) == "Linux" ]]; then
+if [[ $system == "Linux" ]]; then
     alias sk='sudo netstat -ntlp | grep'       # Search sockets
-elif [[ $(uname) == "Darwin" ]]; then
+elif [[ $system == "Darwin" ]]; then
     alias sk='sudo netstat -atp tcp | grep'       # Search sockets
 fi
 
-
+######################################################################
 # File sync
 alias rs='rsync -vv --progress -r'
 alias rsl='rsync -vv --progress -r --inplace' # Local
 alias rsn='rsync -vv --progress -rz'          # Network
 
-# git log
+######################################################################
+# git
 # One-line id/author/message/time
 alias gl="git log --abbrev-commit --date=relative --pretty=format:'%C(cyan)%h%Creset %C(green)%an%Creset %s %C(cyan)(%cr)%Creset'"
 # Graph
@@ -267,21 +259,19 @@ alias gg="git log --abbrev-commit --graph --all --pretty=format:'%x20%C(cyan)%h%
 # Not merged to master
 alias gm="git log --abbrev-commit --date=relative --pretty=format:'%C(cyan)%h%Creset %C(green)%an%Creset %s %C(cyan)(%cr)%Creset' HEAD --not master"
 
+######################################################################
+# List
+alias lc='lsof -nPi tcp'                   # List connections
+alias l.='ls -d .*'                        # List dot files
 
 ######################################################################
-# Pretty-print json
-function ppjs () {
-    if command_exists pygmentize ; then
-        python -mjson.tool $1 | pygmentize -l json
-    else
-        python -mjson.tool $1
-    fi
-}
+# Other
+alias ec='emacsclient'
+alias tailf='tail -f'
 
 ######################################################################
 # Package manager shortcuts
-
-if [[ $(uname) == "Linux" ]]; then
+if [[ $system == "Linux" ]]; then
     # apt-get utils
     function aptn () {
         if command_exists notify-send ; then
@@ -306,7 +296,7 @@ if [[ $(uname) == "Linux" ]]; then
         sudo apt-get remove -y $* && aptn "Removed $@"
     }
     alias pf='dpkg -L'
-elif [[ $(uname) == "Darwin" ]]; then
+elif [[ $system == "Darwin" ]]; then
     # Search installed packages
     alias pi='port installed | grep'
     # Search all packages
@@ -327,7 +317,6 @@ fi
 
 ######################################################################
 # Extract archive
-
 function extract () {
     if [ -f $1 ] ; then
       case $1 in
@@ -350,15 +339,17 @@ function extract () {
 }
 
 ######################################################################
-# Postgres & MySQL
-alias createdb='createdb --encoding=utf8 --lc-ctype=en_US.utf8 --lc-collate=en_US.utf8 --template=template0'
+# Pretty-print json
+function ppjs () {
+    if command_exists pygmentize ; then
+        python -mjson.tool $1 | pygmentize -l json
+    else
+        python -mjson.tool $1
+    fi
+}
 
-alias mysql='mysql --pager=less'
-
-#
-# Run a simple http server (after optionally opening the browser if
-# possible)
-
+######################################################################
+# Run a simple http server (after optionally opening the browser if possible)
 function server () {
     local port=${1:-1111} &&
     if command_exists gnome-open ; then # Linux
@@ -370,13 +361,11 @@ function server () {
 }
 
 ######################################################################
-# Clojure
-export LEIN_FAST_TRAMPOLINE=y
-alias cljsbuild="lein trampoline cljsbuild $@"
+# PHP
+ublt/add-path "$HOME/.composer/vendor/bin"
 
 ######################################################################
-# Ruby (interactive tools only, so here, not .zshenv)
-
+# Ruby
 if [ -d "$HOME/.rbenv/bin" ] ; then
     ublt/add-path "$HOME/.rbenv/bin"
 fi
@@ -385,27 +374,33 @@ if command_exists rbenv ; then
 fi
 
 ######################################################################
-if [ -s "$HOME/google-cloud-sdk/completion.zsh.inc" ] ; then
-    source "$HOME/google-cloud-sdk/completion.zsh.inc"
-fi
+# Go
+ublt/maybe-load "$HOME/.gvm/scripts/gvm"
+export GOPATH="$HOME/go"
+ublt/add-path $GOPATH/bin
 
-if [ -s "$HOME/google-cloud-sdk/path.zsh.inc" ] ; then
-    source "$HOME/google-cloud-sdk/path.zsh.inc"
+######################################################################
+# Python
+# Virtualenv puts it before the prompt, which does not work well for my multi-prompt.
+VIRTUAL_ENV_DISABLE_PROMPT=TRUE
+ublt/maybe-load "$HOME/.virtualenvs/default/bin/activate"
+
+######################################################################
+# Javascript
+export NVM_DIR="$HOME/.nvm"
+ublt/maybe-load "$NVM_DIR/nvm.sh"
+
+######################################################################
+# Rust
+if [ -s "$HOME/.cargo/bin/rustup" ] ; then
+    ublt/add-path "$HOME/.cargo/bin"
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
 ######################################################################
-# TODO XXX FIX HACK WTF F*ck /etc/profile calling path_helper
-
-if [[ $(uname) == "Linux" ]]; then
-    # Use user's bin/
-    ublt/add-path "$HOME/bin"
-elif [[ $(uname) == "Darwin" ]]; then
-    # Use user's bin/ & gnu replacements
-    ublt/add-path "/opt/local/sbin"
-    ublt/add-path "/opt/local/bin"
-    # ublt/add-path "/opt/local/libexec/gnubin"
-    ublt/add-path "$HOME/bin"
-fi
+# gcloud
+ublt/maybe-load "$HOME/google-cloud-sdk/path.zsh.inc"
+ublt/maybe-load "$HOME/google-cloud-sdk/completion.zsh.inc"
 
 ######################################################################
 # Additional completions
@@ -418,3 +413,15 @@ fi
 # XXX: Work around for jline issue
 alias sbt="TERM=xterm sbt"
 alias scala="TERM=xterm scala"
+
+######################################################################
+if [[ $system == "Darwin" ]]; then
+    alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs
+fi
+
+######################################################################
+unset system
+
+######################################################################
+# Path deduplication
+typeset -U PATH
