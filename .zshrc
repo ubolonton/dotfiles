@@ -34,19 +34,17 @@ source $ZSH/oh-my-zsh.sh
 # My theme, based on bira theme
 # NTA TODO: 256-color theme with fallback to 16-color
 
-# It looks like the pair of %{ %} serves the purporse of preserving
-# length or sth
+# It looks like the pair of %{ %} serves the purporse of preserving length or sth.
 
-# NTA XXX: Why doesn't it work with left prompt?
-function ublt/virtualenv-info {
+function ublt/py-info {
     [ $VIRTUAL_ENV ] && echo "%{$fg[green]%} py%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"`basename $VIRTUAL_ENV`
 }
 
-function ublt/nvm-info {
+function ublt/js-info {
     [ $NVM_BIN ] && echo "%{$fg[green]%} js%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(basename $(dirname $NVM_BIN))
 }
 
-function ublt/rbenv-info {
+function ublt/rb-info {
     if command_exists rbenv ; then
         echo "%{$fg[green]%} rb%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(rbenv version-name)
     fi
@@ -54,6 +52,12 @@ function ublt/rbenv-info {
 
 function ublt/go-info {
     [ $gvm_go_name ] && echo "%{$fg[green]%} go%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(echo $gvm_go_name | cut -d'o' -f 2)
+}
+
+function ublt/rs-info {
+    if command_exists rustc ; then
+        echo "%{$fg[green]%} rs%{$terminfo[bold]$fg[black]%}:%{$reset_color%}"$(rustc -V | cut -d' ' -f 2)
+    fi
 }
 
 function ublt/date {
@@ -78,13 +82,14 @@ function ublt/prompt {
     local host="%M"
     local user_host="%{$terminfo[bold]$fg[green]%}${user}%{$fg[black]%}@%{$fg[red]%}${host}%{$reset_color%}"
     local date_time="%{$terminfo[bold]$fg[cyan]%}$(ublt/date)%{$reset_color%}"
-    local virtual_env_info="$(ublt/virtualenv-info)"
-    local nvm_info="$(ublt/nvm-info)"
-    local rbenv_info="$(ublt/rbenv-info)"
+    local py_info="$(ublt/py-info)"
+    local js_info="$(ublt/js-info)"
+    local rb_info="$(ublt/rb-info)"
     local go_info="$(ublt/go-info)"
+    local rs_info="$(ublt/rs-info)"
 
     # Left, right, and second lines
-    local   left="╭─ ${user_host}${virtual_env_info}${nvm_info}${go_info}${rbenv_info}"
+    local   left="╭─ ${user_host}${rs_info}${py_info}${js_info}${go_info}${rb_info}"
     local second="╰─%B%b "
     local right="${date_time}"
 
