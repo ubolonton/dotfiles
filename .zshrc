@@ -134,7 +134,14 @@ function ublt/right-prompt {
 PROMPT='$(ublt/prompt)'
 RPROMPT='$(ublt/right-prompt)'
 
-#
+# 
+# This is is loaded before custom key bindings, since fzf binds some keys which I want to override.
+if [ -f ~/.fzf.zsh ] ; then
+    source ~/.fzf.zsh
+fi
+
+# 
+
 # Personal key bindings for Dvorak layout (note that like my Emacs'
 # bindings, these handle both cases: with and without Autokey's
 # remapping)
@@ -406,9 +413,6 @@ if [ -d "$HOME/.zfunc" ] ; then
     fpath+="$HOME/.zfunc"
     autoload -U compinit && compinit
 fi
-
-# 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # 
 # XXX: Work around for jline issue
