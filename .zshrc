@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# 
+######################################################################
 # My theme, based on bira theme
 # NTA TODO: 256-color theme with fallback to 16-color
 
@@ -134,13 +134,13 @@ function ublt/right-prompt {
 PROMPT='$(ublt/prompt)'
 RPROMPT='$(ublt/right-prompt)'
 
-# 
+######################################################################
 # This is is loaded before custom key bindings, since fzf binds some keys which I want to override.
 if [ -f ~/.fzf.zsh ] ; then
     source ~/.fzf.zsh
 fi
 
-# 
+######################################################################
 
 # Personal key bindings for Dvorak layout (note that like my Emacs'
 # bindings, these handle both cases: with and without Autokey's
@@ -203,7 +203,7 @@ bindkey -e "\e[1~" beginning-of-line
 bindkey -e "\e[4~" end-of-line
 
 
-# 
+######################################################################
 # autojump ("j <partial name>")
 
 if [[ $(uname) == "Darwin" ]]; then
@@ -216,7 +216,7 @@ if [ -f $ublt_autojump_sh ]; then
     . $ublt_autojump_sh
 fi
 
-# 
+######################################################################
 # Colored, detailed listing
 
 if [[ $(uname) == "Linux" ]]; then
@@ -225,7 +225,7 @@ elif [[ $(uname) == "Darwin" ]]; then
     alias ls='ls -aCFho -G'
 fi
 
-# 
+######################################################################
 # Useful aliases
 
 alias utorrent="wine ~/.wine/drive_c/uTorrent.exe"
@@ -268,7 +268,7 @@ alias gg="git log --abbrev-commit --graph --all --pretty=format:'%x20%C(cyan)%h%
 alias gm="git log --abbrev-commit --date=relative --pretty=format:'%C(cyan)%h%Creset %C(green)%an%Creset %s %C(cyan)(%cr)%Creset' HEAD --not master"
 
 
-#
+######################################################################
 # Pretty-print json
 function ppjs () {
     if command_exists pygmentize ; then
@@ -278,7 +278,7 @@ function ppjs () {
     fi
 }
 
-#
+######################################################################
 # Package manager shortcuts
 
 if [[ $(uname) == "Linux" ]]; then
@@ -325,7 +325,7 @@ elif [[ $(uname) == "Darwin" ]]; then
     alias pf='port contents'
 fi
 
-# 
+######################################################################
 # Extract archive
 
 function extract () {
@@ -349,7 +349,7 @@ function extract () {
     fi
 }
 
-# 
+######################################################################
 # Postgres & MySQL
 alias createdb='createdb --encoding=utf8 --lc-ctype=en_US.utf8 --lc-collate=en_US.utf8 --template=template0'
 
@@ -369,12 +369,12 @@ function server () {
     python -m SimpleHTTPServer $port
 }
 
-# 
+######################################################################
 # Clojure
 export LEIN_FAST_TRAMPOLINE=y
 alias cljsbuild="lein trampoline cljsbuild $@"
 
-# 
+######################################################################
 # Ruby (interactive tools only, so here, not .zshenv)
 
 if [ -d "$HOME/.rbenv/bin" ] ; then
@@ -384,7 +384,7 @@ if command_exists rbenv ; then
     eval "$(rbenv init -)"
 fi
 
-# 
+######################################################################
 if [ -s "$HOME/google-cloud-sdk/completion.zsh.inc" ] ; then
     source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
@@ -393,7 +393,7 @@ if [ -s "$HOME/google-cloud-sdk/path.zsh.inc" ] ; then
     source "$HOME/google-cloud-sdk/path.zsh.inc"
 fi
 
-# 
+######################################################################
 # TODO XXX FIX HACK WTF F*ck /etc/profile calling path_helper
 
 if [[ $(uname) == "Linux" ]]; then
@@ -407,14 +407,14 @@ elif [[ $(uname) == "Darwin" ]]; then
     ublt/add-path "$HOME/bin"
 fi
 
-# 
+######################################################################
 # Additional completions
 if [ -d "$HOME/.zfunc" ] ; then
     fpath+="$HOME/.zfunc"
     autoload -U compinit && compinit
 fi
 
-# 
+######################################################################
 # XXX: Work around for jline issue
 alias sbt="TERM=xterm sbt"
 alias scala="TERM=xterm scala"

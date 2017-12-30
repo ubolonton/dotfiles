@@ -5,20 +5,7 @@ export SVN_EDITOR="emacsclient"
 # More colors
 export TERM=xterm-256color
 
-# Seems unnecessary with ibus-qt4
-# # Magic incantation for Skype to work with ibus-daemon?
-# export GTK_IM_MODULE=ibus
-# export XMODIFIERS=@im=ibus
-# export QT_IM_MODULE=ibus
-# export XIM_PROGRAM=/usr/bin/ibus-daemon
-
-# # For open-jdk 6
-# # http://www.haskell.org/haskellwiki/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
-# export _JAVA_AWT_WM_NONREPARENTING=1
-
-# export AWT_TOOLKIT=MToolkit
-
-# 
+######################################################################
 # Utils
 
 function command_exists () {
@@ -31,33 +18,35 @@ function ublt/add-path {
     fi
 }
 
-# 
+######################################################################
 # ~/bin
 
-if [[ $(uname) == "Linux" ]]; then
+local system=`uname`
+if [[ $system == "Linux" ]]; then
     # Use user's bin/
     ublt/add-path "$HOME/bin"
-elif [[ $(uname) == "Darwin" ]]; then
+elif [[ $system == "Darwin" ]]; then
     # Use user's bin/ & gnu replacements
     ublt/add-path "/opt/local/sbin"
     ublt/add-path "/opt/local/bin"
     # ublt/add-path "/opt/local/libexec/gnubin"
     ublt/add-path "$HOME/bin"
 fi
+unset system
 
-# 
+######################################################################
 # Haskell
 
 ublt/add-path "$HOME/.cabal/bin"
 
-# 
+######################################################################
 # Go version manager
 
 if [ -s "$HOME/.gvm/scripts/gvm" ] ; then
     source "$HOME/.gvm/scripts/gvm"
 fi
 
-#
+######################################################################
 # Python's default virtual environment
 
 # XXX: Because virtualenv always "puts" its path at the beginning, and
@@ -73,7 +62,7 @@ case ":$PATH:" in
 esac
 
 
-# 
+######################################################################
 # Node version manager
 
 export NVM_DIR="$HOME/.nvm"
@@ -81,7 +70,7 @@ if [ -s "$NVM_DIR/nvm.sh" ] ; then
     source "$NVM_DIR/nvm.sh"
 fi
 
-# 
+######################################################################
 # Ruby version manager
 
 # Load RVM into a shell session *as a function*
@@ -89,24 +78,29 @@ if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
     source "$HOME/.rvm/scripts/rvm"
 fi
 
-# 
+######################################################################
 # PHP globally installed packages
 
 ublt/add-path "$HOME/.composer/vendor/bin"
 
-# 
+######################################################################
 # Go workspace's binaries
 export GOPATH="$HOME/go"
 ublt/add-path $GOPATH/bin
 
-# 
+######################################################################
 # Rust
 if [ -s "$HOME/.cargo/bin/rustup" ] ; then
     ublt/add-path "$HOME/.cargo/bin"
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
-# 
+######################################################################
 # Path deduplication
 
 typeset -U PATH
+
+######################################################################
+# WTF https://www.google.com/search?q=python+ValueError%3A+unknown+locale%3A+UTF-8&ie=utf-8&oe=utf-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
