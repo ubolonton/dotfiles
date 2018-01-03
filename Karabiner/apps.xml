@@ -12,6 +12,7 @@
     <equal>org.gnu.Emacs</equal>
     <equal>org.gnu.AquamacsEmacs</equal>
     <equal>org.gnu.Aquamacs</equal>
+    <equal>org.gnu.Remacs</equal>
   </appdef>
 
   <appdef>
