@@ -263,6 +263,13 @@ alias gl="git log --abbrev-commit --date=relative --pretty=format:'%C(cyan)%h%Cr
 alias gg="git log --abbrev-commit --graph --all --pretty=format:'%x20%C(cyan)%h%x20%C(green)%an%x20%Creset%s%C(yellow)%d%Creset'"
 # Not merged to master
 alias gm="git log --abbrev-commit --date=relative --pretty=format:'%C(cyan)%h%Creset %C(green)%an%Creset %s %C(cyan)(%cr)%Creset' HEAD --not master"
+# Fetch a github pull request's refs
+alias gp=ublt/github-fetch-pull-request
+function ublt/github-fetch-pull-request {
+    local remote=${2:-origin}
+    git fetch $remote +refs/pull/$1/*:refs/remotes/$remote/pull/$1/*
+}
+
 
 ######################################################################
 # List
