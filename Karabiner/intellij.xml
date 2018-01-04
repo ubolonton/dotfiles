@@ -1,0 +1,20 @@
+<item>
+  <item>
+    <name>IntelliJ</name>
+    <identifier>ublt.intellij</identifier>
+    <only>INTELLIJ</only>
+
+    <autogen>
+      <!-- s-h -> s-O find-file -->
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::S, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+    <autogen>
+      <!-- s-H -> s-F find-in-path -->
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::Y, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+  </item>
+</item>

@@ -31,4 +31,9 @@
     <include path="slack.xml"></include>
     <include path="discord.xml"></include>
   </item>
+
+  <item>
+    <name>ubolonton.IDE</name>
+    <include path="intellij.xml"></include>
+  </item>
 </root>
