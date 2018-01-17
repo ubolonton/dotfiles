@@ -4,7 +4,9 @@
     <identifier>ublt.navigation.C-g</identifier>
     <only>
       CHROME,
+      FIREFOX,
       INTELLIJ,
+      VSCODE,
       GOGLAND,
       SLACK,
       DISCORD,

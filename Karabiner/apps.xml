@@ -55,6 +55,11 @@
   </appdef>
 
   <appdef>
+    <appname>VSCODE</appname>
+    <equal>com.microsoft.VSCode</equal>
+  </appdef>
+
+  <appdef>
     <appname>GOGLAND</appname>
     <equal>com.jetbrains.gogland-EAP</equal>
   </appdef>
