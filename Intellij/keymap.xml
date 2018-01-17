@@ -87,6 +87,7 @@
   </action>
   <action id="GotoSuperMethod">
     <keyboard-shortcut first-keystroke="meta up" />
+    <keyboard-shortcut first-keystroke="meta u" />
   </action>
   <action id="GotoSymbol">
     <keyboard-shortcut first-keystroke="meta alt o" />
