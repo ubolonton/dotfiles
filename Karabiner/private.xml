@@ -24,6 +24,7 @@
     <name>ubolonton.Navigation</name>
     <include path="tabbed-navigation.xml"></include>
     <include path="C-g.xml"></include>
+    <include path="C-m.xml"></include>
   </item>
 
   <item>

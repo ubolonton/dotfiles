@@ -1,0 +1,30 @@
+<item>
+  <item>
+    <name>C-m → RETURN (also with M-, s-, S-)</name>
+    <identifier>ublt.navigation.C-m</identifier>
+    <autogen>
+      <!-- C-m -->
+      __KeyToKey__
+      KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::RETURN
+    </autogen>
+    <autogen>
+      <!-- C-M-m -->
+      __KeyToKey__
+      KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::RETURN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+    </autogen>
+    <autogen>
+      <!-- C-S-m -->
+      __KeyToKey__
+      KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::RETURN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+    <autogen>
+      <!-- C-s-m -->
+      __KeyToKey__
+      KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::RETURN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+    </autogen>
+  </item>
+</item>
