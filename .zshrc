@@ -141,6 +141,11 @@ RPROMPT='$(ublt/right-prompt)'
 ublt/maybe-load "$HOME/.fzf.zsh"
 
 ######################################################################
+if command_exists sk ; then
+    alias sk="sk --bind 'alt-c:up,alt-t:down,alt-g:backword-word,alt-r:forward-word,alt-h:backward-char,alt-n:forward-char,alt-d:beginning-of-line,alt-i:kill-line,alt-.:backword-kill-word,alt-p:kill-word'"
+    alias skg="sk --ansi -c 'rg --color=always --line-number \"{}\"'"
+fi
+######################################################################
 
 # Personal key bindings for Dvorak layout (note that like my Emacs'
 # bindings, these handle both cases: with and without Autokey's
@@ -244,9 +249,9 @@ alias dul='du -d1'                         # File space usage (sub dirs)
 alias sp='ps -ef | grep'                   # Search processes
 alias sc='lsof -nPi tcp | grep'            # Search connections
 if [[ $system == "Linux" ]]; then
-    alias sk='sudo netstat -ntlp | grep'       # Search sockets
+    alias sck='sudo netstat -ntlp | grep'       # Search sockets
 elif [[ $system == "Darwin" ]]; then
-    alias sk='sudo netstat -atp tcp | grep'       # Search sockets
+    alias sck='sudo netstat -atp tcp | grep'       # Search sockets
 fi
 
 ######################################################################
