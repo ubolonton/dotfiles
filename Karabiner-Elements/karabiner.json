@@ -158,9 +158,27 @@
             ]
           }, {
 
-            "description": "⌥↑  ⌥↓",
+            "description": "Special ↑↓: C-M-c  C-M-t",
             "manipulators": [
               {
+                "type": "basic",
+                "description": "C-M-c -> ⌘↑",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.apple\\.finder"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "i"},
+                "to": [{"modifiers": ["command"], "key_code": "up_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "C-M-t -> ⌘↓",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.apple\\.finder"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "k"},
+                "to": [{"modifiers": ["command"], "key_code": "down_arrow"}]
+              }
+
+              , {
                 "type": "basic",
                 "description": "C-M-c -> ⌥↑",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
@@ -178,6 +196,52 @@
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "k"},
                 "to": [{"modifiers": ["option"], "key_code": "down_arrow"}]
+              }
+            ]
+          }, {
+
+            "description": "Special ←→ (Tabbed Navigation): C-M-h  C-M-n",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "C-M-h -> ⌥⇧↑",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.tinyspeck\\.slackmacgap",
+                  "com\\.hnc\\.Discord"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "j"},
+                "to": [{"modifiers": ["option", "shift"], "key_code": "up_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "C-M-n -> ⌥⇧↓",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.tinyspeck\\.slackmacgap",
+                  "com\\.hnc\\.Discord"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "l"},
+                "to": [{"modifiers": ["option", "shift"], "key_code": "down_arrow"}]
+              }
+
+              , {
+                "type": "basic",
+                "description": "C-M-h -> ⌘⇧[",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "(conkeror|firefox|Chrome|iChat)",
+                  "com\\.apple\\.finder",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "j"},
+                "to": [{"modifiers": ["command", "shift"], "key_code": "hyphen"}]
+              }, {
+                "type": "basic",
+                "description": "C-M-h -> ⌘⇧]",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "(conkeror|firefox|Chrome|iChat)",
+                  "com\\.apple\\.finder",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "l"},
+                "to": [{"modifiers": ["command", "shift"], "key_code": "equal_sign"}]
               }
             ]
           }, {
@@ -216,7 +280,7 @@
             ]
           }, {
 
-            "description": "⏎",
+            "description": "Return: ⏎",
             "manipulators": [
               {
                 "type": "basic",
@@ -229,7 +293,7 @@
             ]
           }, {
 
-            "description": "⎋",
+            "description": "Escape: ⎋",
             "manipulators": [
               {
                 "type": "basic",
@@ -243,7 +307,7 @@
             ]
           }, {
 
-            "description": "s-h",
+            "description": "In-app Switcher: s-h",
             "manipulators": [
               {
                 "type": "basic",
@@ -258,11 +322,17 @@
               }, {
                 "type": "basic",
                 "description": "s-h -> ⌘⇧O",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.jetbrains\\.intellij\\.ce"
+                ]}],
                 "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "j"},
                 "to": [{"modifiers": ["command", "shift"], "key_code": "s"}]
               }, {
                 "type": "basic",
                 "description": "s-H -> ⌘⇧F",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.jetbrains\\.intellij\\.ce"
+                ]}],
                 "from": {"modifiers": {"mandatory": ["command", "shift"]}, "key_code": "j"},
                 "to": [{"modifiers": ["command", "shift"], "key_code": "y"}]
               }
