@@ -168,7 +168,7 @@
                   "(iterm2|iTerm|Terminal)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "i"},
-                "to": [{"modifiers": ["option"], "key_code": "up"}]
+                "to": [{"modifiers": ["option"], "key_code": "up_arrow"}]
               }, {
                 "type": "basic",
                 "description": "C-M-t -> M-↓",
@@ -177,7 +177,7 @@
                   "(iterm2|iTerm|Terminal)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "k"},
-                "to": [{"modifiers": ["option"], "key_code": "down"}]
+                "to": [{"modifiers": ["option"], "key_code": "down_arrow"}]
               }
             ]
           }, {
@@ -212,6 +212,27 @@
                 "type": "basic",
                 "from": {"key_code": "f12"},
                 "to": [{"shell_command": "open '/Applications/Google Chrome.app'"}]
+              }
+            ]
+          }, {
+
+            "description": "⏎  ⎋",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "C-m",
+                "from": {"modifiers": {"mandatory": ["control"], "optional": [
+                  "option", "shift", "command"
+                ]}, "key_code": "m"},
+                "to": [{"key_code": "return_or_enter"}]
+              }, {
+                "type": "basic",
+                "description": "C-g",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "(Emacs|Aquamacs|Remacs)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["control"]}, "key_code": "u"},
+                "to": [{"key_code": "escape"}]
               }
             ]
           }
