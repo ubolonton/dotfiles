@@ -180,6 +180,40 @@
                 "to": [{"modifiers": ["option"], "key_code": "down"}]
               }
             ]
+          }, {
+
+            "description": "App Switcher",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {"key_code": "f1"},
+                "to": [{"shell_command": "open /Applications/Emacs.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "f2"},
+                "to": [{"shell_command": "open /Users/ubolonton/Applications/Conkeror.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "f3"},
+                "to": [{"shell_command": "open /Applications/iTerm.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "f9"},
+                "to": [{"shell_command": "open /Applications/Firefox.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "f10"},
+                "to": [{"shell_command": "open '/Applications/IntelliJ IDEA CE.app'"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "f11"},
+                "to": [{"shell_command": "open /Applications/Slack.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "f12"},
+                "to": [{"shell_command": "open '/Applications/Google Chrome.app'"}]
+              }
+            ]
           }
         ]
       },
