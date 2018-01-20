@@ -1,125 +1,235 @@
 {
-    "global": {
-        "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": false
-    },
-    "profiles": [
+  "global": {
+    "check_for_updates_on_startup": true,
+    "show_in_menu_bar": true,
+    "show_profile_name_in_menu_bar": false
+  },
+  "profiles": [
+    {
+      "name": "Ubolonton (Dvorak NDK)",
+      "selected": true,
+
+      "simple_modifications": [
         {
-            "complex_modifications": {
-                "parameters": {
-                    "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500
-                },
-                "rules": []
-            },
-            "devices": [],
-            "fn_function_keys": [
-                {
-                    "from": {
-                        "key_code": "f1"
-                    },
-                    "to": {
-                        "consumer_key_code": "display_brightness_decrement"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f2"
-                    },
-                    "to": {
-                        "consumer_key_code": "display_brightness_increment"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f3"
-                    },
-                    "to": {
-                        "key_code": "mission_control"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f4"
-                    },
-                    "to": {
-                        "key_code": "launchpad"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f5"
-                    },
-                    "to": {
-                        "key_code": "illumination_decrement"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f6"
-                    },
-                    "to": {
-                        "key_code": "illumination_increment"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f7"
-                    },
-                    "to": {
-                        "consumer_key_code": "rewind"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f8"
-                    },
-                    "to": {
-                        "consumer_key_code": "play_or_pause"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f9"
-                    },
-                    "to": {
-                        "consumer_key_code": "fastforward"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f10"
-                    },
-                    "to": {
-                        "consumer_key_code": "mute"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f11"
-                    },
-                    "to": {
-                        "consumer_key_code": "volume_decrement"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f12"
-                    },
-                    "to": {
-                        "consumer_key_code": "volume_increment"
-                    }
-                }
-            ],
-            "name": "Default profile",
-            "selected": true,
-            "simple_modifications": [],
-            "virtual_hid_keyboard": {
-                "caps_lock_delay_milliseconds": 0,
-                "keyboard_type": "ansi"
-            }
+          "from": {"key_code": "caps_lock"},
+          "to": {"key_code": "left_control"}
         }
-    ]
+      ],
+
+      "complex_modifications": {
+        "parameters": {
+          "basic.to_delayed_action_delay_milliseconds": 500,
+          "basic.to_if_alone_timeout_milliseconds": 1000,
+          "basic.to_if_held_down_threshold_milliseconds": 500
+        },
+        "rules": [
+          {
+
+            "description":  "←  →  ↑  ↓    ⇷  ⇸    ⇤  ⇥    ⇞  ⇟    ⇱  ⇲",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "M-h -> left",
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "j"},
+                "to": [{"key_code": "left_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "M-n -> right",
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "l"},
+                "to": [{"key_code": "right_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "M-c -> up",
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "i"},
+                "to": [{"key_code": "up_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "M-t -> down",
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "k"},
+                "to": [{"key_code": "down_arrow"}]
+              }
+
+              , {
+                "type": "basic",
+                "description": "M-g -> M-<left>",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "(Emacs|Aquamacs|Remacs)",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "u"},
+                "to": [{"modifiers": ["option"], "key_code": "left_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "M-r -> M-<right>",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "(Emacs|Aquamacs|Remacs)",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "o"},
+                "to": [{"modifiers": ["option"], "key_code": "right_arrow"}]
+              }
+
+              , {
+                "type": "basic",
+                "description": "M-d -> C-a",
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "h"},
+                "to": [{"modifiers": ["control"], "key_code": "a"}]
+              }, {
+                "type": "basic",
+                "description": "M-D -> C-e",
+                "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "h"},
+                "to": [{"modifiers": ["control"], "key_code": "d"}]
+              }
+
+              , {
+                "type": "basic",
+                "description": "M-C -> <prior>",
+                "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "i"},
+                "to": [{"key_code": "page_up"}]
+              }, {
+                "type": "basic",
+                "description": "M-T -> <next>",
+                "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "k"},
+                "to": [{"key_code": "page_down"}]
+              }
+
+              , {
+                "type": "basic",
+                "description": "M-G -> <home>",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "com\\.apple\\.finder",
+                  "(Emacs|Aquamacs|Remacs)",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "u"},
+                "to": [{"key_code": "home"}]
+              } , {
+                "type": "basic",
+                "description": "M-R -> <end>",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "com\\.apple\\.finder",
+                  "(Emacs|Aquamacs|Remacs)",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "o"},
+                "to": [{"key_code": "end"}]
+              }
+            ]
+          }, {
+
+            "description": "⌫  ⌦  ⌥⌫  ⌥⌦  ^K",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "M-e -> DEL",
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "d"},
+                "to": [{"key_code": "delete_or_backspace"}]
+              }, {
+                "type": "basic",
+                "description": "M-u -> <kp-delete>",
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "f"},
+                "to": [{"key_code": "delete_forward"}]
+              }, {
+                "type": "basic",
+                "description": "M-. -> M-<DEL>",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "(Emacs|Aquamacs|Remacs)",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "e"},
+                "to": [{"modifiers": ["option"], "key_code": "delete_or_backspace"}]
+              }, {
+                "type": "basic",
+                "description": "M-p -> M-<kp-delete>",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "(Emacs|Aquamacs|Remacs)",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "r"},
+                "to": [{"modifiers": ["option"], "key_code": "delete_forward"}]
+              }
+
+              , {
+                "type": "basic",
+                "description": "M-i -> C-k",
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "g"},
+                "to": [{"modifiers": ["control"], "key_code": "v"}]
+              }
+            ]
+          }, {
+
+            "description": "⌥↑  ⌥↓",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "C-M-c -> M-↑",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "com\\.apple\\.finder",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "i"},
+                "to": [{"modifiers": ["option"], "key_code": "up"}]
+              }, {
+                "type": "basic",
+                "description": "C-M-t -> M-↓",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "com\\.apple\\.finder",
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "k"},
+                "to": [{"modifiers": ["option"], "key_code": "down"}]
+              }
+            ]
+          }
+        ]
+      },
+
+      "devices": [],
+
+      "fn_function_keys": [
+        {
+          "from": {"key_code": "f1"},
+          "to": {"consumer_key_code": "display_brightness_decrement"}
+        }, {
+          "from": {"key_code": "f2"},
+          "to": {"consumer_key_code": "display_brightness_increment"}
+        }, {
+          "from": {"key_code": "f3"},
+          "to": {"key_code": "mission_control"}
+        }, {
+          "from": {"key_code": "f4"},
+          "to": {"key_code": "launchpad"}
+        }, {
+          "from": {"key_code": "f5"},
+          "to": {"key_code": "illumination_decrement"}
+        }, {
+          "from": {"key_code": "f6"},
+          "to": {"key_code": "illumination_increment"}
+        }, {
+          "from": {"key_code": "f7"},
+          "to": {"consumer_key_code": "rewind"}
+        }, {
+          "from": {"key_code": "f8"},
+          "to": {"consumer_key_code": "play_or_pause"}
+        }, {
+          "from": {"key_code": "f9"},
+          "to": {"consumer_key_code": "fastforward"}
+        }, {
+          "from": {"key_code": "f10"},
+          "to": {"consumer_key_code": "mute"}
+        }, {
+          "from": {"key_code": "f11"},
+          "to": {"consumer_key_code": "volume_decrement"}
+        }, {
+          "from": {"key_code": "f12"},
+          "to": {"consumer_key_code": "volume_increment"}
+        }
+      ],
+
+      "virtual_hid_keyboard": {
+        "caps_lock_delay_milliseconds": 0,
+        "keyboard_type": "ansi"
+      }
+    }
+  ]
 }
