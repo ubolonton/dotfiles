@@ -29,29 +29,29 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "M-h -> left",
+                "description": "M-h -> ←",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "j"},
                 "to": [{"key_code": "left_arrow"}]
               }, {
                 "type": "basic",
-                "description": "M-n -> right",
+                "description": "M-n -> →",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "l"},
                 "to": [{"key_code": "right_arrow"}]
               }, {
                 "type": "basic",
-                "description": "M-c -> up",
+                "description": "M-c -> ↑",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "i"},
                 "to": [{"key_code": "up_arrow"}]
               }, {
                 "type": "basic",
-                "description": "M-t -> down",
+                "description": "M-t -> ↓",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "k"},
                 "to": [{"key_code": "down_arrow"}]
               }
 
               , {
                 "type": "basic",
-                "description": "M-g -> M-<left>",
+                "description": "M-g -> ⌥←",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "(Emacs|Aquamacs|Remacs)",
                   "(iterm2|iTerm|Terminal)"
@@ -60,7 +60,7 @@
                 "to": [{"modifiers": ["option"], "key_code": "left_arrow"}]
               }, {
                 "type": "basic",
-                "description": "M-r -> M-<right>",
+                "description": "M-r -> ⌥→",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "(Emacs|Aquamacs|Remacs)",
                   "(iterm2|iTerm|Terminal)"
@@ -71,31 +71,31 @@
 
               , {
                 "type": "basic",
-                "description": "M-d -> C-a",
+                "description": "M-d -> ^A",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "h"},
                 "to": [{"modifiers": ["control"], "key_code": "a"}]
               }, {
                 "type": "basic",
-                "description": "M-D -> C-e",
+                "description": "M-D -> ^E",
                 "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "h"},
                 "to": [{"modifiers": ["control"], "key_code": "d"}]
               }
 
               , {
                 "type": "basic",
-                "description": "M-C -> <prior>",
+                "description": "M-C -> ⇞",
                 "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "i"},
                 "to": [{"key_code": "page_up"}]
               }, {
                 "type": "basic",
-                "description": "M-T -> <next>",
+                "description": "M-T -> ⇟",
                 "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "k"},
                 "to": [{"key_code": "page_down"}]
               }
 
               , {
                 "type": "basic",
-                "description": "M-G -> <home>",
+                "description": "M-G -> ⇱",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
                   "(Emacs|Aquamacs|Remacs)",
@@ -105,7 +105,7 @@
                 "to": [{"key_code": "home"}]
               } , {
                 "type": "basic",
-                "description": "M-R -> <end>",
+                "description": "M-R -> ⇲",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
                   "(Emacs|Aquamacs|Remacs)",
@@ -121,17 +121,17 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "M-e -> DEL",
+                "description": "M-e -> ⌫",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "d"},
                 "to": [{"key_code": "delete_or_backspace"}]
               }, {
                 "type": "basic",
-                "description": "M-u -> <kp-delete>",
+                "description": "M-u -> ⌦",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "f"},
                 "to": [{"key_code": "delete_forward"}]
               }, {
                 "type": "basic",
-                "description": "M-. -> M-<DEL>",
+                "description": "M-. -> ⌥⌫",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "(Emacs|Aquamacs|Remacs)",
                   "(iterm2|iTerm|Terminal)"
@@ -140,7 +140,7 @@
                 "to": [{"modifiers": ["option"], "key_code": "delete_or_backspace"}]
               }, {
                 "type": "basic",
-                "description": "M-p -> M-<kp-delete>",
+                "description": "M-p -> ⌥⌦",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "(Emacs|Aquamacs|Remacs)",
                   "(iterm2|iTerm|Terminal)"
@@ -151,7 +151,7 @@
 
               , {
                 "type": "basic",
-                "description": "M-i -> C-k",
+                "description": "M-i -> ^K",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "g"},
                 "to": [{"modifiers": ["control"], "key_code": "v"}]
               }
@@ -162,7 +162,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "C-M-c -> M-↑",
+                "description": "C-M-c -> ⌥↑",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
                   "(iterm2|iTerm|Terminal)"
@@ -171,7 +171,7 @@
                 "to": [{"modifiers": ["option"], "key_code": "up_arrow"}]
               }, {
                 "type": "basic",
-                "description": "C-M-t -> M-↓",
+                "description": "C-M-t -> ⌥↓",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
                   "(iterm2|iTerm|Terminal)"
@@ -216,7 +216,7 @@
             ]
           }, {
 
-            "description": "⏎  ⎋",
+            "description": "⏎",
             "manipulators": [
               {
                 "type": "basic",
@@ -225,7 +225,13 @@
                   "option", "shift", "command"
                 ]}, "key_code": "m"},
                 "to": [{"key_code": "return_or_enter"}]
-              }, {
+              }
+            ]
+          }, {
+
+            "description": "⎋",
+            "manipulators": [
+              {
                 "type": "basic",
                 "description": "C-g",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
@@ -233,6 +239,32 @@
                 ]}],
                 "from": {"modifiers": {"mandatory": ["control"]}, "key_code": "u"},
                 "to": [{"key_code": "escape"}]
+              }
+            ]
+          }, {
+
+            "description": "s-h",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "s-h -> ⌘K",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.tinyspeck\\.slackmacgap",
+                  "com\\.hnc\\.Discord"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["command"], "optional": ["shift"]},
+                         "key_code": "j"},
+                "to": [{"modifiers": ["command"], "key_code": "v"}]
+              }, {
+                "type": "basic",
+                "description": "s-h -> ⌘⇧O",
+                "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "j"},
+                "to": [{"modifiers": ["command", "shift"], "key_code": "s"}]
+              }, {
+                "type": "basic",
+                "description": "s-H -> ⌘⇧F",
+                "from": {"modifiers": {"mandatory": ["command", "shift"]}, "key_code": "j"},
+                "to": [{"modifiers": ["command", "shift"], "key_code": "y"}]
               }
             ]
           }
