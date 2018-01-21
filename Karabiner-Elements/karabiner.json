@@ -25,7 +25,7 @@
         "rules": [
           {
 
-            "description":  "←  →  ↑  ↓    ⇷  ⇸    ⇤  ⇥    ⇞  ⇟    ⇱  ⇲",
+            "description":  "Navigating: ← →  ↑ ↓    ⇷ ⇸    ⇤ ⇥    ⇞ ⇟    ⇱ ⇲",
             "manipulators": [
               {
                 "type": "basic",
@@ -133,7 +133,7 @@
             ]
           }, {
 
-            "description": "⌫  ⌦  ⌥⌫  ⌥⌦  ^K",
+            "description": "Deleting: ⌫  ⌦  ⌥⌫  ⌥⌦  ^K",
             "manipulators": [
               {
                 "type": "basic",
@@ -216,7 +216,7 @@
             ]
           }, {
 
-            "description": "Special ←→ (Tabbed Navigation): C-M-h  C-M-n",
+            "description": "Special ←→ (Tab Switching): C-M-h  C-M-n",
             "manipulators": [
               {
                 "type": "basic",
@@ -262,7 +262,67 @@
             ]
           }, {
 
-            "description": "App Switcher",
+            "description": "Return: ⏎",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "C-m",
+                "from": {"modifiers": {"mandatory": ["control"], "optional": [
+                  "option", "shift", "command"
+                ]}, "key_code": "m"},
+                "to": [{"key_code": "return_or_enter"}]
+              }
+            ]
+          }, {
+
+            "description": "Escape: ⎋",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "C-g",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "(Emacs|Aquamacs|Remacs)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["control"]}, "key_code": "u"},
+                "to": [{"key_code": "escape"}]
+              }
+            ]
+          }, {
+
+            "description": "In-app Switching: s-h  s-H",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "s-h -> ⌘K",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "(firefox|Chrome)",
+                  "com\\.tinyspeck\\.slackmacgap",
+                  "com\\.hnc\\.Discord"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["command"], "optional": ["shift"]},
+                         "key_code": "j"},
+                "to": [{"modifiers": ["command"], "key_code": "v"}]
+              }, {
+                "type": "basic",
+                "description": "s-h -> ⌘⇧O",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.jetbrains\\.intellij\\.ce"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "j"},
+                "to": [{"modifiers": ["command", "shift"], "key_code": "s"}]
+              }, {
+                "type": "basic",
+                "description": "s-H -> ⌘⇧F",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.jetbrains\\.intellij\\.ce"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["command", "shift"]}, "key_code": "j"},
+                "to": [{"modifiers": ["command", "shift"], "key_code": "y"}]
+              }
+            ]
+          }, {
+
+            "description": "App Switching",
             "manipulators": [
               {
                 "type": "basic",
@@ -292,65 +352,6 @@
                 "type": "basic",
                 "from": {"key_code": "f12"},
                 "to": [{"shell_command": "open '/Applications/Google Chrome.app'"}]
-              }
-            ]
-          }, {
-
-            "description": "Return: ⏎",
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "C-m",
-                "from": {"modifiers": {"mandatory": ["control"], "optional": [
-                  "option", "shift", "command"
-                ]}, "key_code": "m"},
-                "to": [{"key_code": "return_or_enter"}]
-              }
-            ]
-          }, {
-
-            "description": "Escape: ⎋",
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "C-g",
-                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
-                  "(Emacs|Aquamacs|Remacs)"
-                ]}],
-                "from": {"modifiers": {"mandatory": ["control"]}, "key_code": "u"},
-                "to": [{"key_code": "escape"}]
-              }
-            ]
-          }, {
-
-            "description": "In-app Switcher: s-h",
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "s-h -> ⌘K",
-                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
-                  "com\\.tinyspeck\\.slackmacgap",
-                  "com\\.hnc\\.Discord"
-                ]}],
-                "from": {"modifiers": {"mandatory": ["command"], "optional": ["shift"]},
-                         "key_code": "j"},
-                "to": [{"modifiers": ["command"], "key_code": "v"}]
-              }, {
-                "type": "basic",
-                "description": "s-h -> ⌘⇧O",
-                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
-                  "com\\.jetbrains\\.intellij\\.ce"
-                ]}],
-                "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "j"},
-                "to": [{"modifiers": ["command", "shift"], "key_code": "s"}]
-              }, {
-                "type": "basic",
-                "description": "s-H -> ⌘⇧F",
-                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
-                  "com\\.jetbrains\\.intellij\\.ce"
-                ]}],
-                "from": {"modifiers": {"mandatory": ["command", "shift"]}, "key_code": "j"},
-                "to": [{"modifiers": ["command", "shift"], "key_code": "y"}]
               }
             ]
           }
