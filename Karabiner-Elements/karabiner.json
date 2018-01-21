@@ -289,6 +289,21 @@
             ]
           }, {
 
+            "description": "Closing buffer/tab/window: s-k",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "s-k",
+                "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "conkeror",
+                  "(Emacs|Aquamacs|Remacs)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "v"},
+                "to": [{"modifiers": ["command"], "key_code": "comma"}]
+              }
+            ]
+          }, {
+
             "description": "In-app Switching: s-h  s-H",
             "manipulators": [
               {
