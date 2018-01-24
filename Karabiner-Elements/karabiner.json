@@ -281,6 +281,8 @@
                 "type": "basic",
                 "description": "C-g",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
+                  "(iterm2|iTerm|Terminal)",
+                  "conkeror",
                   "(Emacs|Aquamacs|Remacs)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["control"]}, "key_code": "u"},
