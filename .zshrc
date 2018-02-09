@@ -139,6 +139,7 @@ RPROMPT='$(ublt/right-prompt)'
 ######################################################################
 # This is is loaded before custom key bindings, since fzf binds some keys which I want to override.
 ublt/maybe-load "$HOME/.fzf.zsh"
+bindkey '^T' transpose-chars
 
 ######################################################################
 if command_exists sk ; then
