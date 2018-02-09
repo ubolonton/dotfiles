@@ -1029,26 +1029,193 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x68-0x100000</key>
+
+		<key>0x68-0x100000</key> <!--s-h-->
 		<dict>
 			<key>Action</key>
 			<integer>11</integer>
 			<key>Text</key>
 			<string>0x18 0x40 0x73 0x68</string>
 		</dict>
-		<key>0x6f-0x100000</key>
+		<key>0x48-0x120000</key> <!--s-H-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x48</string>
+		</dict>
+
+		<key>0x74-0x100000</key> <!--s-t-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x74</string>
+		</dict>
+		<key>0x54-0x120000</key> <!--s-T-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x54</string>
+		</dict>
+
+		<key>0x66-0x100000</key> <!--s-f-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x66</string>
+		</dict>
+		<key>0x46-0x120000</key> <!--s-F-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x46</string>
+		</dict>
+
+		<key>0x67-0x100000</key> <!--s-g-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x67</string>
+		</dict>
+		<key>0x47-0x120000</key> <!--s-G-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x47</string>
+		</dict>
+
+		<key>0x6f-0x100000</key> <!--s-o-->
 		<dict>
 			<key>Action</key>
 			<integer>11</integer>
 			<key>Text</key>
 			<string>0x18 0x40 0x73 0x6f</string>
 		</dict>
-		<key>0x73-0x100000</key>
+		<key>0x73-0x100000</key> <!--s-s-->
 		<dict>
 			<key>Action</key>
 			<integer>11</integer>
 			<key>Text</key>
 			<string>0x18 0x40 0x73 0x73</string>
+		</dict>
+		<key>0x6d-0x100000</key> <!--s-m-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x6d</string>
+		</dict>
+		<key>0x4d-0x100000</key> <!--s-M-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x4d</string>
+		</dict>
+		<key>0x6e-0x100000</key> <!--s-n-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x6e</string>
+		</dict>
+		<key>0x6b-0x100000</key> <!--s-k-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x6b</string>
+		</dict>
+		<key>0x75-0x100000</key> <!--s-u-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x75</string>
+		</dict>
+		<key>0x7a-0x100000</key> <!--s-z-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x7a</string>
+		</dict>
+		<key>0x61-0x100000</key> <!--s-a-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x61</string>
+		</dict>
+		<key>0x69-0x100000</key> <!--s-i-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x69</string>
+		</dict>
+		<key>0x64-0x100000</key> <!--s-d-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x64</string>
+		</dict>
+
+        <key>0x29-0x120000</key> <!--s-)-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x29</string>
+		</dict>
+		<key>0x30-0x100000</key> <!--s-0-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x30</string>
+		</dict>
+		<key>0x31-0x100000</key> <!--s-1-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x31</string>
+		</dict>
+		<key>0x32-0x100000</key> <!--s-2-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x32</string>
+		</dict>
+		<key>0x33-0x100000</key> <!--s-3-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x33</string>
+		</dict>
+		<key>0x77-0x100000</key> <!--s-w-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x77</string>
+		</dict>
+		<key>0x57-0x120000</key> <!--s-W-->
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x18 0x40 0x73 0x57</string>
 		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
@@ -1200,23 +1367,29 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
-	<key>NSTableView Columns KeyBingingTable</key>
-	<array>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATCG
-		</data>
-		<string>198</string>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATGG
-		</data>
-		<string>330</string>
-	</array>
-	<key>NSTableView Hidden Columns KeyBingingTable</key>
-	<array/>
-	<key>NSTableView Sort Ordering KeyBingingTable</key>
-	<array/>
+	<key>NSTableView Columns v2 KeyBingingTable</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoK4HCA8aGxwdHh8gJjAxMlUkbnVsbNIJCgsOWk5TLm9iamVjdHNWJGNsYXNzogwN
+	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
+	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
+	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
+	DIAIgAlRMSNAc7AAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
+	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
+	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
+	AAAAADoAAAAAAAAAAAAAAAAAAAFM
+	</data>
+	<key>NSTableView Sort Ordering v2 KeyBingingTable</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
+	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
+	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
+	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
+	</data>
+	<key>NSTableView Supports v2 KeyBingingTable</key>
+	<true/>
 	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
 	<dict>
 		<key>TB Is Shown</key>
