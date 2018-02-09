@@ -434,7 +434,7 @@ alias scala="TERM=xterm scala"
 
 ######################################################################
 if [[ $system == "Darwin" ]]; then
-    alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs
+    alias emacs=/Applications/EmacsMac.app/Contents/MacOS/Emacs
 fi
 
 ######################################################################
