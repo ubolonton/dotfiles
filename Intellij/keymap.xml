@@ -77,6 +77,11 @@
     <mouse-shortcut keystroke="meta button1" />
     <keyboard-shortcut first-keystroke="meta t" />
   </action>
+  <action id="GotoImplementation">
+    <keyboard-shortcut first-keystroke="meta alt b" />
+    <mouse-shortcut keystroke="meta alt button1" />
+    <keyboard-shortcut first-keystroke="ctrl meta t" />
+  </action>
   <action id="GotoNextError">
     <keyboard-shortcut first-keystroke="alt v" />
   </action>
