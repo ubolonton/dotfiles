@@ -8,6 +8,7 @@ aspell-dict-vi
 autoconf
 autojump
 automake
+cask
 cmake
 coreutils
 ctags
@@ -24,14 +25,13 @@ gdb
 git
 global
 gmake
-gnupg
 gnupg2
 gperf
-gpg-agent
 gradle
 groovy
 htop
 icu-docs
+inetutils
 jq
 libpqxx
 maven3
@@ -43,7 +43,6 @@ mysql56
 mysql56-server
 nginx
 nmap
-ntfs-3g
 postgresql94-server
 pstree
 py-pip
@@ -51,7 +50,6 @@ py-pyicu
 py-rpy2
 py-virtualenvwrapper
 py27-gnureadline
-py27-readline
 py27-rpy2
 py27-virtualenv
 py36-virtualenv
