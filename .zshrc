@@ -302,7 +302,7 @@ if [[ $system == "Linux" ]]; then
     alias pi='dpkg -l | grep'
     # Search all packages
     function pa () {
-        apt-cache search --names-only $1 | grep $1
+        apt-cache search --names-only $1 | grep -i $1
     }
     alias po='apt-cache policy'
     alias upd='sudo apt-get update; aptn "Updated"'
@@ -319,7 +319,7 @@ elif [[ $system == "Darwin" ]]; then
     alias pi='port installed | grep'
     # Search all packages
     function pa () {
-        port search $1 | grep $1
+        port search $1 | grep -i $1
     }
     alias po='port info'
     alias upd='sudo port selfupdate'
