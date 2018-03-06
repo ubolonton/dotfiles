@@ -39,6 +39,7 @@ Look for ~Load preferences from a custom folder or URL~, set the directory to =d
 Symlink ~<profile>/chrome/userChrome.css~ [[file:Firefox/userChrome.css][to userChrome.css]]
 Paste content of [[file:Firefox/tree-style-tab-extra-rules.css]] into the custom css box.
 
+* OS X
 #+begin_src shell
 ln -s dotfiles/.z* ~/
 ln -s dotfiles/.oh-my-zsh ~/
@@ -51,6 +52,6 @@ ln -s dotfiles/.psqlrc ~/
 ln -s dotfiles/.tmux.conf ~/
 
 ln -s ../dotfiles/Karabiner-Elements ~/.config/karabiner
-ln -s ~/dotfiles/IntelliJ/keymap.xml ~/Library/Preferences/IdeaIC2017.2/keymaps/ubolonton.xml
+ln -s ~/dotfiles/IntelliJ/keymap.xml ~/Library/Preferences/IdeaIC2017.sh-ad/keymaps/ubolonton.xml
 ln -s ~/dotfiles/IntelliJ/keymap.xml ~/Library/Preferences/Gogland1.0/keymaps/ubolonton.xml
 #+end_src
