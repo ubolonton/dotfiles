@@ -372,6 +372,40 @@
                 "to": [{"shell_command": "open '/Applications/Google Chrome.app'"}]
               }
             ]
+          }, {
+
+            "description": "App Switching (Workaround for Touch Bar)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {"key_code": "1", "modifiers": {"mandatory": ["fn"]}},
+                "to": [{"shell_command": "open /Applications/EmacsMac.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "2", "modifiers": {"mandatory": ["fn"]}},
+                "to": [{"shell_command": "osascript -e 'activate application \"Conkeror\"'"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "3", "modifiers": {"mandatory": ["fn"]}},
+                "to": [{"shell_command": "open /Applications/iTerm.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "9", "modifiers": {"mandatory": ["fn"]}},
+                "to": [{"shell_command": "open /Applications/Firefox.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "0", "modifiers": {"mandatory": ["fn"]}},
+                "to": [{"shell_command": "open '/Applications/IntelliJ IDEA CE.app'"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "hyphen", "modifiers": {"mandatory": ["fn"]}},
+                "to": [{"shell_command": "open /Applications/Slack.app"}]
+              }, {
+                "type": "basic",
+                "from": {"key_code": "equal_sign", "modifiers": {"mandatory": ["fn"]}},
+                "to": [{"shell_command": "open '/Applications/Google Chrome.app'"}]
+              }
+            ]
           }
         ]
       },
