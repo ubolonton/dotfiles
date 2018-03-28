@@ -47,4 +47,4 @@
     smtpuser = ubolonton@gmail.com
     smtpserverport = 587
 [diff "gpg"]
-	textconv = gpg --no-tty --decrypt
+	textconv = gpg --use-agent -q --batch --decrypt
