@@ -370,6 +370,11 @@
                 "type": "basic",
                 "from": {"key_code": "f12"},
                 "to": [{"shell_command": "open '/Applications/Google Chrome.app'"}]
+              }, {
+                "type": "basic",
+                "description": "Workaround for my old Advantage keyboard",
+                "from": {"key_code": "f8"},
+                "to": [{"shell_command": "open /Applications/Slack.app"}]
               }
             ]
           }, {
