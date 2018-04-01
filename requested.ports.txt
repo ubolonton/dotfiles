@@ -25,6 +25,7 @@ gdb
 git
 global
 gmake
+gnetcat
 gnupg2
 gperf
 gradle
@@ -32,6 +33,8 @@ groovy
 htop
 icu-docs
 inetutils
+iperf3
+iTerm2
 jq
 libpqxx
 maven3
@@ -43,6 +46,7 @@ mysql56
 mysql56-server
 nginx
 nmap
+openvpn2
 postgresql94-server
 pstree
 py-pip
@@ -61,7 +65,7 @@ ruby-build
 scala2.12
 sox
 swig
-texlive +full
+texlive
 the_silver_searcher
 tmux
 tmux-pasteboard
@@ -70,5 +74,6 @@ ttfautohint
 vcs_blackbox
 watch
 wget
+wireshark2
 woff2
 youtube-dl
