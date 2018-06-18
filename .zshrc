@@ -24,7 +24,8 @@ ZSH_THEME=""
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(npm pip kubectl zsh-syntax-highlighting colored-man-pages golang sbt cargo rust osx)
+plugins=(npm pip kubectl zsh-syntax-highlighting colored-man-pages golang cargo rust
+         osx aws)
 
 source $ZSH/oh-my-zsh.sh
 
