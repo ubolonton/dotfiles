@@ -213,6 +213,26 @@
                 "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "k"},
                 "to": [{"modifiers": ["option"], "key_code": "down_arrow"}]
               }
+
+              , {
+                "type": "basic",
+                "description": "C-M-c -> C-o h",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "i"},
+                "to": [{"modifiers": ["control"], "key_code": "s"},
+                       {"modifiers": [], "key_code": "r"}]
+              }, {
+                "type": "basic",
+                "description": "C-M-t -> C-o n",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "(iterm2|iTerm|Terminal)"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "k"},
+                "to": [{"modifiers": ["control"], "key_code": "s"},
+                       {"modifiers": [], "key_code": "l"}]
+              }
             ]
           }, {
 
