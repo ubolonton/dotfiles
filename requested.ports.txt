@@ -60,7 +60,6 @@ py36-virtualenv
 R
 rbenv
 redis
-rtags
 ruby-build
 scala2.12
 sox
