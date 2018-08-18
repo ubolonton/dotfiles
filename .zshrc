@@ -414,6 +414,11 @@ ublt/maybe-load "$NVM_DIR/nvm.sh"
 if [ -s "$HOME/.cargo/bin/rustup" ] ; then
     ublt/add-path "$HOME/.cargo/bin"
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+    # Cache build artifacts.
+    if command_exists sccache ; then
+        export RUSTC_WRAPPER=sccache
+    fi
 fi
 
 ######################################################################
