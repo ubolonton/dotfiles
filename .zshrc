@@ -446,7 +446,8 @@ fi
 ######################################################################
 #
 if [[ $system == "Darwin" ]]; then
-    export CFLAGS="-I /opt/local/include"
+    export CPATH="/opt/local/include"
+    export LIBRARY_PATH="/opt/local/lib"
 fi
 
 ######################################################################
