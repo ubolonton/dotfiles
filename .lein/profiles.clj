@@ -1,11 +1,14 @@
-{:user {:plugins [[lein-difftest "2.0.0"]
-                  [lein-marginalia "0.8.0"]
-                  [lein-pprint "1.1.2"]
-                  ;; [lein-noir "1.2.1"]
-                  ;; [noir/lein-template "1.3.0"]
-                  [refactor-nrepl "0.2.2"]
-                  [lein-cljsbuild "1.0.4"]
-                  [lein-ancient "0.5.5"]
-                  [cider/cider-nrepl "0.8.2"]]
-        :dependencies [[com.cemerick/pomegranate "0.3.0"]
-                       [ring-serve "0.1.2"]]}}
+{:user {:plugins [[lein-midje "3.2.1"]]
+
+        :dependencies
+        [[com.cemerick/pomegranate "0.4.0"]]
+
+        :injections
+        [(defn add-dependency
+           "Adds new dependency without reloading the JVM."
+           [dep-vec]
+           (require 'cemerick.pomegranate)
+           ((resolve 'cemerick.pomegranate/add-dependencies)
+            :coordinates [dep-vec]
+            :repositories (merge @(resolve 'cemerick.pomegranate.aether/maven-central)
+                                 {"clojars" "https://clojars.org/repo"})))]}}
