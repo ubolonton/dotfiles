@@ -402,7 +402,8 @@ ublt/add-path $GOPATH/bin
 # Python
 # Virtualenv puts it before the prompt, which does not work well for my multi-prompt.
 VIRTUAL_ENV_DISABLE_PROMPT=TRUE
-ublt/maybe-load "$HOME/.virtualenvs/default/bin/activate"
+# XXX: Disable because loading it here makes 'deactivate' not cleaning up $PATH corrrectly.
+# ublt/maybe-load "$HOME/.virtualenvs/default/bin/activate"
 
 ######################################################################
 # Javascript
