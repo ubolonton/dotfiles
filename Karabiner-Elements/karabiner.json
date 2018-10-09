@@ -389,10 +389,10 @@
               }, {
                 "type": "basic",
                 "from": {"key_code": "f12"},
-                "to": [{"shell_command": "open '/Applications/Google Chrome.app'"}]
+                "to": [{"shell_command": "open '/Applications/Discord.app'"}]
               }, {
                 "type": "basic",
-                "description": "Workaround for my old Advantage keyboard",
+                "description": "Workaround for my old Advantage keyboard (f11 -> f8)",
                 "from": {"key_code": "f8"},
                 "to": [{"shell_command": "open /Applications/Slack.app"}]
               }
