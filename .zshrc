@@ -322,7 +322,12 @@ elif [[ $system == "Darwin" ]]; then
     function pa () {
         port search $1 | grep -i $1
     }
-    alias po='port -vq installed'
+    function po () {
+        port info $1
+        echo
+        port -vq installed $1
+    }
+    unalias po
     alias upd='sudo port -v selfupdate'
     alias upg='sudo port -v upgrade outdated'
     function ins {
