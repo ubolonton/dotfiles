@@ -53,6 +53,8 @@ ln -s dotfiles/.tmux.conf ~/
 
 ln -s ../dotfiles/Karabiner-Elements ~/.config/karabiner
 
-ln -s ~/dotfiles/IntelliJ/* ~/Library/Preferences/IdeaIC2018.2/
-ln -s ~/dotfiles/IntelliJ/* ~/Library/Preferences/PyCharmCE2018.2/
+ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/PyCharmCE2018.2/keymaps/
+
+ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/IdeaIC2018.2/keymaps/
+ln -s ~/dotfiles/IntelliJ/options/* ~/Library/Preferences/IdeaIC2018.2/options/
 #+end_src
