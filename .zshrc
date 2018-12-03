@@ -334,7 +334,7 @@ elif [[ $system == "Darwin" ]]; then
         sudo port -v install $*
     }
     function rem {
-        sudo port -v uninstall $*
+        sudo port -v uninstall --follow-dependencies $*
     }
     alias pf='port contents'
 fi
