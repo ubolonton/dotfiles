@@ -21,7 +21,7 @@ erlang
 findutils
 fontforge
 fswatch
-gcc5
+gawk
 gdb
 git
 global
@@ -35,7 +35,6 @@ htop
 icu-docs
 inetutils
 iperf3
-iTerm2
 jq
 KeePassXC
 libpqxx
@@ -48,6 +47,8 @@ mysql56
 mysql56-server
 nginx
 nmap
+openmpi-clang60
+openssh
 openvpn2
 pgAdmin3
 pipenv
@@ -64,6 +65,7 @@ py-virtualenvwrapper
 py27-gnureadline
 py27-rpy2
 py27-virtualenv
+py36-pip
 py36-virtualenv
 python35
 R
@@ -74,6 +76,7 @@ rtags
 ruby-build
 scala2.12
 sox
+sqlitebrowser
 swig
 texlive
 the_silver_searcher
@@ -83,6 +86,7 @@ ttf2eot
 ttfautohint
 vcs_blackbox
 watch
+watchman
 wget
 wireshark2
 woff2
