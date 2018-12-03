@@ -8,10 +8,11 @@ aspell-dict-vi
 autoconf
 autojump
 automake
-cask
+clojure
 cmake
 coreutils
 ctags
+easy-rsa
 elixir
 emacs
 emacs-app
@@ -36,6 +37,7 @@ inetutils
 iperf3
 iTerm2
 jq
+KeePassXC
 libpqxx
 maven3
 mercurial
@@ -47,7 +49,13 @@ mysql56-server
 nginx
 nmap
 openvpn2
+pgAdmin3
+pipenv
+postgresql10
+postgresql10-doc
 postgresql94-server
+postgresql96
+protobuf3-cpp
 pstree
 py-pip
 py-pyicu
@@ -57,9 +65,12 @@ py27-gnureadline
 py27-rpy2
 py27-virtualenv
 py36-virtualenv
+python35
 R
 rbenv
 redis
+rlwrap
+rtags
 ruby-build
 scala2.12
 sox
