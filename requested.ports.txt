@@ -35,7 +35,9 @@ htop
 icu-docs
 inetutils
 iperf3
+iTerm2
 jq
+k6
 KeePassXC
 libpqxx
 maven3
@@ -43,8 +45,10 @@ mercurial
 mongo-tools
 mongodb
 moreutils
+mtr
 mysql56
 mysql56-server
+ncdu
 nginx
 nmap
 openmpi-clang60
