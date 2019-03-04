@@ -270,7 +270,7 @@
                 "to": [{"modifiers": ["command", "shift"], "key_code": "hyphen"}]
               }, {
                 "type": "basic",
-                "description": "C-M-h -> ⌘⇧]",
+                "description": "C-M-n -> ⌘⇧]",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
                   "(conkeror|firefox|Chrome|iChat)",
                   "com\\.apple\\.finder",
@@ -278,6 +278,22 @@
                 ]}],
                 "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "l"},
                 "to": [{"modifiers": ["command", "shift"], "key_code": "equal_sign"}]
+              }, {
+                "type": "basic",
+                "description": "C-M-h -> ^⇧⇥",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "desktop\\.WhatsApp"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "j"},
+                "to": [{"modifiers": ["control", "shift"], "key_code": "tab"}]
+              }, {
+                "type": "basic",
+                "description": "C-M-n -> ^⇥",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "desktop\\.WhatsApp"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "l"},
+                "to": [{"modifiers": ["control"], "key_code": "tab"}]
               }
             ]
           }, {
