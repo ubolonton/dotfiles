@@ -133,7 +133,7 @@
             ]
           }, {
 
-            "description": "Deleting: ⌫  ⌦  ⌥⌫  ⌥⌦  ^K",
+            "description": "Deleting: ⌫  ⌦  ⌥⌫  ⌥⌦  M-i M-I",
             "manipulators": [
               {
                 "type": "basic",
@@ -167,9 +167,29 @@
 
               , {
                 "type": "basic",
-                "description": "M-i -> ^K",
+                "description": "M-i -> ^K (kill-line)",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "g"},
                 "to": [{"modifiers": ["control"], "key_code": "v"}]
+              }
+
+              , {
+                "type": "basic",
+                "description": "M-I -> ^A ^K (kill-whole-line)",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "(firefox|Chrome|iChat)",
+                  "com\\.skype\\.skype",
+                  "com\\.tinyspeck\\.slackmacgap",
+                  "com\\.hnc\\.Discord",
+                  "desktop\\.WhatsApp",
+                  "com\\.spotify\\.client",
+                  "com\\.apple\\.Notes",
+                  "com\\.apple\\.mail"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "g"},
+                "to": [
+                  {"modifiers": ["control"], "key_code": "a"},
+                  {"modifiers": ["control"], "key_code": "v"}
+                ]
               }
             ]
           }, {
