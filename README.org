@@ -57,4 +57,8 @@ ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/PyCharmCE2018.2/keymap
 
 ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/IdeaIC2018.2/keymaps/
 ln -s ~/dotfiles/IntelliJ/options/* ~/Library/Preferences/IdeaIC2018.2/options/
+
+mkdir -p ~/Library/'Application Support'/Code/User/
+cd ~/Library/'Application Support'/Code/User/
+ln -s ../../../../dotfiles/'Visual Studio Code'/* ./
 #+end_src

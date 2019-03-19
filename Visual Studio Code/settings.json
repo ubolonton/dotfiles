@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true
+}
