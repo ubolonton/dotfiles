@@ -112,6 +112,22 @@
               }, {
                 "type": "basic",
                 "description": "M-G -> ⇱",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.microsoft\\.VSCode"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "u"},
+                "to": [{"modifiers": ["command"], "key_code": "up_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "M-R -> ⇲",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.microsoft\\.VSCode"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "o"},
+                "to": [{"modifiers": ["command"], "key_code": "down_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "M-G -> ⇱",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
                   "(Emacs|Aquamacs|Remacs)",
