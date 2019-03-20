@@ -319,6 +319,7 @@
                 "description": "C-M-h -> ^⇧⇥",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
                   "com\\.skype\\.skype",
+                  "com\\.microsoft\\.VSCode",
                   "desktop\\.WhatsApp"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "j"},
@@ -328,6 +329,7 @@
                 "description": "C-M-n -> ^⇥",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
                   "com\\.skype\\.skype",
+                  "com\\.microsoft\\.VSCode",
                   "desktop\\.WhatsApp"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "l"},
