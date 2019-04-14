@@ -419,8 +419,10 @@ VIRTUAL_ENV_DISABLE_PROMPT=TRUE
 
 ######################################################################
 # Javascript
-export NVM_DIR="$HOME/.nvm"
-ublt/maybe-load "$NVM_DIR/nvm.sh"
+if [ -d "$HOME/.nvm" ] ; then
+    export NVM_DIR="$HOME/.nvm"
+    ublt/maybe-load "$NVM_DIR/nvm.sh"
+fi
 
 ######################################################################
 # Rust
