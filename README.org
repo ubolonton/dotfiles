@@ -50,6 +50,7 @@ ln -s dotfiles/.jshint.json ~/
 ln -s dotfiles/.lein ~/
 ln -s dotfiles/.psqlrc ~/
 ln -s dotfiles/.tmux.conf ~/
+ln -s dotfiles/.rustfmt.toml ~/
 
 ln -s ../dotfiles/Karabiner-Elements ~/.config/karabiner
 
