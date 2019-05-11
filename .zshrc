@@ -293,6 +293,7 @@ alias l.='ls -d .*'                        # List dot files
 ######################################################################
 # Other
 alias ec='emacsclient'
+alias ee="emacsclient -a '' -e"
 alias tailf='tail -f'
 
 ######################################################################
