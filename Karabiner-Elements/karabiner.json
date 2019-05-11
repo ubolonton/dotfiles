@@ -428,6 +428,10 @@
                 "to": [{"shell_command": "osascript -e 'activate application \"Conkeror\"'"}]
               }, {
                 "type": "basic",
+                "from": {"modifiers": {"mandatory": ["command", "control"]}, "key_code": "f"},
+                "to": [{"shell_command": "/opt/local/bin/emacsclient -a '' -e '(pullover-start)'"}]
+              }, {
+                "type": "basic",
                 "from": {"key_code": "f3"},
                 "to": [{"shell_command": "open /Applications/iTerm.app"}]
               }, {
