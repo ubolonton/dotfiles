@@ -1,8 +1,8 @@
 # -*- mode: conf-unix; -*-
 
 [user]
-    name = Nguyễn Tuấn Anh
-    email = ubolonton@gmail.com
+	name = Tuấn-Anh Nguyễn
+	email = ubolonton@gmail.com
 [color]
     status = auto
     diff = auto
