@@ -48,3 +48,6 @@
     smtpserverport = 587
 [diff "gpg"]
 	textconv = gpg --use-agent -q --batch --decrypt
+
+[includeIf "gitdir/i:~/Programming/pp/**/.git"]
+    path = "~/dotfiles/pp.gitconfig"
