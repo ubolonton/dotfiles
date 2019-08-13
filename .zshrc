@@ -213,10 +213,6 @@ bindkey -e "\e[27~" kill-word
 bindkey -e "\e[1~" beginning-of-line
 bindkey -e "\e[4~" end-of-line
 
-if command_exists exa; then
-    bindkey -s '\el' 'exa\n'
-fi
-
 ######################################################################
 # TODO XXX FIX HACK WTF F*ck /etc/profile calling path_helper. This makes sure that
 # /opt paths go before /usr paths.
@@ -244,7 +240,9 @@ elif [[ $system == "Darwin" ]]; then
     alias ls='ls -aCFho -G'
 fi
 
-alias exa='exa -a -lbghmS'
+if command_exists exa; then
+    alias ls='exa -a -lbghmS'
+fi
 
 ######################################################################
 # Inspect disk
