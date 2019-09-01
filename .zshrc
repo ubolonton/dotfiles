@@ -430,6 +430,11 @@ if [ -d "$HOME/.nvm" ] ; then
     ublt/maybe-load "$NVM_DIR/nvm.sh"
 fi
 
+if [ -d "$HOME/.yarn/bin" ] ; then
+    ublt/add-path "$HOME/.config/yarn/global/node_modules/.bin"
+    ublt/add-path "$HOME/.yarn/bin"
+fi
+
 ######################################################################
 # Rust
 if [ -s "$HOME/.cargo/bin/rustup" ] ; then
