@@ -119,9 +119,17 @@ ${left} ${middle} ${right}
 ${second}"
 }
 
+ublt/exit-code() {
+    if [ $? == 0 ]; then
+        echo 😃
+    else
+        echo 😱
+    fi
+}
+
 function ublt/right-prompt {
     # Red exit code wrapped in [], nothing if exit code is 0
-    local exit_code="%(?..[%{$fg[red]%}%?%{$reset_color%}])"
+    local exit_code="%(?.😃.😱 [%{$fg[red]%}%?%{$reset_color%}])"
 
     # Set git prompt variables
     local ZSH_THEME_GIT_PROMPT_PREFIX="%{$terminfo[bold]$fg[magenta]%}"
