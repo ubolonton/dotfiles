@@ -1,4 +1,5 @@
-*.el diff=elisp
-*.clj diff=clj
-*.cljs diff=cljs
+*.el diff=lisp
+*.clj diff=lisp
+*.cljs diff=lisp
 *.gpg diff=gpg
+*.rs diff=rust

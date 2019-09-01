@@ -22,12 +22,6 @@
     enabled = 1
 [i18n]
     logoutputencoding = UTF-8
-[diff "elisp"]
-    xfuncname="^(\\((def).*)$"
-[diff "clj"]
-    xfuncname="^(\\((def).*)$"
-[diff "cljs"]
-    xfuncname="^(\\((def).*)$"
 [color]
     diff = auto
     status = auto
@@ -44,6 +38,9 @@
     smtpserver = smtp.gmail.com
     smtpuser = ubolonton@gmail.com
     smtpserverport = 587
+
+[diff "lisp"]
+    xfuncname = "^(\\((def).*)$"
 [diff "gpg"]
 	textconv = gpg --use-agent -q --batch --decrypt
 
