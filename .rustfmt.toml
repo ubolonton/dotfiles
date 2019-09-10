@@ -11,3 +11,5 @@ use_try_shorthand = true
 # I'd like to order these by specificity.
 reorder_imports = false
 reorder_modules = false
+
+merge_impors = true
