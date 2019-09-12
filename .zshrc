@@ -318,7 +318,12 @@ if [[ $system == "Linux" ]]; then
     function pa () {
         apt-cache search --names-only $1 | grep -i $1
     }
-    alias po='apt-cache policy'
+    function po () {
+        apt-cache showpkg $1
+        echo
+        apt-cache show $1
+        apt-cache policy $1
+    }
     alias upd='sudo apt-get update; aptn "Updated"'
     alias upg='sudo apt-get upgrade; aptn "Upgraded"'
     function ins {
