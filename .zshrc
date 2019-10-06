@@ -137,16 +137,11 @@ function ublt/right-prompt {
     local ZSH_THEME_GIT_PROMPT_DIRTY="%{$terminfo[bold]$fg[red]%} ✘"
     local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[yellow]%} °"
     local ZSH_THEME_GIT_PROMPT_CLEAN="%{$terminfo[bold]$fg[green]%} ✔"
-    # Get the actual prompt now
-    local git_info="$(git_prompt_info)"
 
     local terminal="%l"
 
-    echo "${exit_code} ${git_info} ${terminal}"
+    echo "${exit_code} ${terminal}"
 }
-
-PROMPT='$(ublt/prompt)'
-RPROMPT='$(ublt/right-prompt)'
 
 ######################################################################
 # This is is loaded before custom key bindings, since fzf binds some keys which I want to override.
@@ -450,6 +445,13 @@ if [ -s "$HOME/.cargo/bin/rustup" ] ; then
     if command_exists sccache ; then
         export RUSTC_WRAPPER=sccache
     fi
+fi
+
+if command_exists starship ; then
+    eval "$(starship init zsh)"
+else
+    PROMPT='$(ublt/prompt)'
+    RPROMPT='$(ublt/right-prompt)'
 fi
 
 ######################################################################
