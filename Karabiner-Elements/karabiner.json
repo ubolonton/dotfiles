@@ -400,7 +400,7 @@
                 "type": "basic",
                 "description": "s-h -> ⌘⇧O",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
-                  "com\\.jetbrains\\.intellij\\.ce"
+                  "com\\.jetbrains\\.intellij"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "j"},
                 "to": [{"modifiers": ["command", "shift"], "key_code": "s"}]
@@ -408,7 +408,7 @@
                 "type": "basic",
                 "description": "s-H -> ⌘⇧F",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
-                  "com\\.jetbrains\\.intellij\\.ce"
+                  "com\\.jetbrains\\.intellij"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["command", "shift"]}, "key_code": "j"},
                 "to": [{"modifiers": ["command", "shift"], "key_code": "y"}]
@@ -441,7 +441,7 @@
               }, {
                 "type": "basic",
                 "from": {"key_code": "f10"},
-                "to": [{"shell_command": "open '/Applications/IntelliJ IDEA CE.app'"}]
+                "to": [{"shell_command": "open '/Applications/IntelliJ IDEA.app'"}]
               }, {
                 "type": "basic",
                 "from": {"key_code": "f11"},
@@ -480,7 +480,7 @@
               }, {
                 "type": "basic",
                 "from": {"key_code": "0", "modifiers": {"mandatory": ["fn"]}},
-                "to": [{"shell_command": "open '/Applications/IntelliJ IDEA CE.app'"}]
+                "to": [{"shell_command": "open '/Applications/IntelliJ IDEA.app'"}]
               }, {
                 "type": "basic",
                 "from": {"key_code": "hyphen", "modifiers": {"mandatory": ["fn"]}},
