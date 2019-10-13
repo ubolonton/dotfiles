@@ -1,19 +1,35 @@
 <application>
   <component name="FileTypeManager" version="17">
-    <ignoreFiles list="*.hprof;*.pyc;*.pyo;*.rbc;*.tfstate;*.tfstate.backup;*.yarb;*~;.DS_Store;.git;.hg;.svn;CVS;__pycache__;_svn;vssver.scc;vssver2.scc;.terraform;" />
+    <ignoreFiles list="*.hprof;*.pyc;*.pyo;*.rbc;*.tfstate;*.tfstate.backup;*.yarb;*~;.DS_Store;.git;.hg;.svn;.terraform;CVS;__pycache__;_svn;vssver.scc;vssver2.scc;" />
     <extensionMap>
-      <mapping ext="prc" type="DBN-PSQL" />
-      <mapping ext="tps" type="DBN-PSQL" />
       <mapping ext="tpe" type="DBN-PSQL" />
-      <mapping ext="tpb" type="DBN-PSQL" />
       <mapping ext="trg" type="DBN-PSQL" />
-      <mapping ext="pks" type="DBN-PSQL" />
+      <mapping ext="prc" type="DBN-PSQL" />
       <mapping ext="fnc" type="DBN-PSQL" />
+      <mapping ext="tps" type="DBN-PSQL" />
+      <mapping ext="pks" type="DBN-PSQL" />
+      <mapping ext="tpb" type="DBN-PSQL" />
       <mapping ext="pkg" type="DBN-PSQL" />
       <mapping ext="pkb" type="DBN-PSQL" />
       <mapping ext="vw" type="DBN-SQL" />
+      <mapping pattern="*.js.flow" type="Flow" />
+      <mapping pattern="*.js.flow" type="Flow" />
+      <removed_mapping ext="cmd" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="log" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="bat" approved="true" type="PLAIN_TEXT" />
       <removed_mapping ext="yml" approved="true" type="YAML" />
+      <removed_mapping ext="yaml" approved="true" type="YAML" />
       <mapping ext="yml" type="YAML_EX" />
+      <mapping ext="yaml" type="YAML_EX" />
+      <removed_mapping ext="bat" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="log" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="dockerfile" approved="true" type="textmate" />
+      <removed_mapping ext="makefile" approved="true" type="textmate" />
+      <removed_mapping ext="yml" approved="true" type="YAML" />
+      <removed_mapping ext="cmd" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="snakefile" approved="true" type="textmate" />
+      <removed_mapping ext="yaml" approved="true" type="YAML" />
+      <mapping pattern=".lein-repl-history" type="Clojure" />
     </extensionMap>
   </component>
 </application>
