@@ -145,6 +145,9 @@ function ublt/right-prompt {
 
 ######################################################################
 # This is is loaded before custom key bindings, since fzf binds some keys which I want to override.
+if [[ $system == "Darwin" ]]; then
+    ublt/maybe-load /opt/local/share/fzf/shell/key-bindings.zsh
+fi
 ublt/maybe-load "$HOME/.fzf.zsh"
 bindkey '^T' transpose-chars
 
