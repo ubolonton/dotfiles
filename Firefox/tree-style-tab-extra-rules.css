@@ -1,42 +1,52 @@
 /* Title of unread tabs */
-.tab.unread .label {
+tab-item.unread .label-content {
   color: magenta !important;
   font-style: italic !important;
 }
 
 /* Add private browsing indicator per tab */
-.tab.private-browsing .label:before {
+tab-item.private-browsing .label-content:before {
   content: "🕶";
 }
 
 /* Less visible tab dividers.
    A black border with a very low alpha slightly darkens any color. */
-.tab {
+tab-item {
   border: solid 1px #00000012;
 }
 
 /* Change styling of pending (unloaded) tabs */
-.tab.discarded {
+tab-item.discarded {
   opacity: 0.65;
 }
-.tab.discarded .label {
+tab-item.discarded .label-content {
   font-style: italic;
 }
-.tab.discarded .favicon {
+tab-item.discarded tab-favicon {
   opacity: 0.85 !important;
 }
 
 /* Show close button only when hovering */
-.tab:not(:hover) .closebox {
+tab-item:not(:hover) .closebox {
   display: none;
 }
-.tab .closebox::before {
+tab-item .closebox::before {
   border-radius: 5px; /* vary between 0 and 10 to make the background rounder */
 }
-.tab .closebox:hover::before {
+tab-item .closebox:hover::before {
   background: #c8c8c8;
   opacity: 1; /* defaults to 0.1 */
 }
-.tab.active .closebox:hover::before {
+tab-item.active .closebox:hover::before {
   background: #96afc8;
 }
+
+/* As little space before the tab name as possible.
+   The fold/unfold icon is not affected. */
+tab-item:not(.pinned) {
+  padding-left: 0px !important; /* !important is required when there are enough tabs to cause a scrollbar */
+}
+
+/* tab-item[data-current-uri^="https://github.com"] { */
+/*   background-color: hsl(300, 30%, 75%); */
+/* } */
