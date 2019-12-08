@@ -77,3 +77,5 @@ wireguard-tools
 wireshark2
 woff2
 youtube-dl
+pgcli
+imagemagick
