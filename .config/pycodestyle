@@ -1,0 +1,4 @@
+# -*- mode: conf-toml -*-
+
+[pycodestyle]
+max-line-length = 120

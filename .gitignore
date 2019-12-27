@@ -7,3 +7,5 @@
 /.xmonad/xmonad.errors
 /.xmonad/xmonad.hi
 /.xmonad/xmonad.o
+/.config/pgcli/history
+/.config/pgcli/log

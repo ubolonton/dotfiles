@@ -1,0 +1,64 @@
+prompt_order = [
+    "username",
+    "hostname",
+    # "git_branch",
+    # "git_state",
+    # "git_status",
+    "rust",
+    "package",
+    "dotnet",
+    "golang",
+    "java",
+    "nodejs",
+    "python",
+    "ruby",
+    "nix_shell",
+    "directory",
+    # "memory_usage",
+    "aws",
+    "env_var",
+    "cmd_duration",
+    "time",
+    "line_break",
+    # "jobs",
+    # "battery",
+    "character",
+]
+
+[username]
+style_user = "bold green"
+show_always = true
+
+[hostname]
+style = "bold red"
+ssh_only = false
+
+[character]
+use_symbol_for_status = true
+symbol = "😃"
+error_symbol = "😱"
+# symbol = "➜"
+# error_symbol = "✗"
+
+[directory]
+truncation_length = 8
+fish_style_pwd_dir_length = 2
+truncate_to_repo = false
+style = "bold blue"
+
+[time]
+disabled = false
+format = "%a %Y-%m-%d %H:%M:%S %z"
+style = "cyan"
+
+[rust]
+style = "dimmed"
+
+[nodejs]
+style = "dimmed"
+
+[python]
+style = "dimmed"
+
+[package]
+style = "dimmed"
