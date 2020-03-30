@@ -79,3 +79,5 @@ woff2
 youtube-dl
 pgcli
 imagemagick
+hugo +extended
+pandoc
