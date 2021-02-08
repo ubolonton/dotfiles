@@ -428,15 +428,22 @@ VIRTUAL_ENV_DISABLE_PROMPT=TRUE
 
 ######################################################################
 # Javascript
-if [ -d "$HOME/.nvm" ] ; then
-    export NVM_DIR="$HOME/.nvm"
-    ublt/maybe-load "$NVM_DIR/nvm.sh"
+
+if [ -d "$HOME/.volta" ] ; then
+   export VOLTA_HOME="$HOME/.volta"
+   ublt/add-path "$VOLTA_HOME/bin"
+else
+    if [ -d "$HOME/.nvm" ] ; then
+        export NVM_DIR="$HOME/.nvm"
+        ublt/maybe-load "$NVM_DIR/nvm.sh"
+    fi
+
+    if [ -d "$HOME/.yarn/bin" ] ; then
+        ublt/add-path "$HOME/.config/yarn/global/node_modules/.bin"
+        ublt/add-path "$HOME/.yarn/bin"
+    fi
 fi
 
-if [ -d "$HOME/.yarn/bin" ] ; then
-    ublt/add-path "$HOME/.config/yarn/global/node_modules/.bin"
-    ublt/add-path "$HOME/.yarn/bin"
-fi
 
 ######################################################################
 # Rust
