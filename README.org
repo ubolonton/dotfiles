@@ -45,6 +45,7 @@ ln -s dotfiles/.z* ~/
 ln -s dotfiles/.oh-my-zsh ~/
 ln -s dotfiles/.gitconfig ~/
 ln -s dotfiles/.gitattributes ~/
+ln -s dotfiles/.gitignore_global ~/
 ln -s dotfiles/.inputrc ~/
 ln -s dotfiles/.jshint.json ~/
 ln -s dotfiles/.lein ~/
