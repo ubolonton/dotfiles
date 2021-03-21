@@ -12,4 +12,4 @@ use_try_shorthand = true
 reorder_imports = false
 reorder_modules = false
 
-merge_impors = true
+merge_imports = true
