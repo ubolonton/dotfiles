@@ -1,29 +1,21 @@
-prompt_order = [
-    "username",
-    "hostname",
-    # "git_branch",
-    # "git_state",
-    # "git_status",
-    "rust",
-    "package",
-    "dotnet",
-    "golang",
-    "java",
-    "nodejs",
-    "python",
-    "ruby",
-    "nix_shell",
-    "directory",
-    # "memory_usage",
-    "aws",
-    "env_var",
-    "cmd_duration",
-    "time",
-    "line_break",
-    # "jobs",
-    # "battery",
-    "character",
-]
+format = """\
+$username\
+$hostname\
+$rust\
+$package\
+$dotnet\
+$golang\
+$java\
+$nodejs\
+$python\
+$ruby\
+$nix_shell\
+$directory\
+$cmd_duration\
+$time\
+$line_break\
+$character\
+"""
 
 [username]
 style_user = "bold green"
@@ -35,9 +27,9 @@ ssh_only = false
 
 [character]
 use_symbol_for_status = true
-symbol = "😃"
+success_symbol = "😃"
 error_symbol = "😱"
-# symbol = "➜"
+# success_symbol = "➜"
 # error_symbol = "✗"
 
 [directory]
@@ -48,7 +40,7 @@ style = "bold blue"
 
 [time]
 disabled = false
-format = "%a %Y-%m-%d %H:%M:%S %z"
+time_format = "%a %Y-%m-%d %H:%M:%S %z"
 style = "cyan"
 
 [rust]
@@ -62,3 +54,6 @@ style = "dimmed"
 
 [package]
 style = "dimmed"
+
+[kubernetes]
+disabled = false
