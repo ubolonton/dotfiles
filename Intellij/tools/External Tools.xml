@@ -1,0 +1,9 @@
+<toolSet name="External Tools">
+  <tool name="Emacs" description="Edit in Emacs" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient" />
+      <option name="PARAMETERS" value="+$LineNumber$:$ColumnNumber$ $FilePath$ --no-wait" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
+    </exec>
+  </tool>
+</toolSet>

@@ -128,6 +128,7 @@
     <keyboard-shortcut first-keystroke="ctrl h" second-keystroke="d" />
     <keyboard-shortcut first-keystroke="ctrl h" second-keystroke="ctrl d" />
   </action>
+  <action id="RecentFiles" />
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="n" />
   </action>
@@ -137,6 +138,11 @@
     <keyboard-shortcut first-keystroke="alt home" />
   </action>
   <action id="SurroundWith" />
+  <action id="SwitcherIterateItems" />
+  <action id="SwitcherRecentEditedChangedToggleCheckBox" />
+  <action id="Tool_External Tools_Emacs">
+    <keyboard-shortcut first-keystroke="meta e" />
+  </action>
   <action id="TypeHierarchy" />
   <action id="TypeHierarchy.BaseOnThisType" />
   <action id="TypeHierarchyBase.BaseOnThisType" />

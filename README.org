@@ -41,26 +41,28 @@ Paste content of [[file:Firefox/tree-style-tab-extra-rules.css]] into the custom
 
 * OS X
 #+begin_src shell
-ln -s dotfiles/.z* ~/
-ln -s dotfiles/.oh-my-zsh ~/
-ln -s dotfiles/.gitconfig ~/
-ln -s dotfiles/.gitattributes ~/
-ln -s dotfiles/.gitignore_global ~/
-ln -s dotfiles/.inputrc ~/
-ln -s dotfiles/.jshint.json ~/
-ln -s dotfiles/.lein ~/
-ln -s dotfiles/.psqlrc ~/
-ln -s dotfiles/.tmux.conf ~/
-ln -s dotfiles/.rustfmt.toml ~/
+  ln -s dotfiles/.z* ~/
+  ln -s dotfiles/.oh-my-zsh ~/
+  ln -s dotfiles/.gitconfig ~/
+  ln -s dotfiles/.gitattributes ~/
+  ln -s dotfiles/.gitignore_global ~/
+  ln -s dotfiles/.inputrc ~/
+  ln -s dotfiles/.jshint.json ~/
+  ln -s dotfiles/.lein ~/
+  ln -s dotfiles/.psqlrc ~/
+  ln -s dotfiles/.tmux.conf ~/
+  ln -s dotfiles/.rustfmt.toml ~/
 
-ln -s ../dotfiles/Karabiner-Elements ~/.config/karabiner
+  ln -s ../dotfiles/Karabiner-Elements ~/.config/karabiner
 
-ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/PyCharmCE2018.2/keymaps/
+  ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/PyCharmCE2018.2/keymaps/
 
-ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/IdeaIC2018.2/keymaps/
-ln -s ~/dotfiles/IntelliJ/options/* ~/Library/Preferences/IdeaIC2018.2/options/
+  export INTELLIJ_CONF_DIR=~/Library/ApplicationSupport/JetBrains/IntelliJIdea2021.1
+  ln -s ~/dotfiles/IntelliJ/keymaps/* $INTELLIJ_CONF_DIR/keymaps/
+  ln -s ~/dotfiles/IntelliJ/options/* $INTELLIJ_CONF_DIR/options/
+  ln -s ~/dotfiles/IntelliJ/tools/* $INTELLIJ_CONF_DIR/tools/
 
-mkdir -p ~/Library/'Application Support'/Code/User/
-cd ~/Library/'Application Support'/Code/User/
-ln -s ../../../../dotfiles/'Visual Studio Code'/* ./
+  mkdir -p ~/Library/'Application Support'/Code/User/
+  cd ~/Library/'Application Support'/Code/User/
+  ln -s ../../../../dotfiles/'Visual Studio Code'/* ./
 #+end_src
