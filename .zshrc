@@ -28,7 +28,7 @@ ZSH_THEME=""
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(npm pip kubectl colored-man-pages cargo rust osx aws)
+plugins=(pip kubectl colored-man-pages cargo rust osx aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -343,7 +343,7 @@ elif [[ $system == "Darwin" ]]; then
         echo
         port -vq installed $1
     }
-    unalias po
+    # unalias po
     alias upd='sudo port -v selfupdate'
     alias upg='sudo port -v upgrade outdated'
     function ins {
@@ -444,6 +444,12 @@ else
     fi
 fi
 
+######################################################################
+# Java
+GRAALVM_BIN="/Library/Java/JavaVirtualMachines/openjdk11-graalvm/Contents/Home/bin"
+# if [ -s $GRAALVM_BIN ] ; then
+#     ublt/add-path $GRAALVM_BIN
+# fi
 
 ######################################################################
 # Rust
@@ -503,3 +509,8 @@ export DOCKER_BUILDKIT=1
 ######################################################################
 # Path deduplication
 typeset -U PATH
+
+
+# #### FIG ENV VARIABLES ####
+# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+# #### END FIG ENV VARIABLES ####

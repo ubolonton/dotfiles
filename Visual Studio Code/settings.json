@@ -1,6 +1,5 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "workbench.colorTheme": "Monokai Pro (Filter Machine)",
     "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
@@ -10,5 +9,6 @@
     "aceJump.placeholder.height": 12,
     "aceJump.placeholder.textPosY": 10,
     "aceJump.placeholder.width": 10,
-    "aceJump.placeholder.textPosX": 1
+    "aceJump.placeholder.textPosX": 1,
+    "workbench.colorTheme": "Forest All-Nighter"
 }

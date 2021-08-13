@@ -9,9 +9,6 @@
     </case-options>
     <formatting-settings enabled="false" />
   </DBN-PSQL>
-  <PostgresCodeStyleSettings version="2">
-    <option name="KEYWORD_CASE" value="0" />
-  </PostgresCodeStyleSettings>
   <DBN-SQL>
     <case-options enabled="true">
       <option name="KEYWORD_CASE" value="upper" />
@@ -26,6 +23,12 @@
       <option name="ITERATION_ELEMENTS_WRAPPING" value="chop_down_if_not_single" />
     </formatting-settings>
   </DBN-SQL>
+  <PostgresCodeStyleSettings version="2">
+    <option name="KEYWORD_CASE" value="0" />
+  </PostgresCodeStyleSettings>
+  <Python>
+    <option name="OPTIMIZE_IMPORTS_SORT_IMPORTS" value="false" />
+  </Python>
   <ScalaCodeStyleSettings>
     <option name="importLayout">
       <array>
