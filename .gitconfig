@@ -46,3 +46,7 @@
 
 [includeIf "gitdir/i:~/Programming/pp/**/.git"]
     path = "~/dotfiles/pp.gitconfig"
+
+# # XXX: Make straight.el ignore untracked files instead.
+[includeIf "gitdir/i:~/Programming/projects/emacs-tree-sitter/**"]
+    path = "~/.emacs.d/.gitconfig"

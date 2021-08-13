@@ -133,6 +133,10 @@
     <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="n" />
   </action>
   <action id="Run" />
+  <action id="Scala.ShowImplicits">
+    <keyboard-shortcut first-keystroke="shift ctrl alt equals" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt add" />
+  </action>
   <action id="SelectNextOccurrence" />
   <action id="ShowNavBar">
     <keyboard-shortcut first-keystroke="alt home" />
@@ -148,6 +152,9 @@
   <action id="TypeHierarchyBase.BaseOnThisType" />
   <action id="Vcs.Log.GoToRef">
     <keyboard-shortcut first-keystroke="meta f" />
+  </action>
+  <action id="Vcs.ShowMessageHistory">
+    <keyboard-shortcut first-keystroke="ctrl m" />
   </action>
   <action id="Vcs.UpdateProject" />
   <action id="VcsShowNextChangeMarker">

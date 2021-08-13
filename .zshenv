@@ -46,6 +46,9 @@ ublt/basic-path
 typeset -U PATH
 
 ######################################################################
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk15/Contents/Home
+
+######################################################################
 # WTF https://www.google.com/search?q=python+ValueError%3A+unknown+locale%3A+UTF-8&ie=utf-8&oe=utf-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
