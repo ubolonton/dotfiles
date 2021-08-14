@@ -509,8 +509,3 @@ export DOCKER_BUILDKIT=1
 ######################################################################
 # Path deduplication
 typeset -U PATH
-
-
-# #### FIG ENV VARIABLES ####
-# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-# #### END FIG ENV VARIABLES ####
