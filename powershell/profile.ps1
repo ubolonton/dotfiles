@@ -18,5 +18,14 @@ $env:Path = "$HOME\bin;" + $env:Path
 
 $env:Path += ";C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.22.27905\bin\HostX86\x86"
 
+# https://github.com/dahlbyk/posh-sshell
+# https://itsallinthecode.com/powershell-using-git-with-ssh-keys-on-windows-10/
+try {
+    Import-Module posh-sshell
+    Start-SshAgent
+} catch {
+    echo "Fail to set up ssh agent integration"
+}
+
 echo "Done running profile.ps1"
 echo "--------------------------------------------------------------------------------"
