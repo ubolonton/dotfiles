@@ -53,6 +53,8 @@ Paste content of [[file:Firefox/tree-style-tab-extra-rules.css]] into the custom
   ln -s dotfiles/.tmux.conf ~/
   ln -s dotfiles/.rustfmt.toml ~/
 
+tic ~/dotfiles/xterm-256color-italic.terminfo
+
   ln -s ../dotfiles/Karabiner-Elements ~/.config/karabiner
 
   ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/PyCharmCE2018.2/keymaps/
