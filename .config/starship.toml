@@ -26,7 +26,6 @@ style = "bold red"
 ssh_only = false
 
 [character]
-use_symbol_for_status = true
 success_symbol = "😃"
 error_symbol = "😱"
 # success_symbol = "➜"
