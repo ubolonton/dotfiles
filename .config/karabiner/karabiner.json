@@ -483,6 +483,28 @@
                 "to": [{"shell_command": "open -a '/Applications/Google Chrome.app'"}]
               }
             ]
+          }, {
+
+            "description": "History navigation (Workaround for the deteriorating Firefox)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "s-[ -> s-<left>",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "firefox"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "hyphen"},
+                "to": [{"modifiers": ["command"], "key_code": "left_arrow"}]
+              }, {
+                "type": "basic",
+                "description": "s-] -> s-<right>",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "firefox"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "equal_sign"},
+                "to": [{"modifiers": ["command"], "key_code": "right_arrow"}]
+              }
+            ]
           }
         ]
       },
