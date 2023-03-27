@@ -1,0 +1,5 @@
+<config>
+  <use_client_time_zone>true</use_client_time_zone>
+  <!-- <multiline>true</multiline> -->
+  <format>PrettyCompactMonoBlock</format>
+</config>
