@@ -425,28 +425,28 @@
               }, {
                 "type": "basic",
                 "from": {"key_code": "f2"},
-                "to": [{"shell_command": "open -a /Applications/Firefox.app"}]
+                "to": [{"shell_command": "open -a Firefox"}]
               }, {
                 "type": "basic",
                 "from": {"key_code": "f3"},
-                "to": [{"shell_command": "open -a /Applications/iTerm2.app"}]
+                "to": [{"shell_command": "open -a iTerm2"}]
               }, {
                 "type": "basic",
                 "from": {"key_code": "f9"},
-                "to": [{"shell_command": "open -a /Applications/Firefox.app"}]
+                "to": [{"shell_command": "open -a Firefox"}]
               }, {
                 "type": "basic",
                 "from": {"key_code": "f10"},
-                "to": [{"shell_command": "open -a '/Applications/IntelliJ IDEA.app'"}]
+                "to": [{"shell_command": "open -a 'IntelliJ IDEA.app'"}]
               }, {
                 "type": "basic",
                 "from": {"key_code": "f11"},
-                "to": [{"shell_command": "open -a /Applications/Slack.app"}]
+                "to": [{"shell_command": "open -a Slack"}]
               }, {
                 "type": "basic",
                 "description": "Workaround for my old Advantage keyboard (f11 -> f8)",
                 "from": {"key_code": "f8"},
-                "to": [{"shell_command": "open -a /Applications/Slack.app"}]
+                "to": [{"shell_command": "open -a kitty"}]
               }
             ]
           }, {
