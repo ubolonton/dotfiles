@@ -53,6 +53,8 @@ Paste content of [[file:Firefox/tree-style-tab-extra-rules.css]] into the custom
   ln -s dotfiles/.tmux.conf ~/
   ln -s dotfiles/.rustfmt.toml ~/
   ln -s dotfiles/.clickhouse-client ~/
+  ln -s dotfiles/.duckdbrc ~/
+  ln -s dotfiles/.digrc ~/
 
 tic ~/dotfiles/xterm-256color-italic.terminfo
 
@@ -60,10 +62,11 @@ tic ~/dotfiles/xterm-256color-italic.terminfo
 
   ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/PyCharmCE2018.2/keymaps/
 
-  export INTELLIJ_CONF_DIR=~/Library/ApplicationSupport/JetBrains/IntelliJIdea2021.1
-  ln -s ~/dotfiles/IntelliJ/keymaps/* $INTELLIJ_CONF_DIR/keymaps/
-  ln -s ~/dotfiles/IntelliJ/options/* $INTELLIJ_CONF_DIR/options/
-  ln -s ~/dotfiles/IntelliJ/tools/* $INTELLIJ_CONF_DIR/tools/
+  export INTELLIJ_CONF_DIR=~/Library/'Application Support'/JetBrains/IntelliJIdea2023.1
+  ln -f -s ~/dotfiles/IntelliJ/keymaps/* $INTELLIJ_CONF_DIR/keymaps/
+  ln -f -s ~/dotfiles/IntelliJ/options/* $INTELLIJ_CONF_DIR/options/
+  ln -f -s ~/dotfiles/IntelliJ/tools/* $INTELLIJ_CONF_DIR/tools/
+  ln -f -s ~/dotfiles/IntelliJ/codestyles/* $INTELLIJ_CONF_DIR/codestyles/
 
   mkdir -p ~/Library/'Application Support'/Code/User/
   cd ~/Library/'Application Support'/Code/User/
