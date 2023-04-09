@@ -6,23 +6,21 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-numpy = "*"
+requests = "*"
+# pytz = "*"
+psycopg2 = "*"
+ptipython = "*"
+# Infra.
+boto3 = "*"
+kubernetes = "*"
+# Data analytics.
+s3fs = "*"
 pandas = "*"
 jupyter = "*"
-tensorflow = "*"
-pytz = "*"
-twisted = "*"
-ansible = "2.6"
-awscli = "*"
-ptipython = "*"
-grip = "*"
-boto3 = "*"
-opencv-python = "*"
-autopep8 = "*"
-pycodestyle = "*"
-pylint = "*"
-flake8 = "*"
+duckdb = "*"
+# pyarrow = "*"
+# Other.
 tree-sitter = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.11"
