@@ -451,6 +451,11 @@ GRAALVM_BIN="/Library/Java/JavaVirtualMachines/openjdk11-graalvm/Contents/Home/b
 #     ublt/add-path $GRAALVM_BIN
 # fi
 
+export SDKMAN_DIR="$HOME/.sdkman"
+if [ -s "$HOME/.sdkman/bin/sdkman-init.sh" ] ; then
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+
 ######################################################################
 # Rust
 if [ -s "$HOME/.cargo/bin/rustup" ] ; then
