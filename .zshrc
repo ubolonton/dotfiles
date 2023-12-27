@@ -506,6 +506,7 @@ fi
 ######################################################################
 unset system
 
+ublt/add-path "$HOME"/.local/bin
 ublt/add-path "$HOME/bin"
 
 # Docker sucks less with this setting.
