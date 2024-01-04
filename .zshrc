@@ -232,9 +232,7 @@ elif [[ $system == "Linux" ]]; then
     ublt_autojump_sh=/usr/share/autojump/autojump.sh
 fi
 
-if [ -f $ublt_autojump_sh ]; then
-    . $ublt_autojump_sh
-fi
+ublt/maybe-load $ublt_autojump_sh
 
 ######################################################################
 # Colored, detailed listing
@@ -406,9 +404,7 @@ ublt/add-path "$HOME/.composer/vendor/bin"
 
 ######################################################################
 # Ruby
-if [ -d "$HOME/.rbenv/bin" ] ; then
-    ublt/add-path "$HOME/.rbenv/bin"
-fi
+ublt/add-path "$HOME/.rbenv/bin"
 if command_exists rbenv ; then
     eval "$(rbenv init -)"
 fi
@@ -456,9 +452,7 @@ GRAALVM_BIN="/Library/Java/JavaVirtualMachines/openjdk11-graalvm/Contents/Home/b
 # fi
 
 export SDKMAN_DIR="$HOME/.sdkman"
-if [ -s "$HOME/.sdkman/bin/sdkman-init.sh" ] ; then
-    source "$HOME/.sdkman/bin/sdkman-init.sh"
-fi
+ublt/maybe-load "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ######################################################################
 # Rust
