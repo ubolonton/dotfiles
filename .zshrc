@@ -423,8 +423,12 @@ ublt/add-path $GOPATH/bin
 # Python
 # Virtualenv puts it before the prompt, which does not work well for my multi-prompt.
 VIRTUAL_ENV_DISABLE_PROMPT=TRUE
-# XXX: Disable because loading it here makes 'deactivate' not cleaning up $PATH corrrectly.
-# ublt/maybe-load "$HOME/.virtualenvs/default/bin/activate"
+
+if [ -d "$HOME/.pyenv" ] ; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    ublt/add-path "$PYENV_ROOT"/bin
+    eval "$(pyenv init -)"
+fi
 
 ######################################################################
 # Javascript
