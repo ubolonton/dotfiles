@@ -456,7 +456,7 @@ ublt/maybe-load "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ######################################################################
 # Rust
-if [ -s "$HOME/.cargo/bin/rustup" ] ; then
+if [ -s "$HOME/.cargo/bin/rustup" ] || command_exists cargo ; then
     ublt/add-path "$HOME/.cargo/bin"
 
     # Cache build artifacts.
