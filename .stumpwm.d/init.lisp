@@ -3,6 +3,8 @@
 (set-prefix-key (kbd "s-r"))
 
 
+(setf *mouse-focus-policy* :click)
+
 (set-module-dir (pathname-as-directory "/home/ubolonton/.stumpwm.d/stumpwm-contrib"))
 
 (load-module "end-session")
