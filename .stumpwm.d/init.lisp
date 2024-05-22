@@ -2,8 +2,6 @@
 
 (set-prefix-key (kbd "s-r"))
 
-;; sudo pkg install picom
-(run-shell-command "picom --no-fading-openclose --fade-in-step=1 --fade-out-step=1 --inactive-opacity=0.99")
 
 (set-module-dir (pathname-as-directory "/home/ubolonton/.stumpwm.d/stumpwm-contrib"))
 
@@ -19,3 +17,6 @@
 (asdf:load-system :slynk)
 
 (slynk:create-server :port 4004 :dont-close t)
+
+;; sudo pkg install picom
+(run-shell-command "picom --no-fading-openclose --fade-in-step=1 --fade-out-step=1 --inactive-opacity=0.99")
