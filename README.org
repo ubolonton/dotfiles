@@ -36,8 +36,10 @@ Symlink =~/Users/ubolonton/Library/Application Support/Karabiner= to =Karabiner=
 Look for ~Load preferences from a custom folder or URL~, set the directory to =dotfiles/iTerm2=.
 
 * Firefox
-Symlink ~<profile>/chrome/userChrome.css~ [[file:Firefox/userChrome.css][to userChrome.css]]
-Paste content of [[file:Firefox/tree-style-tab-extra-rules.css]] into the custom css box.
+- Go to about:config, set ~toolkit.legacyUserProfileCustomizations.stylesheets~ to ~true~.
+    - Go to about:profile to find the profile setting location.
+    - Symlink ~<profile>/chrome/userChrome.css~ [[file:Firefox/userChrome.css][to userChrome.css]]
+- Paste content of [[file:Firefox/tree-style-tab-extra-rules.css]] into the custom css box.
 
 * OS X
 #+begin_src shell
