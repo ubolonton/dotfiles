@@ -39,7 +39,7 @@
 
 (setf *mouse-focus-policy* :click)
 
-(set-module-dir (pathname-as-directory "/home/ubolonton/.stumpwm.d/stumpwm-contrib"))
+(set-module-dir (pathname-as-directory (merge-pathnames ".stumpwm.d/stumpwm-contrib" (user-homedir-pathname))))
 
 (load-module "end-session")
 
@@ -48,10 +48,9 @@
       (append asdf:*central-registry* '("/usr/local/lib/common-lisp/system-registry/")))
 
 ;; (use-package sly)
-(push #p"/home/ubolonton/.emacs.d/straight/build/sly/slynk/" asdf:*central-registry* )
-(push #p"/home/ubolonton/.emacs.d/straight/build/sly/contrib/" asdf:*central-registry*)
+(push (merge-pathnames ".emacs.d/straight/build/sly/slynk/" (user-homedir-pathname)) asdf:*central-registry* )
+(push (merge-pathnames ".emacs.d/straight/build/sly/contrib/" (user-homedir-pathname)) asdf:*central-registry*)
 (asdf:load-system :slynk)
-
 (slynk:create-server :port 4004 :dont-close t)
 
 ;; sudo pkg install picom
