@@ -1,7 +1,41 @@
 (in-package :stumpwm)
 
+(defcommand firefox () ()
+  (run-or-raise "firefox" '(:class "firefox")))
+
+(defcommand konsole () ()
+  (run-or-raise "konsole" '(:class "konsole")))
+
+(defcommand kitty () ()
+  (run-or-raise "kitty" '(:class "kitty")))
+
+
+
 (set-prefix-key (kbd "s-r"))
 
+(defun ublt/define-keys (key-map &rest ps)
+  "Define key binding pairs for KEY-MAP."
+  (let ((i 0))
+    (loop while (< i (length ps))
+          do (let ((src (elt ps i))
+                   (dst (elt ps (1+ i))))
+               (define-key key-map (kbd src) dst))
+          do (setf i (+ i 2)))))
+
+(ublt/define-keys
+ *top-map*
+ "F1" "emacs"
+ "F2" "firefox"
+ "F5" "kitty"
+ "F8" "kitty"
+ "F9" "firefox")
+
+(ublt/define-keys
+ *root-map*
+ "s-x" "colon"
+ "x" "colon")
+
+
 
 (setf *mouse-focus-policy* :click)
 
