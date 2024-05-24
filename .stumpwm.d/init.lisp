@@ -11,7 +11,7 @@
 
 
 
-(set-prefix-key (kbd "s-r"))
+(set-prefix-key (kbd "s-space"))
 
 (defun ublt/define-keys (key-map &rest ps)
   "Define key binding pairs for KEY-MAP."
