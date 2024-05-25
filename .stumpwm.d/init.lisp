@@ -27,8 +27,9 @@
  "F1" "emacs"
  "F2" "firefox"
  "F5" "kitty"
- "F8" "kitty"
- "F9" "firefox")
+ "F8" "konsole"
+ "F9" "firefox"
+ "s-TAB" "pull-hidden-other")
 
 (ublt/define-keys
  *root-map*
