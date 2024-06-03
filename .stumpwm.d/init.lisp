@@ -40,6 +40,10 @@
 
 (setf *mouse-focus-policy* :click)
 
+(setf *message-window-gravity* :bottom
+      *message-window-input-gravity* :bottom
+      *input-window-gravity* :bottom)
+
 (set-module-dir (pathname-as-directory (merge-pathnames ".stumpwm.d/stumpwm-contrib" (user-homedir-pathname))))
 
 (load-module "end-session")
