@@ -26,13 +26,21 @@
  *top-map*
  "F1" "emacs"
  "F2" "firefox"
+ "F3" "kitty"
  "F5" "kitty"
  "F8" "konsole"
  "F9" "firefox"
- "s-TAB" "pull-hidden-other")
+ "s-`" "pull-hidden-other"
+ "s-TAB" "other-window")
 
 (ublt/define-keys
  *root-map*
+ "s-Left" "move-window left"
+ "s-Right" "move-window right"
+ "s-d" "echo-date"
+ "d" "echo-date"
+ "s-g" "gother"
+ "g" "gother"
  "s-x" "colon"
  "x" "colon")
 
