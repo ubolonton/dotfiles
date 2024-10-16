@@ -148,10 +148,11 @@ function ublt/right-prompt {
 if [[ $system == "Darwin" ]]; then
     ublt/maybe-load /opt/local/share/fzf/shell/key-bindings.zsh
 elif [[ $system == "FreeBSD" ]]; then
-    ublt/maybe-load /usr/local/share/examples/fzf/shell/key-bindings.zsh
+    eval "$(fzf --zsh 2>/dev/null)" || ublt/maybe-load /usr/local/share/examples/fzf/shell/key-bindings.zsh
 elif [[ $system == "Linux" ]]; then
-    ublt/maybe-load /usr/share/doc/fzf/examples/completion.zsh
-    ublt/maybe-load /usr/share/doc/fzf/examples/key-bindings.zsh
+    eval "$(fzf --zsh 2>/dev/null)" ||
+        ublt/maybe-load /usr/share/doc/fzf/examples/completion.zsh &&
+            ublt/maybe-load /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 ublt/maybe-load "$HOME/.fzf.zsh"
 bindkey '^T' transpose-chars
