@@ -373,7 +373,7 @@
                 "type": "basic",
                 "description": "s-k",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
-                  "iterm2",
+                  "(iterm2|kitty)",
                   "conkeror",
                   "(Emacs|Aquamacs|Remacs)"
                 ]}],
