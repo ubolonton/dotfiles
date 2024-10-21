@@ -54,7 +54,7 @@
                 "description": "M-g -> ⌥←",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "(Emacs|Aquamacs|Remacs)",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "u"},
                 "to": [{"modifiers": ["option"], "key_code": "left_arrow"}]
@@ -63,7 +63,7 @@
                 "description": "M-r -> ⌥→",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "(Emacs|Aquamacs|Remacs)",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "o"},
                 "to": [{"modifiers": ["option"], "key_code": "right_arrow"}]
@@ -131,7 +131,7 @@
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
                   "(Emacs|Aquamacs|Remacs)",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "u"},
                 "to": [{"key_code": "home"}]
@@ -141,7 +141,7 @@
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
                   "(Emacs|Aquamacs|Remacs)",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "o"},
                 "to": [{"key_code": "end"}]
@@ -166,7 +166,7 @@
                 "description": "M-. -> ⌥⌫",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "(Emacs|Aquamacs|Remacs)",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "e"},
                 "to": [{"modifiers": ["option"], "key_code": "delete_or_backspace"}]
@@ -175,7 +175,7 @@
                 "description": "M-p -> ⌥⌦",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "(Emacs|Aquamacs|Remacs)",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "r"},
                 "to": [{"modifiers": ["option"], "key_code": "delete_forward"}]
@@ -235,7 +235,7 @@
                 "description": "C-M-c -> ⌥↑",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "i"},
                 "to": [{"modifiers": ["option"], "key_code": "up_arrow"}]
@@ -244,7 +244,7 @@
                 "description": "C-M-t -> ⌥↓",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
                   "com\\.apple\\.finder",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "k"},
                 "to": [{"modifiers": ["option"], "key_code": "down_arrow"}]
@@ -254,7 +254,7 @@
                 "type": "basic",
                 "description": "C-M-c -> C-o h",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "i"},
                 "to": [{"modifiers": ["control"], "key_code": "s"},
@@ -263,7 +263,7 @@
                 "type": "basic",
                 "description": "C-M-t -> C-o n",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "control"]}, "key_code": "k"},
                 "to": [{"modifiers": ["control"], "key_code": "s"},
@@ -300,7 +300,7 @@
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
                   "(conkeror|firefox|Chrome|iChat)",
                   "com\\.apple\\.finder",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "j"},
                 "to": [{"modifiers": ["command", "shift"], "key_code": "hyphen"}]
@@ -310,7 +310,7 @@
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
                   "(conkeror|firefox|Chrome|iChat)",
                   "com\\.apple\\.finder",
-                  "(iterm2|iTerm|Terminal)"
+                  "(iterm2|iTerm|Terminal|kitty)"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["control", "option"]}, "key_code": "l"},
                 "to": [{"modifiers": ["command", "shift"], "key_code": "equal_sign"}]
@@ -357,7 +357,7 @@
                 "type": "basic",
                 "description": "C-g",
                 "conditions": [{"type": "frontmost_application_unless", "bundle_identifiers": [
-                  "(iterm2|iTerm|Terminal)",
+                  "(iterm2|iTerm|Terminal|kitty)",
                   "conkeror",
                   "(Emacs|Aquamacs|Remacs)"
                 ]}],
