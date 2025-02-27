@@ -404,6 +404,7 @@
                 "type": "basic",
                 "description": "s-h -> ⌘⇧O",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.jetbrains\\.rustrover-EAP",
                   "com\\.jetbrains\\.intellij"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["command"]}, "key_code": "j"},
@@ -412,6 +413,7 @@
                 "type": "basic",
                 "description": "s-H -> ⌘⇧F",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.jetbrains\\.rustrover-EAP",
                   "com\\.jetbrains\\.intellij"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["command", "shift"]}, "key_code": "j"},
@@ -441,11 +443,16 @@
               }, {
                 "type": "basic",
                 "from": {"key_code": "f10"},
-                "to": [{"shell_command": "open -a 'IntelliJ IDEA.app'"}]
+                "to": [{"shell_command": "open -a 'IntelliJ IDEA Ultimate.app'"}]
               }, {
                 "type": "basic",
                 "from": {"key_code": "f11"},
                 "to": [{"shell_command": "open -a Slack"}]
+              }, {
+              }, {
+                "type": "basic",
+                "from": {"key_code": "f12"},
+                "to": [{"shell_command": "open -a RustRover"}]
               }, {
                 "type": "basic",
                 "description": "Workaround for my old Advantage keyboard (f11 -> f8)",
