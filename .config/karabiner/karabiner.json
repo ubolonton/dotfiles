@@ -113,6 +113,7 @@
                 "type": "basic",
                 "description": "M-G -> ⇱",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.todesktop\\.230313mzl4w4u92",
                   "com\\.microsoft\\.VSCode"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "u"},
@@ -121,6 +122,7 @@
                 "type": "basic",
                 "description": "M-R -> ⇲",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.todesktop\\.230313mzl4w4u92",
                   "com\\.microsoft\\.VSCode"
                 ]}],
                 "from": {"modifiers": {"mandatory": ["option", "shift"]}, "key_code": "o"},
@@ -319,6 +321,7 @@
                 "description": "C-M-h -> ^⇧⇥",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
                   "com\\.skype\\.skype",
+                  "com\\.todesktop\\.230313mzl4w4u92",
                   "com\\.microsoft\\.VSCode",
                   "desktop\\.WhatsApp"
                 ]}],
@@ -329,6 +332,7 @@
                 "description": "C-M-n -> ^⇥",
                 "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
                   "com\\.skype\\.skype",
+                  "com\\.todesktop\\.230313mzl4w4u92",
                   "com\\.microsoft\\.VSCode",
                   "desktop\\.WhatsApp"
                 ]}],
