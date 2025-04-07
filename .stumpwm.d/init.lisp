@@ -9,6 +9,12 @@
 (defcommand kitty () ()
   (run-or-raise "kitty" '(:class "kitty")))
 
+(defcommand kitty () ()
+  (run-or-raise "kitty" '(:class "kitty")))
+
+(defcommand intellij () ()
+  (run-or-raise "intellij-idea-ultimate" '(:class "jetbrains-idea")))
+
 
 
 (set-prefix-key (kbd "s-space"))
@@ -28,8 +34,10 @@
  "F2" "firefox"
  "F3" "kitty"
  "F5" "kitty"
- "F8" "konsole"
+ "F8" "kitty"
  "F9" "firefox"
+ "F10" "intellij"
+ "F11" "discord"
  "s-`" "pull-hidden-other"
  "s-TAB" "other-window")
 
@@ -42,7 +50,11 @@
  "s-g" "gother"
  "g" "gother"
  "s-x" "colon"
- "x" "colon")
+ "x" "colon"
+ "e" "emacs"
+ "s-e" "emacs"
+ "t" "kitty"
+ "s-t" "kitty")
 
 
 
