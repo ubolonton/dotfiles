@@ -9,8 +9,8 @@
 (defcommand kitty () ()
   (run-or-raise "kitty" '(:class "kitty")))
 
-(defcommand kitty () ()
-  (run-or-raise "kitty" '(:class "kitty")))
+(defcommand discord () ()
+  (run-or-raise "discord" '(:class "discord")))
 
 (defcommand intellij () ()
   (run-or-raise "intellij-idea-ultimate" '(:class "jetbrains-idea")))
