@@ -17,7 +17,6 @@ class AbstractWindowFilter:
             return True
 #+end_src
 
-
 * Konsole
 Symlink =~/.kde/share/apps/konsole= to =konsole=
 Symlink =~/.kde/share/config/konsolerc= to =konsolerc=
@@ -70,7 +69,5 @@ tic ~/dotfiles/xterm-256color-italic.terminfo
   ln -f -s ~/dotfiles/IntelliJ/tools/* $INTELLIJ_CONF_DIR/tools/
   ln -f -s ~/dotfiles/IntelliJ/codestyles/* $INTELLIJ_CONF_DIR/codestyles/
 
-  mkdir -p ~/Library/'Application Support'/Code/User/
-  cd ~/Library/'Application Support'/Code/User/
-  ln -s ../../../../dotfiles/'Visual Studio Code'/* ./
+ln -s "$HOME"/dotfiles/.config/Code ~/Library/'Application Support'/
 #+end_src
