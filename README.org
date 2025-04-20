@@ -25,49 +25,40 @@ Symlink =~/.kde/share/config/konsolerc= to =konsolerc=
 Just in case (use Konsole if possible).
 Symlink =~/.gconf/apps/gnome-terminal= to =gnome-terminal=
 
-* Redshift
-Symlink =~/.conf/redshift.conf= to =redshift.conf=
-
-* Karabiner
-Symlink =~/Users/ubolonton/Library/Application Support/Karabiner= to =Karabiner=
-
 * iTerm2
 Look for ~Load preferences from a custom folder or URL~, set the directory to =dotfiles/iTerm2=.
 
 * Firefox
 - Go to about:config, set ~toolkit.legacyUserProfileCustomizations.stylesheets~ to ~true~.
-    - Go to about:profile to find the profile setting location.
-    - Symlink ~<profile>/chrome/userChrome.css~ [[file:Firefox/userChrome.css][to userChrome.css]]
+  - Go to about:profile to find the profile setting location.
+  - Symlink ~<profile>/chrome/userChrome.css~ [[file:Firefox/userChrome.css][to userChrome.css]]
 - Paste content of [[file:Firefox/tree-style-tab-extra-rules.css]] into the custom css box.
 
 * OS X
 #+begin_src shell
-  ln -s dotfiles/.z* ~/
-  ln -s dotfiles/.oh-my-zsh ~/
-  ln -s dotfiles/.gitconfig ~/
-  ln -s dotfiles/.gitattributes ~/
-  ln -s dotfiles/.gitignore_global ~/
-  ln -s dotfiles/.inputrc ~/
-  ln -s dotfiles/.jshint.json ~/
-  ln -s dotfiles/.lein ~/
-  ln -s dotfiles/.psqlrc ~/
-  ln -s dotfiles/.tmux.conf ~/
-  ln -s dotfiles/.rustfmt.toml ~/
-  ln -s dotfiles/.clickhouse-client ~/
-  ln -s dotfiles/.duckdbrc ~/
-  ln -s dotfiles/.digrc ~/
+ln -s dotfiles/.config ~/
+ln -s dotfiles/.z* ~/
+ln -s dotfiles/.oh-my-zsh ~/
+ln -s dotfiles/.gitconfig ~/
+ln -s dotfiles/.gitattributes ~/
+ln -s dotfiles/.gitignore_global ~/
+ln -s dotfiles/.inputrc ~/
+ln -s dotfiles/.jshint.json ~/
+ln -s dotfiles/.lein ~/
+ln -s dotfiles/.psqlrc ~/
+ln -s dotfiles/.tmux.conf ~/
+ln -s dotfiles/.rustfmt.toml ~/
+ln -s dotfiles/.clickhouse-client ~/
+ln -s dotfiles/.duckdbrc ~/
+ln -s dotfiles/.digrc ~/
 
 tic ~/dotfiles/xterm-256color-italic.terminfo
 
-  ln -s ../dotfiles/Karabiner-Elements ~/.config/karabiner
-
-  ln -s ~/dotfiles/IntelliJ/keymaps/* ~/Library/Preferences/PyCharmCE2018.2/keymaps/
-
-  export INTELLIJ_CONF_DIR=~/Library/'Application Support'/JetBrains/IntelliJIdea2023.1
-  ln -f -s ~/dotfiles/IntelliJ/keymaps/* $INTELLIJ_CONF_DIR/keymaps/
-  ln -f -s ~/dotfiles/IntelliJ/options/* $INTELLIJ_CONF_DIR/options/
-  ln -f -s ~/dotfiles/IntelliJ/tools/* $INTELLIJ_CONF_DIR/tools/
-  ln -f -s ~/dotfiles/IntelliJ/codestyles/* $INTELLIJ_CONF_DIR/codestyles/
+export INTELLIJ_CONF_DIR=~/Library/'Application Support'/JetBrains/IntelliJIdea2023.1
+ln -f -s ~/dotfiles/IntelliJ/keymaps/* $INTELLIJ_CONF_DIR/keymaps/
+ln -f -s ~/dotfiles/IntelliJ/options/* $INTELLIJ_CONF_DIR/options/
+ln -f -s ~/dotfiles/IntelliJ/tools/* $INTELLIJ_CONF_DIR/tools/
+ln -f -s ~/dotfiles/IntelliJ/codestyles/* $INTELLIJ_CONF_DIR/codestyles/
 
 ln -s "$HOME"/dotfiles/.config/Code ~/Library/'Application Support'/
 #+end_src
