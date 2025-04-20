@@ -1,60 +1,89 @@
 * Goals
 # TODO: Add columns for programs' conformance.
 
-| name      | :1:                  | :2:                 | visual | Dvorak | QWERTY |                      |
-|-----------+----------------------+---------------------+--------+--------+--------+----------------------|
-| up        | prev-line            |                     | ↑      | M-c    | M-i    |                      |
-| down      | next-line            |                     | ↓      | M-t    | M-k    |                      |
-| right     | right-char           |                     | →      | M-h    | M-j    |                      |
-| left      | left-char            |                     | ←      | M-n    | M-l    |                      |
-| page-up   | scroll-down-command  |                     |        | M-C    | M-I    |                      |
-| page-down | scroll-up-command    |                     |        | M-T    | M-K    |                      |
-|           | backward-paragraph   |                     |        | M-H    | M-J    |                      |
-|           | forward-paragraph    |                     |        | M-N    | M-L    |                      |
-|           | backward-word        |                     |        | M-g    | M-u    |                      |
-|           | forward-word         |                     |        | M-r    | M-o    |                      |
-|           | beginning-of-buffer  |                     | ⇱      | M-G    | M-U    |                      |
-|           | end-of-buffer        |                     | ⇲      | M-R    | M-O    |                      |
-|           | beginning-of-line    |                     | ⇤      | M-d    | M-h    |                      |
-|           | end-of-line          |                     | ⇥      | M-D    | M-H    |                      |
-|-----------+----------------------+---------------------+--------+--------+--------+----------------------|
-| backspace | delete-backward-char |                     |        | M-e    | M-d    |                      |
-| delete    | delete-forward-char  |                     |        | M-u    | M-f    |                      |
-|           | backward-kill-word   |                     |        | M-.    | M-e    |                      |
-|           | forward-kill-word    |                     |        | M-p    | M-r    |                      |
-|           | kill-line            |                     |        | M-i    | M-g    |                      |
-|           | kill-whole-line      |                     |        | M-I    | M-G    |                      |
-|-----------+----------------------+---------------------+--------+--------+--------+----------------------|
-|           | ublt:prev-inner-tab  | ublt:move-item-up   |        | C-M-c  | C-M-i  |                      |
-|           | ublt:next-inner-tab  | ublt:move-item-down |        | C-M-t  | C-M-k  |                      |
-|           | ublt:prev-tab        | ublt:indent-item    |        | C-M-h  | C-M-j  |                      |
-|           | ublt:next-tab        | ublt:dedent-item    |        | C-M-n  | C-M-l  |                      |
-|           |                      | ublt:move-line-up   |        | M-s-c  | M-s-i  |                      |
-|           |                      | ublt:move-line-down |        | M-s-t  | M-s-k  |                      |
-|           |                      | ublt:indent         |        | M-s-h  | M-s-j  |                      |
-|           |                      | ublt:dedent         |        | M-s-n  | M-s-l  |                      |
-|-----------+----------------------+---------------------+--------+--------+--------+----------------------|
-|           | ublt:special-prev    |                     |        | M-m    | M-m    |                      |
-|           | ublt:special-next    |                     |        | M-v    | M-.    |                      |
-|-----------+----------------------+---------------------+--------+--------+--------+----------------------|
-|           | copy                 |                     |        | s-c    | s-i    |                      |
-|           | cut                  |                     |        | s-x    | s-b    |                      |
-|           | paste                |                     |        | s-v    | s-.    |                      |
-|           | paste-special        |                     |        | s-V    | s->     |                      |
-|           | save                 |                     |        | s-s    | s-;    |                      |
-|           | undo                 |                     |        | s-z    | s-/    |                      |
-|           | redo                 |                     |        | s-Z    | s-?    |                      |
-|           | select-all           |                     |        | s-a    | s-a    |                      |
-|           | open                 |                     |        | s-o    | s-s    |                      |
-|           | find                 |                     |        | s-f    | s-y    |                      |
-|           | ublt:other-frame     |                     |        | s-`    | s-`    |                      |
-|           |                      | ublt:go-to-symbol   |        | s-i    | s-g    |                      |
-|           | ublt:command-panel   |                     |        | s-h    | s-j    | C-k in "modern" apps |
-|           | ublt:new-tab         | ublt:go-to-source   |        | s-t    | s-k    |                      |
-|           | ublt:re-open-tab     | ublt:go-back        |        | s-T    | s-K    | Code editor/IDE only |
-|-----------+----------------------+---------------------+--------+--------+--------+----------------------|
-|           |                      | ublt:go-to-impls    |        | C-s-t  | C-s-k  |                      |
-|           |                      |                     |        |        |        |                      |
+|   | 1️⃣                   | 2️⃣                  | Dvorak | QWERTY |                      |
+|---+----------------------+---------------------+--------+--------+----------------------|
+| ↑ | prev-line            |                     | M-c    | M-i    |                      |
+| ↓ | next-line            |                     | M-t    | M-k    |                      |
+| → | right-char           |                     | M-h    | M-j    |                      |
+| ← | left-char            |                     | M-n    | M-l    |                      |
+| ⇞ | scroll-down-command  |                     | M-C    | M-I    |                      |
+| ⇟ | scroll-up-command    |                     | M-T    | M-K    |                      |
+|   | backward-paragraph   |                     | M-H    | M-J    |                      |
+|   | forward-paragraph    |                     | M-N    | M-L    |                      |
+| ⇷ | backward-word        |                     | M-g    | M-u    |                      |
+| ⇸ | forward-word         |                     | M-r    | M-o    |                      |
+| ⇱ | beginning-of-buffer  |                     | M-G    | M-U    |                      |
+| ⇲ | end-of-buffer        |                     | M-R    | M-O    |                      |
+| ⇤ | beginning-of-line    |                     | M-d    | M-h    |                      |
+| ⇥ | end-of-line          |                     | M-D    | M-H    |                      |
+|   |                      |                     |        |        |                      |
+|---+----------------------+---------------------+--------+--------+----------------------|
+| ⌫ | delete-backward-char |                     | M-e    | M-d    |                      |
+| ⌦ | delete-forward-char  |                     | M-u    | M-f    |                      |
+|   | backward-kill-word   |                     | M-.    | M-e    |                      |
+|   | forward-kill-word    |                     | M-p    | M-r    |                      |
+|   | kill-line            |                     | M-i    | M-g    |                      |
+|   | kill-whole-line      |                     | M-I    | M-G    |                      |
+|   |                      |                     |        |        |                      |
+|---+----------------------+---------------------+--------+--------+----------------------|
+|   | ublt:move-item-up    | ublt:prev-inner-tab | C-M-c  | C-M-i  |                      |
+|   | ublt:move-item-down  | ublt:next-inner-tab | C-M-t  | C-M-k  |                      |
+|   | ublt:indent-item     | ublt:prev-tab       | C-M-h  | C-M-j  |                      |
+|   | ublt:dedent-item     | ublt:next-tab       | C-M-n  | C-M-l  |                      |
+|   | ublt:move-line-up    |                     | M-s-c  | M-s-i  |                      |
+|   | ublt:move-line-down  |                     | M-s-t  | M-s-k  |                      |
+|   | ublt:indent          |                     | M-s-h  | M-s-j  |                      |
+|   | ublt:dedent          |                     | M-s-n  | M-s-l  |                      |
+|   |                      |                     |        |        |                      |
+|---+----------------------+---------------------+--------+--------+----------------------|
+|   | ublt:special-prev    |                     | M-m    | M-m    |                      |
+|   | ublt:special-next    |                     | M-v    | M-.    |                      |
+|   |                      |                     |        |        |                      |
+|---+----------------------+---------------------+--------+--------+----------------------|
+|   | copy                 |                     | s-c    | s-i    |                      |
+|   | cut                  |                     | s-x    | s-b    |                      |
+|   | paste                |                     | s-v    | s-.    |                      |
+|   | paste-special        |                     | s-V    | s->     |                      |
+|   | save                 |                     | s-s    | s-;    |                      |
+|   | undo                 |                     | s-z    | s-/    |                      |
+|   | redo                 |                     | s-Z    | s-?    |                      |
+|   | select-all           |                     | s-a    | s-a    |                      |
+|   | open                 |                     | s-o    | s-s    |                      |
+|   | find                 |                     | s-f    | s-y    |                      |
+|   | quit                 |                     | s-q    | s-x    |                      |
+|   | open-settings        |                     | s-,    | s-w    |                      |
+|   | zoom-in              |                     | s-+    | s-]    |                      |
+|   | zoom-out             |                     | s--    | s-,    |                      |
+|   |                      |                     |        |        |                      |
+|   | ublt:jump-visually   |                     | s-m    | s-m    |                      |
+|   | ublt:other-frame     |                     | s-`    | s-`    |                      |
+|   | ublt:close           |                     | s-k    | s-v    |                      |
+|   | ublt:command-panel   |                     | s-h    | s-j    | C-k in "modern" apps |
+|   | ublt:go-to-symbol    |                     | s-i    | s-g    |                      |
+|   | ublt:go-to-source    | ublt:new-tab        | s-t    | s-k    |                      |
+|   | ublt:go-back         | ublt:re-open-tab    | s-T    | s-K    |                      |
+|   | ublt:last-buffer     |                     | s-n    | s-l    | Otherwise new        |
+|   | ublt:other-window    |                     | s-w    | s-,    | Otherwise close      |
+|   |                      |                     | s-b    | s-n    |                      |
+|   |                      |                     | s-d    | s-h    |                      |
+|   |                      |                     | s-e    | s-d    |                      |
+|   |                      |                     | s-g    | s-u    |                      |
+|   |                      |                     | s-j    | s-c    |                      |
+|   |                      |                     | s-l    | s-p    |                      |
+|   |                      |                     | s-p    | s-r    |                      |
+|   |                      |                     | s-r    | s-o    |                      |
+|   |                      |                     | s-u    | s-f    |                      |
+|   |                      |                     | s-y    | s-t    |                      |
+|   |                      |                     | s-;    | s-z    |                      |
+|   |                      |                     | s-[    | s--    |                      |
+|   |                      |                     | s-]    | s-=    |                      |
+|   |                      |                     | s-/    | s-[    |                      |
+|   |                      |                     | s-\    | s-\    |                      |
+|   |                      |                     |        |        |                      |
+|---+----------------------+---------------------+--------+--------+----------------------|
+|   | ublt:go-to-impls     |                     | C-s-t  | C-s-k  |                      |
+|   |                      |                     |        |        |                      |
 
 * Remapping
 
