@@ -2,8 +2,9 @@
 export EDITOR="emacsclient"
 export SVN_EDITOR="emacsclient"
 
-# More colors
+# Emacs relies on these.
 export TERM=xterm-256color
+export COLORTERM=truecolor
 
 ######################################################################
 # Utils
