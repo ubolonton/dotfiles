@@ -34,6 +34,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+HISTSIZE=10000000
 SAVEHIST=$HISTSIZE
 
 ######################################################################
