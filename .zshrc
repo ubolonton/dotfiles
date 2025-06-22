@@ -34,6 +34,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+SAVEHIST=$HISTSIZE
+
 ######################################################################
 # My theme, based on bira theme
 # NTA TODO: 256-color theme with fallback to 16-color
