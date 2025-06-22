@@ -9,6 +9,7 @@
 [branch "master"]
     merge = refs/heads/master
 [core]
+	pager = delta
     excludesfile = ~/.gitignore_global
     # autocrlf = input
     # quotepath = false
@@ -16,6 +17,7 @@
      attributesfile = ~/.gitattributes
 [merge]
     tool = emerge
+    conflictstyle = zdiff3
 [push]
     default = current
 [rerere]
@@ -43,6 +45,13 @@
     xfuncname = "^(\\((def).*)$"
 [diff "gpg"]
 	textconv = gpg --use-agent -q --batch --decrypt
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+	side-by-side = true
+	navigate = true  # use n and N to move between diff sections
 
 [includeIf "gitdir/i:~/Programming/pp/**/.git"]
     path = "~/dotfiles/pp.gitconfig"
