@@ -175,19 +175,23 @@ fi
 
 bindkey -e "\eh" backward-char
 bindkey -e "\en" forward-char
-bindkey -e "\eg" backward-word
-bindkey -e "\er" forward-word
+# Translated by Kitty already.
+# bindkey -e "\eg" backward-word
+# bindkey -e "\er" forward-word
 
 bindkey -e "\ee" backward-delete-char
 bindkey -e "\eu" delete-char
-bindkey -e "\e." backward-kill-word
-bindkey -e "\ep" kill-word
+# Translated by Kitty already.
+# bindkey -e "\e." backward-kill-word
+# bindkey -e "\ep" kill-word
 
-bindkey -e "\ed" beginning-of-line
-bindkey -e "\eD" end-of-line
+# Translated by Karabiner/keyd.
+# bindkey -e "\ed" beginning-of-line
+# bindkey -e "\eD" end-of-line
 
-bindkey -e "\ei" kill-line
-bindkey -e "\eI" kill-whole-line
+# Translated by lower layers.
+# bindkey -e "\ei" kill-line
+# bindkey -e "\eI" kill-whole-line
 
 bindkey -e "\ec" up-history
 bindkey -e "\et" down-history
@@ -199,7 +203,8 @@ bindkey -e "\eR" end-of-buffer-or-history
 
 bindkey -e "\e\t" menu-complete
 bindkey -e "\t" menu-complete
-bindkey -e "\eb" menu-complete
+# Translated by lower layers
+# bindkey -e "\eb" menu-complete
 
 bindkey -e "\e " insert-last-word
 
