@@ -446,13 +446,16 @@
                 "to": [{"shell_command": "open -a 'IntelliJ IDEA Ultimate.app'"}]
               }, {
                 "type": "basic",
+                "from": {"key_code": "f10", "modifiers": {"mandatory": ["command"]}},
+                "to": [{"shell_command": "open -a 'Visual Studio Code'"}]
+              }, {
+                "type": "basic",
                 "from": {"key_code": "f11"},
                 "to": [{"shell_command": "open -a Slack"}]
               }, {
-              }, {
                 "type": "basic",
-                "from": {"key_code": "f12"},
-                "to": [{"shell_command": "open -a RustRover"}]
+                "from": {"key_code": "f11", "modifiers": {"mandatory": ["command"]}},
+                "to": [{"shell_command": "open -a Discord"}]
               }, {
                 "type": "basic",
                 "description": "Workaround for my old Advantage keyboard (f11 -> f8)",
