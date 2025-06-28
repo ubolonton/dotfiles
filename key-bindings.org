@@ -1,101 +1,102 @@
 * Goals
 # TODO: Add columns for programs' conformance.
 
-|    | 1️⃣                     | 2️⃣                  | Dvorak | QWERTY |                      |
-|----+------------------------+---------------------+--------+--------+----------------------|
-| -  | *Navigation*             | -                   | -      | -      | -                    |
-| ↑  | prev-line              |                     | M-c    | M-i    |                      |
-| ↓  | next-line              |                     | M-t    | M-k    |                      |
-| →  | right-char             |                     | M-h    | M-j    |                      |
-| ←  | left-char              |                     | M-n    | M-l    |                      |
-| ⇞  | scroll-down-command    |                     | M-C    | M-I    |                      |
-| ⇟  | scroll-up-command      |                     | M-T    | M-K    |                      |
-|    | backward-paragraph     |                     | M-H    | M-J    |                      |
-|    | forward-paragraph      |                     | M-N    | M-L    |                      |
-| ⇷  | backward-word          |                     | M-g    | M-u    |                      |
-| ⇸  | forward-word           |                     | M-r    | M-o    |                      |
-| ⇱  | beginning-of-buffer    |                     | M-G    | M-U    |                      |
-| ⇲  | end-of-buffer          |                     | M-R    | M-O    |                      |
-| ⇤  | beginning-of-line      |                     | M-d    | M-h    |                      |
-| ⇥  | end-of-line            |                     | M-D    | M-H    |                      |
-|----+------------------------+---------------------+--------+--------+----------------------|
-| -  | *Deleting*               | -                   | -      | -      | -                    |
-| ⌫  | delete-backward-char   |                     | M-e    | M-d    |                      |
-| ⌦  | delete-forward-char    |                     | M-u    | M-f    |                      |
-|    | backward-kill-word     |                     | M-.    | M-e    |                      |
-|    | forward-kill-word      |                     | M-p    | M-r    |                      |
-|    | kill-line              |                     | M-i    | M-g    |                      |
-|    | kill-whole-line        |                     | M-I    | M-G    |                      |
-|----+------------------------+---------------------+--------+--------+----------------------|
-| -  | *Special Editing*        | *Special Navigation*  | -      | -      | -                    |
-| ⌥↑ | ublt:move-item-up      | ublt:prev-inner-tab | C-M-c  | C-M-i  |                      |
-| ⌥↓ | ublt:move-item-down    | ublt:next-inner-tab | C-M-t  | C-M-k  |                      |
-| ⌥→ | ublt:indent-item       | ublt:prev-tab       | C-M-h  | C-M-j  |                      |
-| ⌥← | ublt:dedent-item       | ublt:next-tab       | C-M-n  | C-M-l  |                      |
-| ⌘↑ | ublt:move-line-up      |                     | M-s-c  | M-s-i  |                      |
-| ⌘↓ | ublt:move-line-down    |                     | M-s-t  | M-s-k  |                      |
-| ⌘→ | ublt:indent            |                     | M-s-h  | M-s-j  |                      |
-| ⌘← | ublt:dedent            |                     | M-s-n  | M-s-l  |                      |
-|    | ublt:special-prev      |                     | M-m    | M-m    |                      |
-|    | ublt:special-next      |                     | M-v    | M-.    |                      |
-|----+------------------------+---------------------+--------+--------+----------------------|
-| -  | *macOS*                  | -                   | -      | -      | -                    |
-|    | copy                   |                     | s-c    | s-i    |                      |
-|    | cut                    |                     | s-x    | s-b    |                      |
-|    | paste                  |                     | s-v    | s-.    |                      |
-|    | paste-special          |                     | s-V    | s->     |                      |
-|    | save                   |                     | s-s    | s-;    |                      |
-|    | undo                   |                     | s-z    | s-/    |                      |
-|    | redo                   |                     | s-Z    | s-?    |                      |
-|    | select-all             |                     | s-a    | s-a    |                      |
-|    | open                   |                     | s-o    | s-s    |                      |
-|    | find                   |                     | s-f    | s-y    |                      |
-|    | quit                   |                     | s-q    | s-x    |                      |
-|    | open-settings          |                     | s-,    | s-w    |                      |
-|    | zoom-in                |                     | s-+    | s-]    |                      |
-|    | zoom-out               |                     | s--    | s-,    |                      |
-|----+------------------------+---------------------+--------+--------+----------------------|
-| -  | *Super Meta*             | -                   | -      | -      | -                    |
-|    | ublt:jump-visually     |                     | s-m    | s-m    |                      |
-|    | ublt:jump-visually-2   |                     | s-M    | s-M    |                      |
-|    | ublt:other-frame       |                     | s-`    | s-`    |                      |
-|    | ublt:close             |                     | s-k    | s-v    |                      |
-|    | ublt:command-panel     |                     | s-h    | s-j    | C-k in "modern" apps |
-|    | ublt:search-in-files   |                     | s-H    | s-J    |                      |
-|    | ublt:go-to-symbol      |                     | s-i    | s-g    |                      |
-|    | ublt:go-to-source      | ublt:new-tab        | s-t    | s-k    |                      |
-|    | ublt:go-back           | ublt:re-open-tab    | s-T    | s-K    |                      |
-|    | ublt:last-buffer       |                     | s-n    | s-l    | Otherwise new        |
-|    | ublt:other-window      |                     | s-w    | s-,    | Otherwise close      |
-|    | ublt:open-at-point     |                     | s-b    | s-n    |                      |
-|    |                        |                     | s-d    | s-h    |                      |
-|    |                        |                     | s-e    | s-d    |                      |
-|    |                        |                     | s-g    | s-u    |                      |
-|    |                        |                     | s-j    | s-c    |                      |
-|    |                        |                     | s-l    | s-p    |                      |
-|    |                        |                     | s-p    | s-r    |                      |
-|    |                        |                     | s-r    | s-o    |                      |
-|    |                        |                     | s-u    | s-f    |                      |
-|    |                        |                     | s-y    | s-t    |                      |
-|    |                        |                     | s-;    | s-z    |                      |
-|    |                        |                     | s-[    | s--    |                      |
-|    |                        |                     | s-]    | s-=    |                      |
-|    |                        |                     | s-/    | s-[    |                      |
-|    |                        |                     | s-\    | s-\    |                      |
-|----+------------------------+---------------------+--------+--------+----------------------|
-| -  | *Misc*                   | -                   | -      | -      | -                    |
-|    | ublt:expand-dwim       |                     | M-b    | M-n    |                      |
-|    | recenter-top-bottom    |                     | C-l    | C-p    |                      |
-|    | ublt:center-top-bottom |                     | M-l    | M-p    |                      |
-|    | ublt:collapse-expand   |                     | M-a    | M-a    |                      |
-|    | ublt:clean-up-buffer   |                     | C-c n  | C-i l  |                      |
-|    | ublt:show-doc-at-point |                     | C-h d  | C-j h  |                      |
-|----+------------------------+---------------------+--------+--------+----------------------|
-| -  | *Wilderness*             | -                   | -      | -      | -                    |
-|    |                        |                     | C-s-c  | C-s-i  |                      |
-|    | ublt:go-to-impls       |                     | C-s-t  | C-s-k  |                      |
-|    |                        |                     | C-s-h  | C-s-j  |                      |
-|    |                        |                     | C-s-n  | C-s-l  |                      |
+|    |                        |                     | Dvorak | QWERTY |                      | Emacs | IntelliJ | VS Code | Zed | zsh |
+|----+------------------------+---------------------+--------+--------+----------------------+-------+----------+---------+-----+-----|
+| -  | *Navigation*             | -                   | -      | -      | -                    |       |          |         |     |     |
+| ↑  | prev-line              |                     | M-c    | M-i    |                      | ✅    | ✅       | ✅      | ✅  | ✅  |
+| ↓  | next-line              |                     | M-t    | M-k    |                      | ✅    | ✅       | ✅      | ✅  | ✅  |
+| →  | right-char             |                     | M-h    | M-j    |                      | ✅    | ✅       | ✅      | ✅  | ✅  |
+| ←  | left-char              |                     | M-n    | M-l    |                      | ✅    | ✅       | ✅      | ✅  | ✅  |
+| ⇷  | backward-word          |                     | M-g    | M-u    |                      | ✅    | ✅       | ✅      |     | ✅  |
+| ⇸  | forward-word           |                     | M-r    | M-o    |                      | ✅    | ✅       | ✅      |     | ✅  |
+| ⇤  | beginning-of-line      |                     | M-d    | M-h    |                      | ✅    | ✅       | ✅      |     | ✅  |
+| ⇥  | end-of-line            |                     | M-D    | M-H    |                      | ✅    | ✅       | ✅      |     | ✅  |
+| ↱  | backward-paragraph     |                     | M-H    | M-J    |                      | ✅    | ✅       | ✅      |     |     |
+| ↳  | forward-paragraph      |                     | M-N    | M-L    |                      | ✅    | ✅       | ✅      |     |     |
+| ⇞  | scroll-down-command    |                     | M-C    | M-I    |                      | ✅    | ✅       | ✅      |     | ✅  |
+| ⇟  | scroll-up-command      |                     | M-T    | M-K    |                      | ✅    | ✅       | ✅      |     | ✅  |
+| ⇱  | beginning-of-buffer    |                     | M-G    | M-U    |                      | ✅    | ✅       | ✅      |     |     |
+| ⇲  | end-of-buffer          |                     | M-R    | M-O    |                      | ✅    | ✅       | ✅      |     |     |
+|----+------------------------+---------------------+--------+--------+----------------------+-------+----------+---------+-----+-----|
+| -  | *Deleting*               | -                   | -      | -      | -                    |       |          |         |     |     |
+| ⌫  | delete-backward-char   |                     | M-e    | M-d    |                      | ✅    | ✅       |         |     |     |
+| ⌦  | delete-forward-char    |                     | M-u    | M-f    |                      | ✅    | ✅       |         |     |     |
+| ⌥⌫ | backward-kill-word     |                     | M-.    | M-e    |                      | ✅    | ✅       |         |     |     |
+| ⌥⌦ | forward-kill-word      |                     | M-p    | M-r    |                      | ✅    | ✅       |         |     |     |
+| ^K | kill-line              |                     | M-i    | M-g    |                      | ✅    | ✅       |         |     |     |
+| ^U | kill-whole-line        |                     | M-I    | M-G    |                      | ✅    | ✅       |         |     |     |
+|----+------------------------+---------------------+--------+--------+----------------------+-------+----------+---------+-----+-----|
+| -  | *Special Editing*        | *Special Navigation*  | -      | -      | -                    |       |          |         |     |     |
+| ⌥↑ | ublt:move-item-up      | ublt:prev-inner-tab | C-M-c  | C-M-i  |                      |       |          |         |     |     |
+| ⌥↓ | ublt:move-item-down    | ublt:next-inner-tab | C-M-t  | C-M-k  |                      |       |          |         |     |     |
+| ⌥→ | ublt:indent-item       | ublt:prev-tab       | C-M-h  | C-M-j  |                      |       |          |         |     |     |
+| ⌥← | ublt:dedent-item       | ublt:next-tab       | C-M-n  | C-M-l  |                      |       |          |         |     |     |
+| ⌘↑ | ublt:move-line-up      |                     | M-s-c  | M-s-i  |                      |       |          |         |     |     |
+| ⌘↓ | ublt:move-line-down    |                     | M-s-t  | M-s-k  |                      |       |          |         |     |     |
+| ⌘→ | ublt:indent            |                     | M-s-h  | M-s-j  |                      |       |          |         |     |     |
+| ⌘← | ublt:dedent            |                     | M-s-n  | M-s-l  |                      |       |          |         |     |     |
+|    | ublt:special-prev      |                     | M-m    | M-m    |                      |       |          |         |     |     |
+|    | ublt:special-next      |                     | M-v    | M-.    |                      |       |          |         |     |     |
+|----+------------------------+---------------------+--------+--------+----------------------+-------+----------+---------+-----+-----|
+| -  | *macOS*                  | -                   | -      | -      | -                    |       |          |         |     |     |
+|    | copy                   |                     | s-c    | s-i    |                      |       |          |         |     |     |
+|    | cut                    |                     | s-x    | s-b    |                      |       |          |         |     |     |
+|    | paste                  |                     | s-v    | s-.    |                      |       |          |         |     |     |
+|    | paste-special          |                     | s-V    | s->     |                      |       |          |         |     |     |
+|    | save                   |                     | s-s    | s-;    |                      |       |          |         |     |     |
+|    | undo                   |                     | s-z    | s-/    |                      |       |          |         |     |     |
+|    | redo                   |                     | s-Z    | s-?    |                      |       |          |         |     |     |
+|    | select-all             |                     | s-a    | s-a    |                      |       |          |         |     |     |
+|    | open                   |                     | s-o    | s-s    |                      |       |          |         |     |     |
+|    | find                   |                     | s-f    | s-y    |                      |       |          |         |     |     |
+|    | quit                   |                     | s-q    | s-x    |                      |       |          |         |     |     |
+|    | open-settings          |                     | s-,    | s-w    |                      |       |          |         |     |     |
+|    | zoom-in                |                     | s-+    | s-}    |                      |       |          |         |     |     |
+|    | zoom-in-?              |                     | s-=    | s-]    |                      |       |          |         |     |     |
+|    | zoom-out               |                     | s--    | s-'    |                      |       |          |         |     |     |
+|----+------------------------+---------------------+--------+--------+----------------------+-------+----------+---------+-----+-----|
+| -  | *Super Meta*             | -                   | -      | -      | -                    |       |          |         |     |     |
+|    | ublt:jump-visually     |                     | s-m    | s-m    |                      |       |          |         |     |     |
+|    | ublt:jump-visually-2   |                     | s-M    | s-M    |                      |       |          |         |     |     |
+|    | ublt:other-frame       |                     | s-`    | s-`    |                      |       |          |         |     |     |
+|    | ublt:close             |                     | s-k    | s-v    |                      |       |          |         |     |     |
+|    | ublt:command-panel     |                     | s-h    | s-j    | C-k in "modern" apps |       |          |         |     |     |
+|    | ublt:search-in-files   |                     | s-H    | s-J    |                      |       |          |         |     |     |
+|    | ublt:go-to-symbol      |                     | s-i    | s-g    |                      |       |          |         |     |     |
+|    | ublt:go-to-source      | ublt:new-tab        | s-t    | s-k    |                      |       |          |         |     |     |
+|    | ublt:go-back           | ublt:re-open-tab    | s-T    | s-K    |                      |       |          |         |     |     |
+|    | ublt:last-buffer       |                     | s-n    | s-l    | Otherwise new        |       |          |         |     |     |
+|    | ublt:other-window      |                     | s-w    | s-,    | Otherwise close      |       |          |         |     |     |
+|    | ublt:open-at-point     |                     | s-b    | s-n    |                      |       |          |         |     |     |
+|    |                        |                     | s-d    | s-h    |                      |       |          |         |     |     |
+|    |                        |                     | s-e    | s-d    |                      |       |          |         |     |     |
+|    |                        |                     | s-g    | s-u    |                      |       |          |         |     |     |
+|    |                        |                     | s-j    | s-c    |                      |       |          |         |     |     |
+|    |                        |                     | s-l    | s-p    |                      |       |          |         |     |     |
+|    |                        |                     | s-p    | s-r    |                      |       |          |         |     |     |
+|    |                        |                     | s-r    | s-o    |                      |       |          |         |     |     |
+|    |                        |                     | s-u    | s-f    |                      |       |          |         |     |     |
+|    |                        |                     | s-y    | s-t    |                      |       |          |         |     |     |
+|    |                        |                     | s-;    | s-z    |                      |       |          |         |     |     |
+|    |                        |                     | s-[    | s--    |                      |       |          |         |     |     |
+|    |                        |                     | s-]    | s-=    |                      |       |          |         |     |     |
+|    |                        |                     | s-/    | s-[    |                      |       |          |         |     |     |
+|    |                        |                     | s-\    | s-\    |                      |       |          |         |     |     |
+|----+------------------------+---------------------+--------+--------+----------------------+-------+----------+---------+-----+-----|
+| -  | *Misc*                   | -                   | -      | -      | -                    |       |          |         |     |     |
+|    | ublt:expand-dwim       |                     | M-b    | M-n    |                      |       |          |         |     |     |
+|    | recenter-top-bottom    |                     | C-l    | C-p    |                      |       |          |         |     |     |
+|    | ublt:center-top-bottom |                     | M-l    | M-p    |                      |       |          |         |     |     |
+|    | ublt:collapse-expand   |                     | M-a    | M-a    |                      |       |          |         |     |     |
+|    | ublt:clean-up-buffer   |                     | C-c n  | C-i l  |                      |       |          |         |     |     |
+|    | ublt:show-doc-at-point |                     | C-h d  | C-j h  |                      |       |          |         |     |     |
+|----+------------------------+---------------------+--------+--------+----------------------+-------+----------+---------+-----+-----|
+| -  | *Wilderness*             | -                   | -      | -      | -                    |       |          |         |     |     |
+|    |                        |                     | C-s-c  | C-s-i  |                      |       |          |         |     |     |
+|    | ublt:go-to-impls       |                     | C-s-t  | C-s-k  |                      |       |          |         |     |     |
+|    |                        |                     | C-s-h  | C-s-j  |                      |       |          |         |     |     |
+|    |                        |                     | C-s-n  | C-s-l  |                      |       |          |         |     |     |
 
 - Emacs
     - GUI
