@@ -173,6 +173,16 @@ fi
 
 # \e means "escape sequence". C-v then type to see
 
+# macOS conventions
+bindkey -e "^X@sc" copy-region-as-kill
+bindkey -e "^X@sx" kill-region
+bindkey -e "^X@sv" yank
+bindkey -e "^X@sz" undo
+bindkey -e "^X@sZ" redo
+
+# M-SPC
+bindkey -e "^[ " set-mark-command
+
 bindkey -e "\eh" backward-char
 bindkey -e "\en" forward-char
 # Translated by Kitty already.
