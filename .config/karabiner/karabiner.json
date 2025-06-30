@@ -72,6 +72,14 @@
               , {
                 "type": "basic",
                 "description": "M-d -> ^A",
+                "conditions": [{"type": "frontmost_application_if", "bundle_identifiers": [
+                  "com\\.microsoft\\.VSCode"
+                ]}],
+                "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "h"},
+                "to": [{"key_code": "home"}]
+              }, {
+                "type": "basic",
+                "description": "M-d -> ^A",
                 "from": {"modifiers": {"mandatory": ["option"]}, "key_code": "h"},
                 "to": [{"modifiers": ["control"], "key_code": "a"}]
               }, {
