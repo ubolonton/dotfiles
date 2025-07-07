@@ -536,3 +536,5 @@ export DOCKER_BUILDKIT=1
 ######################################################################
 # Path deduplication
 typeset -U PATH
+
+ublt/maybe-load ~/dotfiles/.local.zsh
