@@ -290,9 +290,9 @@ fi
 
 ######################################################################
 # File sync
-alias rs='rsync -vv --progress -r'
-alias rsl='rsync -vv --progress -r --inplace' # Local
-alias rsn='rsync -vv --progress -rz'          # Network
+alias rs='rsync -vv --progress -ar'
+alias rsl='rsync -vv --progress -ar --inplace' # Local
+alias rsn='rsync -vv --progress -arz'          # Network
 
 ######################################################################
 # git
