@@ -39,12 +39,17 @@
  "F10" "intellij"
  "F11" "discord"
  "s-`" "pull-hidden-other"
+ "s-M-u" "only"
+ "s-M-Right" "hsplit 1/3"
  "s-TAB" "other-window")
 
 (ublt/define-keys
  *root-map*
+ "|" "hsplit 1/2"
  "s-Left" "move-window left"
  "s-Right" "move-window right"
+ "s-Up" "move-window up"
+ "s-Down" "move-window down"
  "s-d" "echo-date"
  "d" "echo-date"
  "s-g" "gother"
