@@ -56,6 +56,8 @@
  ;; "s-F11" "discord"
  "s-`" "pull-hidden-other"
  "s-M-u" "only"
+ ;; XXX: Somehow keyd maps M-s-u to this even though I only mapped M-u?
+ "s-Delete" "only"
  "s-M-Right" "hsplit 1/3"
  "s-TAB" "other-window")
 
