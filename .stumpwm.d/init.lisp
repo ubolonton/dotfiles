@@ -9,11 +9,23 @@
 (defcommand kitty () ()
   (run-or-raise "kitty" '(:class "kitty")))
 
+(defcommand slack () ()
+  (run-or-raise "slack" '(:class "slack")))
+
 (defcommand discord () ()
   (run-or-raise "discord" '(:class "discord")))
 
 (defcommand intellij () ()
   (run-or-raise "intellij-idea-ultimate" '(:class "jetbrains-idea")))
+
+(defcommand code () ()
+  (run-or-raise "code" '(:class "Code")))
+
+(defcommand zed () ()
+  (run-or-raise "~/.local/bin/zed-editor" '(:class "dev.zed.Zed")))
+
+(defcommand cursor () ()
+  (run-or-raise "~/.local/bin/Cursor.AppImage --no-sandbox" '(:class "Cursor")))
 
 
 
@@ -36,8 +48,12 @@
  "F5" "kitty"
  "F8" "kitty"
  "F9" "firefox"
+ ;; "F10" "goland"
  "F10" "intellij"
- "F11" "discord"
+ ;; "s-F10" "code"
+ "s-F10" "cursor"
+ ;; "F11" "slack"
+ ;; "s-F11" "discord"
  "s-`" "pull-hidden-other"
  "s-M-u" "only"
  "s-M-Right" "hsplit 1/3"
@@ -51,15 +67,30 @@
  "s-Up" "move-window up"
  "s-Down" "move-window down"
  "s-d" "echo-date"
- "d" "echo-date"
+ "d"   "echo-date"
  "s-g" "gother"
- "g" "gother"
+ "g"   "gother"
  "s-x" "colon"
- "x" "colon"
- "e" "emacs"
+ "x"   "colon"
+
+ "f"   "firefox"
+ "s-f" "firefox"
+ "C-f" "firefox"
+ "e"   "emacs"
  "s-e" "emacs"
- "t" "kitty"
- "s-t" "kitty")
+ "C-e" "emacs"
+ "i"   "intellij"
+ "s-i" "intellij"
+ "C-i" "intellij"
+ "c"   "code"
+ "s-c" "code"
+ "C-c" "code"
+ "z"   "zed"
+ "s-z" "zed"
+ "C-z" "zed"
+ "t"   "kitty"
+ "s-t" "kitty"
+ "C-t" "kitty")
 
 
 
