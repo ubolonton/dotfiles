@@ -1,5 +1,10 @@
 My personal config files. Clone and create appropriate symbolic links.
 
+#+begin_src shell
+stow -v {zsh,git}
+#+end_src
+
+
 * .autokey
 - Install
 - Add .autokey dir via GUI
@@ -37,11 +42,7 @@ Look for ~Load preferences from a custom folder or URL~, set the directory to =d
 * OS X
 #+begin_src shell
 ln -s dotfiles/.config ~/
-ln -s dotfiles/.z* ~/
 ln -s dotfiles/.oh-my-zsh ~/
-ln -s dotfiles/.gitconfig ~/
-ln -s dotfiles/.gitattributes ~/
-ln -s dotfiles/.gitignore_global ~/
 ln -s dotfiles/.inputrc ~/
 ln -s dotfiles/.jshint.json ~/
 ln -s dotfiles/.lein ~/
