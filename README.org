@@ -1,7 +1,7 @@
 My personal config files. Clone and create appropriate symbolic links.
 
 #+begin_src shell
-stow -v {zsh,git}
+stow -v zsh git tmux
 #+end_src
 
 
