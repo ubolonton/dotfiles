@@ -37,6 +37,20 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=10000000
 SAVEHIST=$HISTSIZE
 
+case $system in
+    (FreeBSD)
+        ublt/maybe-load /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        ublt/maybe-load /usr/local/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+        ;;
+    (Linux)
+        ublt/maybe-load /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        ublt/maybe-load /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        ;;
+    (Darwin)
+        ublt/maybe-load /opt/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        ublt/maybe-load /opt/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+esac
+
 ######################################################################
 # My theme, based on bira theme
 # NTA TODO: 256-color theme with fallback to 16-color
