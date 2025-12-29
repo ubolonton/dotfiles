@@ -481,6 +481,9 @@ else
         ublt/add-path "$HOME/.yarn/bin"
     fi
 fi
+if command_exists bun ; then
+    ublt/add-path "$HOME/.bun/bin"
+fi
 
 ######################################################################
 # Java
