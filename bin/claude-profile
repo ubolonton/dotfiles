@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+CLAUDE_DIR="$HOME/.claude"
+CLAUDE_JSON="$HOME/.claude.json"
+
+# Function to get available profiles
+get_profiles() {
+    # Look for .claude.* directories (excluding the symlink itself)
+    for dir in "$HOME"/.claude.*; do
+        if [[ -d "$dir" && ! -L "$dir" ]]; then
+            basename "$dir" | sed 's/^\.claude\.//'
+        fi
+    done
+}
+
+# Function to get current profile
+get_current_profile() {
+    if [[ -L "$CLAUDE_DIR" ]]; then
+        readlink "$CLAUDE_DIR" | sed 's/^\.claude\.//'
+    else
+        echo "none"
+    fi
+}
+
+# Function to list profiles
+list_profiles() {
+    local current
+    current=$(get_current_profile)
+
+    echo "Available Claude Code profiles:"
+    echo
+
+    while IFS= read -r profile; do
+        if [[ "$profile" == "$current" ]]; then
+            echo "  * $profile (active)"
+        else
+            echo "    $profile"
+        fi
+    done < <(get_profiles | sort)
+
+    echo
+    if [[ "$current" == "none" ]]; then
+        echo "No profile currently active"
+    fi
+}
+
+# Function to switch profile
+switch_profile() {
+    local profile="$1"
+    local target_dir="$HOME/.claude.$profile"
+    local target_json="$HOME/.claude.json.$profile"
+
+    # Validate profile exists
+    if [[ ! -d "$target_dir" ]]; then
+        echo "Error: Profile '$profile' not found (expected directory: $target_dir)"
+        exit 1
+    fi
+
+    if [[ ! -f "$target_json" ]]; then
+        echo "Error: Profile config not found (expected file: $target_json)"
+        exit 1
+    fi
+
+    # Remove existing symlinks
+    if [[ -L "$CLAUDE_DIR" ]]; then
+        rm "$CLAUDE_DIR"
+    elif [[ -e "$CLAUDE_DIR" ]]; then
+        echo "Error: $CLAUDE_DIR exists but is not a symlink"
+        exit 1
+    fi
+
+    if [[ -L "$CLAUDE_JSON" ]]; then
+        rm "$CLAUDE_JSON"
+    elif [[ -e "$CLAUDE_JSON" ]]; then
+        echo "Error: $CLAUDE_JSON exists but is not a symlink"
+        exit 1
+    fi
+
+    # Create new symlinks
+    ln -s ".claude.$profile" "$CLAUDE_DIR"
+    ln -s ".claude.json.$profile" "$CLAUDE_JSON"
+
+    echo "Switched to profile: $profile"
+    echo
+    echo "  ~/.claude -> .claude.$profile"
+    echo "  ~/.claude.json -> .claude.json.$profile"
+}
+
+# Main command handling
+case "${1:-list}" in
+    ls|list|"")
+        list_profiles
+        ;;
+    switch)
+        if [[ $# -lt 2 ]]; then
+            echo "Error: switch command requires a profile name"
+            echo
+            echo "Usage: $(basename "$0") switch <profile>"
+            exit 1
+        fi
+        switch_profile "$2"
+        ;;
+    *)
+        echo "Usage: $(basename "$0") [ls|list|switch <profile>]"
+        echo
+        echo "Commands:"
+        echo "  ls, list    List available profiles and show current selection"
+        echo "  switch      Switch to specified profile"
+        exit 1
+        ;;
+esac
