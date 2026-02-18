@@ -1,31 +1,97 @@
 (in-package :stumpwm)
 
+(defun ublt/sort-windows (windows)
+  "Sort windows by group and window number."
+  (stable-sort (sort windows #'< :key #'window-number)
+               #'< :key (lambda (w) (group-number (window-group w)))))
+
+(defun ublt/next-in-ring (item list)
+  "Return the next item after @var{item} in @var{list}.
+If none found, return the first item in @var{list}."
+  (or (second (member item list))
+      (first list)))
+
+(defun ublt/get-app-windows (&optional (window (current-window)))
+  (let* ((class (window-class window))
+         ;; (windows (group-windows (current-group)))
+         (windows (mapcan (lambda (s) (screen-windows s)) *screen-list*)))
+    (remove-if-not (lambda (w)
+                     (string-equal (window-class w) class))
+                   windows)))
+
+(defun ublt/get-next-app-window (&optional (window (current-window)))
+  (ublt/next-in-ring window (ublt/sort-windows
+                             (ublt/get-app-windows window))))
+
+(defun ublt/run-or-raise (cmd props &optional (all-groups *run-or-raise-all-groups*)
+                                      (all-screens *run-or-raise-all-screens*))
+  "Like `run-or-raise', with quality-of-life improvements.
+
+- If the current window doesn't match, switch to the most-recently-used matching window.
+- If the current window matches, cycle to the next matching window, like `run-or-raise'.
+
+In other words, either switch to an app, or cycle among an app's windows."
+  (let* ((current (current-window))
+         (screens (if all-screens
+                      *screen-list*
+                      (list (current-screen))))
+         (windows (if all-groups
+                      (mapcan (lambda (s) (screen-windows s)) screens)
+                      (group-windows (current-group))))
+         (matches (remove-if-not (lambda (w)
+                                   (apply 'window-matches-properties-p w props))
+                                 windows))
+         (match (first matches)))
+    (if match
+        (if (equalp match current)
+            (let* ((sorted-matches (ublt/sort-windows matches)))
+              (focus-all (ublt/next-in-ring match sorted-matches)))
+            (focus-all match))
+        (run-shell-command cmd))))
+
+(defcommand ublt/other-app () ()
+  "Switch to the 2nd most-recently-used app.
+An 'app' is defined as the collection of windows with the same `:class'."
+  (let* ((current (current-window))
+         (class (window-class current))
+         (windows (group-windows (current-group)))
+         (matches (remove-if
+                   (lambda (w) (string-equal (window-class w) class))
+                   windows))
+         (next (first matches)))
+    (when next
+      (focus-all next))))
+
+(defcommand ublt/next-app-window () ()
+  (when-let ((next (ublt/get-next-app-window)))
+    (focus-all next)))
+
 (defcommand firefox () ()
-  (run-or-raise "firefox" '(:class "firefox")))
+  (ublt/run-or-raise "firefox" '(:class "firefox")))
 
 (defcommand konsole () ()
-  (run-or-raise "konsole" '(:class "konsole")))
+  (ublt/run-or-raise "konsole" '(:class "konsole")))
 
 (defcommand kitty () ()
-  (run-or-raise "kitty" '(:class "kitty")))
+  (ublt/run-or-raise "kitty" '(:class "kitty")))
 
 (defcommand slack () ()
-  (run-or-raise "slack" '(:class "slack")))
+  (ublt/run-or-raise "slack" '(:class "slack")))
 
 (defcommand discord () ()
-  (run-or-raise "discord" '(:class "discord")))
+  (ublt/run-or-raise "discord" '(:class "discord")))
 
 (defcommand intellij () ()
-  (run-or-raise "intellij-idea-ultimate" '(:class "jetbrains-idea")))
+  (ublt/run-or-raise "intellij-idea-ultimate" '(:class "jetbrains-idea")))
 
 (defcommand code () ()
-  (run-or-raise "code" '(:class "Code")))
+  (ublt/run-or-raise "code" '(:class "Code")))
 
 (defcommand zed () ()
-  (run-or-raise "~/.local/bin/zed-editor" '(:class "dev.zed.Zed")))
+  (ublt/run-or-raise "~/.local/bin/zed-editor" '(:class "dev.zed.Zed")))
 
-(defcommand cursor () ()
-  (run-or-raise "~/.local/bin/Cursor.AppImage --no-sandbox" '(:class "Cursor")))
+;; (defcommand cursor () ()
+;;   (ublt/run-or-raise "~/.local/bin/Cursor.AppImage --no-sandbox" '(:class "Cursor")))
 
 
 
@@ -54,12 +120,14 @@
  "s-F10" "cursor"
  ;; "F11" "slack"
  ;; "s-F11" "discord"
- "s-`" "pull-hidden-other"
+ ;; "s-`" "pull-hidden-other"
+ ;; "s-`" "other-window"
+ "s-`" "ublt/next-app-window"
  "s-M-u" "only"
  ;; XXX: Somehow keyd maps M-s-u to this even though I only mapped M-u?
  "s-Delete" "only"
  "s-M-Right" "hsplit 1/3"
- "s-TAB" "other-window")
+ "s-TAB" "ublt/other-app")
 
 (ublt/define-keys
  *root-map*
