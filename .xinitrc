@@ -1,3 +1,5 @@
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting ~/.xinitrc" >> "$HOME"/.local/state/ublt-xinitrc.log
+
 keyd-application-mapper -d
 
 # eval $(ssh-agent)
@@ -18,4 +20,4 @@ export XIM_PROGRAM="ibus-daemon"
 export XIM_ARGS="--daemonize --xim"
 ibus-daemon --replace --xim --restart --daemonize
 
-stumpwm
+stumpwm >>"$HOME"/.local/state/ublt-stumpwm.log 2>&1

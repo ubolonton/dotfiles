@@ -1,3 +1,5 @@
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting ~/.xsession" >> "$HOME"/.local/state/ublt-xsession.log
+
 keyd-application-mapper -d
 
 # export XMODIFIERS='@im=fcitx'
