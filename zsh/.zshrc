@@ -559,10 +559,18 @@ if [[ $system == "Darwin" ]]; then
 fi
 
 ######################################################################
-unset system
+# Envs + tools management
 
 ublt/add-path "$HOME"/.local/bin
 
+if command_exists mise ; then
+    eval "$(mise activate zsh)"
+elif command_exists direnv ; then
+    eval "$(direnv hook zsh)"
+fi
+
+######################################################################
+unset system
 # Docker sucks less with this setting.
 export DOCKER_BUILDKIT=1
 
