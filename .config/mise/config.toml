@@ -1,0 +1,5 @@
+[tools]
+babashka = { version = "1.12.216", exe = "bb" }
+clickhouse = "26.2"
+duckdb = "1.4"
+pdm = "2.26.6"
