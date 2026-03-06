@@ -189,6 +189,8 @@ fi
 ublt/maybe-load "$HOME/.fzf.zsh"
 bindkey '^T' transpose-chars
 
+export FZF_DEFAULT_OPTS='--bind=ctrl-k:kill-line'
+
 ######################################################################
 if command_exists sk ; then
     alias sk="sk --bind 'alt-c:up,alt-t:down,alt-g:backword-word,alt-r:forward-word,alt-h:backward-char,alt-n:forward-char,alt-d:beginning-of-line,alt-i:kill-line,alt-.:backword-kill-word,alt-p:kill-word'"
