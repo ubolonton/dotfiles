@@ -92,7 +92,7 @@
 |    | ublt:reverse-i-search  |                     | C-r    | C-o    |                      | ✅    |          |         |     | ✅  |
 |    | ublt:center-top-bottom |                     | M-l    | M-p    | ls                   | GUI   |          |         |     |     |
 |    | ublt:collapse-expand   |                     | M-a    | M-a    |                      | ✅    |          |         |     |     |
-|    | ublt:clean-up-buffer   |                     | C-c n  | C-i l  |                      | ✅    | ✅       |         |     |     |
+|    | ublt:clean-up-buffer   |                     | C-c n  | C-i l  |                      | ✅    | ✅       | ✅      |     |     |
 |    | ublt:show-doc-at-point |                     | C-h d  | C-j h  |                      | ❌    | ✅       |         |     |     |
 |----+------------------------+---------------------+--------+--------+----------------------+-------+----------+---------+-----+-----|
 | -  | *Wilderness*             | -                   | -      | -      | -                    |       |          |         |     |     |
@@ -120,6 +120,8 @@ Principles:
         - Kitty can do program-specific translations. https://sw.kovidgoyal.net/kitty/keyboard-protocol/
             - But that wouldn't work via tmux/ssh?
                 - Seems like it would, eventually.
+- VS Code: Prefer bindings over translating at the lower layer? Or not?
+    - It can recognize ~super~ (~cmd~) modifier, but has different key bindings depending on the OS.
 
 #+begin_src mermaid
 flowchart TD
