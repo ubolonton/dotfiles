@@ -1,31 +1,40 @@
 # -*- mode: conf -*-
 $include /etc/inputrc
 
-# C-<delete>: Works on most terminal emulators. If not, configure
-"\e[3;5~": kill-word
+# "\C-x@sc": copy-region-as-kill
+# "\C-x@sx": kill-region
+# "\C-x@sv": yank
+"\C-x@sz": undo
+"\C-x@sZ": redo
 
-# XXX: To use these, configure Konsole > Settings > Edit Current
-# Profile > Keyboard: Backspace+Ctrl => \E[25~ (just type them in).
-# Note that we don't use ";5" or ";*" because tmux refuses to forward
-# them.
-"\ee": backward-delete-char
-"\e.": backward-kill-word
-"\ep": kill-word
+"\C-[ ": set-mark-command
 
-# # XXX: Because Konsole-tmux-zsh-readline, not exactly sure why.
-# "\eOD": backward-word
-# "\eOC": forward-word
+# # C-<delete>: Works on most terminal emulators. If not, configure
+# "\e[3;5~": kill-word
+# "\ed": kill-word
 
-"\eg": backward-word
-"\er": forward-word
+# # XXX: To use these, configure Konsole > Settings > Edit Current
+# # Profile > Keyboard: Backspace+Ctrl => \E[25~ (just type them in).
+# # Note that we don't use ";5" or ";*" because tmux refuses to forward
+# # them.
+# "\ee": backward-delete-char
+# "\e.": backward-kill-word
+# "\ep": kill-word
 
-# M-i M-I (my Dvorak's layout strategy)
-"\ei": kill-line
-"\eI": kill-whole-line
+# # # XXX: Because Konsole-tmux-zsh-readline, not exactly sure why.
+# # "\eOD": backward-word
+# # "\eOC": forward-word
 
-# M-m M-v
-"\eb": complete
+# "\eg": backward-word
+# "\er": forward-word
 
-# M-G M-R
-"\eOH": beginning-of-history
-"\eOF": end-of-history
+# # M-i M-I (my Dvorak's layout strategy)
+# "\ei": kill-line
+# "\eI": kill-whole-line
+
+# # M-m M-v
+# "\eb": complete
+
+# # M-G M-R
+# "\eOH": beginning-of-history
+# "\eOF": end-of-history
