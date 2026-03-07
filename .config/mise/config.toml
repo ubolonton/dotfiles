@@ -1,14 +1,27 @@
 [settings]
-# `mise` doesn't support lockfile for global tools. We work around by via the ~/dotfiles project.
+# `mise` doesn't support lockfile for global tools. Or at least that's what Gemini said. We work
+# around by via the ~/dotfiles project.
 lockfile = true
 experimental = true
 
 [tools]
+# Things that better come from the system package manager:
+#
+# So that `cargo:` tools can use it for compiling.
+# sccache =
+#
+# Could be useful system-wide.
+# rg =
+# exa =
+
+# Things that should be project-specific.
+# bindgen =
 
 # General
 fd = "latest"
 bat = "latest"
 "cargo:mdcat" = "latest"
+"cargo:bingrep" = "latest"
 
 # REPLs
 babashka = { version = "latest", exe = "bb" }
@@ -18,13 +31,14 @@ duckdb = "1"
 # Project management: build tools, task runners
 scie-pants = "latest"
 just = "1"
-# This better comes as a system package, so 'cargo:' tools can use it.
-# sccache = "0.14.0"
 mdbook = "latest"
 
-# Language
+# Languages
 pdm = "2"
 
 # Unsorted
 hyperfine = "latest"
-"cargo:tokei" = "latest"
+tokei = "latest"
+starship = "latest"
+"pipx:tmuxp" = "latest"
+"pipx:magic-wormhole" = "latest"

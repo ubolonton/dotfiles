@@ -523,13 +523,6 @@ if [ -s "$HOME/.cargo/bin/rustup" ] || command_exists cargo ; then
     fi
 fi
 
-if command_exists starship ; then
-    eval "$(starship init zsh)"
-else
-    PROMPT='$(ublt/prompt)'
-    RPROMPT='$(ublt/right-prompt)'
-fi
-
 ######################################################################
 # gcloud
 ublt/maybe-load "$HOME/google-cloud-sdk/path.zsh.inc"
@@ -569,6 +562,16 @@ if command_exists mise ; then
     eval "$(mise activate zsh)"
 elif command_exists direnv ; then
     eval "$(direnv hook zsh)"
+fi
+
+######################################################################
+# Shell prompt.
+
+if command_exists starship ; then
+    eval "$(starship init zsh)"
+else
+    PROMPT='$(ublt/prompt)'
+    RPROMPT='$(ublt/right-prompt)'
 fi
 
 ######################################################################

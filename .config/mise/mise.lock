@@ -16,6 +16,10 @@ backend = "aqua:sharkdp/bat"
 "platforms.macos-x64" = { checksum = "sha256:830d63b0bba1fa040542ec569e3cf77f60d3356b9de75116a344b061e0894245", url = "https://github.com/sharkdp/bat/releases/download/v0.26.1/bat-v0.26.1-x86_64-apple-darwin.tar.gz"}
 "platforms.windows-x64" = { checksum = "sha256:0f729b4b6f5f28d395c641eacc2e9ff68d0096b85aa0eec344aa62425144b69b", url = "https://github.com/sharkdp/bat/releases/download/v0.26.1/bat-v0.26.1-x86_64-pc-windows-msvc.zip"}
 
+[[tools."cargo:bingrep"]]
+version = "0.12.1"
+backend = "cargo:bingrep"
+
 [[tools."cargo:mdcat"]]
 version = "2.7.1"
 backend = "cargo:mdcat"
@@ -76,6 +80,14 @@ backend = "aqua:rust-lang/mdBook"
 version = "2.26.6"
 backend = "pipx:pdm"
 
+[[tools."pipx:magic-wormhole"]]
+version = "0.22.0"
+backend = "pipx:magic-wormhole"
+
+[[tools."pipx:tmuxp"]]
+version = "1.64.0"
+backend = "pipx:tmuxp"
+
 [[tools.scie-pants]]
 version = "0.12.5"
 backend = "github:pantsbuild/scie-pants"
@@ -83,3 +95,11 @@ backend = "github:pantsbuild/scie-pants"
 "platforms.linux-x64" = { checksum = "sha256:5c9d26c2c6e775a2a9ddcc1680b3849b1e09ab4af24b55b062bb8858d1138bc5", url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-linux-x86_64", url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273135293"}
 "platforms.macos-arm64" = { checksum = "sha256:bc2873e37f55720950092ed59e99728eb52ec85fd057573dcc4f47cd324e13af", url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-macos-aarch64", url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/274140596"}
 "platforms.macos-x64" = { checksum = "sha256:4c8cbe760c5a118c255ce480d8465edcbeccf537e104eefeb4889e0e2189df77", url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-macos-x86_64", url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273248101"}
+
+[[tools.starship]]
+version = "1.24.2"
+backend = "aqua:starship/starship"
+
+[[tools.tokei]]
+version = "14.0.0"
+backend = "cargo:tokei"
