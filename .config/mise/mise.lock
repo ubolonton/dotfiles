@@ -25,7 +25,7 @@ version = "14.0.0"
 backend = "cargo:tokei"
 
 [[tools.clickhouse]]
-version = "26.2.1.1139-stable"
+version = "26.2.4.23-stable"
 backend = "asdf:clickhouse"
 
 [[tools.duckdb]]
@@ -77,5 +77,9 @@ version = "2.26.6"
 backend = "pipx:pdm"
 
 [[tools.scie-pants]]
-version = "0.12.3"
-backend = "ubi:pantsbuild/scie-pants"
+version = "0.12.5"
+backend = "github:pantsbuild/scie-pants"
+"platforms.linux-arm64" = { checksum = "sha256:0b5a61887067256ffd28e634ad1c82998f6d6bc1d18a80c5a6b4c24b84c07a6c", url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-linux-aarch64", url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273160215"}
+"platforms.linux-x64" = { checksum = "sha256:5c9d26c2c6e775a2a9ddcc1680b3849b1e09ab4af24b55b062bb8858d1138bc5", url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-linux-x86_64", url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273135293"}
+"platforms.macos-arm64" = { checksum = "sha256:bc2873e37f55720950092ed59e99728eb52ec85fd057573dcc4f47cd324e13af", url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-macos-aarch64", url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/274140596"}
+"platforms.macos-x64" = { checksum = "sha256:4c8cbe760c5a118c255ce480d8465edcbeccf537e104eefeb4889e0e2189df77", url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-macos-x86_64", url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273248101"}
