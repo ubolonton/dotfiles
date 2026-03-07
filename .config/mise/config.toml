@@ -1,5 +1,30 @@
+[settings]
+# `mise` doesn't support lockfile for global tools. We work around by via the ~/dotfiles project.
+lockfile = true
+experimental = true
+
 [tools]
-babashka = { version = "1.12.216", exe = "bb" }
-clickhouse = "26.2"
-duckdb = "1.4"
-pdm = "2.26.6"
+
+# General
+fd = "latest"
+bat = "latest"
+"cargo:mdcat" = "latest"
+
+# REPLs
+babashka = { version = "latest", exe = "bb" }
+clickhouse = "26"
+duckdb = "1"
+
+# Project management: build tools, task runners
+scie-pants = "latest"
+just = "1"
+# This better comes as a system package, so 'cargo:' tools can use it.
+# sccache = "0.14.0"
+mdbook = "latest"
+
+# Language
+pdm = "2"
+
+# Unsorted
+hyperfine = "latest"
+"cargo:tokei" = "latest"
