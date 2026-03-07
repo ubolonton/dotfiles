@@ -3,6 +3,9 @@
 # around by via the ~/dotfiles project.
 lockfile = true
 experimental = true
+status.show_env = true
+npm.package_manager = "bun"
+pipx.uvx = true
 
 [tools]
 # Things that better come from the system package manager:
