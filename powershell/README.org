@@ -1,0 +1,15 @@
+** PowerShell
+- PowerShell 7 (~pwsh~)
+  #+begin_src powershell
+  New-Item -ItemType SymbolicLink -Path $HOME\Documents\PowerShell\ -Name profile.ps1 -Target $HOME\dotfiles\powershell\profile.ps1
+  #+end_src
+
+- Windows PowerShell 5 (~powershel~)
+  #+begin_src powershell
+  New-Item -ItemType SymbolicLink -Path $HOME\Documents\WindowsPowerShell\ -Name profile.ps1 -Target $HOME\dotfiles\powershell\profile.ps1
+  #+end_src
+
+** Starship
+#+begin_src powershell
+New-Item -ItemType SymbolicLink -Path $HOME\.config -Name starship.toml -Target $HOME\dotfiles\.config\starship.toml
+#+end_src
