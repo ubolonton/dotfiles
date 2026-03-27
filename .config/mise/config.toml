@@ -36,8 +36,13 @@ scie-pants = "latest"
 just = "1"
 mdbook = "latest"
 
-# Languages
+# Language-specific dev tools
 pdm = "2"
+zig = "latest"
+"cargo:cargo-outdated" = "latest"
+"cargo:cargo-edit" = "latest"
+"cargo:cargo-zigbuild" = "latest"
+"cargo:cargo-watch" = "latest"
 
 # Unsorted
 hyperfine = "latest"
