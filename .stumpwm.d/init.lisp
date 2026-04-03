@@ -132,6 +132,7 @@ An 'app' is defined as the collection of windows with the same `:class'."
 (ublt/define-keys
  *root-map*
  "|" "hsplit 1/2"
+ "-" "vsplit 1/2"
  "s-Left" "move-window left"
  "s-Right" "move-window right"
  "s-Up" "move-window up"
