@@ -3,9 +3,16 @@
 # around by via the ~/dotfiles project.
 lockfile = true
 experimental = true
+
+# So we know it's working
 status.show_env = true
+
+# npm -> bun, pipx -> uv
 npm.package_manager = "bun"
 pipx.uvx = true
+
+# Reduce supply chain risk.
+install_before = "30d"
 
 [tools]
 # Things that better come from the system package manager:
