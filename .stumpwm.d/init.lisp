@@ -66,6 +66,21 @@ An 'app' is defined as the collection of windows with the same `:class'."
   (when-let ((next (ublt/get-next-app-window)))
     (focus-all next)))
 
+(defcommand ublt/save-layout () ()
+  "Save the current group's frame layout to disk."
+  (dump-to-file (dump-group (current-group)) "ublt-layout")
+  (message "Layout saved"))
+
+(defcommand ublt/restore-layout () ()
+  "Restore the current group's frame layout from disk."
+  (let ((path (dump-pathname "ublt-layout")))
+    (if (probe-file path)
+        (progn
+          (restore-group (current-group)
+                         (read-dump-from-file path))
+          (message "Layout restored"))
+        (message "No saved layout found"))))
+
 (defcommand firefox () ()
   (ublt/run-or-raise "firefox" '(:class "firefox")))
 
@@ -133,6 +148,9 @@ An 'app' is defined as the collection of windows with the same `:class'."
  *root-map*
  "|" "hsplit 1/2"
  "-" "vsplit 1/2"
+ "S" "ublt/save-layout"
+ "s" "ublt/restore-layout"
+
  "s-Left" "move-window left"
  "s-Right" "move-window right"
  "s-Up" "move-window up"
