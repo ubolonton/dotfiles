@@ -46,6 +46,7 @@ mdbook = "latest"
 # Language-specific dev tools
 pdm = "2"
 zig = "latest"
+uv = "latest"
 "cargo:cargo-outdated" = "latest"
 "cargo:cargo-edit" = "latest"
 "cargo:cargo-zigbuild" = "latest"
