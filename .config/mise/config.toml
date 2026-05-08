@@ -12,7 +12,7 @@ npm.package_manager = "bun"
 pipx.uvx = true
 
 # Reduce supply chain risk.
-install_before = "30d"
+install_before = "7d"
 
 [tools]
 # Things that better come from the system package manager:
