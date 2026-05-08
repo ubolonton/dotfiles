@@ -453,64 +453,6 @@ function server () {
     python -m SimpleHTTPServer $port
 }
 
-######################################################################
-# PHP
-ublt/add-path "$HOME/.composer/vendor/bin"
-
-######################################################################
-# Ruby
-ublt/add-path "$HOME/.rbenv/bin"
-if command_exists rbenv ; then
-    eval "$(rbenv init -)"
-fi
-
-######################################################################
-# Go
-ublt/maybe-load "$HOME/.gvm/scripts/gvm"
-export GOPATH="$HOME/go"
-ublt/add-path $GOPATH/bin
-
-######################################################################
-# Python
-# Virtualenv puts it before the prompt, which does not work well for my multi-prompt.
-VIRTUAL_ENV_DISABLE_PROMPT=TRUE
-
-if [ -d "$HOME/.pyenv" ] ; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    ublt/add-path "$PYENV_ROOT"/bin
-    eval "$(pyenv init -)"
-fi
-
-######################################################################
-# Javascript
-
-if [ -d "$HOME/.volta" ] ; then
-   export VOLTA_HOME="$HOME/.volta"
-   ublt/add-path "$VOLTA_HOME/bin"
-else
-    if [ -d "$HOME/.nvm" ] ; then
-        export NVM_DIR="$HOME/.nvm"
-        ublt/maybe-load "$NVM_DIR/nvm.sh"
-    fi
-
-    if [ -d "$HOME/.yarn/bin" ] ; then
-        ublt/add-path "$HOME/.config/yarn/global/node_modules/.bin"
-        ublt/add-path "$HOME/.yarn/bin"
-    fi
-fi
-if command_exists bun ; then
-    ublt/add-path "$HOME/.bun/bin"
-fi
-
-######################################################################
-# Java
-GRAALVM_BIN="/Library/Java/JavaVirtualMachines/openjdk11-graalvm/Contents/Home/bin"
-# if [ -s $GRAALVM_BIN ] ; then
-#     ublt/add-path $GRAALVM_BIN
-# fi
-
-export SDKMAN_DIR="$HOME/.sdkman"
-ublt/maybe-load "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ######################################################################
 # Rust

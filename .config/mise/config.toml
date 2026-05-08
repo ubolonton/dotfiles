@@ -46,6 +46,8 @@ mdbook = "latest"
 # Language-specific dev tools
 pdm = "2"
 zig = "latest"
+node = "latest"
+bun = "latest"
 uv = "latest"
 "cargo:cargo-outdated" = "latest"
 "cargo:cargo-edit" = "latest"
@@ -60,6 +62,12 @@ starship = "latest"
 "pipx:magic-wormhole" = "latest"
 stern = "latest"
 lima = "latest"
+
+# AI coding
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@zed-industries/claude-agent-acp" = "latest"
+"npm:@google/gemini-cli" = "latest"
+"npm:ccstatusline" = "latest"
 
 [env]
 RUSTC_WRAPPER = "sccache"
