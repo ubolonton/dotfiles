@@ -75,6 +75,50 @@ url = "https://github.com/sharkdp/bat/releases/download/v0.26.1/bat-v0.26.1-x86_
 version = "1.3.13"
 backend = "core:bun"
 
+[tools.bun."platforms.linux-arm64"]
+checksum = "sha256:70bae41b3908b0a120e1e58c5c8af30e74afae3b8d11b0d3fdd8e787ddfb4b22"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-linux-aarch64.zip"
+
+[tools.bun."platforms.linux-arm64-musl"]
+checksum = "sha256:5385e978107ce4934298d8d6afe9bfbb898683f6cc23e6753a0da60bc60c5b81"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-linux-aarch64-musl.zip"
+
+[tools.bun."platforms.linux-x64"]
+checksum = "sha256:79c0771fa8b92c33aae41e15a0e0d307ea99d0e2f00317c71c6c53237a78e25a"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-linux-x64.zip"
+
+[tools.bun."platforms.linux-x64-baseline"]
+checksum = "sha256:9d8a24292a7068090205daac0a5a223f5f69736f5287e37bf88d3b4031edc750"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-linux-x64-baseline.zip"
+
+[tools.bun."platforms.linux-x64-musl"]
+checksum = "sha256:5b91a48f0b00df9fd2da8bff1a795d2659d842da966432969203f25da19d1c74"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-linux-x64-musl.zip"
+
+[tools.bun."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:88ca7c7ad235b498f549eea2f770f434e9f0f5e9ba95168a2d3a1f235184c394"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-linux-x64-musl-baseline.zip"
+
+[tools.bun."platforms.macos-arm64"]
+checksum = "sha256:5467e3f65dba526b9fea98f0cce04efafc0c63e169733ec27b876a3ad32da190"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-darwin-aarch64.zip"
+
+[tools.bun."platforms.macos-x64"]
+checksum = "sha256:e5a6c8b64f419925232d111ecb13e25f0abf55e54f792341f987623fd0778009"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-darwin-x64.zip"
+
+[tools.bun."platforms.macos-x64-baseline"]
+checksum = "sha256:a98ba6a480f22fda9b343626b906a4e26aa53618bf85d2bc5928ecf2ba45f0ed"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-darwin-x64-baseline.zip"
+
+[tools.bun."platforms.windows-x64"]
+checksum = "sha256:85b14f3e0584218e9b63407b3aa6b90c4835ec5c32435c1f12cb6fc13667c7c9"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-windows-x64.zip"
+
+[tools.bun."platforms.windows-x64-baseline"]
+checksum = "sha256:c68c7903c1190101590cc1b2129835f47211b3b37ae87759f2b97d6534aa3ad1"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/bun-windows-x64-baseline.zip"
+
 [[tools."cargo:bingrep"]]
 version = "0.12.1"
 backend = "cargo:bingrep"
@@ -290,33 +334,37 @@ checksum = "sha256:2dc5b10aa3a4f26d08c1f3fe83e37e01f85a7d9db0d1d5cb6985b18af96ab
 url = "https://github.com/lima-vm/lima/releases/download/v2.1.1/lima-2.1.1-Darwin-x86_64.tar.gz"
 provenance = "github-attestations"
 
-[[tools.mdbook]]
-version = "0.5.2"
-backend = "aqua:rust-lang/mdBook"
-
-[tools.mdbook."platforms.linux-x64"]
-checksum = "sha256:8e9d802bbecea34380aabfc65bec4fdba23c07453ef2c7e06fa34c282082e2c4"
-url = "https://github.com/rust-lang/mdBook/releases/download/v0.5.2/mdbook-v0.5.2-x86_64-unknown-linux-musl.tar.gz"
-
-[tools.mdbook."platforms.linux-x64-musl"]
-checksum = "sha256:8e9d802bbecea34380aabfc65bec4fdba23c07453ef2c7e06fa34c282082e2c4"
-url = "https://github.com/rust-lang/mdBook/releases/download/v0.5.2/mdbook-v0.5.2-x86_64-unknown-linux-musl.tar.gz"
-
-[tools.mdbook."platforms.macos-arm64"]
-checksum = "sha256:17cc64478ec279a73881420e850bd8f9d460552e56b50159ff465bc97eb90d6c"
-url = "https://github.com/rust-lang/mdBook/releases/download/v0.5.2/mdbook-v0.5.2-x86_64-apple-darwin.tar.gz"
-
-[tools.mdbook."platforms.macos-x64"]
-checksum = "sha256:17cc64478ec279a73881420e850bd8f9d460552e56b50159ff465bc97eb90d6c"
-url = "https://github.com/rust-lang/mdBook/releases/download/v0.5.2/mdbook-v0.5.2-x86_64-apple-darwin.tar.gz"
-
-[tools.mdbook."platforms.windows-x64"]
-checksum = "sha256:e78fa1159bfc381d03f9c6659c48c883706497dc63c9153007a8a4c8df8da166"
-url = "https://github.com/rust-lang/mdBook/releases/download/v0.5.2/mdbook-v0.5.2-x86_64-pc-windows-msvc.zip"
-
 [[tools.node]]
 version = "25.9.0"
 backend = "core:node"
+
+[tools.node."platforms.linux-arm64"]
+checksum = "sha256:8fb4283301b8c720fc9f18bffff0f659e72cc14d0cf207a3bb411808aaa73a57"
+url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-linux-arm64.tar.gz"
+
+[tools.node."platforms.linux-arm64-musl"]
+checksum = "sha256:97f6fe125faa51f84a7bb600d0cd7aefcfaaa0e75a5f49a7c61c3df91d12d535"
+url = "https://unofficial-builds.nodejs.org/download/release/v25.9.0/node-v25.9.0-linux-arm64-musl.tar.gz"
+
+[tools.node."platforms.linux-x64"]
+checksum = "sha256:134e55b2408448a219760fe04dc44d6851f9de8a79549021ffd870e9082d9e7b"
+url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-linux-x64.tar.gz"
+
+[tools.node."platforms.linux-x64-musl"]
+checksum = "sha256:1ac44af012be6bc17f1e3723edbf12897c0baeae5d1dc75b9f97d71413e4c8f5"
+url = "https://unofficial-builds.nodejs.org/download/release/v25.9.0/node-v25.9.0-linux-x64-musl.tar.gz"
+
+[tools.node."platforms.macos-arm64"]
+checksum = "sha256:e479f3c469d3d9303a44f00a8ea37a3788395d171bb8059c48a4bbbd2e371b59"
+url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-darwin-arm64.tar.gz"
+
+[tools.node."platforms.macos-x64"]
+checksum = "sha256:7d737b53ce191142bfa1c17cfa5b070d96e84eebf76b8dd06d84981cbdc3f7e3"
+url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-darwin-x64.tar.gz"
+
+[tools.node."platforms.windows-x64"]
+checksum = "sha256:929552b8305effac843ba7b4270c437aefb702fc3fbd73fcd1bffd35d4ac284e"
+url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-win-x64.zip"
 
 [[tools."npm:@anthropic-ai/claude-code"]]
 version = "2.1.126"
@@ -345,40 +393,6 @@ backend = "pipx:magic-wormhole"
 [[tools."pipx:tmuxp"]]
 version = "1.64.0"
 backend = "pipx:tmuxp"
-
-[[tools.scie-pants]]
-version = "0.12.5"
-backend = "github:pantsbuild/scie-pants"
-
-[tools.scie-pants."platforms.linux-arm64"]
-checksum = "sha256:0b5a61887067256ffd28e634ad1c82998f6d6bc1d18a80c5a6b4c24b84c07a6c"
-url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-linux-aarch64"
-url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273160215"
-
-[tools.scie-pants."platforms.linux-arm64-musl"]
-checksum = "sha256:0b5a61887067256ffd28e634ad1c82998f6d6bc1d18a80c5a6b4c24b84c07a6c"
-url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-linux-aarch64"
-url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273160215"
-
-[tools.scie-pants."platforms.linux-x64"]
-checksum = "sha256:5c9d26c2c6e775a2a9ddcc1680b3849b1e09ab4af24b55b062bb8858d1138bc5"
-url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-linux-x86_64"
-url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273135293"
-
-[tools.scie-pants."platforms.linux-x64-musl"]
-checksum = "sha256:5c9d26c2c6e775a2a9ddcc1680b3849b1e09ab4af24b55b062bb8858d1138bc5"
-url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-linux-x86_64"
-url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273135293"
-
-[tools.scie-pants."platforms.macos-arm64"]
-checksum = "sha256:bc2873e37f55720950092ed59e99728eb52ec85fd057573dcc4f47cd324e13af"
-url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-macos-aarch64"
-url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/274140596"
-
-[tools.scie-pants."platforms.macos-x64"]
-checksum = "sha256:4c8cbe760c5a118c255ce480d8465edcbeccf537e104eefeb4889e0e2189df77"
-url = "https://github.com/pantsbuild/scie-pants/releases/download/v0.12.5/scie-pants-macos-x86_64"
-url_api = "https://api.github.com/repos/pantsbuild/scie-pants/releases/assets/273248101"
 
 [[tools.starship]]
 version = "1.24.2"
@@ -465,6 +479,7 @@ provenance = "github-attestations"
 [tools.uv."platforms.linux-x64"]
 checksum = "sha256:64ddb5f1087649e3f75aa50d139aa4f36ddde728a5295a141e0fa9697bfb7b0f"
 url = "https://github.com/astral-sh/uv/releases/download/0.11.7/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-musl"]
 checksum = "sha256:64ddb5f1087649e3f75aa50d139aa4f36ddde728a5295a141e0fa9697bfb7b0f"

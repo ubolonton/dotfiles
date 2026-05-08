@@ -39,16 +39,14 @@ clickhouse = "26"
 duckdb = "1"
 
 # Project management: build tools, task runners
-scie-pants = "latest"
 just = "1"
-mdbook = "latest"
 
 # Language-specific dev tools
 pdm = "2"
-zig = "latest"
+uv = "latest"
 node = "latest"
 bun = "latest"
-uv = "latest"
+zig = "latest"
 "cargo:cargo-outdated" = "latest"
 "cargo:cargo-edit" = "latest"
 "cargo:cargo-zigbuild" = "latest"
