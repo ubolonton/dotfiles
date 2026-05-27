@@ -60,6 +60,7 @@ starship = "latest"
 "pipx:magic-wormhole" = "latest"
 stern = "latest"
 lima = "latest"
+glab = "latest"
 
 # AI coding
 "npm:@anthropic-ai/claude-code" = "latest"
