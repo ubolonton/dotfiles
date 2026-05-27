@@ -66,6 +66,7 @@ lima = "latest"
 "npm:@zed-industries/claude-agent-acp" = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:ccstatusline" = "latest"
+rtk = "latest"
 
 [env]
 RUSTC_WRAPPER = "sccache"

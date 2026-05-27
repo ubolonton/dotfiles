@@ -394,6 +394,76 @@ backend = "pipx:magic-wormhole"
 version = "1.64.0"
 backend = "pipx:tmuxp"
 
+[[tools.rtk]]
+version = "0.38.0"
+backend = "github:rtk-ai/rtk"
+
+[tools.rtk."platforms.linux-arm64"]
+checksum = "sha256:2e171f1d1c76086bb447e372d9332869d2cd3cc106c08c6e5fbd102b12e91ad9"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424230"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.linux-arm64-musl"]
+checksum = "sha256:2e171f1d1c76086bb447e372d9332869d2cd3cc106c08c6e5fbd102b12e91ad9"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424230"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.linux-x64"]
+checksum = "sha256:9bafb356450fb0f66a7f2d68d0468d1b1e270163f1620574e67a4c8f816d9610"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424229"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.linux-x64-baseline"]
+checksum = "sha256:9bafb356450fb0f66a7f2d68d0468d1b1e270163f1620574e67a4c8f816d9610"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424229"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.linux-x64-musl"]
+checksum = "sha256:9bafb356450fb0f66a7f2d68d0468d1b1e270163f1620574e67a4c8f816d9610"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424229"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:9bafb356450fb0f66a7f2d68d0468d1b1e270163f1620574e67a4c8f816d9610"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424229"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.macos-arm64"]
+checksum = "sha256:3896c8c43d02641ddaad88e91a9569233f35e4e938a3bf7882656dc73928f97a"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424223"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.macos-x64"]
+checksum = "sha256:f05bf6258239898cf57467fb043799527ebe3d5258e93f290f84c8b7f410e359"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424224"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.macos-x64-baseline"]
+checksum = "sha256:f05bf6258239898cf57467fb043799527ebe3d5258e93f290f84c8b7f410e359"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424224"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.windows-x64"]
+checksum = "sha256:06f7a08d60b54bc79cfc579477f30553774dc33e0fe25785c3884a0e34c2e77a"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424225"
+github_attestations = "unavailable"
+
+[tools.rtk."platforms.windows-x64-baseline"]
+checksum = "sha256:06f7a08d60b54bc79cfc579477f30553774dc33e0fe25785c3884a0e34c2e77a"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424225"
+github_attestations = "unavailable"
+
 [[tools.starship]]
 version = "1.24.2"
 backend = "aqua:starship/starship"
