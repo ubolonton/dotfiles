@@ -124,11 +124,11 @@ version = "0.12.1"
 backend = "cargo:bingrep"
 
 [[tools."cargo:cargo-edit"]]
-version = "0.13.9"
+version = "0.13.10"
 backend = "cargo:cargo-edit"
 
 [[tools."cargo:cargo-outdated"]]
-version = "0.17.0"
+version = "0.19.0"
 backend = "cargo:cargo-outdated"
 
 [[tools."cargo:cargo-watch"]]
@@ -136,7 +136,7 @@ version = "8.5.3"
 backend = "cargo:cargo-watch"
 
 [[tools."cargo:cargo-zigbuild"]]
-version = "0.22.1"
+version = "0.22.3"
 backend = "cargo:cargo-zigbuild"
 
 [[tools."cargo:mdcat"]]
@@ -394,39 +394,55 @@ url = "https://github.com/lima-vm/lima/releases/download/v2.1.1/lima-2.1.1-Darwi
 provenance = "github-attestations"
 
 [[tools.node]]
-version = "25.9.0"
+version = "26.2.0"
 backend = "core:node"
 
 [tools.node."platforms.linux-arm64"]
-checksum = "sha256:8fb4283301b8c720fc9f18bffff0f659e72cc14d0cf207a3bb411808aaa73a57"
-url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-linux-arm64.tar.gz"
+checksum = "sha256:bf52461d25017479cdc549642c4e7a2303ac5c5395d7c3d026d5d8b3fa283c05"
+url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-linux-arm64.tar.gz"
 
 [tools.node."platforms.linux-arm64-musl"]
-checksum = "sha256:97f6fe125faa51f84a7bb600d0cd7aefcfaaa0e75a5f49a7c61c3df91d12d535"
-url = "https://unofficial-builds.nodejs.org/download/release/v25.9.0/node-v25.9.0-linux-arm64-musl.tar.gz"
+checksum = "sha256:4593d822012fe3238814721909408c66f2a82955e0141457643a7a4c84e132fd"
+url = "https://unofficial-builds.nodejs.org/download/release/v26.2.0/node-v26.2.0-linux-arm64-musl.tar.gz"
 
 [tools.node."platforms.linux-x64"]
-checksum = "sha256:134e55b2408448a219760fe04dc44d6851f9de8a79549021ffd870e9082d9e7b"
-url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-linux-x64.tar.gz"
+checksum = "sha256:8e5b4b969bb2414aca2ff84d2b99608511aedca32bf8a8427e6187dbdd703bbe"
+url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-linux-x64.tar.gz"
+
+[tools.node."platforms.linux-x64-baseline"]
+checksum = "sha256:8e5b4b969bb2414aca2ff84d2b99608511aedca32bf8a8427e6187dbdd703bbe"
+url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-linux-x64.tar.gz"
 
 [tools.node."platforms.linux-x64-musl"]
-checksum = "sha256:1ac44af012be6bc17f1e3723edbf12897c0baeae5d1dc75b9f97d71413e4c8f5"
-url = "https://unofficial-builds.nodejs.org/download/release/v25.9.0/node-v25.9.0-linux-x64-musl.tar.gz"
+checksum = "sha256:9efc99332e1cf70eeb85618398467c9d339bc208be65115380c611dda4c28407"
+url = "https://unofficial-builds.nodejs.org/download/release/v26.2.0/node-v26.2.0-linux-x64-musl.tar.gz"
+
+[tools.node."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:9efc99332e1cf70eeb85618398467c9d339bc208be65115380c611dda4c28407"
+url = "https://unofficial-builds.nodejs.org/download/release/v26.2.0/node-v26.2.0-linux-x64-musl.tar.gz"
 
 [tools.node."platforms.macos-arm64"]
-checksum = "sha256:e479f3c469d3d9303a44f00a8ea37a3788395d171bb8059c48a4bbbd2e371b59"
-url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-darwin-arm64.tar.gz"
+checksum = "sha256:2d8575b6a749c0bc66cc6ecd22a952f7d9bbf3b0ea76fcb0ed3ce858018afff7"
+url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-darwin-arm64.tar.gz"
 
 [tools.node."platforms.macos-x64"]
-checksum = "sha256:7d737b53ce191142bfa1c17cfa5b070d96e84eebf76b8dd06d84981cbdc3f7e3"
-url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-darwin-x64.tar.gz"
+checksum = "sha256:26a5480d0dd952be86beae83e6636dacd7a3ffd17ef51d0b26bc9b260f2b42e9"
+url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-darwin-x64.tar.gz"
+
+[tools.node."platforms.macos-x64-baseline"]
+checksum = "sha256:26a5480d0dd952be86beae83e6636dacd7a3ffd17ef51d0b26bc9b260f2b42e9"
+url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-darwin-x64.tar.gz"
 
 [tools.node."platforms.windows-x64"]
-checksum = "sha256:929552b8305effac843ba7b4270c437aefb702fc3fbd73fcd1bffd35d4ac284e"
-url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-win-x64.zip"
+checksum = "sha256:371071a4f7e2c8a5dd280730049c685911feecc59f50ebc488d675dc1087c69c"
+url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-win-x64.zip"
+
+[tools.node."platforms.windows-x64-baseline"]
+checksum = "sha256:371071a4f7e2c8a5dd280730049c685911feecc59f50ebc488d675dc1087c69c"
+url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-win-x64.zip"
 
 [[tools."npm:@anthropic-ai/claude-code"]]
-version = "2.1.126"
+version = "2.1.148"
 backend = "npm:@anthropic-ai/claude-code"
 
 [[tools."npm:@zed-industries/claude-agent-acp"]]
@@ -434,7 +450,7 @@ version = "0.23.1"
 backend = "npm:@zed-industries/claude-agent-acp"
 
 [[tools."npm:ccstatusline"]]
-version = "2.2.12"
+version = "2.2.19"
 backend = "npm:ccstatusline"
 
 [[tools.pdm]]
@@ -446,142 +462,163 @@ version = "0.22.0"
 backend = "pipx:magic-wormhole"
 
 [[tools."pipx:tmuxp"]]
-version = "1.64.0"
+version = "1.68.0"
 backend = "pipx:tmuxp"
 
 [[tools.rtk]]
-version = "0.38.0"
+version = "0.40.0"
 backend = "github:rtk-ai/rtk"
 
 [tools.rtk."platforms.linux-arm64"]
-checksum = "sha256:2e171f1d1c76086bb447e372d9332869d2cd3cc106c08c6e5fbd102b12e91ad9"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424230"
-github_attestations = "unavailable"
+checksum = "sha256:1d0087ad62a182c0833c2251ac678b5e05356418d91aa57305ac51a126c9b102"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581651"
 
 [tools.rtk."platforms.linux-arm64-musl"]
-checksum = "sha256:2e171f1d1c76086bb447e372d9332869d2cd3cc106c08c6e5fbd102b12e91ad9"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424230"
-github_attestations = "unavailable"
+checksum = "sha256:1d0087ad62a182c0833c2251ac678b5e05356418d91aa57305ac51a126c9b102"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581651"
 
 [tools.rtk."platforms.linux-x64"]
-checksum = "sha256:9bafb356450fb0f66a7f2d68d0468d1b1e270163f1620574e67a4c8f816d9610"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424229"
-github_attestations = "unavailable"
+checksum = "sha256:a75d210a445874106bc16da2b4efba01d36d297afa33ec134728f2d5f42ef5af"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581643"
 
 [tools.rtk."platforms.linux-x64-baseline"]
-checksum = "sha256:9bafb356450fb0f66a7f2d68d0468d1b1e270163f1620574e67a4c8f816d9610"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424229"
-github_attestations = "unavailable"
+checksum = "sha256:a75d210a445874106bc16da2b4efba01d36d297afa33ec134728f2d5f42ef5af"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581643"
 
 [tools.rtk."platforms.linux-x64-musl"]
-checksum = "sha256:9bafb356450fb0f66a7f2d68d0468d1b1e270163f1620574e67a4c8f816d9610"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424229"
-github_attestations = "unavailable"
+checksum = "sha256:a75d210a445874106bc16da2b4efba01d36d297afa33ec134728f2d5f42ef5af"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581643"
 
 [tools.rtk."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:9bafb356450fb0f66a7f2d68d0468d1b1e270163f1620574e67a4c8f816d9610"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424229"
-github_attestations = "unavailable"
+checksum = "sha256:a75d210a445874106bc16da2b4efba01d36d297afa33ec134728f2d5f42ef5af"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581643"
 
 [tools.rtk."platforms.macos-arm64"]
-checksum = "sha256:3896c8c43d02641ddaad88e91a9569233f35e4e938a3bf7882656dc73928f97a"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424223"
-github_attestations = "unavailable"
+checksum = "sha256:60c2c325b4edf0367cfa9716ac2e2c888abcd065eff45d01510da6561ab82e3c"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581645"
 
 [tools.rtk."platforms.macos-x64"]
-checksum = "sha256:f05bf6258239898cf57467fb043799527ebe3d5258e93f290f84c8b7f410e359"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424224"
-github_attestations = "unavailable"
+checksum = "sha256:8eac502fb812056973da2a8c2f0c00e1427ba5f71bd14c01520bc540630cb98a"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581650"
 
 [tools.rtk."platforms.macos-x64-baseline"]
-checksum = "sha256:f05bf6258239898cf57467fb043799527ebe3d5258e93f290f84c8b7f410e359"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424224"
-github_attestations = "unavailable"
+checksum = "sha256:8eac502fb812056973da2a8c2f0c00e1427ba5f71bd14c01520bc540630cb98a"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581650"
 
 [tools.rtk."platforms.windows-x64"]
-checksum = "sha256:06f7a08d60b54bc79cfc579477f30553774dc33e0fe25785c3884a0e34c2e77a"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424225"
-github_attestations = "unavailable"
+checksum = "sha256:7fc90190f76f55dc170898d0ac755e89f405fc2d1d89f717ad8600640ab0f1ed"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581646"
 
 [tools.rtk."platforms.windows-x64-baseline"]
-checksum = "sha256:06f7a08d60b54bc79cfc579477f30553774dc33e0fe25785c3884a0e34c2e77a"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.38.0/rtk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/408424225"
-github_attestations = "unavailable"
+checksum = "sha256:7fc90190f76f55dc170898d0ac755e89f405fc2d1d89f717ad8600640ab0f1ed"
+url = "https://github.com/rtk-ai/rtk/releases/download/v0.40.0/rtk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/419581646"
 
 [[tools.starship]]
-version = "1.24.2"
+version = "1.25.1"
 backend = "aqua:starship/starship"
 
 [tools.starship."platforms.linux-arm64"]
-checksum = "sha256:56b9ff412bbf374d29b99e5ac09a849124cb37a0a13121e8470df32de53c1ea6"
-url = "https://github.com/starship/starship/releases/download/v1.24.2/starship-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:01517aab398959ea9ea73bdb4f032ea4dbb51dff5c8e5eb05b4a1b9b7ab872b8"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.starship."platforms.linux-arm64-musl"]
-checksum = "sha256:56b9ff412bbf374d29b99e5ac09a849124cb37a0a13121e8470df32de53c1ea6"
-url = "https://github.com/starship/starship/releases/download/v1.24.2/starship-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:01517aab398959ea9ea73bdb4f032ea4dbb51dff5c8e5eb05b4a1b9b7ab872b8"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.starship."platforms.linux-x64"]
-checksum = "sha256:00ff3c1f8ffb59b5c15d4b44c076bcca04d92cf0055c86b916248c14f3ae714a"
-url = "https://github.com/starship/starship/releases/download/v1.24.2/starship-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:c6ddd3ecb9c0071a2ad38d98cee748160066b7c4f197421268058f4a5d6f8504"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.starship."platforms.linux-x64-baseline"]
+checksum = "sha256:c6ddd3ecb9c0071a2ad38d98cee748160066b7c4f197421268058f4a5d6f8504"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.starship."platforms.linux-x64-musl"]
-checksum = "sha256:00ff3c1f8ffb59b5c15d4b44c076bcca04d92cf0055c86b916248c14f3ae714a"
-url = "https://github.com/starship/starship/releases/download/v1.24.2/starship-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:c6ddd3ecb9c0071a2ad38d98cee748160066b7c4f197421268058f4a5d6f8504"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.starship."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:c6ddd3ecb9c0071a2ad38d98cee748160066b7c4f197421268058f4a5d6f8504"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.starship."platforms.macos-arm64"]
-checksum = "sha256:d3a0da21374962625a2ee992110979bc1fa33424d7b6aea58a70405e26544fd9"
-url = "https://github.com/starship/starship/releases/download/v1.24.2/starship-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:1062a2363489b9335529b83204472f02633c08fc3609f1b325be5eba36feb631"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-aarch64-apple-darwin.tar.gz"
 
 [tools.starship."platforms.macos-x64"]
-checksum = "sha256:237beb10cc970c4361536e9f9f434dfed755f8282c5cd951b6a7e3fcbda8e779"
-url = "https://github.com/starship/starship/releases/download/v1.24.2/starship-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:f86fbe7a3b9f262bcf34ca61e9e996243da511c5500dcd81a1e4daa542869276"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-apple-darwin.tar.gz"
+
+[tools.starship."platforms.macos-x64-baseline"]
+checksum = "sha256:f86fbe7a3b9f262bcf34ca61e9e996243da511c5500dcd81a1e4daa542869276"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-apple-darwin.tar.gz"
 
 [tools.starship."platforms.windows-x64"]
-checksum = "sha256:d38424c595320e9639a276666347d5e44cb004de3972f40b9a5a1a6b88537f29"
-url = "https://github.com/starship/starship/releases/download/v1.24.2/starship-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:a07cf3e428afab09324e510fb786041ebcc491a68b1ca6fba044c5a461f9b017"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-pc-windows-msvc.zip"
+
+[tools.starship."platforms.windows-x64-baseline"]
+checksum = "sha256:a07cf3e428afab09324e510fb786041ebcc491a68b1ca6fba044c5a461f9b017"
+url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-pc-windows-msvc.zip"
 
 [[tools.stern]]
-version = "1.33.1"
+version = "1.34.0"
 backend = "aqua:stern/stern"
 
 [tools.stern."platforms.linux-arm64"]
-checksum = "sha256:41ff85d85aeaf6f61b1cfb7aeccad64d7f66051b51f955f55b49ce20b5822374"
-url = "https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_linux_arm64.tar.gz"
+checksum = "sha256:e215cfc5e42d71e93b77d3fac8f0df7d736271f44b2d92a5b417eaa588edff3a"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_linux_arm64.tar.gz"
 
 [tools.stern."platforms.linux-arm64-musl"]
-checksum = "sha256:41ff85d85aeaf6f61b1cfb7aeccad64d7f66051b51f955f55b49ce20b5822374"
-url = "https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_linux_arm64.tar.gz"
+checksum = "sha256:e215cfc5e42d71e93b77d3fac8f0df7d736271f44b2d92a5b417eaa588edff3a"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_linux_arm64.tar.gz"
 
 [tools.stern."platforms.linux-x64"]
-checksum = "sha256:185be29c6a22bd07c0791ec697900943c0cc27292e5a5640a07a543886f1bfc9"
-url = "https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_linux_amd64.tar.gz"
+checksum = "sha256:7754adfa653939240f7d20fff4ada9b69cda40c9e70732301f67bb8045f1ef3e"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_linux_amd64.tar.gz"
+
+[tools.stern."platforms.linux-x64-baseline"]
+checksum = "sha256:7754adfa653939240f7d20fff4ada9b69cda40c9e70732301f67bb8045f1ef3e"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_linux_amd64.tar.gz"
 
 [tools.stern."platforms.linux-x64-musl"]
-checksum = "sha256:185be29c6a22bd07c0791ec697900943c0cc27292e5a5640a07a543886f1bfc9"
-url = "https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_linux_amd64.tar.gz"
+checksum = "sha256:7754adfa653939240f7d20fff4ada9b69cda40c9e70732301f67bb8045f1ef3e"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_linux_amd64.tar.gz"
+
+[tools.stern."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:7754adfa653939240f7d20fff4ada9b69cda40c9e70732301f67bb8045f1ef3e"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_linux_amd64.tar.gz"
 
 [tools.stern."platforms.macos-arm64"]
-checksum = "sha256:bdca897b9bd5a0ee8b4d1f4e00c8e63cf503d2f85abceab4ae6a276a7d232d95"
-url = "https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_darwin_arm64.tar.gz"
+checksum = "sha256:4014d84096e1e603ee115864e03a1e15fb9bae9876647bf7bb8031eee278dcd3"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_darwin_arm64.tar.gz"
 
 [tools.stern."platforms.macos-x64"]
-checksum = "sha256:6dc34102318ef012a4cb16f786c5930240b202b33c20666399230826e857107e"
-url = "https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_darwin_amd64.tar.gz"
+checksum = "sha256:153355317f21e565ea10bc710d4c2e3d98fd06f83cae5eb927e7031cc724a7a6"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_darwin_amd64.tar.gz"
+
+[tools.stern."platforms.macos-x64-baseline"]
+checksum = "sha256:153355317f21e565ea10bc710d4c2e3d98fd06f83cae5eb927e7031cc724a7a6"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_darwin_amd64.tar.gz"
 
 [tools.stern."platforms.windows-x64"]
-checksum = "sha256:e1451cac9f01dbd9ab9aacde9d8e8d7fa800970f51054d4ffaa04f6d3bf959bd"
-url = "https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_windows_amd64.tar.gz"
+checksum = "sha256:22ed0c8eb0c15cbd2651c944517f6c06aa6ffa11467be55f7673f7242f1bafd3"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_windows_amd64.tar.gz"
+
+[tools.stern."platforms.windows-x64-baseline"]
+checksum = "sha256:22ed0c8eb0c15cbd2651c944517f6c06aa6ffa11467be55f7673f7242f1bafd3"
+url = "https://github.com/stern/stern/releases/download/v1.34.0/stern_1.34.0_windows_amd64.tar.gz"
 
 [[tools.tokei]]
 version = "14.0.0"
@@ -627,34 +664,50 @@ url = "https://github.com/astral-sh/uv/releases/download/0.11.7/uv-x86_64-pc-win
 provenance = "github-attestations"
 
 [[tools.zig]]
-version = "0.15.2"
+version = "0.16.0"
 backend = "core:zig"
 
 [tools.zig."platforms.linux-arm64"]
-checksum = "sha256:958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f"
-url = "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz"
+checksum = "sha256:ea4b09bfb22ec6f6c6ceac57ab63efb6b46e17ab08d21f69f3a48b38e1534f17"
+url = "https://ziglang.org/download/0.16.0/zig-aarch64-linux-0.16.0.tar.xz"
 
 [tools.zig."platforms.linux-arm64-musl"]
-checksum = "sha256:958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f"
-url = "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz"
+checksum = "sha256:ea4b09bfb22ec6f6c6ceac57ab63efb6b46e17ab08d21f69f3a48b38e1534f17"
+url = "https://ziglang.org/download/0.16.0/zig-aarch64-linux-0.16.0.tar.xz"
 
 [tools.zig."platforms.linux-x64"]
-checksum = "sha256:02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239"
-url = "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz"
+checksum = "sha256:70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00"
+url = "https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz"
 provenance = "minisign"
 
+[tools.zig."platforms.linux-x64-baseline"]
+checksum = "sha256:70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00"
+url = "https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz"
+
 [tools.zig."platforms.linux-x64-musl"]
-checksum = "sha256:02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239"
-url = "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz"
+checksum = "sha256:70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00"
+url = "https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz"
+
+[tools.zig."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00"
+url = "https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz"
 
 [tools.zig."platforms.macos-arm64"]
-checksum = "sha256:3cc2bab367e185cdfb27501c4b30b1b0653c28d9f73df8dc91488e66ece5fa6b"
-url = "https://ziglang.org/download/0.15.2/zig-aarch64-macos-0.15.2.tar.xz"
+checksum = "sha256:b23d70deaa879b5c2d486ed3316f7eaa53e84acf6fc9cc747de152450d401489"
+url = "https://ziglang.org/download/0.16.0/zig-aarch64-macos-0.16.0.tar.xz"
 
 [tools.zig."platforms.macos-x64"]
-checksum = "sha256:375b6909fc1495d16fc2c7db9538f707456bfc3373b14ee83fdd3e22b3d43f7f"
-url = "https://ziglang.org/download/0.15.2/zig-x86_64-macos-0.15.2.tar.xz"
+checksum = "sha256:0387557ed1877bc6a2e1802c8391953baddba76081876301c522f52977b52ba7"
+url = "https://ziglang.org/download/0.16.0/zig-x86_64-macos-0.16.0.tar.xz"
+
+[tools.zig."platforms.macos-x64-baseline"]
+checksum = "sha256:0387557ed1877bc6a2e1802c8391953baddba76081876301c522f52977b52ba7"
+url = "https://ziglang.org/download/0.16.0/zig-x86_64-macos-0.16.0.tar.xz"
 
 [tools.zig."platforms.windows-x64"]
-checksum = "sha256:3a0ed1e8799a2f8ce2a6e6290a9ff22e6906f8227865911fb7ddedc3cc14cb0c"
-url = "https://ziglang.org/download/0.15.2/zig-x86_64-windows-0.15.2.zip"
+checksum = "sha256:68659eb5f1e4eb1437a722f1dd889c5a322c9954607f5edcf337bc3684a75a7e"
+url = "https://ziglang.org/download/0.16.0/zig-x86_64-windows-0.16.0.zip"
+
+[tools.zig."platforms.windows-x64-baseline"]
+checksum = "sha256:68659eb5f1e4eb1437a722f1dd889c5a322c9954607f5edcf337bc3684a75a7e"
+url = "https://ziglang.org/download/0.16.0/zig-x86_64-windows-0.16.0.zip"
