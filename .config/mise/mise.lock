@@ -429,10 +429,6 @@ url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-win-x64.zip"
 version = "2.1.126"
 backend = "npm:@anthropic-ai/claude-code"
 
-[[tools."npm:@google/gemini-cli"]]
-version = "0.40.1"
-backend = "npm:@google/gemini-cli"
-
 [[tools."npm:@zed-industries/claude-agent-acp"]]
 version = "0.23.1"
 backend = "npm:@zed-industries/claude-agent-acp"

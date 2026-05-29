@@ -65,7 +65,6 @@ glab = "latest"
 # AI coding
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@zed-industries/claude-agent-acp" = "latest"
-"npm:@google/gemini-cli" = "latest"
 "npm:ccstatusline" = "latest"
 rtk = "latest"
 
