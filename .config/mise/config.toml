@@ -61,6 +61,7 @@ starship = "latest"
 stern = "latest"
 lima = "latest"
 glab = "latest"
+"npm:microsandbox" = "latest"
 
 # AI coding
 "npm:@anthropic-ai/claude-code" = "latest"

@@ -453,6 +453,10 @@ backend = "npm:@zed-industries/claude-agent-acp"
 version = "2.2.19"
 backend = "npm:ccstatusline"
 
+[[tools."npm:microsandbox"]]
+version = "0.5.2"
+backend = "npm:microsandbox"
+
 [[tools.pdm]]
 version = "2.26.6"
 backend = "pipx:pdm"
