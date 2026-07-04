@@ -52,6 +52,10 @@ zig = "latest"
 "cargo:cargo-zigbuild" = "latest"
 "cargo:cargo-watch" = "latest"
 
+# VM tools
+lima = "latest"
+"pipx:microsandbox" = "latest"
+
 # Unsorted
 hyperfine = "latest"
 tokei = "latest"
@@ -59,9 +63,7 @@ starship = "latest"
 "pipx:tmuxp" = "latest"
 "pipx:magic-wormhole" = "latest"
 stern = "latest"
-lima = "latest"
 glab = "latest"
-"npm:microsandbox" = "latest"
 
 # AI coding
 "npm:@anthropic-ai/claude-code" = "latest"

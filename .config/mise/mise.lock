@@ -453,10 +453,6 @@ backend = "npm:@zed-industries/claude-agent-acp"
 version = "2.2.19"
 backend = "npm:ccstatusline"
 
-[[tools."npm:microsandbox"]]
-version = "0.5.2"
-backend = "npm:microsandbox"
-
 [[tools.pdm]]
 version = "2.26.6"
 backend = "pipx:pdm"
@@ -464,6 +460,10 @@ backend = "pipx:pdm"
 [[tools."pipx:magic-wormhole"]]
 version = "0.22.0"
 backend = "pipx:magic-wormhole"
+
+[[tools."pipx:microsandbox"]]
+version = "0.5.7"
+backend = "pipx:microsandbox"
 
 [[tools."pipx:tmuxp"]]
 version = "1.70.0"
