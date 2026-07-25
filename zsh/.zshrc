@@ -298,7 +298,9 @@ elif [[ $system == "Darwin" ]]; then
     alias ls='ls -aCFho -G'
 fi
 
-if command_exists exa; then
+if command_exists eza; then
+    alias ls='eza -a -lbghmS'
+elif command_exists exa; then
     alias ls='exa -a -lbghmS'
 fi
 
