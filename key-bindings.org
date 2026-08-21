@@ -139,15 +139,32 @@ flowchart TD
     term --> lined
 #+end_src
 
-** KeyboardIO Model M1
+** Hardware
+*** KeyboardIO Model M1
 - QWERTY
 
-** Kinesis Advantage 2
+*** Kinesis Advantage 2
 - QWERTY
 - Modifiers are moved around
 - Ctrl+M -> Enter
 
-** macOS
+** Software layers
+- System keyboard layout: Dvorak
+- Desktop env
+    - X, KDE, macOS
+    - Keyboard interceptor: keyd, Karabiner
+- Terminal
+    - Emulator: Kitty, iTerm, Konsole
+    - Multiplexer: tmux
+- Readline: ~/.inputrc
+  # Minimal, relying on translations instead. The rationale is that many programs follow readline conventions, but don't use readline directly. They likely don't read ~/.inputrc.
+- Emacs
+    # - ~input-decode-map~
+    # - ~function-key-map~
+    # - ~local-function-key-map~
+    # - ~key-translation-map~
+
+*** macOS
 - System keyboard layout: Dvorak
 - Karabiner
 - Kitty, iTerm
@@ -155,7 +172,7 @@ flowchart TD
 - ~/.inputrc
 - Emacs
 
-** FreeBSD/Linux
+*** FreeBSD/Linux
 - System keyboard layout: Dvorak
 - X keyboard layout: Dvorak
 - keyd
