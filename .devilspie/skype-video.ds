@@ -1,3 +1,0 @@
-(if (and (is (window_role) "CallWindowForm"))
-    (begin (undecorate) (stick) (above) (pin)
-           (geometry "+963+0")))

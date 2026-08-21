@@ -1,3 +1,0 @@
-;;; Only undecorate, set size in Emacs instead
-(if (or (matches (application_name) "emacs"))
-    (begin (undecorate)))
