@@ -43,23 +43,6 @@ Look for ~Load preferences from a custom folder or URL~, set the directory to =d
 #+begin_src shell
 ln -s dotfiles/.config ~/
 ln -s dotfiles/.oh-my-zsh ~/
-ln -s dotfiles/.inputrc ~/
-ln -s dotfiles/.jshint.json ~/
-ln -s dotfiles/.lein ~/
-ln -s dotfiles/.psqlrc ~/
-ln -s dotfiles/.tmux.conf ~/
-ln -s dotfiles/.rustfmt.toml ~/
-ln -s dotfiles/.clickhouse-client ~/
-ln -s dotfiles/.duckdbrc ~/
-ln -s dotfiles/.digrc ~/
 
 tic ~/dotfiles/xterm-256color-italic.terminfo
-
-export INTELLIJ_CONF_DIR=~/Library/'Application Support'/JetBrains/IntelliJIdea2023.1
-ln -f -s ~/dotfiles/IntelliJ/keymaps/* $INTELLIJ_CONF_DIR/keymaps/
-ln -f -s ~/dotfiles/IntelliJ/options/* $INTELLIJ_CONF_DIR/options/
-ln -f -s ~/dotfiles/IntelliJ/tools/* $INTELLIJ_CONF_DIR/tools/
-ln -f -s ~/dotfiles/IntelliJ/codestyles/* $INTELLIJ_CONF_DIR/codestyles/
-
-ln -s "$HOME"/dotfiles/.config/Code ~/Library/'Application Support'/
 #+end_src
