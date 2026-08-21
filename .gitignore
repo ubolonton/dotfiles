@@ -29,3 +29,5 @@
 /.stumpwm.d/stumpwm.log*
 /.config/keyd/app.log
 /.config/keyd/app.lock
+
+/.config/Code/
