@@ -1,3 +1,0 @@
-npm i -g bower browserify gulp less jsxhint jshint sjs grunt-cli tern
-
-phantomjs yo
