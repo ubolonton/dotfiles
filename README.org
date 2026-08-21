@@ -8,10 +8,6 @@ stow -v zsh git fmt repl
 Symlink =~/.kde/share/apps/konsole= to =konsole=
 Symlink =~/.kde/share/config/konsolerc= to =konsolerc=
 
-* Gnome-terminal
-Just in case (use Konsole if possible).
-Symlink =~/.gconf/apps/gnome-terminal= to =gnome-terminal=
-
 * iTerm2
 Look for ~Load preferences from a custom folder or URL~, set the directory to =dotfiles/iTerm2=.
 
