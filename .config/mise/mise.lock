@@ -405,6 +405,55 @@ checksum = "sha256:2dc5b10aa3a4f26d08c1f3fe83e37e01f85a7d9db0d1d5cb6985b18af96ab
 url = "https://github.com/lima-vm/lima/releases/download/v2.1.1/lima-2.1.1-Darwin-x86_64.tar.gz"
 provenance = "github-attestations"
 
+[[tools.microsandbox]]
+version = "0.6.14"
+backend = "aqua:superradcompany/microsandbox"
+
+[tools.microsandbox."platforms.linux-arm64"]
+checksum = "sha256:d799473cfe3657e9888e3b4b92273c534547287fb7c9fa55170d17abb88a1ca8"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-linux-aarch64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178206"
+
+[tools.microsandbox."platforms.linux-arm64-musl"]
+checksum = "sha256:d799473cfe3657e9888e3b4b92273c534547287fb7c9fa55170d17abb88a1ca8"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-linux-aarch64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178206"
+
+[tools.microsandbox."platforms.linux-x64"]
+checksum = "sha256:2db88548266a7a0ac6ec21c9e5fa2f8b241e337fbd22f120ec8dba42ca95f39a"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178217"
+
+[tools.microsandbox."platforms.linux-x64-baseline"]
+checksum = "sha256:2db88548266a7a0ac6ec21c9e5fa2f8b241e337fbd22f120ec8dba42ca95f39a"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178217"
+
+[tools.microsandbox."platforms.linux-x64-musl"]
+checksum = "sha256:2db88548266a7a0ac6ec21c9e5fa2f8b241e337fbd22f120ec8dba42ca95f39a"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178217"
+
+[tools.microsandbox."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:2db88548266a7a0ac6ec21c9e5fa2f8b241e337fbd22f120ec8dba42ca95f39a"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178217"
+
+[tools.microsandbox."platforms.macos-arm64"]
+checksum = "sha256:9578ea619e9818f2d65b7092ecf257b3f16aea03be7e01069bb1875dee8b582a"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-darwin-aarch64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178203"
+
+[tools.microsandbox."platforms.windows-x64"]
+checksum = "sha256:91af2a3fea65eb6c42f0309c056fd5d31fe95d6a859ac4c002d536b2f1dabf47"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-windows-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178256"
+
+[tools.microsandbox."platforms.windows-x64-baseline"]
+checksum = "sha256:91af2a3fea65eb6c42f0309c056fd5d31fe95d6a859ac4c002d536b2f1dabf47"
+url = "https://github.com/superradcompany/microsandbox/releases/download/v0.6.14/microsandbox-windows-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/superradcompany/microsandbox/releases/assets/525178256"
+
 [[tools.node]]
 version = "26.2.0"
 backend = "core:node"

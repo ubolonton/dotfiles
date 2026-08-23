@@ -60,7 +60,7 @@ zig = "latest"
 
 # VM tools
 lima = "latest"
-"pipx:microsandbox" = "latest"
+microsandbox = "0.6"
 
 # Unsorted
 hyperfine = "latest"
