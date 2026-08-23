@@ -14,6 +14,12 @@ pipx.uvx = true
 # Reduce supply chain risk.
 install_before = "7d"
 
+# https://mise.jdx.dev/dev-tools/github-tokens.html
+# XXX: Other methods didn't work.
+[settings.github]
+credential_command = "gh auth token"
+# use_git_credentials = true
+
 [tools]
 # Things that better come from the system package manager:
 #
