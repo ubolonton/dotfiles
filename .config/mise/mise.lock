@@ -148,29 +148,41 @@ version = "14.0.0"
 backend = "cargo:tokei"
 
 [[tools.clickhouse]]
-version = "26.2.4.23-stable"
-backend = "asdf:clickhouse"
+version = "26.7.5.10-stable"
+backend = "vfox:clickhouse"
 
 [tools.clickhouse."platforms.linux-arm64"]
-url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.2.4.23-stable/clickhouse-common-static-26.2.4.23-amd64.tgz"
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-common-static-26.7.5.10-amd64.tgz"
 
 [tools.clickhouse."platforms.linux-arm64-musl"]
-url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.2.4.23-stable/clickhouse-common-static-26.2.4.23-amd64.tgz"
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-common-static-26.7.5.10-amd64.tgz"
 
 [tools.clickhouse."platforms.linux-x64"]
-url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.2.4.23-stable/clickhouse-common-static-26.2.4.23-amd64.tgz"
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-common-static-26.7.5.10-amd64.tgz"
+
+[tools.clickhouse."platforms.linux-x64-baseline"]
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-common-static-26.7.5.10-amd64.tgz"
 
 [tools.clickhouse."platforms.linux-x64-musl"]
-url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.2.4.23-stable/clickhouse-common-static-26.2.4.23-amd64.tgz"
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-common-static-26.7.5.10-amd64.tgz"
+
+[tools.clickhouse."platforms.linux-x64-musl-baseline"]
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-common-static-26.7.5.10-amd64.tgz"
 
 [tools.clickhouse."platforms.macos-arm64"]
-url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.2.4.23-stable/clickhouse-macos"
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-macos"
 
 [tools.clickhouse."platforms.macos-x64"]
-url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.2.4.23-stable/clickhouse-macos"
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-macos"
+
+[tools.clickhouse."platforms.macos-x64-baseline"]
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-macos"
 
 [tools.clickhouse."platforms.windows-x64"]
-url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.2.4.23-stable/clickhouse-common-static-26.2.4.23-amd64.tgz"
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-common-static-26.7.5.10-amd64.tgz"
+
+[tools.clickhouse."platforms.windows-x64-baseline"]
+url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.7.5.10-stable/clickhouse-common-static-26.7.5.10-amd64.tgz"
 
 [[tools.duckdb]]
 version = "1.4.4"

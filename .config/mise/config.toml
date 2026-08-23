@@ -41,7 +41,7 @@ bat = "latest"
 
 # REPLs
 babashka = { version = "latest", exe = "bb" }
-clickhouse = "26"
+clickhouse = "26.7"
 duckdb = "1"
 
 # Project management: build tools, task runners
