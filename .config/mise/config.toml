@@ -12,7 +12,7 @@ npm.package_manager = "bun"
 pipx.uvx = true
 
 # Reduce supply chain risk.
-install_before = "7d"
+minimum_release_age = "7d"
 
 # https://mise.jdx.dev/dev-tools/github-tokens.html
 # XXX: Other methods didn't work.
