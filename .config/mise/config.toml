@@ -56,7 +56,6 @@ sqlite = "latest"
 just = "1"
 
 # Language-specific dev tools
-pdm = "2"
 uv = "latest"
 node = "latest"
 bun = "latest"

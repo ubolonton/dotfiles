@@ -439,10 +439,6 @@ backend = "cargo:cargo-zigbuild"
 version = "2.7.1"
 backend = "cargo:mdcat"
 
-[[tools."cargo:tokei"]]
-version = "14.0.0"
-backend = "cargo:tokei"
-
 [[tools.claude]]
 version = "2.1.296"
 backend = "aqua:anthropics/claude-code"
@@ -507,36 +503,47 @@ version = "26.4.5.143-stable"
 backend = "vfox:clickhouse"
 
 [tools.clickhouse."platforms.linux-arm64"]
+checksum = "sha256:53fca67fdaaee48c6ced5cdcfd3fbd1e016eff66c9b70af4e3993e630d32a57d"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-common-static-26.4.5.143-amd64.tgz"
 
 [tools.clickhouse."platforms.linux-arm64-musl"]
+checksum = "sha256:53fca67fdaaee48c6ced5cdcfd3fbd1e016eff66c9b70af4e3993e630d32a57d"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-common-static-26.4.5.143-amd64.tgz"
 
 [tools.clickhouse."platforms.linux-x64"]
+checksum = "sha256:53fca67fdaaee48c6ced5cdcfd3fbd1e016eff66c9b70af4e3993e630d32a57d"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-common-static-26.4.5.143-amd64.tgz"
 
 [tools.clickhouse."platforms.linux-x64-baseline"]
+checksum = "sha256:53fca67fdaaee48c6ced5cdcfd3fbd1e016eff66c9b70af4e3993e630d32a57d"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-common-static-26.4.5.143-amd64.tgz"
 
 [tools.clickhouse."platforms.linux-x64-musl"]
+checksum = "sha256:53fca67fdaaee48c6ced5cdcfd3fbd1e016eff66c9b70af4e3993e630d32a57d"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-common-static-26.4.5.143-amd64.tgz"
 
 [tools.clickhouse."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:53fca67fdaaee48c6ced5cdcfd3fbd1e016eff66c9b70af4e3993e630d32a57d"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-common-static-26.4.5.143-amd64.tgz"
 
 [tools.clickhouse."platforms.macos-arm64"]
+checksum = "sha256:f26411e54653f5bb56665cd508dd3bc21a91c3ef4b6e2838989d36c715b7c9ec"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-macos"
 
 [tools.clickhouse."platforms.macos-x64"]
+checksum = "sha256:f26411e54653f5bb56665cd508dd3bc21a91c3ef4b6e2838989d36c715b7c9ec"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-macos"
 
 [tools.clickhouse."platforms.macos-x64-baseline"]
+checksum = "sha256:f26411e54653f5bb56665cd508dd3bc21a91c3ef4b6e2838989d36c715b7c9ec"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-macos"
 
 [tools.clickhouse."platforms.windows-x64"]
+checksum = "sha256:53fca67fdaaee48c6ced5cdcfd3fbd1e016eff66c9b70af4e3993e630d32a57d"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-common-static-26.4.5.143-amd64.tgz"
 
 [tools.clickhouse."platforms.windows-x64-baseline"]
+checksum = "sha256:53fca67fdaaee48c6ced5cdcfd3fbd1e016eff66c9b70af4e3993e630d32a57d"
 url = "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-common-static-26.4.5.143-amd64.tgz"
 
 [[tools.clojure]]
@@ -544,36 +551,47 @@ version = "1.12.5.1664"
 backend = "vfox:clojure"
 
 [tools.clojure."platforms.linux-arm64"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.linux-arm64-musl"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.linux-x64"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.linux-x64-baseline"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.linux-x64-musl"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.macos-arm64"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.macos-x64"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.macos-x64-baseline"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.windows-x64"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [tools.clojure."platforms.windows-x64-baseline"]
+checksum = "sha256:77dd6868948074adcc93e83a796f8e8f15a1a92bcb1b9002d715fd2210e476f3"
 url = "https://download.clojure.org/install/clojure-tools-1.12.5.1664.tar.gz"
 
 [[tools.duckdb]]
@@ -1063,10 +1081,6 @@ url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-win-x64.zip"
 checksum = "sha256:371071a4f7e2c8a5dd280730049c685911feecc59f50ebc488d675dc1087c69c"
 url = "https://nodejs.org/dist/v26.2.0/node-v26.2.0-win-x64.zip"
 
-[[tools."npm:@anthropic-ai/claude-code"]]
-version = "2.1.158"
-backend = "npm:@anthropic-ai/claude-code"
-
 [[tools."npm:@zed-industries/claude-agent-acp"]]
 version = "0.23.1"
 backend = "npm:@zed-industries/claude-agent-acp"
@@ -1074,22 +1088,6 @@ backend = "npm:@zed-industries/claude-agent-acp"
 [[tools."npm:ccstatusline"]]
 version = "2.2.19"
 backend = "npm:ccstatusline"
-
-[[tools.pdm]]
-version = "2.26.6"
-backend = "pipx:pdm"
-
-[[tools."pipx:magic-wormhole"]]
-version = "0.22.0"
-backend = "pipx:magic-wormhole"
-
-[[tools."pipx:microsandbox"]]
-version = "0.5.7"
-backend = "pipx:microsandbox"
-
-[[tools."pipx:tmuxp"]]
-version = "1.70.0"
-backend = "pipx:tmuxp"
 
 [[tools."pypi:magic-wormhole"]]
 version = "0.24.0"
@@ -1103,64 +1101,60 @@ backend = "pypi:tmuxp"
 version = "3.14.6"
 backend = "core:python"
 
-[[tools.rtk]]
-version = "0.42.0"
-backend = "github:rtk-ai/rtk"
+[tools.python."platforms.linux-arm64"]
+checksum = "sha256:8ad1ec529cd1708245e8661a463245fc1479c43cbfd66e58b095456ebf77180a"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.linux-arm64"]
-checksum = "sha256:62bb749df1ed64f09149998c31de864932f047a1be4e0f882a8ceada849e0871"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637339"
+[tools.python."platforms.linux-arm64-musl"]
+checksum = "sha256:85dbb537dc5d6679edabfb61cefdf2511d26cb8669662c4563202b0990e79b4a"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-aarch64-unknown-linux-musl-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.linux-arm64-musl"]
-checksum = "sha256:62bb749df1ed64f09149998c31de864932f047a1be4e0f882a8ceada849e0871"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637339"
+[tools.python."platforms.linux-x64"]
+checksum = "sha256:ba960817e542642021135db330d875f410f4e14c64a62e2ae5faf3697ada08b2"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.linux-x64"]
-checksum = "sha256:cdd4f87ac97ce958f71b53a991880d6adcc41cc5bca1044175a64630980152be"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637341"
+[tools.python."platforms.linux-x64-baseline"]
+checksum = "sha256:ba960817e542642021135db330d875f410f4e14c64a62e2ae5faf3697ada08b2"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.linux-x64-baseline"]
-checksum = "sha256:cdd4f87ac97ce958f71b53a991880d6adcc41cc5bca1044175a64630980152be"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637341"
+[tools.python."platforms.linux-x64-musl"]
+checksum = "sha256:cbedbddcc6b2de99310015e629df67aeb732f622bbf258ec5d310757f85ab7ac"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-x86_64-unknown-linux-musl-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.linux-x64-musl"]
-checksum = "sha256:cdd4f87ac97ce958f71b53a991880d6adcc41cc5bca1044175a64630980152be"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637341"
+[tools.python."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:cbedbddcc6b2de99310015e629df67aeb732f622bbf258ec5d310757f85ab7ac"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-x86_64-unknown-linux-musl-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:cdd4f87ac97ce958f71b53a991880d6adcc41cc5bca1044175a64630980152be"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637341"
+[tools.python."platforms.macos-arm64"]
+checksum = "sha256:e0d4e5066aef3248c22e08a07546bfd5edeaca904c91fadc296be720998ec2ec"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-aarch64-apple-darwin-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.macos-arm64"]
-checksum = "sha256:cddc9cd11cdf80b3342eebaba0e6ab26d9c8dec45295ea44cf98062987185724"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637345"
+[tools.python."platforms.macos-x64"]
+checksum = "sha256:78ded4c4f0b6a931240f09bd20608533bb40dd71c1ff953c7267359075ca8b16"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-x86_64-apple-darwin-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.macos-x64"]
-checksum = "sha256:3b1b9f13548599ae9d920f5e3169cc402db1930044ea24e0be4e236b7f072a99"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637340"
+[tools.python."platforms.macos-x64-baseline"]
+checksum = "sha256:78ded4c4f0b6a931240f09bd20608533bb40dd71c1ff953c7267359075ca8b16"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-x86_64-apple-darwin-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.macos-x64-baseline"]
-checksum = "sha256:3b1b9f13548599ae9d920f5e3169cc402db1930044ea24e0be4e236b7f072a99"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637340"
+[tools.python."platforms.windows-x64"]
+checksum = "sha256:ada613a2af32c04cf7c54726243c56d76f0e59f5f61d2f28371d3b9d8efad566"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-x86_64-pc-windows-msvc-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
-[tools.rtk."platforms.windows-x64"]
-checksum = "sha256:527552ec419988ff4a862415ba28d5aa7c1148ef3dc926ae11a4c133e63a7491"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637344"
-
-[tools.rtk."platforms.windows-x64-baseline"]
-checksum = "sha256:527552ec419988ff4a862415ba28d5aa7c1148ef3dc926ae11a4c133e63a7491"
-url = "https://github.com/rtk-ai/rtk/releases/download/v0.42.0/rtk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/428637344"
+[tools.python."platforms.windows-x64-baseline"]
+checksum = "sha256:ada613a2af32c04cf7c54726243c56d76f0e59f5f61d2f28371d3b9d8efad566"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260804/cpython-3.14.6+20260804-x86_64-pc-windows-msvc-install_only_stripped.tar.gz"
+provenance = "github-attestations"
 
 [[tools.sqlite]]
 version = "3.54.0"
