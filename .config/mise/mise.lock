@@ -1099,6 +1099,10 @@ backend = "pypi:magic-wormhole"
 version = "1.74.0"
 backend = "pypi:tmuxp"
 
+[[tools.python]]
+version = "3.14.6"
+backend = "core:python"
+
 [[tools.rtk]]
 version = "0.42.0"
 backend = "github:rtk-ai/rtk"
