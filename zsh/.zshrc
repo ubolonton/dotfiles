@@ -504,6 +504,8 @@ ublt/add-path "$HOME"/.local/bin
 
 if command_exists mise ; then
     eval "$(mise activate zsh)"
+    # Needs compinit, which oh-my-zsh runs above.
+    eval "$(mise completion zsh)"
 elif command_exists direnv ; then
     eval "$(direnv hook zsh)"
 fi
