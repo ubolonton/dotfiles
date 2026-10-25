@@ -7,9 +7,9 @@ experimental = true
 # So we know it's working
 status.show_env = true
 
-# npm -> bun, pipx -> uv
+# npm -> bun, pypi -> uv
 npm.package_manager = "bun"
-pipx.uvx = true
+pypi.uvx = true
 
 # Reduce supply chain risk.
 minimum_release_age = "7d"
@@ -36,7 +36,7 @@ credential_command = "gh auth token"
 
 # Essential
 starship = "latest"
-"pipx:tmuxp" = "latest"
+"pypi:tmuxp" = "latest"
 
 # General
 fd = "latest"
@@ -80,7 +80,7 @@ claude = "latest"
 # Unsorted
 hyperfine = "latest"
 tokei = "latest"
-"pipx:magic-wormhole" = "latest"
+"pypi:magic-wormhole" = "latest"
 stern = "latest"
 glab = "latest"
 "github:tamnd/kage" = "latest"

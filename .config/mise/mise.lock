@@ -1091,6 +1091,14 @@ backend = "pipx:microsandbox"
 version = "1.70.0"
 backend = "pipx:tmuxp"
 
+[[tools."pypi:magic-wormhole"]]
+version = "0.24.0"
+backend = "pypi:magic-wormhole"
+
+[[tools."pypi:tmuxp"]]
+version = "1.74.0"
+backend = "pypi:tmuxp"
+
 [[tools.rtk]]
 version = "0.42.0"
 backend = "github:rtk-ai/rtk"
