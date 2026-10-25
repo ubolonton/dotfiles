@@ -33,6 +33,11 @@ credential_command = "gh auth token"
 # Things that should be project-specific.
 # bindgen =
 
+
+# Essential
+starship = "latest"
+"pipx:tmuxp" = "latest"
+
 # General
 fd = "latest"
 bat = "latest"
@@ -41,8 +46,10 @@ bat = "latest"
 
 # REPLs
 babashka = { version = "latest", exe = "bb" }
-clickhouse = "26.7"
+clickhouse = "26.4"
 duckdb = "1"
+clojure = "latest"
+sqlite = "latest"
 
 # Project management: build tools, task runners
 just = "1"
@@ -52,6 +59,7 @@ pdm = "2"
 uv = "latest"
 node = "latest"
 bun = "latest"
+# pnpm = "latest"
 zig = "latest"
 "cargo:cargo-outdated" = "latest"
 "cargo:cargo-edit" = "latest"
@@ -60,22 +68,22 @@ zig = "latest"
 
 # VM tools
 lima = "latest"
-microsandbox = "0.6"
+microsandbox = "latest"
+# colima = "latest"
+# "npm:@e2b/cli" = "latest"
+
+# AI coding
+claude = "latest"
+"npm:@zed-industries/claude-agent-acp" = "latest"
+"npm:ccstatusline" = "latest"
 
 # Unsorted
 hyperfine = "latest"
 tokei = "latest"
-starship = "latest"
-"pipx:tmuxp" = "latest"
 "pipx:magic-wormhole" = "latest"
 stern = "latest"
 glab = "latest"
-
-# AI coding
-"npm:@anthropic-ai/claude-code" = "latest"
-"npm:@zed-industries/claude-agent-acp" = "latest"
-"npm:ccstatusline" = "latest"
-rtk = "latest"
+"github:tamnd/kage" = "latest"
 
 [env]
 RUSTC_WRAPPER = "sccache"
