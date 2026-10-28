@@ -48,7 +48,7 @@ bat = "latest"
 "cargo:bingrep" = "latest"
 
 # REPLs
-babashka = { version = "latest", exe = "bb" }
+babashka = "latest"
 clickhouse = "26.4"
 duckdb = "1"
 clojure = "latest"
