@@ -1,3 +1,5 @@
+min_version = "2024.10.01"
+
 [settings]
 # `mise` doesn't support lockfile for global tools. Or at least that's what Gemini said. We work
 # around by via the ~/dotfiles project.
